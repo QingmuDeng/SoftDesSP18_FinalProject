@@ -1,3 +1,5 @@
+"""Uses k means to determine the dominate colors in an image. Displays the results in a color histogram and saves the
+RGB values in a csv file. """
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import argparse
@@ -17,7 +19,7 @@ image_path = 'test2.jpg'
 image = cv2.imread(image_path)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-# show our image
+# TESTING: show our image
 # cv2.imshow('image',image)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
@@ -34,26 +36,20 @@ clt.fit(image)
 # representing the number of pixels labeled to each color
 hist = utils.centroid_histogram(clt)
 bar = utils.plot_colors(hist, clt.cluster_centers_)
-# print bar
 
-# extract the RGB pixel values and remove duplicates
-color_palette = utils.plot_colors(hist, clt.cluster_centers_)
-# print color_palette
-row = (image_path, [tuple(x) for x in color_palette])
+# extract the RGB pixel values
+row = (image_path, [tuple(x) for x in bar])
 
-lst_palette = []
+# make a list of lists containing the RGB values for all the colors in the histogram
+palette = []
 for arr in list(row[1][0]):
     # print([arr[0], arr[1], arr[2]])
-    lst_palette.append([arr[0], arr[1], arr[2]])
+    palette.append([arr[0], arr[1], arr[2]])
 
-print(lst_palette)
-lst_palette = list(lst_palette for lst_palette,_ in itertools.groupby(lst_palette))
-print(lst_palette)
-# print row
-
-# print row[0]
-# print row[1]
-
+# remove duplicates in the color list
+# print(lst_palette)
+palette = list(palette for palette,_ in itertools.groupby(palette))
+# print(lst_palette)
 
 # show our color bar
 plt.figure()
@@ -66,7 +62,7 @@ plt.close()
 # write rbg values into csv file
 file.writerow([
                row[0].encode('utf-8', 'ignore'),
-               lst_palette,
+               palette,
                ])
 
 
