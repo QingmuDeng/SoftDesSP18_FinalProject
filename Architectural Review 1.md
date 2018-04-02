@@ -32,3 +32,6 @@ d. Ask for feedback/ awesome ideas
 
 Click [here](https://tinyurl.com/y77u66jo) to open our feedback form.
 
+### 5. AR Presentation
+
+Click [here](https://docs.google.com/presentation/d/1qB1l5g-42Oe0hqINpyVdh_MGqVr4Ym1yJtZY_kdgk7g/edit?usp=sharing) to open our presentation.
