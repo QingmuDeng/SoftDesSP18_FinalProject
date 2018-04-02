@@ -30,7 +30,7 @@ d. Ask for feedback/ awesome ideas
 
 ### 4. Feedback Form
 
-Click [here](https://tinyurl.com/y77u66jo) to open our feedback form.
+Click [here](https://tinyurl.com/yabp98kg) to open our feedback form.
 
 ### 5. AR Presentation
 
