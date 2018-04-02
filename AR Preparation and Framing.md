@@ -22,11 +22,13 @@ e. What are your thoughts on the pair rotation idea for splitting up work?
 
 a. Start with an overview of our project idea (both original and new ideas)
 
-b. Describe potential algorithms that we would implement (i.e. K means clustering) and specific application ideas/ extensions
+b. Progress update
 
-c. Explain our methods of splitting up work (i.e pair programming rotation structure)
+c. Describe specific features/ extensions
 
-d. Ask for feedback/ awesome ideas
+d. Explain our methods of splitting up work (i.e pair programming rotation structure)
+
+e. Ask for feedback/ awesome ideas
 
 ### 4. Feedback Form
 
