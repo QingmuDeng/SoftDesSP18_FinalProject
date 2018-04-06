@@ -1,20 +1,23 @@
 """
 Put your Flask app code here.
 """
-from flask import render_template
-from flask import Flask
-from flask import request
+from flask import render_template, Flask, request
+import webbrowser
+import threading
 
 app = Flask(__name__)
-
+image = None;
 @app.route('/')
 def index():
+    global image
+    # if request.form['pic']:
+    #     image = request.form['pic']
     return render_template('index.html')
 
 
 @app.route('/hello')
 def hello_world():
-    return "Hello World!"
+    return request.form['pic']
 
 
 # @app.route('/hello/')
@@ -54,4 +57,12 @@ def show_user_profile(username, age):
 
 
 if __name__ == '__main__':
-    app.run()
+    # url = 'http://127.0.0.5000'
+    # webbrowser.open_new_tab(url)
+    port = 5000
+    url = "http://127.0.0.1:{0}".format(port)
+
+    threading.Timer(1.25, lambda: webbrowser.open(url) ).start()
+
+    app.run(port=port, debug=False)
+    # app.run()
