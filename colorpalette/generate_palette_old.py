@@ -55,7 +55,6 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
 
     # print("hist", hist)
     # print(clt.cluster_centers_)
-
     # extract the RGB pixel values
     row = [tuple(x) for x in bar]
 
@@ -68,8 +67,6 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
     # remove duplicates in the color list
     palette = list(palette for palette, _ in itertools.groupby(palette))
     # print(palette)
-
-    # make a dictionary with keys being the percentages and values being the rgbs
     output_palette = {}
     for index, color in enumerate(palette):
         output_palette[hist[index]] = color
@@ -77,7 +74,6 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
 
 
 def get_hsvs(clrs):
-    # iterate through a list of rgb values, convert into hsv, and append to another list
     new_clrs = []
     for clr in clrs:
         new_clrs.append(get_hsv(clr))
@@ -85,14 +81,12 @@ def get_hsvs(clrs):
 
 
 def get_hsv(clr):
-    # convert a single rgb value into hsv
     h, s, v = rgb_to_hsv(*map(down_scale, clr))
     h, s, v = 360 * h, 100 * s, 100 * v
     return h, s, v
 
 
 def get_rgbs(clrs):
-    # iterate through a list of hsv values, convert into rgb, and append to another list
     new_clrs = []
     for clr in clrs:
         new_clrs.append(get_rgb(clr))
@@ -100,30 +94,37 @@ def get_rgbs(clrs):
 
 
 def get_rgb(clr):
-    # convert a single hsv value into rgb
     h, s, v = clr
     h, s, v = h / 360, s / 100, v / 100
     return tuple(map(up_scale, hsv_to_rgb(h, s, v)))
 
 
 def get_mag(rgb):
-    # return the magnitude of a rgb pixel/vector
     r, g, b = rgb
     return math.sqrt(r ** 2 + g ** 2 + b ** 2)
 
 
 def get_brightness(hsv):
-    # return the magnitude of just the S and V components of a hsv pixel/vector
     h, s, v = hsv
     return math.sqrt(s ** 2 + v ** 2)
 
 
-def get_hexs(clrs):
+def format_palette(palette):
     # convert RGB to hex and change array of RGB values to tuple
     hexs = []
-    for clr in clrs:
+    rgb = []
+    hues = []
+    saturations = []
+    values = []
+    for clr in palette:
         hexs.append("#{0:02x}{1:02x}{2:02x}".format(clr[0], clr[1], clr[2]))
-    return hexs
+        rgb.append(tuple(clr))
+        h, s, v = get_hsv(clr)
+        hues.append(h)
+        saturations.append(s)
+        values.append(v)
+
+    return hexs, rgb, hues, saturations, values
 
 
 def show_colors(bar, save=None):
@@ -138,12 +139,11 @@ def show_colors(bar, save=None):
 
 
 def crop(image):
-    # first resize image
     r = 100.0 / image.shape[1]
     dim = (100, int(image.shape[0] * r))
-    image = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
 
-    # iterate through the image width and height to create all possible crops
+    # perform the actual resizing of the image and show it
+    image = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
     images = []
     height, width = image.shape[:2]
     delta_x = width / 4
@@ -160,23 +160,30 @@ def crop(image):
         index_y = 0
         index_x += delta_x
 
-    # iterate through the cropped images to generate an array of clamped pixels
     images2 = []
     for img in images:
         # reshape image to list of pixels
         img = img.reshape((img.shape[0] * img.shape[1], 3))
         image2 = []
-        # make sure pixels are in the right brightness ranges
         for pix in img:
             pix = clamp(pix, DEFAULT_MINV, DEFAULT_MAXV)
             image2.append(pix)
         images2.append(image2)
+
     return images2
 
 
 def edit_image(image):
     # TESTING: show our image
     # cv2.imshow('image',image)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+    # hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)  # convert it to hsv
+    #
+    # h, s, v = cv2.split(hsv)
+    # print(s)
+    # image = cv2.merge((h, s, v))
+    # cv2.imshow("resized", image)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
@@ -188,7 +195,7 @@ def edit_image(image):
     # cv2.imshow("resized", resized)
     # cv2.waitKey(0)
 
-    # reshape image to list of pixels and clamp values
+    # reshape image to list of pixels
     image = resized.reshape((resized.shape[0] * resized.shape[1], 3))
     image2 = []
     for pix in image:
@@ -206,7 +213,6 @@ if __name__ == '__main__':
     file = csv.writer(open('palettes2.csv', 'wb'))
     file.writerow(['image name', 'RGB', 'Hex'])
 
-    # stores the rgb and hsv info for dominant and accent colors
     dominants_rgb = []
     dominants_hsv = []
     accents_rgb = []
@@ -214,7 +220,7 @@ if __name__ == '__main__':
     final_palette = []
 
     # load image and convert from BGR to RBG
-    image_path = 'test6.jpg'
+    image_path = 'test4.jpg'
     orig_image = cv2.imread(image_path)
     orig_image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
     image = edit_image(orig_image)
@@ -227,11 +233,12 @@ if __name__ == '__main__':
 
     # get the top 1 dominant color from palette1
     first = palette1.pop(max(palette1))
+    # dominants_rgb.append(first)
     dominants_hsv.append(get_hsv(first))
     dom_h = dominants_hsv[0][0]
     print(dominants_hsv)
 
-    # Find next dominant color from palette1 that is similar to first dominant color by taking smallest difference in hue
+    # Find next dominant color from palette1 that is similar to first dominant color by taking smallest different in hue
     # Find the two potential accent colors from palette1 by picking the two dominant colors that are most different in hue to the most dominant color
     hsvs = get_hsvs(palette1.values())
     sub_hsvs = []
@@ -242,14 +249,16 @@ if __name__ == '__main__':
     # print(sub_hsvs)
 
     # sort the hue differences from least difference to most difference
+    # sub_hsvs = sorted(sub_hsvs, key=itemgetter(0))
+    # print(sub_hsvs)
     hsvs.sort(key=dict(zip(hsvs, sub_hsvs)).get)
     # print(hsvs)
     dominants_hsv.append(hsvs[0])  # first elm is most dominant color
     accents_hsv.extend(hsvs[-2:])  # last elm is most diff in hue from dominant color
 
-    max_diff2 = abs(accents_hsv[-2][0] - dom_h)  # difference between dominant and second accent
-    max_diff1 = abs(accents_hsv[-1][0] - dom_h) # difference between dominant and first accent
-    min_diff = abs(dominants_hsv[-1][0] - dom_h) # difference between dominant and second dominant
+    max_diff2 = abs(accents_hsv[-2][0] - dom_h)  # difference between dominant and not as different accent
+    max_diff1 = abs(accents_hsv[-1][0] - dom_h)
+    min_diff = abs(dominants_hsv[-1][0] - dom_h)
 
     # print(max_dis, min_dis)
     # print(dominants_hsv)
@@ -259,13 +268,13 @@ if __name__ == '__main__':
     print(dominants_rgb)
     print(accents_rgb)
 
-    # Examine the cropped images (consider resizing the cropped images) and look for better accents
+    # TODO: examine the cropped images (consider resizing the cropped images) and look for better accents
     # look for brighter accents (go by magnitude of rgb), maybe more different from dominant colors (but watch out for outliers)
     # also look for alternatives to dominant colors by also optimizing magnitude of rgb
     cropped_images = crop(orig_image)
-
+    # find dominate colors
+    all_hsvs = []
     for crop in cropped_images:
-        # find top 3 most dominant colors in each crop image
         bar, palette = dominant_colors(crop, 3)
         # show_colors(bar)
         temp_hsvs = get_hsvs(palette.values())
@@ -306,20 +315,35 @@ if __name__ == '__main__':
                 accents_hsv[-1] = hsv
                 print("maybe found a brighter color to replace 1st accent", rgb)
 
+        all_hsvs.extend(temp_hsvs)
+
+        # hexs, rgb, hues, saturations, values = format_palette(palette)
+        # all_hues.extend(hues)
+    # print(all_hsvs)
     # TESTING, display dominant and accent colors
     final_palette.extend(dominants_rgb)
     final_palette.extend(accents_rgb)
     final_palette = map(list, final_palette)
-    final_palette2 = np.array(final_palette)
-    hist = [1.0 / len(final_palette2)] * len(final_palette2)
-    bar = utils.plot_colors(hist, final_palette2)
+    final_palette = np.array(final_palette)
+    hist = [1.0/len(final_palette)] * len(final_palette)
+    print(hist)
+    print(final_palette)
+    bar = utils.plot_colors(hist, final_palette)
+    # show_colors(bar, save="result13.png")
     show_colors(bar)
+    # all_hues = np.asarray(all_hues)
+    # clt = KMeans(n_clusters=4)
+    # clt.fit(all_hues.reshape(-1, 1))
+    # print(clt.cluster_centers_)
 
-    hexs = get_hexs(final_palette)
-    print("hexs", hexs)
+    # format data (final_palette)
+    # hexs, rgb, hues, saturations, values = format_palette(palette1.values())
+    # print(hues)
+    # print(saturations)
+    # print(values)
     # write rbg values into csv file
-    file.writerow([
-        image_path.encode('utf-8', 'ignore'),
-        final_palette,
-        hexs
-    ])
+    # file.writerow([
+    #     image_path.encode('utf-8', 'ignore'),
+    #     rgb,
+    #     hexs
+    # ])
