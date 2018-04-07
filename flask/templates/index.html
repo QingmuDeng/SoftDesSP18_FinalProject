@@ -77,9 +77,10 @@
             <ul>
                 <!--<li><a href="upload">Upload Image</a></li>-->
                 <li>
-                    <div class="file btn btn-lg btn-primary">Upload Image
+                    <form action = "/uploads" class="file btn btn-lg btn-primary" target="_blank" method="POST">Upload Image
                         <!--<label class="file btn btn-lg btn-primary-label">Upload Image</label>-->
-                        <input action = "/uploads" type="file" name="file" id="imginput" formmethod="post"/></div>
+                        <input type="file" name="image"/>
+                        <input type ="submit"/> </form>
                         <img data-src="path/to/image.(png,jpeg..)">
                         <script>
                             $('img').imageCaching();
