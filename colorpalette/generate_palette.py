@@ -203,7 +203,7 @@ if __name__ == '__main__':
     # print(type)
 
     # create csv file with results
-    file = csv.writer(open('palettes2.csv', 'wb'))
+    file = csv.writer(open('palettes2.csv', 'w'))  #TODO: change back to 'wb' when running on Cassandra's
     file.writerow(['image name', 'RGB', 'Hex'])
 
     # stores the rgb and hsv info for dominant and accent colors
@@ -305,6 +305,15 @@ if __name__ == '__main__':
                 accents_rgb[-1] = rgb
                 accents_hsv[-1] = hsv
                 print("maybe found a brighter color to replace 1st accent", rgb)
+
+    #Find transition dominant color and add to list of dominants
+    #transdomS, transdomV = max(dominants_hsv[-1][1], dominants_hsv[0][1]), max(dominants_hsv[-1][2], dominants_hsv[0][2])
+    transdomH = (abs(dominants_hsv[-1][0] - dominants_hsv[0][0])) / 2 + min(dominants_hsv[-1][0], dominants_hsv[0][0])
+    transdomS = (abs(dominants_hsv[-1][1] - dominants_hsv[0][1])) / 2 + min(dominants_hsv[-1][1], dominants_hsv[0][1])
+    transdomV = (abs(dominants_hsv[-1][2] - dominants_hsv[0][2])) / 2 + min(dominants_hsv[-1][2], dominants_hsv[0][2])
+
+    dominants_hsv.insert(1, (transdomH, transdomS, transdomV))
+    dominants_rgb.insert(1, get_rgb((transdomH, transdomS, transdomV)))
 
     # TESTING, display dominant and accent colors
     final_palette.extend(dominants_rgb)
