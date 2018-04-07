@@ -46,6 +46,7 @@
     }
 
 
+
     </style>
     <title>Paletteful</title>
     <meta charset="utf-8"/>
@@ -75,18 +76,24 @@
         </div>
         <nav>
             <ul>
-                <!--<li><a href="upload">Upload Image</a></li>-->
+                    <!--<form action="/upload" method="POST"-->
+                          <!--enctype="multipart/form-data">                &lt;!&ndash;<li><a href="upload">Upload Image</a></li>&ndash;&gt;-->
                 <li>
-                    <div class="file btn btn-lg btn-primary">Upload Image
-                        <!--<label class="file btn btn-lg btn-primary-label">Upload Image</label>-->
-                        <input action = "/uploads" type="file" name="file" id="imginput" formmethod="post"/></div>
-                        <img data-src="path/to/image.(png,jpeg..)">
-                        <script>
-                            $('img').imageCaching();
-                        </script>
+
+                        <form action="/upload" class="file btn btn-lg btn-primary" method="POST">Upload Image
+                            <!--<label class="file btn btn-lg btn-primary-label">Upload Image</label>-->
+
+                            <input action = "/upload" type="file" name="file" id="imginput" formmethod="post"/>
+                            <!--<br></br>-->
+                            <!--<input action = "/upload" >-->
+                            <!--<input type="submit"/>-->
+
+                        </form>
+                    <!--<input type="submit"/>-->
 
                 </li>
                 <!--<li><a href="#elements">Elements</a></li>-->
+                        <!--</form>-->
             </ul>
         </nav>
     </header>
@@ -113,10 +120,10 @@
 
 <!--function WriteFile()-->
 <!--{-->
-   <!--var fso  = new ActiveXObject("Scripting.FileSystemObject");-->
-   <!--var fh = fso.CreateTextFile("c:\\Test.bmp", true);-->
-   <!--fh.WriteLine("Some text goes here...");-->
-   <!--fh.Close();-->
+<!--var fso  = new ActiveXObject("Scripting.FileSystemObject");-->
+<!--var fh = fso.CreateTextFile("c:\\Test.bmp", true);-->
+<!--fh.WriteLine("Some text goes here...");-->
+<!--fh.Close();-->
 <!--}-->
 
 <!--</SCRIPT>-->

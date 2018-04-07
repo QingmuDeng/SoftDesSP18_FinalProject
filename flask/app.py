@@ -25,27 +25,34 @@ def upload_file():
     # file.save(f)
     #
     # return render_template('index.html')
-    if request.method == 'POST':
-        print ("HELP US 2!!")
-        # check if the post request has the file part
-        if 'file' not in request.file:
-            Flask.flash('No file part')
-            print ("HELP  3!!")
-            return redirect(request.url)
-        file = request.file['btn-primary']
-        # if user does not select file, browser also
-        # submit a empty part without filename
-        if file.filename == '':
-            Flask.flash('No selected file')
-            return redirect(request.url)
-            print ("HELP US KILL US!!")
-        if file and allowed_file(file.filename):
-            print ("HELP!!")
-            filename = Flask.secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
+
+    # if request.method == 'POST':
+    #     print ("HELP US 2!!")
+    #     # check if the post request has the file part
+    #     if 'file' not in request.file:
+    #         Flask.flash('No file part')
+    #         print ("HELP  3!!")
+    #         return redirect(request.url)
+    #     file = request.file['btn-primary']
+    #     # if user does not select file, browser also
+    #     # submit a empty part without filename
+    #     if file.filename == '':
+    #         Flask.flash('No selected file')
+    #         return redirect(request.url)
+    #         print ("HELP US KILL US!!")
+    #     if file and allowed_file(file.filename):
+    #         print ("HELP!!")
+    #         filename = Flask.secure_filename(file.filename)
+    #         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    #         return redirect(url_for('uploaded_file',
+    #                                 filename=filename))
+    # return "file uploaded successfully"
     return "file uploaded successfully"
+
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save(secure_filename(f.filename))
+        return 'file uploaded successfully'
 
 
 if __name__ == "__main__":
