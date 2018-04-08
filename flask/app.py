@@ -8,18 +8,23 @@ UPLOAD_FOLDER = os.path.basename('/home/enmo/SoftDesSP18_FinalProject/flask/stat
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
 @app.route("/", methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
+
+@app.route("/uploads", methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
-        print "111"
+
         file = request.files['file']
+        print "111"
         if file and allowed_file(file.filename):
             print "111"
             # filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
             return redirect(url_for('index'))
-    return render_template('index.html')
+    # return render_template('index.html')
+    return render_template('upload.html')
 
 
 def allowed_file(filename):
