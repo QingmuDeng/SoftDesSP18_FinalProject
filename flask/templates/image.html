@@ -1,7 +1,83 @@
-<!doctype html>
-<title>Hello from Flask</title>
-{% if filename %}
-  <h1>some text <img src="{{ filename }}">more text!</h1>
-{% else %}
-  <h1>no image for whatever reason</h1>
-{% endif %}
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <style>
+        #result{
+        -moz-transform: translateY(0.25rem);
+			-webkit-transform: translateY(0.25rem);
+			-ms-transform: translateY(0.25rem);
+			transform: translateY(0.25rem);
+			-moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
+			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
+			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
+			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
+			position: relative;
+			width: 40rem;
+			max-width: 100%;
+			background-color: rgba(27, 31, 34, 0.85);
+			border-radius: 4px;
+			opacity: 1;
+        }
+
+
+
+    </style>
+    <title>Paletteful</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="/static/assets/css/main.css"/>
+    <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
+    <noscript>
+        <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
+    </noscript>
+
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <span class="icon fa-diamond"></span>
+        </div>
+        <div id="result">{% if filename1 %}
+            <img src="{{ filename1 }}">
+            {% if filename2 %}
+            <br><br>
+            <img src="{{ filename2 }}">
+            {% else %}
+            <h1>please re-submit image</h1>
+            {% endif %}
+            {% else %}
+            <h1>please re-submit image</h1>
+            {% endif %}
+        </div>
+    </header>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="/static/assets/js/jquery.min.js"></script>
+<script src="/static/assets/js/skel.min.js"></script>
+<script src="/static/assets/js/util.js"></script>
+<script src="/static/assets/js/main.js"></script>
+
+</body>
+</html>

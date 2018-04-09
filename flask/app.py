@@ -3,6 +3,7 @@
 import os
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
+import crop_img
 
 app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
@@ -17,21 +18,24 @@ def home():
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload():
+    fullname = None
     print("hello")
     if request.method == 'POST':
         print("posting something")
         print("requests", request.files)
-        if 'image' in request.files:
+        if "image" in request.files:
             print("posted image")
-            filename = photos.save(request.files['image'])
+            filename = photos.save(request.files["image"])
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
+            crop_img.resize(fullname)
             print(fullname)
     # file = request.files['image']
     # f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     #
     # # add your custom code to check that the uploaded file is a valid image and not a malicious file (out-of-scope for this post)
     # file.save(f)
-    return render_template('image.html', filename=fullname)
+    palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
+    return render_template('image.html', filename1=fullname, filename2=palettename)
 
 def allowed_file(filename):
     return '.' in filename and \
