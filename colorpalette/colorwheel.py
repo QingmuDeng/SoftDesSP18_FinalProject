@@ -1,3 +1,7 @@
+import cv2
+import numpy as np
+import random
+
 COLORWHEEL = {"red": (255, 0, 0), "rose": (255, 0, 128), "magenta": (255, 0, 255), "violet": (128, 0, 255),
               "blue": (0, 0, 255), "azure": (0, 128, 255), "cyan": (0, 255, 255),
               "spring green": (0, 255, 128), "green": (0, 255, 0), "chartreuse": (128, 255, 0), "yellow": (225, 255, 0),
@@ -34,6 +38,7 @@ COLORWHEEL_RANGE = {0: "MIDRED", 15: "WARMRED", 30: "ORANGE", 45: "WARMYELLOW", 
                     255 : "WARMBLUE",270 : "VIOLET", 285 : "COOLMAGENTA", 300 : "MIDMAGENTA", 315 : "WARMMAGENTA", 330 : "REDMAGENTA",
                     345 : "COOLRED"}
 HVALS = dict((v,k) for k, v in COLORWHEEL_RANGE.iteritems())
+
 def give_color(color):
     """
     Returns string name of the color of the input h,s,v
@@ -106,6 +111,40 @@ def get_complement(color):
         newh = (colorvalue - 180) + (h - colorvalue)
     return (newh,s,v)
 
-#TODO: generate 3 midcolors to go gradient between the two colors or generate two accent colors and one midtone color
+def complement_accents(color):
+    """
+    Returns the HSV values for the dominant and accent colors of the complementary color palette
+    :param color: tuple containing HSV value
+    :return: two tuples, one for dominant and one for complementary accents
+    """
+    h,s,v = color
+    if s<210:
+        news = s + random.randint(35,45)
+    else:
+        news = s - random.randint(35,45)
+    if v < 210:
+        newv = 255
+    else:
+        newv = v - random.randint(35,45)
+    return (h,news,newv)
 
-print(get_complement((343,100,100)))
+def visualize(hsv, colorstr):
+    canvas = np.zeros((100, 100, 3), np.uint8)
+    canvas[:, :] = hsv
+    canvas = cv2.cvtColor(canvas, cv2.COLOR_HSV2BGR)
+    cv2.imshow(colorstr, canvas)
+
+#TODO: generate 3 midcolors to go gradient between the two colors or generate two accent colors and one midtone color
+ogH = random.randint(0,360)
+ogS = random.randint(0,255)
+ogV = random.randint(0,255)
+h,s,v = complement_accents((ogH, ogS, ogV))
+y = (ogH/2, ogS, ogV)
+x = (h/2, s, v)
+while True:
+    visualize(x, 'x')
+    visualize(y, 'y')
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cv2.destroyAllWindows()
