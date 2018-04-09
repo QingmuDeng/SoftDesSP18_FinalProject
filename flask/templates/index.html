@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <style>
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  <!--display: inline-block;-->
+}
+
+.btn {
+  <!--border: 2px solid gray;-->
+  color: gray;
+  <!--padding: 4px 10px;-->
+  <!--border-radius: 8px;-->
+  font-size: 20px;
+  <!--font-weight: bold;-->
+    border: none;
+    <!--cursor: pointer;-->
+    border-radius: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  <!--cursor: pointer;-->
+}
+
+.upload-btn-wrapper2 {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 40px;
+  <!--display: inline-block;-->
+}
+
+.upload-btn-wrapper2 input[type=submit] {
+  <!--border: 2px solid gray;-->
+  color: gray;
+  <!--padding: 4px 10px;-->
+  <!--border-radius: 8px;-->
+  font-size: 20px;
+  <!--font-weight: bold;-->
+  border: none;
+    <!--cursor: pointer;-->
+    border-radius: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+    </style>
+    <title>Paletteful</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="/static/assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/static/assets/css/ie9.css"/><![endif]-->
+    <noscript>
+        <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <span class="icon fa-diamond"></span>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>Paletteful</h1>
+                <p>Get creativity from your favorite images.</p>
+            </div>
+        </div>
+
+
+        <!--<li><a href="upload">Upload Image</a></li>-->
+
+        <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+            <!--<label class="file btn btn-lg btn-primary-label">Upload Image</label>-->
+            <div class="upload-btn-wrapper">
+                <button class="btn">Upload</button>
+                <input type="file" name="image"/>
+                <!--<button class="btn">Submit</button>-->
+            </div>
+            <div class="upload-btn-wrapper2"><input type="submit"/></div>
+            <!--<input type=submit value=Upload>-->
+            <!--<br></br>-->
+            <!--<input action = "/upload" >-->
+        </form>
+        <!--<div class="file btn btn-lg btn-primary">Upload Image-->
+        <!--&lt;!&ndash;<label class="file btn btn-lg btn-primary-label">Upload Image</label>&ndash;&gt;-->
+        <!--<input type="file" name="file" id="imginput" formmethod="POST" formaction="http://localhost:5000/upload"/><input type="submit"/></div>-->
+
+
+        <!--<li><a href="#elements">Elements</a></li>-->
+
+    </header>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="/static/assets/js/jquery.min.js"></script>
+<script src="/static/assets/js/skel.min.js"></script>
+<script src="/static/assets/js/util.js"></script>
+<script src="/static/assets/js/main.js"></script>
+
+</body>
+</html>
