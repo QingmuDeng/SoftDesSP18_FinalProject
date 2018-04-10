@@ -9,9 +9,6 @@ def visualize(hsv):
     cv2.imshow('canvas', canvas)
 
 
-while True:
-    visualize((160, 207, 225))
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
+visualize((160, 207, 225))
+cv2.waitKey(0)
 cv2.destroyAllWindows()
