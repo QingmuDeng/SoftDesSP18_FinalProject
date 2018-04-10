@@ -137,10 +137,10 @@ def analogous(color):
     h_old,s,v = color
     h = h_old*2
     ranv = random.randint(-15,15)
-    accent1 = complement_accents(((h-45)/2, s, v))
+    accent1 = (int((h-60)/2), s, v+ranv)
     leftdomin = ((h-30)/2, s, v+ranv)
     rightdomin = ((h+30)/2, s, v+ranv)
-    accent2 = complement_accents(((h+45)/2, s, v))
+    accent2 = (int((h+60)/2), s, v+ranv)
     return [accent1, leftdomin, color, rightdomin, accent2]
 
 def midcolor(color):
@@ -176,7 +176,7 @@ def visualize(hsv, colorstr):
     cv2.imshow(colorstr, canvas)
 
 #TODO: generate 3 midcolors to go gradient between the two colors or generate two accent colors and one midtone color
-ogH = random.randint(0,360)
+ogH = random.randint(0,180)
 ogS = random.randint(0,255)
 ogV = random.randint(0,255)
 comp = complement((ogH, ogS, ogV))
@@ -184,17 +184,17 @@ analog = analogous((int(ogH/2), ogS, ogV))
 
 print(ogH, ogS, ogV)
 while True:
-    #visualize(analog[0], 'Lacc')
-    #visualize(analog[1], 'Ltra')
-    #visualize(analog[2], 'dom')
-    #visualize(analog[3], 'Rtra')
-    #visualize(analog[4], 'Racc')
+    visualize(analog[0], 'Lacc')
+    visualize(analog[1], 'Ltra')
+    visualize(analog[2], 'dom')
+    visualize(analog[3], 'Rtra')
+    visualize(analog[4], 'Racc')
 
-    visualize(comp[0], 'DAcc')
-    visualize(comp[1], 'D')
-    visualize(comp[2], 'mid')
-    visualize(comp[3], 'C')
-    visualize(comp[4], 'CAcc')
+    #visualize(comp[0], 'DAcc')
+    #visualize(comp[1], 'D')
+    #visualize(comp[2], 'mid')
+    #visualize(comp[3], 'C')
+    #visualize(comp[4], 'CAcc')
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
