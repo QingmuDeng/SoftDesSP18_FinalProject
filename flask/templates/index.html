@@ -59,16 +59,23 @@
 }
 
 
+
     </style>
     <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="/static/assets/css/main.css"/>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="/static/assets/css/ie9.css"/><![endif]-->
+    <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
+    <![endif]-->
     <noscript>
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
+    <script>
+        function load()
+        {
+            return "http://127.0.0.1:5000/";
+        }
+    </script>
 </head>
 <body>
 
@@ -78,7 +85,7 @@
     <!-- Header -->
     <header id="header">
         <div class="logo">
-            <span class="icon fa-diamond"></span>
+            <span class="icon fa-fire" onclick="document.location.href=load();"></span>
         </div>
         <div class="content">
             <div class="inner">
@@ -87,30 +94,15 @@
             </div>
         </div>
 
-
-        <!--<li><a href="upload">Upload Image</a></li>-->
-
         <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
-            <!--<label class="file btn btn-lg btn-primary-label">Upload Image</label>-->
             <div class="upload-btn-wrapper">
                 <button class="btn">Upload</button>
                 <input type="file" name="image"/>
-                <!--<button class="btn">Submit</button>-->
             </div>
             <div class="upload-btn-wrapper2"><input type="submit"/></div>
-            <!--<input type=submit value=Upload>-->
-            <!--<br></br>-->
-            <!--<input action = "/upload" >-->
         </form>
-        <!--<div class="file btn btn-lg btn-primary">Upload Image-->
-        <!--&lt;!&ndash;<label class="file btn btn-lg btn-primary-label">Upload Image</label>&ndash;&gt;-->
-        <!--<input type="file" name="file" id="imginput" formmethod="POST" formaction="http://localhost:5000/upload"/><input type="submit"/></div>-->
-
-
-        <!--<li><a href="#elements">Elements</a></li>-->
 
     </header>
-
 
     <!-- Footer -->
     <footer id="footer">
