@@ -25,6 +25,69 @@
 			opacity: 1;
         }
 
+        .caption-style-1{
+		list-style-type: none;
+		display:inline-block;
+		margin: 0px;
+		padding: 0px;
+
+	}
+
+	.caption-style-1 li{
+		float: right;
+		<!--display:inline-block;-->
+		padding: 0px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.caption-style-1 li:hover .caption{
+		opacity: 1;
+
+	}
+
+
+	.caption-style-1 img{
+		margin: 0px;
+		padding: 0px;
+		float: right;
+		<!--display:inline-block;-->
+		z-index: 4;
+	}
+
+
+	.caption-style-1 .caption{
+		cursor: pointer;
+		position: absolute;
+		opacity: 0;
+		-webkit-transition:all 0.45s ease-in-out;
+		-moz-transition:all 0.45s ease-in-out;
+		-o-transition:all 0.45s ease-in-out;
+		-ms-transition:all 0.45s ease-in-out;
+		transition:all 0.45s ease-in-out;
+
+	}
+	.caption-style-1 .blur{
+		background-color: rgba(0,0,0,0.65);
+		height: 100px;
+		width: 500px;
+		z-index: 5;
+		position: absolute;
+	}
+
+	.caption-style-1 .caption-text h1{
+		<!--text-transform: uppercase;-->
+		font-size: 24px;
+	}
+	.caption-style-1 .caption-text{
+		z-index: 10;
+		<!--color: #fff;-->
+		position: absolute;
+		width: 500px;
+		height: 200px;
+		text-align: center;
+	}
+
 
 
     </style>
@@ -48,11 +111,21 @@
         <div class="logo">
             <span class="icon fa-diamond"></span>
         </div>
-        <div id="result">{% if filename1 %}
+        <div id="result" class="container-a1">{% if filename1 %}
             <img src="{{ filename1 }}">
             {% if filename2 %}
             <br><br>
-            <img src="{{ filename2 }}">
+            <div class="caption-style-1">
+                <li><img src="{{ filename2 }}" alt="">
+                    <div class="caption">
+                        <div class="blur"></div>
+                        <div class="caption-text">
+                            <h1>Amazing Caption</h1>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
             {% else %}
             <h1>please re-submit image</h1>
             {% endif %}
