@@ -86,9 +86,8 @@
 		width: 500px;
 		height: 200px;
 		text-align: center;
+
 	}
-
-
 
     </style>
     <title>Paletteful</title>
@@ -99,6 +98,12 @@
     <noscript>
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
+    <script>
+        function load()
+        {
+            return "http://127.0.0.1:5000/";
+        }
+    </script>
 
 </head>
 <body>
@@ -109,7 +114,7 @@
     <!-- Header -->
     <header id="header">
         <div class="logo">
-            <span class="icon fa-diamond"></span>
+            <span class="icon fa-fire" onclick="document.location.href=load();"></span>
         </div>
         <div id="result" class="container-a1">{% if filename1 %}
             <img src="{{ filename1 }}">
@@ -125,7 +130,8 @@
                     </div>
                 </li>
             </div>
-
+            <br>
+            <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:15px;">Download Palette</a>
             {% else %}
             <h1>please re-submit image</h1>
             {% endif %}
