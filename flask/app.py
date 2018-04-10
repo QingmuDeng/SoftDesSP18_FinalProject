@@ -4,6 +4,7 @@ import os
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 import crop_img
+import cv2
 
 app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
@@ -29,13 +30,9 @@ def upload():
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
             crop_img.resize(fullname)
             print(fullname)
-    # file = request.files['image']
-    # f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-    #
-    # # add your custom code to check that the uploaded file is a valid image and not a malicious file (out-of-scope for this post)
-    # file.save(f)
     palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
-    return render_template('image.html', filename1=fullname, filename2=palettename)
+    colors_path = crop_img.crop_palette(palettename)
+    return render_template('image.html', filename1=fullname, filename2=colors_path[0],filename3=colors_path[1],filename4=colors_path[2],filename5=colors_path[3])
 
 def allowed_file(filename):
     return '.' in filename and \
