@@ -106,16 +106,16 @@ def get_complement(color):
     colorname = give_color(color)
     colorvalue = HVALS.get(colorname)
     if colorvalue < 180:
-        newh = (180 + colorvalue) + (h-colorvalue)
+        newh = ((180 + colorvalue) + (h-colorvalue))/2
     else:
-        newh = (colorvalue - 180) + (h - colorvalue)
+        newh = ((colorvalue - 180) + (h - colorvalue))/2    #added /2 to make range 0-180
     return (newh,s,v)
 
 def complement_accents(color):
     """
     Returns the HSV values for the dominant and accent colors of the complementary color palette
     :param color: tuple containing HSV value
-    :return: two tuples, one for dominant and one for complementary accents
+    :return: HSV tuple of accent color
     """
     h,s,v = color
     if s<210:
@@ -128,6 +128,47 @@ def complement_accents(color):
         newv = v - random.randint(35,45)
     return (h,news,newv)
 
+def analogous(color):
+    """
+    Returns the HSV values of all of the 4 analogous complements. NOTE THAT H VALUES ARE 0-180
+    :param color: tuple with HSV values of the dominant color (where input h is 0-180)
+    :return:list containing the HSV values of all 5 palette colors
+    """
+    h_old,s,v = color
+    h = h_old*2
+    ranv = random.randint(-15,15)
+    accent1 = complement_accents(((h-45)/2, s, v))
+    leftdomin = ((h-30)/2, s, v+ranv)
+    rightdomin = ((h+30)/2, s, v+ranv)
+    accent2 = complement_accents(((h+45)/2, s, v))
+    return [accent1, leftdomin, color, rightdomin, accent2]
+
+def midcolor(color):
+    """
+    Generates middle color between 2 complementary colors
+    :param color1: tuple of hsv of dominant color
+    :param color2: tuple of hsv of complementary color
+    :return: tuple of hsv of mid color
+    """
+    h1, s1, v1 = color
+    #h2, s2, v2 = color2
+    midh = int((h1 + 90)/2)
+    mids = random.randint(75,115)
+    midv = random.randint(100,150)
+    return (midh, mids, midv)
+
+def complement(color):
+    """
+    Generates 5 palette colors for the complementary color palette in HSV values
+    :param color: input dominant color
+    :return: list of tuples of HSV values
+    """
+    complement = get_complement(color)
+    domacc = complement_accents(color)
+    compacc = complement_accents(complement)
+    mid = midcolor(color)
+    return [domacc, color, mid, complement, compacc]
+
 def visualize(hsv, colorstr):
     canvas = np.zeros((100, 100, 3), np.uint8)
     canvas[:, :] = hsv
@@ -138,12 +179,22 @@ def visualize(hsv, colorstr):
 ogH = random.randint(0,360)
 ogS = random.randint(0,255)
 ogV = random.randint(0,255)
-h,s,v = complement_accents((ogH, ogS, ogV))
-y = (ogH/2, ogS, ogV)
-x = (h/2, s, v)
+comp = complement((ogH, ogS, ogV))
+analog = analogous((int(ogH/2), ogS, ogV))
+
+print(ogH, ogS, ogV)
 while True:
-    visualize(x, 'x')
-    visualize(y, 'y')
+    #visualize(analog[0], 'Lacc')
+    #visualize(analog[1], 'Ltra')
+    #visualize(analog[2], 'dom')
+    #visualize(analog[3], 'Rtra')
+    #visualize(analog[4], 'Racc')
+
+    visualize(comp[0], 'DAcc')
+    visualize(comp[1], 'D')
+    visualize(comp[2], 'mid')
+    visualize(comp[3], 'C')
+    visualize(comp[4], 'CAcc')
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
