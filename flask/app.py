@@ -32,7 +32,9 @@ def upload():
             print(fullname)
     palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
     colors_path = crop_img.crop_palette(palettename)
-    return render_template('image.html', filename1=fullname, filename2=colors_path[0],filename3=colors_path[1],filename4=colors_path[2],filename5=colors_path[3])
+    hex = ['#4e9559', '#18960b', '#d16903', '#f8d000']
+    rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)']
+    return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex,rgb=rgb)
 
 def allowed_file(filename):
     return '.' in filename and \

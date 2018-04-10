@@ -7,30 +7,29 @@
 <html>
 <head>
     <style>
-        #result{
-        -moz-transform: translateY(0.25rem);
-			-webkit-transform: translateY(0.25rem);
-			-ms-transform: translateY(0.25rem);
-			transform: translateY(0.25rem);
-			-moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
-			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
-			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
-			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
-			position: relative;
-			width: 40rem;
-			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
-			border-radius: 4px;
-			opacity: 1;
-        }
+    #result{
+    -moz-transform: translateY(0.25rem);
+        -webkit-transform: translateY(0.25rem);
+        -ms-transform: translateY(0.25rem);
+        transform: translateY(0.25rem);
+        -moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
+        -webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
+        -ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
+        transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+        padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
+        position: relative;
+        width: 60rem;
+        max-width: 100%;
+        background-color: rgba(27, 31, 34, 0.85);
+        border-radius: 4px;
+        opacity: 1;
+    }
 
         .caption-style-1{
 		list-style-type: none;
 		display:inline-block;
 		margin: 0px;
 		padding: 0px;
-
 	}
 
 	.caption-style-1 li{
@@ -43,7 +42,6 @@
 
 	.caption-style-1 li:hover .caption{
 		opacity: 1;
-
 	}
 
 
@@ -78,18 +76,18 @@
 	.caption-style-1 .caption-text{
 		z-index: 10;
 		font-size: 20px;
-		display:inline-block;
+		<!--display:inline-block;-->
 		<!--color: #fff;-->
 		position: absolute;
 		width: 124px;
 		height: 83px;
-		top: 100px;
-		vertical-align: middle;
+		<!--top: 100px;-->
+		<!--vertical-align: middle;-->
 		top: 50%;
 		left:50%;
+		opacity: 1;
 		<!--float: middle;-->
 		<!--text-align: center;-->
-
 	}
 
     </style>
@@ -106,6 +104,30 @@
         {
             return "http://127.0.0.1:5000/";
         }
+
+        function save()
+        {
+            /* Get the text field */
+            var copyText = document.getElementById("hex1");
+
+          /* Select the text field */
+          copyText.select();
+
+          /* Copy the text inside the text field */
+          document.execCommand("Copy");
+
+          /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+
+        }
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
     </script>
 
 </head>
@@ -120,45 +142,49 @@
             <span class="icon fa-fire" onclick="document.location.href=load();"></span>
         </div>
         <div id="result" class="container-a1">{% if filename1 %}
-            <img src="{{ filename1 }}">
+            <div class="content"><div class="inner"><img src="{{ filename1 }}"></div></div>
             {% if filename2 %}
-            <br><br>
+            <br><br><br>
             <div class="caption-style-1">
-                <li><img src="{{ filename2 }}" alt="">
+                <li><img src="{{ filename2[3] }}" alt="">
                     <div class="caption">
-                        <div class="blur"></div>
+                        <div class="blur" onclick="copyToClipboard('#hex3')"></div>
                         <div class="caption-text">
-                            <p>Amazing Caption</p>
+                            <center id="hex3">{{hex[3]}}</center>
+                            <center>{{rgb[3]}}</center>
                         </div>
                     </div>
                 </li>
-                <li><img src="{{ filename3 }}" alt="">
+                <li><img src="{{ filename2[2]  }}" alt="">
                     <div class="caption">
-                        <div class="blur"></div>
+                          <div class="blur" onclick="copyToClipboard('#hex2')"></div>
                         <div class="caption-text">
-                            <p>Amazing Caption</p>
+                            <center id="hex2">{{hex[2]}}</center>
+                            <center>{{rgb[2]}}</center>
                         </div>
                     </div>
                 </li>
-                <li><img src="{{ filename4 }}" alt="">
+                <li><img src="{{ filename2[1]  }}" alt="">
                     <div class="caption">
-                        <div class="blur"></div>
+                        <div class="blur" onclick="copyToClipboard('#hex1')"></div>
                         <div class="caption-text">
-                            <p>Amazing Caption</p>
+                            <center id="hex1">{{hex[1]}}</center>
+                            <center>{{rgb[1]}}</center>
                         </div>
                     </div>
                 </li>
-                <li><img src="{{ filename5 }}" alt="">
+                <li><img src="{{ filename2[0]  }}" alt="">
                     <div class="caption">
-                        <div class="blur"></div>
+                        <div class="blur" onclick="copyToClipboard('#hex0')"></div>
                         <div class="caption-text">
-                            <p>Amazing Caption</p>
+                            <center id="hex0">{{hex[0]}}</center>
+                            <center>{{rgb[0]}}</center>
                         </div>
                     </div>
                 </li>
             </div>
             <br>
-            <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:15px;">Download Palette</a>
+            <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download Palette</a>
             {% else %}
             <h1>please re-submit image</h1>
             {% endif %}
@@ -171,7 +197,7 @@
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">OUR WEBSITE</a>.</p>
     </footer>
 
 </div>
