@@ -137,9 +137,10 @@ def analogous(color):
     h_old,s,v = color
     h = h_old*2
     ranv = random.randint(-15,15)
+
     accent1 = (int((h-60)/2), s, v+ranv)
-    leftdomin = ((h-30)/2, s, v+ranv)
-    rightdomin = ((h+30)/2, s, v+ranv)
+    leftdomin = (int((h-30)/2), s, v+ranv)
+    rightdomin = (int((h+30)/2), s, v+ranv)
     accent2 = (int((h+60)/2), s, v+ranv)
     return [accent1, leftdomin, color, rightdomin, accent2]
 
@@ -157,17 +158,28 @@ def midcolor(color):
     midv = random.randint(100,150)
     return (midh, mids, midv)
 
+def hsvrgbcv(color):
+    """
+    Takes HSV values and converts to RGB tuple for OpenCV
+    :param color:
+    :return:
+    """
+    rgb = cv2.cvtColor(np.uint8([[list(color)]]), cv2.COLOR_HSV2RGB)
+    rgbcolor = rgb[0][0][0], rgb[0][0][1], rgb[0][0][2]
+    return rgbcolor
+
 def complement(color):
     """
     Generates 5 palette colors for the complementary color palette in HSV values
     :param color: input dominant color
     :return: list of tuples of HSV values
     """
-    complement = get_complement(color)
-    domacc = complement_accents(color)
-    compacc = complement_accents(complement)
-    mid = midcolor(color)
-    return [domacc, color, mid, complement, compacc]
+    complement = hsvrgbcv(get_complement(color))
+    domacc = hsvrgbcv(complement_accents(color))
+    compacc = hsvrgbcv(complement_accents(complement))
+    mid = hsvrgbcv(midcolor(color))
+    dominant = hsvrgbcv(color)
+    return [domacc, dominant, mid, complement, compacc]
 
 def visualize(hsv, colorstr):
     canvas = np.zeros((100, 100, 3), np.uint8)
@@ -176,26 +188,26 @@ def visualize(hsv, colorstr):
     cv2.imshow(colorstr, canvas)
 
 #TODO: generate 3 midcolors to go gradient between the two colors or generate two accent colors and one midtone color
-ogH = random.randint(0,180)
-ogS = random.randint(0,255)
-ogV = random.randint(0,255)
-comp = complement((ogH, ogS, ogV))
-analog = analogous((int(ogH/2), ogS, ogV))
-
-print(ogH, ogS, ogV)
-while True:
-    visualize(analog[0], 'Lacc')
-    visualize(analog[1], 'Ltra')
-    visualize(analog[2], 'dom')
-    visualize(analog[3], 'Rtra')
-    visualize(analog[4], 'Racc')
-
-    #visualize(comp[0], 'DAcc')
-    #visualize(comp[1], 'D')
-    #visualize(comp[2], 'mid')
-    #visualize(comp[3], 'C')
-    #visualize(comp[4], 'CAcc')
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-cv2.destroyAllWindows()
+# ogH = random.randint(0,180)
+# ogS = random.randint(0,255)
+# ogV = random.randint(0,255)
+# comp = complement((ogH, ogS, ogV))
+# analog = analogous((int(ogH/2), ogS, ogV))
+#
+# print(ogH, ogS, ogV)
+# while True:
+#     visualize(analog[0], 'Lacc')
+#     visualize(analog[1], 'Ltra')
+#     visualize(analog[2], 'dom')
+#     visualize(analog[3], 'Rtra')
+#     visualize(analog[4], 'Racc')
+#
+#     #visualize(comp[0], 'DAcc')
+#     #visualize(comp[1], 'D')
+#     #visualize(comp[2], 'mid')
+#     #visualize(comp[3], 'C')
+#     #visualize(comp[4], 'CAcc')
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
+#
+# cv2.destroyAllWindows()
