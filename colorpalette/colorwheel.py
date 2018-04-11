@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import random
+import generate_palette as gp
 
 COLORWHEEL = {"red": (255, 0, 0), "rose": (255, 0, 128), "magenta": (255, 0, 255), "violet": (128, 0, 255),
               "blue": (0, 0, 255), "azure": (0, 128, 255), "cyan": (0, 255, 255),
@@ -106,9 +107,9 @@ def get_complement(color):
     colorname = give_color(color)
     colorvalue = HVALS.get(colorname)
     if colorvalue < 180:
-        newh = ((180 + colorvalue) + (h-colorvalue))/2
+        newh = ((180 + colorvalue) + (h-colorvalue))
     else:
-        newh = ((colorvalue - 180) + (h - colorvalue))/2    #added /2 to make range 0-180
+        newh = ((colorvalue - 180) + (h - colorvalue))    #added /2 to make range 0-180
     return (newh,s,v)
 
 def complement_accents(color):
@@ -174,12 +175,12 @@ def complement(color):
     :param color: input dominant color
     :return: list of tuples of HSV values
     """
-    complement = hsvrgbcv(get_complement(color))
-    domacc = hsvrgbcv(complement_accents(color))
-    compacc = hsvrgbcv(complement_accents(complement))
-    mid = hsvrgbcv(midcolor(color))
-    dominant = hsvrgbcv(color)
-    return [domacc, dominant, mid, complement, compacc]
+    complement = get_complement(color)
+    domacc = complement_accents(color)
+    compacc = complement_accents(complement)
+    mid = midcolor(color)
+    dominant = color
+    return gp.get_rgbs([domacc, dominant, mid, complement, compacc])
 
 def visualize(hsv, colorstr):
     canvas = np.zeros((100, 100, 3), np.uint8)

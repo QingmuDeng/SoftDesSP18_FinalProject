@@ -43,7 +43,7 @@ def clamp(color, min_v, max_v):
     return tuple(map(up_scale, hsv_to_rgb(h, s, v)))
 
 
-def dominant_colors(image, n=DEFAULT_NUM_COLORS):
+def dominant_colors(image, orig_image, n=DEFAULT_NUM_COLORS):
     # cluster the pixel intensities
     clt = KMeans(n_clusters=n)
     clt.fit(image)
@@ -53,21 +53,8 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
     hist = utils.centroid_histogram(clt)
     bar = utils.plot_colors(hist, clt.cluster_centers_)
 
-    # print("hist", hist)
-    # print(clt.cluster_centers_)
-
-    # extract the RGB pixel values
-    row = [tuple(x) for x in bar]
-
-    # make a list of lists containing the RGB values for all the colors in the histogram
-    palette = []
-    for arr in list(row[1]):
-        # print([arr[0], arr[1], arr[2]])
-        palette.append([arr[0], arr[1], arr[2]])
-
-    # remove duplicates in the color list
-    palette = list(palette for palette, _ in itertools.groupby(palette))
-    # print(palette)
+    # make a list of lists containing the centroids RGB values
+    palette = clt.cluster_centers_.astype('int').tolist()
 
     # make a dictionary with keys being the percentages and values being the rgbs
     output_palette = {}
@@ -78,10 +65,7 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
 
 def get_hsvs(clrs):
     # iterate through a list of rgb values, convert into hsv, and append to another list
-    new_clrs = []
-    for clr in clrs:
-        new_clrs.append(get_hsv(clr))
-    return new_clrs
+    return [get_hsv(clr) for clr in clrs]
 
 
 def get_hsv(clr):
@@ -93,10 +77,7 @@ def get_hsv(clr):
 
 def get_rgbs(clrs):
     # iterate through a list of hsv values, convert into rgb, and append to another list
-    new_clrs = []
-    for clr in clrs:
-        new_clrs.append(get_rgb(clr))
-    return new_clrs
+    return [get_rgb(clr) for clr in clrs]
 
 
 def get_rgb(clr):
@@ -197,7 +178,7 @@ def edit_image(image):
     return image2
 
 
-def default_palette(image_path):
+def default_palette(image, orig_image):
     """
 
     :param image_path: The image that you want to create color palette from
@@ -211,13 +192,8 @@ def default_palette(image_path):
     accents_hsv = []
     final_palette = []
 
-    # load image and convert from BGR to RBG
-    orig_image = cv2.imread(image_path)
-    orig_image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
-    image = edit_image(orig_image)
-
     # find top 5 dominant colors of entire image
-    bar1, palette1 = dominant_colors(image)
+    bar1, palette1 = dominant_colors(image, orig_image)
     print(palette1)
     # show colors
     # show_colors(bar1)
@@ -312,6 +288,5 @@ def default_palette(image_path):
     dominants_hsv.insert(1, (transdomH, transdomS, transdomV))
     dominants_rgb.insert(1, get_rgb((transdomH, transdomS, transdomV)))
     dominants_rgb.extend(accents_rgb)
-
 
     return dominants_rgb

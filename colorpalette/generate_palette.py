@@ -53,21 +53,8 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
     hist = utils.centroid_histogram(clt)
     bar = utils.plot_colors(hist, clt.cluster_centers_)
 
-    # print("hist", hist)
-    # print(clt.cluster_centers_)
-
-    # extract the RGB pixel values
-    row = [tuple(x) for x in bar]
-
-    # make a list of lists containing the RGB values for all the colors in the histogram
-    palette = []
-    for arr in list(row[1]):
-        # print([arr[0], arr[1], arr[2]])
-        palette.append([arr[0], arr[1], arr[2]])
-
-    # remove duplicates in the color list
-    palette = list(palette for palette, _ in itertools.groupby(palette))
-    # print(palette)
+    # make a list of lists containing the centroids RGB values
+    palette = clt.cluster_centers_.astype('int').tolist()
 
     # make a dictionary with keys being the percentages and values being the rgbs
     output_palette = {}
@@ -78,10 +65,7 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
 
 def get_hsvs(clrs):
     # iterate through a list of rgb values, convert into hsv, and append to another list
-    new_clrs = []
-    for clr in clrs:
-        new_clrs.append(get_hsv(clr))
-    return new_clrs
+    return [get_hsv(clr) for clr in clrs]
 
 
 def get_hsv(clr):
@@ -93,10 +77,7 @@ def get_hsv(clr):
 
 def get_rgbs(clrs):
     # iterate through a list of hsv values, convert into rgb, and append to another list
-    new_clrs = []
-    for clr in clrs:
-        new_clrs.append(get_rgb(clr))
-    return new_clrs
+    return [get_rgb(clr) for clr in clrs]
 
 
 def get_rgb(clr):
@@ -203,8 +184,8 @@ if __name__ == '__main__':
     # print(type)
 
     # create csv file with results
-    file = csv.writer(open('palettes2.csv', 'w'))  #TODO: change back to 'wb' when running on Cassandra's
-    file.writerow(['image name', 'RGB', 'Hex'])
+    # file = csv.writer(open('palettes2.csv', 'w'))  #TODO: change back to 'wb' when running on Cassandra's
+    # file.writerow(['image name', 'RGB', 'Hex'])
 
     # stores the rgb and hsv info for dominant and accent colors
     dominants_rgb = []
@@ -214,7 +195,7 @@ if __name__ == '__main__':
     final_palette = []
 
     # load image and convert from BGR to RBG
-    image_path = 'test6.jpg'
+    image_path = 'src_imgs/test6.jpg'
     orig_image = cv2.imread(image_path)
     orig_image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
     image = edit_image(orig_image)
@@ -327,8 +308,8 @@ if __name__ == '__main__':
     hexs = get_hexs(final_palette)
     print("hexs", hexs)
     # write rbg values into csv file
-    file.writerow([
-        image_path.encode('utf-8', 'ignore'),
-        final_palette,
-        hexs
-    ])
+    # file.writerow([
+    #     image_path.encode('utf-8', 'ignore'),
+    #     final_palette,
+    #     hexs
+    # ])
