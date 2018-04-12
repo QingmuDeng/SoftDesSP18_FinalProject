@@ -90,12 +90,38 @@
 		<!--text-align: center;-->
 	}
 
+	#textHover1{
+display: none;
+font-size: 14px;
+}
+#icon1:hover #textHover1{
+display: block;
+}
+
+#textHover2{
+display: none;
+font-size: 14px;
+}
+#icon2:hover #textHover2{
+display: block;
+}
+
+#textHover3{
+display: none;
+font-size: 14px;
+}
+#icon3:hover #textHover3{
+display: block;
+}
+
+
     </style>
     <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="/static/assets/css/main.css"/>
     <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
+    <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <noscript>
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
@@ -128,6 +154,7 @@ function copyToClipboard(element) {
   document.execCommand("copy");
   $temp.remove();
 }
+
     </script>
 
 </head>
@@ -138,11 +165,19 @@ function copyToClipboard(element) {
 
     <!-- Header -->
     <header id="header">
-        <div class="logo">
-            <span class="icon fa-fire" onclick="document.location.href=load();"></span>
+        <div id="toolbar-options" class="hidden">
+            <a href="#" id="icon1"><i class="fa fa-search"></i><span id="textHover1">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree"></i><span id="textHover2">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq"></i><span id="textHover3">About</span></a>
+        </div>
+
+        <div id="button">
+            <i class="fa fa-envira" onclick="document.location.href=load();" style="font-size:3em;"></i>
         </div>
         <div id="result" class="container-a1">{% if filename1 %}
-            <div class="content"><div class="inner"><img src="{{ filename1 }}"></div></div>
+            <div class="content">
+                <div class="inner"><img src="{{ filename1 }}"></div>
+            </div>
             {% if filename2 %}
             <br><br><br>
             <div class="caption-style-1">
@@ -157,7 +192,7 @@ function copyToClipboard(element) {
                 </li>
                 <li><img src="{{ filename2[2]  }}" alt="">
                     <div class="caption">
-                          <div class="blur" onclick="copyToClipboard('#hex2')"></div>
+                        <div class="blur" onclick="copyToClipboard('#hex2')"></div>
                         <div class="caption-text">
                             <center id="hex2">{{hex[2]}}</center>
                             <center>{{rgb[2]}}</center>
@@ -184,7 +219,8 @@ function copyToClipboard(element) {
                 </li>
             </div>
             <br>
-            <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download Palette</a>
+            <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
+                Palette</a>
             {% else %}
             <h1>please re-submit image</h1>
             {% endif %}
@@ -210,6 +246,9 @@ function copyToClipboard(element) {
 <script src="/static/assets/js/skel.min.js"></script>
 <script src="/static/assets/js/util.js"></script>
 <script src="/static/assets/js/main.js"></script>
+<script src="/static/toolbar/jquery.toolbar.js"></script>
+<script src="/static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
 
 </body>
 </html>
