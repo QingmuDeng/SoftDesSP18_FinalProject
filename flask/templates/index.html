@@ -58,6 +58,47 @@
     white-space: nowrap;
 }
 
+.semi-transparent-button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  width: 80%;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+
+#textHover1{
+display: none;
+font-size: 14px;
+}
+#icon1:hover #textHover1{
+display: block;
+}
+
+#textHover2{
+display: none;
+font-size: 14px;
+}
+#icon2:hover #textHover2{
+display: block;
+}
+
+#textHover3{
+display: none;
+font-size: 14px;
+}
+#icon3:hover #textHover3{
+display: block;
+}
+
+
 
 
     </style>
@@ -66,6 +107,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="/static/assets/css/main.css"/>
     <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
+    <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
+
     <![endif]-->
     <noscript>
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
@@ -84,8 +127,14 @@
 
     <!-- Header -->
     <header id="header">
-        <div class="logo">
-            <span class="icon fa-fire" onclick="document.location.href=load();"></span>
+        <div id="toolbar-options" class="hidden">
+            <a href="#" id="icon1"><i class="fa fa-search"></i><span id="textHover1">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree"></i><span id="textHover2">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq"></i><span id="textHover3">About</span></a>
+        </div>
+
+        <div id="button">
+            <i class="fa fa-envira" onclick="document.location.href=load();" style="font-size:3em;"></i>
         </div>
         <div class="content">
             <div class="inner">
@@ -97,7 +146,7 @@
         <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper">
                 <button class="btn">Upload</button>
-                <input type="file" name="image"/>
+                <input type="file" name="image" id="fileInput"/>
             </div>
             <div class="upload-btn-wrapper2"><input type="submit"/></div>
         </form>
@@ -119,6 +168,11 @@
 <script src="/static/assets/js/skel.min.js"></script>
 <script src="/static/assets/js/util.js"></script>
 <script src="/static/assets/js/main.js"></script>
+<script src="/static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
+<script src="/static/assets/js/ImageCropperTest.js"></script>
+<script src="/static/assets/js/ImageCropper.js"></script>
+
 
 </body>
 </html>

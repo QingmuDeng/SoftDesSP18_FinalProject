@@ -4,6 +4,7 @@ import os
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 import crop_img
+import cv2
 
 app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
@@ -14,7 +15,7 @@ configure_uploads(app, photos)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+    return render_template('cropimagetest.html')
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload():
@@ -29,13 +30,11 @@ def upload():
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
             crop_img.resize(fullname)
             print(fullname)
-    # file = request.files['image']
-    # f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-    #
-    # # add your custom code to check that the uploaded file is a valid image and not a malicious file (out-of-scope for this post)
-    # file.save(f)
     palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
-    return render_template('image.html', filename1=fullname, filename2=palettename)
+    colors_path = crop_img.crop_palette(palettename)
+    hex = ['#4e9559', '#18960b', '#d16903', '#f8d000']
+    rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)']
+    return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex,rgb=rgb)
 
 def allowed_file(filename):
     return '.' in filename and \
