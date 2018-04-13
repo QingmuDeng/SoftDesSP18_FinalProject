@@ -5,6 +5,8 @@ from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 import crop_img
 import cv2
+import webbrowser
+import threading
 
 app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
@@ -42,4 +44,9 @@ def allowed_file(filename):
 
 
 if __name__ == "__main__":
-    app.run()
+    port = 5000
+    url = "http://127.0.0.1:{0}".format(port)
+
+    threading.Timer(1.25, lambda: webbrowser.open(url)).start()
+
+    app.run(port=port, debug=False)
