@@ -14,7 +14,7 @@ import numpy as np
 DEFAULT_NUM_COLORS = 5
 DEFAULT_MINV = 150
 DEFAULT_MAXV = 255
-SCALE = 256.0
+SCALE = 255.0
 COLORWHEEL = {"red": (255, 0, 0), "rose": (255, 0, 128), "magenta": (255, 0, 255), "violet": (128, 0, 255),
               "blue": (0, 0, 255), "azure": (0, 128, 255), "cyan": (0, 255, 255),
               "spring green": (0, 255, 128), "green": (0, 255, 0), "chartreuse": (128, 255, 0), "yellow": (225, 255, 0),
@@ -43,7 +43,7 @@ def clamp(color, min_v, max_v):
     return tuple(map(up_scale, hsv_to_rgb(h, s, v)))
 
 
-def dominant_colors(image, n=DEFAULT_NUM_COLORS):
+def dominant_colors(image, orig_image, n=DEFAULT_NUM_COLORS):
     # cluster the pixel intensities
     clt = KMeans(n_clusters=n)
     clt.fit(image)
@@ -53,35 +53,21 @@ def dominant_colors(image, n=DEFAULT_NUM_COLORS):
     hist = utils.centroid_histogram(clt)
     bar = utils.plot_colors(hist, clt.cluster_centers_)
 
-    # print("hist", hist)
-    # print(clt.cluster_centers_)
-
-    # extract the RGB pixel values
-    row = [tuple(x) for x in bar]
-
-    # make a list of lists containing the RGB values for all the colors in the histogram
-    palette = []
-    for arr in list(row[1]):
-        # print([arr[0], arr[1], arr[2]])
-        palette.append([arr[0], arr[1], arr[2]])
-
-    # remove duplicates in the color list
-    palette = list(palette for palette, _ in itertools.groupby(palette))
-    # print(palette)
+    # make a list of lists containing the centroids RGB values
+    palette = clt.cluster_centers_.astype('int').tolist()
 
     # make a dictionary with keys being the percentages and values being the rgbs
     output_palette = {}
     for index, color in enumerate(palette):
         output_palette[hist[index]] = color
+
+    # Output palette is in RGB
     return bar, output_palette
 
 
 def get_hsvs(clrs):
     # iterate through a list of rgb values, convert into hsv, and append to another list
-    new_clrs = []
-    for clr in clrs:
-        new_clrs.append(get_hsv(clr))
-    return new_clrs
+    return [get_hsv(clr) for clr in clrs]
 
 
 def get_hsv(clr):
@@ -137,7 +123,7 @@ def show_colors(bar, save=None):
     plt.close()
 
 
-def crop(image):
+def cropped(image):
     # first resize image
     r = 100.0 / image.shape[1]
     dim = (100, int(image.shape[0] * r))
@@ -146,8 +132,8 @@ def crop(image):
     # iterate through the image width and height to create all possible crops
     images = []
     height, width = image.shape[:2]
-    delta_x = width / 4
-    delta_y = height / 4
+    delta_x = int(width / 4)
+    delta_y = int(height / 4)
     index_x = 0
     index_y = 0
     for i in range(0, 4):
@@ -197,14 +183,12 @@ def edit_image(image):
     return image2
 
 
-if __name__ == '__main__':
-    # ask for user input
-    # type = user_input()
-    # print(type)
+def default_palette(image, orig_image):
+    """
 
-    # create csv file with results
-    file = csv.writer(open('palettes2.csv', 'w'))  #TODO: change back to 'wb' when running on Cassandra's
-    file.writerow(['image name', 'RGB', 'Hex'])
+    :param image_path: The image that you want to create color palette from
+    :return: list of 5 HSV values to plot for the palette
+    """
 
     # stores the rgb and hsv info for dominant and accent colors
     dominants_rgb = []
@@ -213,14 +197,8 @@ if __name__ == '__main__':
     accents_hsv = []
     final_palette = []
 
-    # load image and convert from BGR to RBG
-    image_path = 'test6.jpg'
-    orig_image = cv2.imread(image_path)
-    orig_image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
-    image = edit_image(orig_image)
-
     # find top 5 dominant colors of entire image
-    bar1, palette1 = dominant_colors(image)
+    bar1, palette1 = dominant_colors(image, orig_image)
     print(palette1)
     # show colors
     # show_colors(bar1)
@@ -262,7 +240,7 @@ if __name__ == '__main__':
     # Examine the cropped images (consider resizing the cropped images) and look for better accents
     # look for brighter accents (go by magnitude of rgb), maybe more different from dominant colors (but watch out for outliers)
     # also look for alternatives to dominant colors by also optimizing magnitude of rgb
-    cropped_images = crop(orig_image)
+    cropped_images = cropped(orig_image)
 
     for crop in cropped_images:
         # find top 3 most dominant colors in each crop image
@@ -314,21 +292,6 @@ if __name__ == '__main__':
 
     dominants_hsv.insert(1, (transdomH, transdomS, transdomV))
     dominants_rgb.insert(1, get_rgb((transdomH, transdomS, transdomV)))
+    dominants_rgb.extend(accents_rgb)
 
-    # TESTING, display dominant and accent colors
-    final_palette.extend(dominants_rgb)
-    final_palette.extend(accents_rgb)
-    final_palette = map(list, final_palette)
-    final_palette2 = np.array(final_palette)
-    hist = [1.0 / len(final_palette2)] * len(final_palette2)
-    bar = utils.plot_colors(hist, final_palette2)
-    show_colors(bar)
-
-    hexs = get_hexs(final_palette)
-    print("hexs", hexs)
-    # write rbg values into csv file
-    file.writerow([
-        image_path.encode('utf-8', 'ignore'),
-        final_palette,
-        hexs
-    ])
+    return dominants_rgb

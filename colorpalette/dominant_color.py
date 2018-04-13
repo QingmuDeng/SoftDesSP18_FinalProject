@@ -55,7 +55,7 @@ palette = list(palette for palette,_ in itertools.groupby(palette))
 plt.figure()
 plt.axis("off")
 plt.imshow(bar)
-plt.savefig("result2.png")
+plt.savefig("output/result2.png")
 plt.show()
 plt.close()
 
@@ -64,5 +64,3 @@ file.writerow([
                row[0].encode('utf-8', 'ignore'),
                palette,
                ])
-
-

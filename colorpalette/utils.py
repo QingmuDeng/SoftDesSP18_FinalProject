@@ -4,10 +4,17 @@ import cv2
 
 
 def centroid_histogram(clt):
-    # grab the number of different clusters and create a histogram
-    # based on the number of pixels assigned to each cluster
-    numLabels = np.arange(0, len(np.unique(clt.labels_)) + 1)
-    (hist, _) = np.histogram(clt.labels_, bins=numLabels)
+    """Grab the number of different clusters and create a histogram based
+    on the number of pixels assigned to each cluster
+
+    Args:
+        clt (sklearn.cluster.Kmeans): a sklearn.cluster.Kmeans object that contains centroid
+                                      locations and labels for each point
+    Returns:
+        hist (np.histogram): TODO
+    """
+    # create a histogram for clt.labels_ with the numbers of centroids as bin numbers
+    (hist, _) = np.histogram(clt.labels_, bins=len(clt.cluster_centers_))
 
     # normalize the histogram, such that it sums to one
     hist = hist.astype("float")
@@ -18,8 +25,15 @@ def centroid_histogram(clt):
 
 
 def plot_colors(hist, centroids):
-    # initialize the bar chart representing the relative frequency
-    # of each of the colors
+    """Initialize the bar chart representing the relative frequency of each of the colors.
+
+    Args:
+        hist (np.histogram): a histogram showing how many points are associated with
+                             each centroid
+    Returns:
+        bar (np.arrary/image): a bar graph that display the centroid colors based on
+                               the distribution in histogram
+    """
     bar = np.zeros((50, 300, 3), dtype="uint8")
     startX = 0
 

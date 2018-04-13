@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import random
+import generate_palette as gp
 
 COLORWHEEL = {"red": (255, 0, 0), "rose": (255, 0, 128), "magenta": (255, 0, 255), "violet": (128, 0, 255),
               "blue": (0, 0, 255), "azure": (0, 128, 255), "cyan": (0, 255, 255),
@@ -37,7 +38,7 @@ COLORWHEEL_RANGE = {0: "MIDRED", 15: "WARMRED", 30: "ORANGE", 45: "WARMYELLOW", 
                     165: "WARMCYAN", 180: "MIDCYAN", 195 : "COOLCYAN", 210: "BLUECYAN", 225: "COOLBLUE", 240: "MIDBLUE",
                     255 : "WARMBLUE",270 : "VIOLET", 285 : "COOLMAGENTA", 300 : "MIDMAGENTA", 315 : "WARMMAGENTA", 330 : "REDMAGENTA",
                     345 : "COOLRED"}
-HVALS = dict((v,k) for k, v in COLORWHEEL_RANGE.iteritems())
+HVALS = dict((v,k) for k, v in COLORWHEEL_RANGE.items())
 
 def give_color(color):
     """
@@ -95,6 +96,7 @@ def give_color(color):
     else:
         return COLORWHEEL_RANGE.get(345)
 
+
 def get_complement(color):
     """
     Gives complementary color to input color using additive color wheel
@@ -106,27 +108,13 @@ def get_complement(color):
     colorname = give_color(color)
     colorvalue = HVALS.get(colorname)
     if colorvalue < 180:
-        newh = ((180 + colorvalue) + (h-colorvalue))/2
+        newh = 180 + h
     else:
-        newh = ((colorvalue - 180) + (h - colorvalue))/2    #added /2 to make range 0-180
-    return (newh,s,v)
+        newh = h - 180
+    return (newh, s, v)
 
-def complement_accents(color):
-    """
-    Returns the HSV values for the dominant and accent colors of the complementary color palette
-    :param color: tuple containing HSV value
-    :return: HSV tuple of accent color
-    """
-    h,s,v = color
-    if s<210:
-        news = s + random.randint(35,45)
-    else:
-        news = s - random.randint(35,45)
-    if v < 210:
-        newv = 255
-    else:
-        newv = v - random.randint(35,45)
-    return (h,news,newv)
+
+
 
 def analogous(color):
     """
@@ -134,15 +122,19 @@ def analogous(color):
     :param color: tuple with HSV values of the dominant color (where input h is 0-180)
     :return:list containing the HSV values of all 5 palette colors
     """
-    h_old,s,v = color
-    h = h_old*2
+    # Read in the RGB value and convert it to hsv
+    h,s,v = gp.get_hsv(color)
+    # h = h_old*2
     ranv = random.randint(-15,15)
 
-    accent1 = (int((h-60)/2), s, v+ranv)
-    leftdomin = (int((h-30)/2), s, v+ranv)
-    rightdomin = (int((h+30)/2), s, v+ranv)
-    accent2 = (int((h+60)/2), s, v+ranv)
-    return [accent1, leftdomin, color, rightdomin, accent2]
+    accent1 = (int((h-50)), s, v+ranv)
+    leftdomin = (int((h-25)), s, v+ranv)
+    rightdomin = (int((h+25)), s, v+ranv)
+    accent2 = (int((h+50)), s, v+ranv)
+
+    # return colors converted to RGB
+    return gp.get_rgbs([accent1, leftdomin, color, rightdomin, accent2])
+
 
 def midcolor(color):
     """
@@ -153,10 +145,11 @@ def midcolor(color):
     """
     h1, s1, v1 = color
     #h2, s2, v2 = color2
-    midh = int((h1 + 90)/2)
+    midh = h1 + 90
     mids = random.randint(75,115)
     midv = random.randint(100,150)
     return (midh, mids, midv)
+
 
 def hsvrgbcv(color):
     """
@@ -168,18 +161,40 @@ def hsvrgbcv(color):
     rgbcolor = rgb[0][0][0], rgb[0][0][1], rgb[0][0][2]
     return rgbcolor
 
+
+def complement_accents(color):
+    """
+    Returns the HSV values for the dominant and accent colors of the complementary color palette
+    :param color: tuple containing HSV value
+    :return: HSV tuple of accent color
+    """
+    h,s,v = color
+    if s<210:
+        news = s + random.randint(35,40)
+    else:
+        news = s - random.randint(35,40)
+    if v < 210:
+        newv = v + random.randint(35,40)
+    else:
+        newv = v - random.randint(35,40)
+    return (h, news, newv)
+
+
 def complement(color):
     """
     Generates 5 palette colors for the complementary color palette in HSV values
     :param color: input dominant color
     :return: list of tuples of HSV values
     """
-    complement = hsvrgbcv(get_complement(color))
-    domacc = hsvrgbcv(complement_accents(color))
-    compacc = hsvrgbcv(complement_accents(complement))
-    mid = hsvrgbcv(midcolor(color))
-    dominant = hsvrgbcv(color)
-    return [domacc, dominant, mid, complement, compacc]
+    color_hsv = tuple(gp.get_hsv(color))
+    complement = get_complement(color_hsv)
+    domacc = complement_accents(color_hsv)
+    compacc = complement_accents(complement)
+    mid = midcolor(color_hsv)
+    dominant = color_hsv
+    print([domacc, dominant, mid, complement, compacc])
+    return gp.get_rgbs([domacc, dominant, mid, complement, compacc])
+
 
 def visualize(hsv, colorstr):
     canvas = np.zeros((100, 100, 3), np.uint8)

@@ -1,72 +1,44 @@
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
-import argparse
+from generate_palette import *
+import colorwheel
 import utils
-import cv2
-import os, os.path
-import csv
-import numpy as np
-import itertools
 
-# create csv file with results
-file = csv.writer(open('palettes.csv', 'wb'))
-file.writerow(['image name', 'palette'])
+palette = []
+final_palette = []
 
-# load image and convert from BGR to RBG
-image_path = 'test2.jpg'
-image = cv2.imread(image_path)
-image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+if __name__ == "__main__":
+    user_input = input("Select your palette type (1 = Default, 2 = Complementary, 3 = Analogous):")
 
-# show our image
-# cv2.imshow('image',image)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+    # load image and convert from BGR to RBG
+    image_path = 'src_imgs/test6.jpg'
+    orig_image = cv2.imread(image_path)
+    orig_image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
+    image = edit_image(orig_image)
+    if int(user_input) == 2:
+        # find top 5 dominant colors of entire image
+        bar1, palette1 = dominant_colors(image, orig_image)
 
-# reshape image to list of pixels
-image = image.reshape((image.shape[0] * image.shape[1], 3))
-# image = np.asarray(image)
-
-# cluster the pixel intensities
-clt = KMeans(n_clusters= 6)
-clt.fit(image)
-
-# build histogram of clusters and create a figure
-# representing the number of pixels labeled to each color
-hist = utils.centroid_histogram(clt)
-bar = utils.plot_colors(hist, clt.cluster_centers_)
-# print bar
-
-# extract the RGB pixel values and remove duplicates
-color_palette = utils.plot_colors(hist, clt.cluster_centers_)
-# print color_palette
-row = (image_path, [tuple(x) for x in color_palette])
-
-lst_palette = []
-for arr in list(row[1][0]):
-    # print([arr[0], arr[1], arr[2]])
-    lst_palette.append([arr[0], arr[1], arr[2]])
-
-print(lst_palette)
-lst_palette = list(lst_palette for lst_palette,_ in itertools.groupby(lst_palette))
-print(lst_palette)
-# print row
-
-# print row[0]
-# print row[1]
+        # get the top 1 dominant color from palette1
+        first = palette1.pop(max(palette1))
+        palette = list(colorwheel.complement(first))
+        print(palette)
 
 
-# show our color bar
-plt.figure()
-plt.axis("off")
-plt.imshow(bar)
-plt.savefig("result2.png")
-plt.show()
-plt.close()
+    elif int(user_input) == 3:
+        # find top 5 dominant colors of entire image
+        bar1, palette1 = dominant_colors(image, orig_image)
 
-# write rbg values into csv file
-file.writerow([
-               row[0].encode('utf-8', 'ignore'),
-               lst_palette,
-               ])
+        # get the top 1 dominant color from palette1
+        first = palette1.pop(max(palette1))
+        palette = list(colorwheel.analogous(first))
 
 
+    else:
+        palette = default_palette(image, orig_image)
+        print(palette)
+
+    final_palette.extend(palette)
+    # final_palette = map(list, final_palette)
+    final_palette2 = np.array(final_palette)
+    hist = [1.0 / len(final_palette2)] * len(final_palette2)
+    bar = utils.plot_colors(hist, final_palette2)
+    show_colors(bar)
