@@ -2,6 +2,9 @@ import cv2
 import numpy as np
 import random
 import generate_palette as gp
+from __future__ import print_function
+import webcolors
+from scipy.spatial import KDTree
 
 COLORWHEEL = {"red": (255, 0, 0), "rose": (255, 0, 128), "magenta": (255, 0, 255), "violet": (128, 0, 255),
               "blue": (0, 0, 255), "azure": (0, 128, 255), "cyan": (0, 255, 255),
@@ -201,6 +204,26 @@ def visualize(hsv, colorstr):
     canvas[:, :] = hsv
     canvas = cv2.cvtColor(canvas, cv2.COLOR_HSV2BGR)
     cv2.imshow(colorstr, canvas)
+
+def make_websafe(color):
+    # lets populate some names into spatial name database
+hexnames = webcolors.css3_hex_to_names
+names = []
+positions = []
+
+for hex, name in hexnames.items():
+#     print(hex, name)
+    names.append(name)
+    positions.append(webcolors.hex_to_rgb(hex))
+
+spacedb = KDTree(positions)
+
+# query nearest point
+querycolor = color
+dist, index = spacedb.query(querycolor)
+
+# return a css3 compatible color in hex
+return webcolors.name_to_hex(names[index], spec=u'css3')
 
 #TODO: generate 3 midcolors to go gradient between the two colors or generate two accent colors and one midtone color
 # ogH = random.randint(0,180)
