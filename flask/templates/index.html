@@ -118,8 +118,6 @@ display: block;
         {
             return "http://127.0.0.1:5000/";
         }
-
-
     </script>
 </head>
 <body>
@@ -148,7 +146,7 @@ display: block;
         <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper">
                 <button class="btn">Upload</button>
-                <input type="file" name="image"/>
+                <input type="file" name="image" id="fileInput"/>
             </div>
             <div class="upload-btn-wrapper2"><input type="submit"/></div>
         </form>
@@ -172,6 +170,9 @@ display: block;
 <script src="/static/assets/js/main.js"></script>
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
+<script src="/static/assets/js/ImageCropperTest.js"></script>
+<script src="/static/assets/js/ImageCropper.js"></script>
+
 
 </body>
 </html>
