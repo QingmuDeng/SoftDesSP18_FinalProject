@@ -127,10 +127,10 @@ def analogous(color):
     # h = h_old*2
     ranv = random.randint(-15,15)
 
-    accent1 = (int((h-50)), s, v+ranv)
+    accent1 = (int((h-60)), s, v+ranv)
     leftdomin = (int((h-25)), s, v+ranv)
     rightdomin = (int((h+25)), s, v+ranv)
-    accent2 = (int((h+50)), s, v+ranv)
+    accent2 = (int((h+60)), s, v+ranv)
 
     # return colors converted to RGB
     return gp.get_rgbs([accent1, leftdomin, color, rightdomin, accent2])
