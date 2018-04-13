@@ -115,6 +115,8 @@ display: block;
 }
 
 
+
+
     </style>
     <meta charset="UTF-8">
     <title>Paletteful</title>
@@ -156,6 +158,8 @@ function copyToClipboard(element) {
   $temp.remove();
 }
 
+
+
     </script>
 
 </head>
@@ -178,73 +182,73 @@ function copyToClipboard(element) {
         <div id="result" class="container-a1">{% if filename1 %}
             <div class="content">
                 <div class="inner">
-                    <!--<img id="fileInput" multiple="" src="{{ filename1 }}">-->
 
-                		<!--<div>-->
-			<!--Select image to crop: <input type="file"  name="file" multiple="" />-->
-		<!--</div>-->
-                   <div><input src="{{ filename1 }}" type="file" id="fileInput" multiple="" ></div>
+                    <div><img id="fileInput" src="{{ filename1 }}">
+
+                    <!--<div>-->
+                    <!--Select image to crop: <input type="file"  name="file" multiple="" />-->
+                    <!--</div>-->
+                    <!--<div><input src="{{ filename1 }}" type="file" id="fileInput" multiple=""></div>-->
+
+
+                        <canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000;">
+                        </canvas></div>
 
                     <div>
-                        <!--<img id="fileInput" multiple="" src="{{ filename1 }}">-->
-			            <canvas id="imageCanvas" width="500" height="400" style="border:0px solid #000000;"></canvas>
-		            </div>
-                    <div>Cropped image:</div>
+                        Cropped image:
+                    </div>
                     <div id="preview"></div>
-		<script src="/static/assets/js/ImageCropperTest.js"></script>
-		<script src="/static/assets/js/ImageCropper.js"></script>
- </div>
+                </div>
+                {% if filename2 %}
+                <br><br><br>
+                <div class="caption-style-1">
+                    <li><img src="{{ filename2[3] }}" alt="">
+                        <div class="caption">
+                            <div class="blur" onclick="copyToClipboard('#hex3')"></div>
+                            <div class="caption-text">
+                                <center id="hex3">{{hex[3]}}</center>
+                                <center>{{rgb[3]}}</center>
+                            </div>
+                        </div>
+                    </li>
+                    <li><img src="{{ filename2[2]  }}" alt="">
+                        <div class="caption">
+                            <div class="blur" onclick="copyToClipboard('#hex2')"></div>
+                            <div class="caption-text">
+                                <center id="hex2">{{hex[2]}}</center>
+                                <center>{{rgb[2]}}</center>
+                            </div>
+                        </div>
+                    </li>
+                    <li><img src="{{ filename2[1]  }}" alt="">
+                        <div class="caption">
+                            <div class="blur" onclick="copyToClipboard('#hex1')"></div>
+                            <div class="caption-text">
+                                <center id="hex1">{{hex[1]}}</center>
+                                <center>{{rgb[1]}}</center>
+                            </div>
+                        </div>
+                    </li>
+                    <li><img src="{{ filename2[0]  }}" alt="">
+                        <div class="caption">
+                            <div class="blur" onclick="copyToClipboard('#hex0')"></div>
+                            <div class="caption-text">
+                                <center id="hex0">{{hex[0]}}</center>
+                                <center>{{rgb[0]}}</center>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <br>
+                <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
+                    Palette</a>
+                {% else %}
+                <h1>please re-submit image</h1>
+                {% endif %}
+                {% else %}
+                <h1>please re-submit image</h1>
+                {% endif %}
             </div>
-            {% if filename2 %}
-            <br><br><br>
-            <div class="caption-style-1">
-                <li><img src="{{ filename2[3] }}" alt="">
-                    <div class="caption">
-                        <div class="blur" onclick="copyToClipboard('#hex3')"></div>
-                        <div class="caption-text">
-                            <center id="hex3">{{hex[3]}}</center>
-                            <center>{{rgb[3]}}</center>
-                        </div>
-                    </div>
-                </li>
-                <li><img src="{{ filename2[2]  }}" alt="">
-                    <div class="caption">
-                        <div class="blur" onclick="copyToClipboard('#hex2')"></div>
-                        <div class="caption-text">
-                            <center id="hex2">{{hex[2]}}</center>
-                            <center>{{rgb[2]}}</center>
-                        </div>
-                    </div>
-                </li>
-                <li><img src="{{ filename2[1]  }}" alt="">
-                    <div class="caption">
-                        <div class="blur" onclick="copyToClipboard('#hex1')"></div>
-                        <div class="caption-text">
-                            <center id="hex1">{{hex[1]}}</center>
-                            <center>{{rgb[1]}}</center>
-                        </div>
-                    </div>
-                </li>
-                <li><img src="{{ filename2[0]  }}" alt="">
-                    <div class="caption">
-                        <div class="blur" onclick="copyToClipboard('#hex0')"></div>
-                        <div class="caption-text">
-                            <center id="hex0">{{hex[0]}}</center>
-                            <center>{{rgb[0]}}</center>
-                        </div>
-                    </div>
-                </li>
-            </div>
-            <br>
-            <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
-                Palette</a>
-            {% else %}
-            <h1>please re-submit image</h1>
-            {% endif %}
-            {% else %}
-            <h1>please re-submit image</h1>
-            {% endif %}
-        </div>
     </header>
 
 
@@ -266,6 +270,8 @@ function copyToClipboard(element) {
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
+<script src="/static/assets/js/ImageCropperTest.js"></script>
+<script src="/static/assets/js/ImageCropper.js"></script>
 
 </body>
 </html>

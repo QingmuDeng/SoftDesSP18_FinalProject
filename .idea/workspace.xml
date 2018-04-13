@@ -4,364 +4,37 @@
     <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/flask/app.py" afterPath="$PROJECT_DIR$/flask/app.py" />
+      <change beforePath="$PROJECT_DIR$/flask/croppertest.py" afterPath="$PROJECT_DIR$/flask/croppertest.py" />
+      <change beforePath="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest.js" afterPath="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest.js" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/28811242_2076471379235637_18545437_o.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_10.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_11.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_12.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_3.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_4.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_5.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_6.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_7.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_8.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_9.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_3.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_4.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_5.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_6.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_7.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_8.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_9.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/team_meal.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/static/img/team_photo.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/templates/cropimagetest.html" afterPath="$PROJECT_DIR$/flask/templates/cropimagetest.html" />
       <change beforePath="$PROJECT_DIR$/flask/templates/image.html" afterPath="$PROJECT_DIR$/flask/templates/image.html" />
-      <change beforePath="$PROJECT_DIR$/flask_old/.idea/flask.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/LICENSE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/README.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/app.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/jQueryImageCaching-master/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/jQueryImageCaching-master/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/jQueryImageCaching-master/jquery.imageCaching.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/jQueryImageCaching-master/jquery.imageCaching.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/css/ie9.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/css/main.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/css/noscript.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/js/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/js/skel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/js/util.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/base/_page.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/base/_typography.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/components/_box.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/components/_button.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/components/_form.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/components/_icon.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/components/_image.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/components/_list.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/components/_table.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/ie9.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/layout/_bg.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/layout/_footer.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/layout/_header.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/layout/_main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/layout/_wrapper.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/libs/_functions.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/libs/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/libs/_skel.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/libs/_vars.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/assets/sass/noscript.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-grid.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-grid.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-grid.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-grid.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-reboot.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-reboot.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-reboot.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap-reboot.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.bundle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.bundle.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.bundle.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.bundle.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/bootstrap/bootstrap.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/images/bg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/images/overlay.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/images/pic01.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/images/pic02.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/images/pic03.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/static/myart1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/team_photo2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/templates/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/templates/index_old.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/templates/template.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/templates/upload.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/activate" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/activate.csh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/activate.fish" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/easy_install" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/easy_install-3.5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/pip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/pip3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/pip3.5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/python" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/python3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/bin/python3.5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/easy-install.pth" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/PKG-INFO" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/SOURCES.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/dependency_links.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/entry_points.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/not-zip-safe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/requires.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/top_level.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/__main__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/appdirs.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/_cmd.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/adapter.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/cache.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/caches/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/caches/file_cache.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/caches/redis_cache.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/controller.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/filewrapper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/heuristics.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/serialize.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/wrapper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/ansi.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/ansitowin32.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/initialise.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/win32.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/winterm.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/misc.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/shutil.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/sysconfig.cfg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/sysconfig.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/tarfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/database.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/index.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/locators.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/manifest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/markers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/metadata.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/resources.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/scripts.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/t32.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/t64.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/version.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/w32.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/w64.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/wheel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distro.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_ihatexml.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_inputstream.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_tokenizer.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/_base.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/datrie.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/py.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/constants.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/alphabeticalattributes.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/base.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/inject_meta_charset.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/lint.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/optionaltags.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/sanitizer.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/whitespace.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/html5parser.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/serializer.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treeadapters/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treeadapters/genshi.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treeadapters/sax.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/base.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/dom.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/etree.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/etree_lxml.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/base.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/dom.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/etree.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/etree_lxml.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/genshi.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/ipaddress.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/linklockfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/mkdirlockfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/pidlockfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/sqlitelockfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/symlinklockfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/ordereddict.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/__about__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/_compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/_structures.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/markers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/requirements.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/specifiers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/version.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/pkg_resources/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/bar.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/counter.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/helpers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/spinner.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/pyparsing.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/re-vendor.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/adapters.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/api.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/auth.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/cacert.pem" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/certs.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/cookies.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/exceptions.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/hooks.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/models.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/big5freq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/big5prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/chardetect.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/chardistribution.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/charsetgroupprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/charsetprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/codingstatemachine.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/constants.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/cp949prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/escprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/escsm.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/eucjpprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/euckrfreq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/euckrprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/euctwfreq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/euctwprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/gb2312freq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/gb2312prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/hebrewprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/jisfreq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/jpcntx.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/langbulgarianmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/langcyrillicmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/langgreekmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/langhebrewmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/langhungarianmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/langthaimodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/latin1prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/mbcharsetprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/mbcsgroupprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/mbcssm.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/sbcharsetprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/sbcsgroupprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/sjisprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/universaldetector.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/chardet/utf8prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/_collections.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/connection.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/connectionpool.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/contrib/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/contrib/appengine.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/contrib/pyopenssl.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/contrib/socks.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/exceptions.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/fields.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/filepost.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/packages/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/packages/ordered_dict.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/packages/six.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/packages/ssl_match_hostname/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/packages/ssl_match_hostname/_implementation.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/poolmanager.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/request.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/response.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/connection.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/request.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/response.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/retry.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/ssl_.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/timeout.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/packages/urllib3/util/url.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/sessions.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/status_codes.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/structures.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/retrying.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/six.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/webencodings/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/webencodings/labels.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/webencodings/mklabels.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/webencodings/tests.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/webencodings/x_user_defined.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/basecommand.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/baseparser.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/cmdoptions.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/check.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/completion.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/download.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/freeze.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/hash.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/help.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/install.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/list.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/search.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/show.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/uninstall.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/commands/wheel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/compat/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/compat/dictconfig.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/download.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/exceptions.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/index.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/locations.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/models/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/models/index.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/operations/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/operations/check.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/operations/freeze.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/pep425tags.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/req/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_file.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_install.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_set.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_uninstall.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/status_codes.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/appdirs.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/build.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/deprecation.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/encoding.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/filesystem.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/glibc.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/hashes.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/logging.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/outdated.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/packaging.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/setuptools_build.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/utils/ui.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/bazaar.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/git.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/mercurial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/subversion.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/pip-9.0.1-py3.5.egg/pip/wheel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/setuptools-28.8.0-py3.5.egg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/lib/python3.5/site-packages/setuptools.pth" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/flask_old/venv/pyvenv.cfg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/picture.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/myart1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/test2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/dropzone.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/newindex.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/test2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/webpage2.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/webpage.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask/templates/index.html" afterPath="$PROJECT_DIR$/flask/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -371,52 +44,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/flask/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-              <folding>
-                <element signature="e#74#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crop_img.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flask/crop_img.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="178" column="68" lean-forward="false" selection-start-line="178" selection-start-column="68" selection-end-line="178" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flask/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="158" column="24" lean-forward="false" selection-start-line="158" selection-start-column="24" selection-end-line="158" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -429,6 +57,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>article</find>
+      <find>imageCa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -447,17 +76,20 @@
         <option value="$PROJECT_DIR$/flask/static/assets/js/main.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/css/main.css" />
         <option value="$PROJECT_DIR$/flask/crop_img.py" />
-        <option value="$PROJECT_DIR$/flask/templates/index.html" />
-        <option value="$PROJECT_DIR$/flask/templates/image.html" />
+        <option value="$PROJECT_DIR$/flask/croppertest.py" />
         <option value="$PROJECT_DIR$/flask/app.py" />
+        <option value="$PROJECT_DIR$/flask/templates/cropimagetest.html" />
+        <option value="$PROJECT_DIR$/flask/templates/image.html" />
+        <option value="$PROJECT_DIR$/flask/templates/index.html" />
+        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="34" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1030" />
+    <option name="y" value="6" />
     <option name="width" value="957" />
-    <option name="height" value="955" />
+    <option name="height" value="983" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -488,6 +120,32 @@
               <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SoftDesSP18_FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoftDesSP18_FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoftDesSP18_FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoftDesSP18_FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -505,6 +163,8 @@
       <recent name="$PROJECT_DIR$/flask_old" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flask/static/ImageCropper-master/test" />
+      <recent name="$PROJECT_DIR$/flask/static/assets/js" />
       <recent name="$PROJECT_DIR$/flask/static/img" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -576,6 +236,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="croppertest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flask" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SoftDesSP18_FinalProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flask/croppertest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="webpage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -612,19 +290,21 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.crop_img" />
       <item index="1" class="java.lang.String" itemvalue="Python.color_palette" />
       <item index="2" class="java.lang.String" itemvalue="Python.webpage" />
       <item index="3" class="java.lang.String" itemvalue="Python.webpage2" />
       <item index="4" class="java.lang.String" itemvalue="Python.app" />
+      <item index="5" class="java.lang.String" itemvalue="Python.croppertest" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.app" />
-        <item index="1" class="java.lang.String" itemvalue="Python.webpage2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.webpage" />
-        <item index="3" class="java.lang.String" itemvalue="Python.color_palette" />
+        <item index="1" class="java.lang.String" itemvalue="Python.croppertest" />
+        <item index="2" class="java.lang.String" itemvalue="Python.webpage2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.webpage" />
+        <item index="4" class="java.lang.String" itemvalue="Python.color_palette" />
       </list>
     </recent_temporary>
   </component>
@@ -646,14 +326,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15010917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3018559" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21935484" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21935484" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -706,35 +385,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/colorpalette/dominant_color.py" />
-    <entry file="file://$PROJECT_DIR$/colorpalette/test2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/colorpalette/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/colorpalette/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/colorpalette/dominant_color.py" />
-    <entry file="file://$PROJECT_DIR$/colorpalette/palettes.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/colorpalette/palettes2.csv" />
     <entry file="file://$PROJECT_DIR$/colorpalette/test2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -934,22 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="178" column="68" lean-forward="false" selection-start-line="178" selection-start-column="68" selection-end-line="178" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="158" column="24" lean-forward="false" selection-start-line="158" selection-start-column="24" selection-end-line="158" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp_archive/flask_old/webpage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-589">
@@ -985,19 +619,97 @@
     <entry file="file://$PROJECT_DIR$/flask/crop_img.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="305" column="10" lean-forward="false" selection-start-line="305" selection-start-column="10" selection-end-line="305" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/ImageCropper-master/test/ImageCropper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2520">
+          <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/ImageCropper-master/test/ImageCropperTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="196" column="25" lean-forward="true" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/croppertest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1494">
+          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/ImageCropper-master/test/ImageCropperTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/cropimagetest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#div#1;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+        <state relative-caret-position="1026">
+          <caret line="60" column="7" lean-forward="false" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
           <folding>
-            <element signature="e#74#83#0" expanded="true" />
+            <element signature="e#340#349#0" expanded="false" />
           </folding>
         </state>
       </provider>
