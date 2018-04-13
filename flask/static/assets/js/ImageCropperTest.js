@@ -23,6 +23,44 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  **/
 /// <reference path="ImageCropper.ts"/>
+//var crop;
+//window.onload = function () {
+//    var canvas = document.getElementById("imageCanvas");
+//    var width = 600;
+//    var height = 300;
+//    crop = new ImageCropper(canvas, canvas.width / 2 - width / 2, canvas.height / 2 - height / 2, width, height, true);
+//    window.addEventListener('mouseup', preview);
+//    window.addEventListener('touchend', preview);
+//};
+//function preview() {
+//    if (crop.isImageSet()) {
+//        var img = crop.getCroppedImage(400, 200);
+//        img.onload = (function () { return previewLoaded(img); });
+//    }
+//}
+//function previewLoaded(img) {
+//    if (img) {
+//        document.getElementById("preview").appendChild(img);
+//    }
+//}
+//function handleFileSelect(evt) {
+//    var file = evt.target.files[0];
+//    var reader = new FileReader();
+//    var img = new Image();
+//    img.addEventListener("load", function () {
+//        crop.setImage(img);
+//        preview();
+//    }, false);
+//    reader.onload = function () {
+//        img.src = reader.result;
+//    };
+//    if (file) {
+//        reader.readAsDataURL(file);
+//    }
+//}
+//document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+//# sourceMappingURL=ImageCropperTest.js.map
+
 var crop;
 window.onload = function () {
     var canvas = document.getElementById("imageCanvas");
@@ -30,7 +68,6 @@ window.onload = function () {
     var height = 300;
     crop = new ImageCropper(canvas, canvas.width / 2 - width / 2, canvas.height / 2 - height / 2, width, height, true);
     window.addEventListener('mouseup', preview);
-    window.addEventListener('touchend', preview);
 };
 function preview() {
     if (crop.isImageSet()) {
@@ -47,6 +84,7 @@ function handleFileSelect(evt) {
     var file = evt.target.files[0];
     var reader = new FileReader();
     var img = new Image();
+    //listener required for FireFox
     img.addEventListener("load", function () {
         crop.setImage(img);
         preview();
@@ -58,5 +96,3 @@ function handleFileSelect(evt) {
         reader.readAsDataURL(file);
     }
 }
-document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
-//# sourceMappingURL=ImageCropperTest.js.map
