@@ -5,7 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<head>
+<head lang="en">
     <style>
     #result{
     -moz-transform: translateY(0.25rem);
@@ -116,6 +116,7 @@ display: block;
 
 
     </style>
+    <meta charset="UTF-8">
     <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
@@ -176,7 +177,23 @@ function copyToClipboard(element) {
         </div>
         <div id="result" class="container-a1">{% if filename1 %}
             <div class="content">
-                <div class="inner"><img src="{{ filename1 }}"></div>
+                <div class="inner">
+                    <!--<img id="fileInput" multiple="" src="{{ filename1 }}">-->
+
+                		<!--<div>-->
+			<!--Select image to crop: <input type="file"  name="file" multiple="" />-->
+		<!--</div>-->
+                   <div><input src="{{ filename1 }}" type="file" id="fileInput" multiple="" ></div>
+
+                    <div>
+                        <!--<img id="fileInput" multiple="" src="{{ filename1 }}">-->
+			            <canvas id="imageCanvas" width="500" height="400" style="border:0px solid #000000;"></canvas>
+		            </div>
+                    <div>Cropped image:</div>
+                    <div id="preview"></div>
+		<script src="/static/assets/js/ImageCropperTest.js"></script>
+		<script src="/static/assets/js/ImageCropper.js"></script>
+ </div>
             </div>
             {% if filename2 %}
             <br><br><br>
