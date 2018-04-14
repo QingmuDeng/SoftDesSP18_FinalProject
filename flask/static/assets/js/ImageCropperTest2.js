@@ -25,30 +25,13 @@
 /// <reference path="ImageCropper.ts"/>
 var crop;
 window.onload = function () {
-    var canvas = document.getElementById('imageCanvas');
+    var canvas = document.getElementById("imageCanvas");
     var width = 600;
     var height = 300;
     crop = new ImageCropper(canvas, canvas.width / 2 - width / 2, canvas.height / 2 - height / 2, width, height, true);
-//    window.addEventListener('mouseup', preview);
-//    window.addEventListener('touchend', preview);
-
-    var img = new Image();
-    var file = document.getElementById('fileInput').src;
-
-//    var file = "/home/cassandra/SoftDes/SoftDesSP18_FinalProject/flask/static/img/team_meal.jpg";
-    var reader = new FileReader();
-    img.addEventListener("load", function () {
-        crop.setImage(img);
-        preview();
-    }, false);
-    reader.onload = function () {
-        img.src = reader.result;
-    };
-    if (file) {
-        reader.readAsDataURL(file);
-    }
+    window.addEventListener('mouseup', preview);
+    window.addEventListener('touchend', preview);
 };
-
 function preview() {
     if (crop.isImageSet()) {
         var img = crop.getCroppedImage(400, 200);
@@ -60,20 +43,21 @@ function previewLoaded(img) {
         document.getElementById("preview").appendChild(img);
     }
 }
-//function handleFileSelect(evt) {
-//    var file = evt.target.files[0];
-//    var reader = new FileReader();
-//    var img = new Image();
-//    img.addEventListener("load", function () {
-//        crop.setImage(img);
-//        preview();
-//    }, false);
-//    reader.onload = function () {
-//        img.src = reader.result;
-//    };
-//    if (file) {
-//        reader.readAsDataURL(file);
-//    }
-//}
-//document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+function handleFileSelect(evt) {
+    var file = evt.target.src;
+//    var file = getDataUrl(evt.currentTarget)
+    var reader = new FileReader();
+    var img = new Image();
+    img.addEventListener("load", function () {
+        crop.setImage(img);
+        preview();
+    }, false);
+    reader.onload = function () {
+        img.src = reader.result;
+    };
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+window.getElementById('fileInput').addEventListener('load', handleFileSelect, false);
 //# sourceMappingURL=ImageCropperTest.js.map

@@ -114,9 +114,6 @@ font-size: 14px;
 display: block;
 }
 
-
-
-
     </style>
     <meta charset="UTF-8">
     <title>Paletteful</title>
@@ -159,7 +156,6 @@ function copyToClipboard(element) {
 }
 
 
-
     </script>
 
 </head>
@@ -183,7 +179,7 @@ function copyToClipboard(element) {
             <div class="content">
                 <div class="inner">
 
-                    <div><img id="fileInput" src="{{ filename1 }}">
+                    <img id="fileInput" src="{{ filename1 }}" name="file">
 
                     <!--<div>-->
                     <!--Select image to crop: <input type="file"  name="file" multiple="" />-->
@@ -191,9 +187,8 @@ function copyToClipboard(element) {
                     <!--<div><input src="{{ filename1 }}" type="file" id="fileInput" multiple=""></div>-->
 
 
-                        <canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000;">
-                        </canvas></div>
-
+                    <div><canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000;">
+                    </canvas></div>
                     <div>
                         Cropped image:
                     </div>
@@ -248,7 +243,7 @@ function copyToClipboard(element) {
                 {% else %}
                 <h1>please re-submit image</h1>
                 {% endif %}
-            </div>
+            </div></div>
     </header>
 
 
@@ -270,7 +265,7 @@ function copyToClipboard(element) {
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
-<script src="/static/assets/js/ImageCropperTest.js"></script>
+<script src="/static/assets/js/ImageCropperTest3.js"></script>
 <script src="/static/assets/js/ImageCropper.js"></script>
 
 </body>
