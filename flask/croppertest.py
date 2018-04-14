@@ -13,7 +13,7 @@ configure_uploads(app, photos)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+    return render_template('cropimagetest.html')
 
 
 if __name__ == "__main__":

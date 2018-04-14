@@ -1,3 +1,8 @@
+"""
+app.py is used to generate the user interface aspect of our project. We will be integrating everything in this python file.
+Flask is the main library utilized in this python script. It basically renders our html templates without having us write
+javascript.
+"""
 # had to pip install Flask-Uploads
 # kill processes: ps -fA | grep python
 import os
@@ -5,6 +10,8 @@ from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 import crop_img
 import cv2
+import webbrowser
+import threading
 
 app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
@@ -15,10 +22,19 @@ configure_uploads(app, photos)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('cropimagetest.html')
+    """
+    This function is automatically called when the main function runs. It renders the home page html file
+    :return: rendered html of home page (known as 'index.html')
+    """
+    return render_template('index.html')
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload():
+    """
+    This function waits until the user uploads an image, grabs the color palette and color codes, and loads the upload
+    page with the image and palette displayed.
+    :return: rendered template of image page (known as 'image.html') with the image files and color codes passed in
+    """
     fullname = None
     print("hello")
     if request.method == 'POST':
@@ -37,9 +53,23 @@ def upload():
     return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex,rgb=rgb)
 
 def allowed_file(filename):
+    """
+    Helper function that makes sure the user inputs an image of the correct file type.
+    NOTE: this function has not been integrated yet.
+    :param filename: the filename of the img the user wants to upload
+    :return: the complete filename needed for upload()
+    """
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 if __name__ == "__main__":
+    # the main function just runs the app, the commented out code automatically opens up the port for you
+
+    # port = 5000
+    # url = "http://127.0.0.1:{0}".format(port)
+    #
+    # threading.Timer(1.25, lambda: webbrowser.open(url)).start()
+    #
+    # app.run(port=port, debug=False)
     app.run()

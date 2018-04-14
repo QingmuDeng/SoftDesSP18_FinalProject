@@ -99,8 +99,6 @@ display: block;
 }
 
 
-
-
     </style>
     <title>Paletteful</title>
     <meta charset="utf-8"/>
@@ -118,6 +116,7 @@ display: block;
         {
             return "http://127.0.0.1:5000/";
         }
+
     </script>
 </head>
 <body>
@@ -146,11 +145,13 @@ display: block;
         <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper">
                 <button class="btn">Upload</button>
-                <input type="file" name="image" id="fileInput"/>
+                <input type="file" name="image" id="fileInput" onchange="handleFileSelect(event)"/>
             </div>
             <div class="upload-btn-wrapper2"><input type="submit"/></div>
         </form>
 
+<canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000; opacity:0;">
+                    </canvas>
     </header>
 
     <!-- Footer -->
@@ -170,7 +171,7 @@ display: block;
 <script src="/static/assets/js/main.js"></script>
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
-<script src="/static/assets/js/ImageCropperTest.js"></script>
+<script src="/static/assets/js/ImageCropperTest3.js"></script>
 <script src="/static/assets/js/ImageCropper.js"></script>
 
 
