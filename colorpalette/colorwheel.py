@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import random
 import generate_palette as gp
-from __future__ import print_function
+#from __future__ import print_function
 import webcolors
 from scipy.spatial import KDTree
 
@@ -130,10 +130,10 @@ def analogous(color):
     # h = h_old*2
     ranv = random.randint(-15,15)
 
-    accent1 = (int((h-50)), s, v+ranv)
+    accent1 = (int((h-60)), s, v+ranv)
     leftdomin = (int((h-25)), s, v+ranv)
     rightdomin = (int((h+25)), s, v+ranv)
-    accent2 = (int((h+50)), s, v+ranv)
+    accent2 = (int((h+60)), s, v+ranv)
 
     # return colors converted to RGB
     return gp.get_rgbs([accent1, leftdomin, color, rightdomin, accent2])
@@ -207,23 +207,23 @@ def visualize(hsv, colorstr):
 
 def make_websafe(color):
     # lets populate some names into spatial name database
-hexnames = webcolors.css3_hex_to_names
-names = []
-positions = []
+    hexnames = webcolors.css3_hex_to_names
+    names = []
+    positions = []
 
-for hex, name in hexnames.items():
-#     print(hex, name)
-    names.append(name)
-    positions.append(webcolors.hex_to_rgb(hex))
+    for hex, name in hexnames.items():
+        #     print(hex, name)
+        names.append(name)
+        positions.append(webcolors.hex_to_rgb(hex))
 
-spacedb = KDTree(positions)
+    spacedb = KDTree(positions)
 
-# query nearest point
-querycolor = color
-dist, index = spacedb.query(querycolor)
+        # query nearest point
+    querycolor = color
+    dist, index = spacedb.query(querycolor)
 
-# return a css3 compatible color in hex
-return webcolors.name_to_hex(names[index], spec=u'css3')
+        # return a css3 compatible color in hex
+    return webcolors.name_to_hex(names[index], spec=u'css3')
 
 #TODO: generate 3 midcolors to go gradient between the two colors or generate two accent colors and one midtone color
 # ogH = random.randint(0,180)
