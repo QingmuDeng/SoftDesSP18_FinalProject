@@ -28,15 +28,19 @@ def user_input():
 
 
 def down_scale(x):
+    """Scales the RGB by 255 down to get to the 0-1 percentage used in colorsys from
+    the normal 8 bit RGB color values"""
     return x / SCALE
 
 
 def up_scale(x):
+    """Scales the RGB by 255 to get to the normal 8 bit RGB color values from
+    the 0-1 percentage used in colorsys"""
     return int(x * SCALE)
 
 
 def clamp(color, min_v, max_v):
-    # clamps a color such that its value is between min_v and max_v
+    """clamps a color such that its value is between min_v and max_v"""
     h, s, v = rgb_to_hsv(*map(down_scale, color))
     min_v, max_v = map(down_scale, (min_v, max_v))
     v = min(max(min_v, v), max_v)
@@ -44,6 +48,9 @@ def clamp(color, min_v, max_v):
 
 
 def dominant_colors(image, orig_image, n=DEFAULT_NUM_COLORS):
+    """Calculates the dominant colors in an image through K-means clustering
+    and returns a plottable bar graph representation of the colors and a color palette
+    """
     # cluster the pixel intensities
     clt = KMeans(n_clusters=n)
     clt.fit(image)
