@@ -147,11 +147,13 @@ display: block;
                 <button class="btn">Upload</button>
                 <input type="file" name="image" id="fileInput" onchange="handleFileSelect(event)"/>
             </div>
-            <div class="upload-btn-wrapper2"><input type="submit"/></div>
+            <br>
+            <canvas id="imageCanvas" width="1" height="1" style="border:0px solid #000000; opacity:0;">
+                    </canvas>
+            <!--<div id="preview" ></div>-->
+            <div class="upload-btn-wrapper2" style="opacity:0;" id="subbtn"><input type="submit"/></div>
         </form>
 
-<canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000; opacity:0;">
-                    </canvas>
     </header>
 
     <!-- Footer -->
@@ -171,7 +173,7 @@ display: block;
 <script src="/static/assets/js/main.js"></script>
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
-<script src="/static/assets/js/ImageCropperTest3.js"></script>
+<script src="/static/assets/js/ImageCropperTest2.js"></script>
 <script src="/static/assets/js/ImageCropper.js"></script>
 
 

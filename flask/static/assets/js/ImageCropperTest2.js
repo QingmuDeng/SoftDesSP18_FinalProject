@@ -25,16 +25,12 @@
 /// <reference path="ImageCropper.ts"/>
 var crop;
 window.onload = function () {
-    var canvas = document.getElementById("imageCanvas");
-    var width = 600;
-    var height = 300;
-    crop = new ImageCropper(canvas, canvas.width / 2 - width / 2, canvas.height / 2 - height / 2, width, height, true);
     window.addEventListener('mouseup', preview);
     window.addEventListener('touchend', preview);
 };
 function preview() {
     if (crop.isImageSet()) {
-        var img = crop.getCroppedImage(400, 200);
+        var img = crop.getCroppedImage(600, 600);
         img.onload = (function () { return previewLoaded(img); });
     }
 }
@@ -43,21 +39,63 @@ function previewLoaded(img) {
         document.getElementById("preview").appendChild(img);
     }
 }
-function handleFileSelect(evt) {
-    var file = evt.target.src;
-//    var file = getDataUrl(evt.currentTarget)
-    var reader = new FileReader();
+var handleFileSelect = function(file) {
+    document.getElementById('imageCanvas').style.opacity = 1;
+    document.getElementById('subbtn').style.opacity = 1;
+    var input = file.target;
+
     var img = new Image();
-    img.addEventListener("load", function () {
+        img.addEventListener("load", function () {
+        var maxWidth = 600;
+        var maxHeight = 600;
+        var width = img.width;
+        var height = img.height;
+        if(width > maxWidth){
+          height = Math.floor( maxWidth * height / width );
+          width = maxWidth
+          }
+
+        if(height > maxHeight){
+          width = Math.floor( maxHeight * width / height );
+          height = maxHeight;
+        }
+
+        img.width = width;
+        img.height = height;
+//        img.src = img.src;
+        document.getElementById("imageCanvas").width = width
+        document.getElementById("imageCanvas").height = height
+        var canvas = document.getElementById("imageCanvas");
+        crop = new ImageCropper(canvas, canvas.width, canvas.height, width, height, true);
         crop.setImage(img);
         preview();
     }, false);
-    reader.onload = function () {
-        img.src = reader.result;
+    var reader = new FileReader();
+    reader.onload = function(){
+//      var dataURL = reader.result;
+//      var output = document.getElementById('output');
+      img.src = reader.result;
     };
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
-window.getElementById('fileInput').addEventListener('load', handleFileSelect, false);
+    reader.readAsDataURL(input.files[0]);
+};
+
+//function handleFileSelect(evt) {
+//    var file = evt.target.src;
+////    var file = getDataUrl(evt.currentTarget)
+//    var reader = new FileReader();
+//    var img = new Image();
+//
+//    img.addEventListener("load", function () {
+//        crop.setImage(img);
+//        preview();
+//    }, false);
+//
+//    reader.addEventListener("load", function () {
+//        img.src = reader.result;
+//    }, false);
+//    if (file) {
+//        reader.readAsDataURL(file);
+//    }
+//}
+//window.getElementById('fileInput').addEventListener('load', handleFileSelect, false);
 //# sourceMappingURL=ImageCropperTest.js.map
