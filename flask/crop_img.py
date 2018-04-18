@@ -40,9 +40,9 @@ def resize(image_path):
     image = cv2.imread(image_path)
     # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     print(image.shape[1], image.shape[0])
-    if image.shape[1] > 600 or image.shape[0] > 600:
-        r = 550.0 / image.shape[1]
-        dim = (550, int(image.shape[0] * r))
+    if image.shape[1] > 420 or image.shape[0] > 420:
+        r = 420.0 / image.shape[1]
+        dim = (420, int(image.shape[0] * r))
 
         # perform the actual resizing of the image and show it
         image = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
