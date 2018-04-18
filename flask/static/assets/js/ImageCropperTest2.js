@@ -34,6 +34,14 @@ function preview() {
         img.onload = (function () { return previewLoaded(img); });
     }
 }
+
+function to_image(){
+    <!--document.getElementById("button").style.opacity = 0;-->
+    var canvas = document.getElementById("imageCanvas");
+    document.getElementById("fileInput").src = canvas.toDataURL();
+    document.getElementById("upload").submit();
+}
+
 function previewLoaded(img) {
     if (img) {
         document.getElementById("preview").appendChild(img);

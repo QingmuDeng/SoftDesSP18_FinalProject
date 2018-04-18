@@ -28,6 +28,18 @@ def home():
     """
     return render_template('index.html')
 
+@app.route("/webpage", methods=['GET', 'POST'])
+def webpage():
+    return render_template('webpage.html')
+
+@app.route("/search", methods=['GET', 'POST'])
+def search():
+    return render_template('search.html')
+
+@app.route("/about", methods=['GET', 'POST'])
+def about():
+    return render_template('about.html')
+
 @app.route("/upload", methods=['GET', 'POST'])
 def upload():
     """
@@ -42,6 +54,11 @@ def upload():
         print("requests", request.files)
         if "image" in request.files:
             print("posted image")
+            if "bounds" in request.files:
+                print("got bounds")
+                print(request.files["bounds"])
+            else:
+                print("no bounds")
             filename = photos.save(request.files["image"])
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
             crop_img.resize(fullname)

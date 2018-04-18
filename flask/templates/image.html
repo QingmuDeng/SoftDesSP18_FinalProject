@@ -131,6 +131,21 @@ display: block;
             return "http://127.0.0.1:5000/";
         }
 
+        function load2()
+        {
+            return "http://127.0.0.1:5000/webpage";
+        }
+
+        function load3()
+        {
+            return "http://127.0.0.1:5000/search";
+        }
+
+        function load4()
+        {
+            return "http://127.0.0.1:5000/about";
+        }
+
         function save()
         {
             /* Get the text field */
@@ -167,9 +182,12 @@ function copyToClipboard(element) {
     <!-- Header -->
     <header id="header">
         <div id="toolbar-options" class="hidden">
-            <a href="#" id="icon1"><i class="fa fa-search"></i><span id="textHover1">Search</span></a>
-            <a href="#" id="icon2"><i class="fa fa-tree"></i><span id="textHover2">Webpages</span></a>
-            <a href="#" id="icon3"><i class="fa fa-qq"></i><span id="textHover3">About</span></a>
+            <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span
+                    id="textHover1">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree" onclick="document.location.href= load2()"></i><span
+                    id="textHover2">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span
+                    id="textHover3">About</span></a>
         </div>
 
         <div id="button">
@@ -178,21 +196,15 @@ function copyToClipboard(element) {
         <div id="result" class="container-a1">{% if filename1 %}
             <div class="content">
                 <div class="inner">
+                    <canvas id="imageCanvas" style="border:0px solid #000000; opacity:1;">
+                    </canvas>
+                    <img id="fileInput" src="{{ filename1 }}" name="file" onload="handleFileSelect()" hidden>
 
-                    <img id="fileInput" src="{{ filename1 }}" name="file">
 
                     <!--<div>-->
                     <!--Select image to crop: <input type="file"  name="file" multiple="" />-->
                     <!--</div>-->
                     <!--<div><input src="{{ filename1 }}" type="file" id="fileInput" multiple=""></div>-->
-
-
-                    <div><canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000;">
-                    </canvas></div>
-                    <div>
-                        Cropped image:
-                    </div>
-                    <div id="preview"></div>
                 </div>
                 {% if filename2 %}
                 <br><br><br>
@@ -258,15 +270,15 @@ function copyToClipboard(element) {
 <div id="bg"></div>
 
 <!-- Scripts -->
-<script src="/static/assets/js/jquery.min.js"></script>
-<script src="/static/assets/js/skel.min.js"></script>
-<script src="/static/assets/js/util.js"></script>
-<script src="/static/assets/js/main.js"></script>
-<script src="/static/toolbar/jquery.toolbar.js"></script>
-<script src="/static/toolbar/jquery.toolbar.js"></script>
-<script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
-<script src="/static/assets/js/ImageCropperTest3.js"></script>
-<script src="/static/assets/js/ImageCropper.js"></script>
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/skel.min.js"></script>
+<script src="../static/assets/js/util.js"></script>
+<script src="../static/assets/js/main.js"></script>
+<script src="../static/toolbar/jquery.toolbar.js"></script>
+<script src="../static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
+<script src="../static/assets/js/ImageCropperTest22.js"></script>
+<script src="../static/assets/js/ImageCropper.js"></script>
 
 </body>
 </html>
