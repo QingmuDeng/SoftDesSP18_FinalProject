@@ -117,6 +117,26 @@
             display: block;
         }
 
+        .upload-btn-wrapper {
+          position: relative;
+          overflow: hidden;
+          <!--display: inline-block;-->
+        }
+
+        .btn {
+          <!--border: 2px solid gray;-->
+          color: gray;
+          <!--padding: 4px 10px;-->
+          <!--border-radius: 8px;-->
+          font-size: 20px;
+          <!--font-weight: bold;-->
+            border: none;
+            <!--cursor: pointer;-->
+            border-radius: 2px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
     </style>
     <meta charset="UTF-8">
     <title>Paletteful</title>
@@ -183,12 +203,19 @@
                     </canvas>
                     <img id="fileInput" src="{{ filename1 }}" name="file" onload="handleFileSelect()" hidden>
 
+                    <!--<form name="update" id="update" method=POST enctype=multipart/form-data>-->
+                        <!--<div class="upload-btn-wrapper">-->
+                            <!--<button class="btn">Update</button>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;<div class="upload-btn-wrapper2" style="opacity:1;" id="subbtn">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="btn">Submit</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input type="submit" onclick="to_image()"/></div>&ndash;&gt;-->
+                    <!--</form>-->
 
-                    <!--<div>-->
-                    <!--Select image to crop: <input type="file"  name="file" multiple="" />-->
-                    <!--</div>-->
-                    <!--<div><input src="{{ filename1 }}" type="file" id="fileInput" multiple=""></div>-->
                 </div>
+                <br>
+                <button class="btn">Update</button>
                 {% if filename2 %}
                 <br><br><br>
                 <div class="caption-style-1">
