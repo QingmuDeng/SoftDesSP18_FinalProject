@@ -1,7 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="" />
+    <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/ie8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/images/arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/images/banner.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/images/loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/images/overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/images/poptrox-closer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/images/poptrox-nav.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/ie/PIE.htc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/ie/backgroundsize.min.htc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/ie/html5shiv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/ie/respond.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.poptrox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.scrolly.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/skel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sass/ie8.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sass/libs/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sass/libs/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sass/libs/_skel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sass/libs/_vars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sass/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/ie8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/images/arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/images/banner.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/images/loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/images/overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/images/poptrox-closer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/images/poptrox-nav.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/ie/PIE.htc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/ie/backgroundsize.min.htc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/ie/html5shiv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/ie/respond.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/jquery.poptrox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/jquery.scrolly.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/skel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/js/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/sass/ie8.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/sass/libs/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/sass/libs/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/sass/libs/_skel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/sass/libs/_vars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/assets/sass/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/bg-alt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/fulls/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/pic01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/pic02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/images/thumbs/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/index.html" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,15 +96,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524176957834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
+    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524181478385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+            <state relative-caret-position="517">
+              <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -44,8 +130,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="121" column="51" lean-forward="true" selection-start-line="121" selection-start-column="51" selection-end-line="121" selection-end-column="51" />
+            <state relative-caret-position="144">
+              <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -217,7 +303,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dimension" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.flask.configuration.FlaskConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -393,18 +479,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22844827" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22844827" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31398562" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31398562" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.12823276" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -416,7 +502,6 @@
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.12823276" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -449,14 +534,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest20.js" />
-    <entry file="file://$PROJECT_DIR$/flask/templates/webpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="88" column="52" selection-start-line="83" selection-start-column="12" selection-end-line="88" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
@@ -573,13 +650,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest22.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest23.js" />
-    <entry file="file://$PROJECT_DIR$/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest24.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1206">
@@ -601,10 +671,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets/css/ie9.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="121" column="51" lean-forward="true" selection-start-line="121" selection-start-column="51" selection-end-line="121" selection-end-column="51" />
+        <state relative-caret-position="144">
+          <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
         </state>
       </provider>
     </entry>
