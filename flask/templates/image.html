@@ -7,112 +7,115 @@
 <html>
 <head lang="en">
     <style>
-    #result{
-    -moz-transform: translateY(0.25rem);
-        -webkit-transform: translateY(0.25rem);
-        -ms-transform: translateY(0.25rem);
-        transform: translateY(0.25rem);
-        -moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
-        -webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
-        -ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
-        transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-        padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
-        position: relative;
-        width: 60rem;
-        max-width: 100%;
-        background-color: rgba(27, 31, 34, 0.85);
-        border-radius: 4px;
-        opacity: 1;
-    }
+        #result {
+            -moz-transform: translateY(0.25rem);
+            -webkit-transform: translateY(0.25rem);
+            -ms-transform: translateY(0.25rem);
+            transform: translateY(0.25rem);
+            -moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
+            -webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
+            -ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
+            transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+            padding: 4.5rem 2.5rem 1.5rem 2.5rem;
+            position: relative;
+            width: 60rem;
+            max-width: 100%;
+            background-color: rgba(27, 31, 34, 0.85);
+            border-radius: 4px;
+            opacity: 1;
+        }
 
-        .caption-style-1{
-		list-style-type: none;
-		display:inline-block;
-		margin: 0px;
-		padding: 0px;
-	}
+        .caption-style-1 {
+            list-style-type: none;
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+        }
 
-	.caption-style-1 li{
-		float: right;
-		<!--display:inline-block;-->
-		padding: 0px;
-		position: relative;
-		overflow: hidden;
-	}
+        .caption-style-1 li {
+            float: right;
+        <!-- display: inline-block;
+        --> padding: 0px;
+            position: relative;
+            overflow: hidden;
+        }
 
-	.caption-style-1 li:hover .caption{
-		opacity: 1;
-	}
+        .caption-style-1 li:hover .caption {
+            opacity: 1;
+        }
 
+        .caption-style-1 img {
+            margin: 0px;
+            padding: 0px;
+            float: right;
+        <!-- display: inline-block;
+        --> z-index: 4;
+        }
 
-	.caption-style-1 img{
-		margin: 0px;
-		padding: 0px;
-		float: right;
-		<!--display:inline-block;-->
-		z-index: 4;
-	}
+        .caption-style-1 .caption {
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            -webkit-transition: all 0.45s ease-in-out;
+            -moz-transition: all 0.45s ease-in-out;
+            -o-transition: all 0.45s ease-in-out;
+            -ms-transition: all 0.45s ease-in-out;
+            transition: all 0.45s ease-in-out;
 
+        }
 
-	.caption-style-1 .caption{
-		cursor: pointer;
-		position: absolute;
-		opacity: 0;
-		-webkit-transition:all 0.45s ease-in-out;
-		-moz-transition:all 0.45s ease-in-out;
-		-o-transition:all 0.45s ease-in-out;
-		-ms-transition:all 0.45s ease-in-out;
-		transition:all 0.45s ease-in-out;
+        .caption-style-1 .blur {
+            background-color: rgba(0, 0, 0, 0.65);
+            height: 100px;
+            width: 500px;
+            z-index: 5;
+            position: absolute;
+        }
 
-	}
-	.caption-style-1 .blur{
-		background-color: rgba(0,0,0,0.65);
-		height: 100px;
-		width: 500px;
-		z-index: 5;
-		position: absolute;
-	}
+        .caption-style-1 .caption-text {
+            z-index: 10;
+            font-size: 20px;
+        <!-- display: inline-block;
+        --> <!-- color: #fff;
+        --> position: absolute;
+            width: 124px;
+            height: 83px;
+        <!-- top: 100 px;
+        --> <!-- vertical-align: middle;
+        --> top: 50%;
+            left: 50%;
+            opacity: 1;
+        <!-- float: middle;
+        --> <!-- text-align: center;
+        -->
+        }
 
-	.caption-style-1 .caption-text{
-		z-index: 10;
-		font-size: 20px;
-		<!--display:inline-block;-->
-		<!--color: #fff;-->
-		position: absolute;
-		width: 124px;
-		height: 83px;
-		<!--top: 100px;-->
-		<!--vertical-align: middle;-->
-		top: 50%;
-		left:50%;
-		opacity: 1;
-		<!--float: middle;-->
-		<!--text-align: center;-->
-	}
+        #textHover1 {
+            display: none;
+            font-size: 14px;
+        }
 
-	#textHover1{
-display: none;
-font-size: 14px;
-}
-#icon1:hover #textHover1{
-display: block;
-}
+        #icon1:hover #textHover1 {
+            display: block;
+        }
 
-#textHover2{
-display: none;
-font-size: 14px;
-}
-#icon2:hover #textHover2{
-display: block;
-}
+        #textHover2 {
+            display: none;
+            font-size: 14px;
+        }
 
-#textHover3{
-display: none;
-font-size: 14px;
-}
-#icon3:hover #textHover3{
-display: block;
-}
+        #icon2:hover #textHover2 {
+            display: block;
+        }
+
+        #textHover3 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon3:hover #textHover3 {
+            display: block;
+        }
 
     </style>
     <meta charset="UTF-8">
@@ -126,49 +129,29 @@ display: block;
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
     <script>
-        function load()
-        {
+        function load() {
             return "http://127.0.0.1:5000/";
         }
 
-        function load2()
-        {
+        function load2() {
             return "http://127.0.0.1:5000/webpage";
         }
 
-        function load3()
-        {
+        function load3() {
             return "http://127.0.0.1:5000/search";
         }
 
-        function load4()
-        {
+        function load4() {
             return "http://127.0.0.1:5000/about";
         }
 
-        function save()
-        {
-            /* Get the text field */
-            var copyText = document.getElementById("hex1");
-
-          /* Select the text field */
-          copyText.select();
-
-          /* Copy the text inside the text field */
-          document.execCommand("Copy");
-
-          <!--/* Alert the copied text */-->
-  <!--alert("Copied the text: " + copyText.value);-->
-
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
         }
-
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-}
 
 
     </script>
@@ -255,7 +238,8 @@ function copyToClipboard(element) {
                 {% else %}
                 <h1>please re-submit image</h1>
                 {% endif %}
-            </div></div>
+            </div>
+        </div>
     </header>
 
 
@@ -277,7 +261,7 @@ function copyToClipboard(element) {
 <script src="../static/toolbar/jquery.toolbar.js"></script>
 <script src="../static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
-<script src="../static/assets/js/ImageCropperTest22.js"></script>
+<script src="../static/assets/js/ImageCropperTest24.js"></script>
 <script src="../static/assets/js/ImageCropper.js"></script>
 
 </body>

@@ -54,15 +54,13 @@ function previewLoaded(img) {
 }
 
 function handleFileSelect() {
-    console.log("dsadasdsadsad");
-    console.log("hahhah");
 //    var input = file.target;
     var img = document.createElement("IMG");
     img.setAttribute("src", document.getElementById('fileInput').src);
     img.setAttribute("width", document.getElementById('fileInput').width);
     img.setAttribute("height", document.getElementById('fileInput').height);
 
-    document.getElementById('fileInput').hidden = true;
+    // document.getElementById('fileInput').hidden = true;
 
     var canvas = document.getElementById("imageCanvas");
     canvas.style.opacity = 1;
@@ -71,7 +69,7 @@ function handleFileSelect() {
 
     crop = new ImageCropper(canvas, canvas.width, canvas.height, img.width, img.height, true);
     crop.setImage(img);
-    preview();
+    // preview();
 
 //    var img = new Image();
 //        img.addEventListener("load", function () {

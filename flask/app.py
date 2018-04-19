@@ -54,11 +54,6 @@ def upload():
         print("requests", request.files)
         if "image" in request.files:
             print("posted image")
-            if "bounds" in request.files:
-                print("got bounds")
-                print(request.files["bounds"])
-            else:
-                print("no bounds")
             filename = photos.save(request.files["image"])
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
             crop_img.resize(fullname)
