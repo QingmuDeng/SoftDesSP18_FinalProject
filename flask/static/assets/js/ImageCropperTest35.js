@@ -54,75 +54,21 @@ function previewLoaded(img) {
 }
 
 function handleFileSelect() {
-//    var input = file.target;
-    var img = document.createElement("IMG");
-    img.setAttribute("src", document.getElementById('fileInput').src);
-    img.setAttribute("width", document.getElementById('fileInput').width);
-    img.setAttribute("height", document.getElementById('fileInput').height);
-
-    // document.getElementById('fileInput').hidden = true;
+    document.getElementById("fileInput").hidden = true;
+    
+    var img = document.getElementById("fileInput");
 
     var canvas = document.getElementById("imageCanvas");
-    canvas.style.opacity = 1;
     canvas.width = img.width;
     canvas.height = img.height;
 
-    crop = new ImageCropper(canvas, canvas.width, canvas.height, img.width, img.height, true);
+    crop = new ImageCropper(canvas, img.width, img.height, img.width, img.height, true);
     crop.setImage(document.getElementById('fileInput'));
     // preview();
-
-//    var img = new Image();
-//        img.addEventListener("load", function () {
-////        var maxWidth = 600;
-////        var maxHeight = 600;
-////        var width = img.width;
-////        var height = img.height;
-////        if(width > maxWidth){
-////          height = Math.floor( maxWidth * height / width );
-////          width = maxWidth
-////          }
-////
-////        if(height > maxHeight){
-////          width = Math.floor( maxHeight * width / height );
-////          height = maxHeight;
-////        }
-////
-////        img.width = width;
-////        img.height = height;
-////        img.src = img.src;
-//        document.getElementById("imageCanvas").width = img.width
-//        document.getElementById("imageCanvas").height = img.height
-//        var canvas = document.getElementById("imageCanvas");
-//        crop = new ImageCropper(canvas, canvas.width, canvas.height, width, height, true);
-//        crop.setImage(img);
-//        preview();
-//    }, false);
-//    var reader = new FileReader();
-//    reader.onload = function(){
-////      var dataURL = reader.result;
-////      var output = document.getElementById('output');
-//      img.src = reader.result;
-//    };
-//    reader.readAsDataURL(input.files[0]);
 }
 
-//function handleFileSelect(evt) {
-//    var file = evt.target.src;
-////    var file = getDataUrl(evt.currentTarget)
-//    var reader = new FileReader();
-//    var img = new Image();
-//
-//    img.addEventListener("load", function () {
-//        crop.setImage(img);
-//        preview();
-//    }, false);
-//
-//    reader.addEventListener("load", function () {
-//        img.src = reader.result;
-//    }, false);
-//    if (file) {
-//        reader.readAsDataURL(file);
-//    }
-//}
-//window.getElementById('fileInput').addEventListener('load', handleFileSelect, false);
-//# sourceMappingURL=ImageCropperTest.js.map
+function getBounds() {
+    var bounds = crop.getCropBounds();
+    document.getElementById("bounds").value = bounds.top.toString()+", "+bounds.bottom.toString()+", "+bounds.left.toString()+", "+bounds.right.toString();
+    document.getElementById("img").value = document.getElementById("fileInput").src;
+}
