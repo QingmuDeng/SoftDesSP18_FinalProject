@@ -6,6 +6,9 @@
 -->
 <html>
 <head lang="en">
+    <link rel="stylesheet" href="/static/assets/css/main2.css"/>
+    <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
+    <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <style>
         #result {
             -moz-transform: translateY(0.25rem);
@@ -138,14 +141,16 @@
             white-space: nowrap;
         }
 
+        form {
+        margin: 0;
+        padding: 0;
+        }
+
     </style>
     <meta charset="UTF-8">
     <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="/static/assets/css/main.css"/>
-    <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
-    <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <noscript>
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
@@ -214,15 +219,13 @@
                     </canvas>
                     <img id="fileInput" src="{{ filename1 }}" name="file" onload="handleFileSelect()">
                 </div>
-                <br>
                 <form name="update" id="update" method=POST>
                     <button class="btn" onclick="getBounds()">Update</button>
-                    <input type="text" name="bounds" id="bounds" hidden style="opacity: 0">
-                    <input type="text" name="img" id="img" hidden style="opacity: 0">
+                    <input type="text" name="bounds" id="bounds" hidden style="opacity: 0; margin: 0; padding: 0">
+                    <input type="text" name="img" id="img" hidden style="opacity: 0; display: block">
                 </form>
                 {% if filename2 %}
-
-                <div class="caption-style-1">
+                <div class="caption-style-1" style="padding: 0; margin: 0">
                     <li><img src="{{ filename2[3] }}" alt="">
                         <div class="caption">
                             <div class="blur" onclick="copyToClipboard('#hex3')"></div>
@@ -261,7 +264,7 @@
                     </li>
                 </div>
                 <br>
-                <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
+                <a href="{{ filename2[4] }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
                     Palette</a>
                 {% else %}
                 <h1>please re-submit image</h1>

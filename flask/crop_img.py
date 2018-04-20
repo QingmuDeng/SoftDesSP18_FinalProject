@@ -33,6 +33,7 @@ def crop_palette(image_path):
         # cv2.waitKey(500)
         cv2.imwrite(image_path[0:-4]+"_"+str(i)+".png",color)
         single_color.append(image_path[0:-4]+"_"+str(i)+".png")
+    single_color.append(image_path)
     return single_color
 
 
