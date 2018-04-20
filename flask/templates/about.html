@@ -4,20 +4,159 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
 <html>
 	<head>
+		    <style>
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  <!--display: inline-block;-->
+}
+
+.btn {
+  <!--border: 2px solid gray;-->
+  color: gray;
+  <!--padding: 4px 10px;-->
+  <!--border-radius: 8px;-->
+  font-size: 20px;
+  <!--font-weight: bold;-->
+    border: none;
+    <!--cursor: pointer;-->
+    border-radius: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  <!--cursor: pointer;-->
+}
+
+.upload-btn-wrapper2 {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 40px;
+  <!--display: inline-block;-->
+}
+
+.upload-btn-wrapper2{
+  <!--border: 2px solid gray;-->
+  color: gray;
+  <!--padding: 4px 10px;-->
+  <!--border-radius: 8px;-->
+  font-size: 20px;
+  <!--font-weight: bold;-->
+  border: none;
+    <!--cursor: pointer;-->
+    border-radius: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.semi-transparent-button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  width: 80%;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+
+#textHover1{
+display: none;
+font-size: 14px;
+}
+#icon1:hover #textHover1{
+display: block;
+}
+
+#textHover2{
+display: none;
+font-size: 14px;
+}
+#icon2:hover #textHover2{
+display: block;
+}
+
+#textHover3{
+display: none;
+font-size: 14px;
+}
+#icon3:hover #textHover3{
+display: block;
+}
+
+
+    </style>
 		<title>Overflow by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="/static/assets_overflow/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/static/assets_overflow//css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets_overflow/css/ie8.css" /><![endif]-->
+		<link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
+
+    <![endif]-->
+    <noscript>
+        <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
+    </noscript>
+    <script>
+        function load()
+        {
+            return "http://127.0.0.1:5000/";
+        }
+
+        function load2()
+        {
+            return "http://127.0.0.1:5000/webpage";
+        }
+
+        function load3()
+        {
+            return "http://127.0.0.1:5000/search";
+        }
+
+        function load4()
+        {
+            return "http://127.0.0.1:5000/about";
+        }
+
+        <!--function to_image(){-->
+                <!--&lt;!&ndash;document.getElementById("button").style.opacity = 0;&ndash;&gt;-->
+                <!--var canvas = document.getElementById("imageCanvas");-->
+                <!--document.getElementById("fileInput").src = canvas.toDataURL();-->
+                <!--document.getElementById("upload").submit();-->
+            <!--}-->
+
+    </script>
 	</head>
 	<body>
 
 		<!-- Header -->
 			<section id="header">
 				<header>
+					        <div id="toolbar-options" class="hidden">
+            <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span id="textHover1">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree" onclick="document.location.href= load2()"></i><span id="textHover2">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span id="textHover3">About</span></a>
+        </div>
+
+        <div id="button">
+            <i class="fa fa-envira" onclick="document.location.href=load();" style="font-size:3em;"></i>
+        </div>
 					<h1>Page Under Construction</h1>
 					<p>By HTML5 UP</p>
 				</header>
@@ -289,6 +428,8 @@
 			<script src="/static/assets_overflow/js/util.js"></script>
 			<!--[if lte IE 8]><script src="/static/assets_overflow/js/ie/respond.min.js"></script><![endif]-->
 			<script src="/static/assets_overflow/js/main.js"></script>
+	<script src="/static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
 
 	</body>
 </html>
