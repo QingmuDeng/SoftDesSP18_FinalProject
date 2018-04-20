@@ -1,1 +1,7 @@
 *.pyc
+colorpalette/dataset/
+colorpalette/jupyter/
+colorpalette/dataset/scrape/
+.idea/
+flask/.idea/
+color_palette/.idea/

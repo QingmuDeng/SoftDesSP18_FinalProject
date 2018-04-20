@@ -11,11 +11,11 @@ import numpy as np
 import itertools
 
 # create csv file with results
-file = csv.writer(open('palettes.csv', 'wb'))
-file.writerow(['image name', 'palette'])
+# file = csv.writer(open('palettes.csv', 'wb'))
+# file.writerow(['image name', 'palette'])
 
 # load image and convert from BGR to RBG
-image_path = 'test2.jpg'
+image_path = 'src_imgs/test2.jpg'
 image = cv2.imread(image_path)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
@@ -60,7 +60,7 @@ plt.show()
 plt.close()
 
 # write rbg values into csv file
-file.writerow([
-               row[0].encode('utf-8', 'ignore'),
-               palette,
-               ])
+# file.writerow([
+               # row[0].encode('utf-8', 'ignore'),
+               # palette,
+               # ])
