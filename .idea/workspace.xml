@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/crop_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/crop_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/flask/static/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/templates/image.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/templates/webpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/webpage.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$crop_img.coverage" NAME="crop_img Coverage Results" MODIFIED="1524240088522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
-    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524240165165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
+    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524242458219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -41,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="image.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="image.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="232" column="69" lean-forward="true" selection-start-line="232" selection-start-column="69" selection-end-line="232" selection-end-column="69" />
+            <state relative-caret-position="175">
+              <caret line="269" column="47" lean-forward="true" selection-start-line="269" selection-start-column="16" selection-end-line="269" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -56,20 +55,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main2.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flask/static/assets/css/main2.css">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="433" column="20" selection-start-line="433" selection-start-column="4" selection-end-line="433" selection-end-column="20" />
+            <state relative-caret-position="198">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
+      <file leaf-file-name="webpage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/flask/templates/webpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5076">
-              <caret line="282" selection-start-line="282" selection-end-line="282" />
+            <state relative-caret-position="362">
+              <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flask/templates/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -138,13 +146,10 @@
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest15.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest16.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest17.js" />
-        <option value="$PROJECT_DIR$/flask/templates/webpage.html" />
-        <option value="$PROJECT_DIR$/flask/templates/search.html" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest18.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest19.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest20.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest21.js" />
-        <option value="$PROJECT_DIR$/flask/templates/about.html" />
         <option value="$PROJECT_DIR$/flask/templates/index.html" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest22.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest23.js" />
@@ -163,6 +168,9 @@
         <option value="$PROJECT_DIR$/flask/crop_img.py" />
         <option value="$PROJECT_DIR$/flask/static/assets/css/main.css" />
         <option value="$PROJECT_DIR$/flask/templates/image.html" />
+        <option value="$PROJECT_DIR$/flask/templates/about.html" />
+        <option value="$PROJECT_DIR$/flask/templates/search.html" />
+        <option value="$PROJECT_DIR$/flask/templates/webpage.html" />
       </list>
     </option>
   </component>
@@ -219,15 +227,7 @@
               <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SoftDesSP18_FinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="flask" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="images_overflow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SoftDesSP18_FinalProject" type="b2602c69:ProjectViewProjectNode" />
@@ -478,10 +478,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest2.js" />
-    <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTes3.js" />
-    <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTes4.js" />
-    <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest5.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest6.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest7.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest8.js" />
@@ -494,13 +490,6 @@
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest15.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest16.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest17.js" />
-    <entry file="file://$PROJECT_DIR$/flask/templates/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2178">
-          <caret line="121" column="77" selection-start-line="121" selection-start-column="77" selection-end-line="121" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest18.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest19.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest20.js" />
@@ -539,13 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/templates/webpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="88" column="52" selection-start-line="83" selection-start-column="12" selection-end-line="88" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -632,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5076">
-          <caret line="282" selection-start-line="282" selection-end-line="282" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask/static/img/palette3_0.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -673,16 +648,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg-alt.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/pic02.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/pic01.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="232" column="69" lean-forward="true" selection-start-line="232" selection-start-column="69" selection-end-line="232" selection-end-column="69" />
+        <state relative-caret-position="175">
+          <caret line="269" column="47" lean-forward="true" selection-start-line="269" selection-start-column="16" selection-end-line="269" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/webpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
         </state>
       </provider>
     </entry>
