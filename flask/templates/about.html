@@ -9,97 +9,102 @@
 <head>
     <style>
 
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  <!--display: inline-block;-->
-}
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+        <!-- display: inline-block;
+        -->
+        }
 
-.btn {
-  <!--border: 2px solid gray;-->
-  color: gray;
-  <!--padding: 4px 10px;-->
-  <!--border-radius: 8px;-->
-  font-size: 20px;
-  <!--font-weight: bold;-->
-    border: none;
-    <!--cursor: pointer;-->
-    border-radius: 2px;
-    text-align: center;
-    white-space: nowrap;
-}
+        .btn {
+        <!-- border: 2 px solid gray;
+        --> color: gray;
+        <!-- padding: 4 px 10 px;
+        --> <!-- border-radius: 8 px;
+        --> font-size: 20px;
+        <!-- font-weight: bold;
+        --> border: none;
+        <!-- cursor: pointer;
+        --> border-radius: 2px;
+            text-align: center;
+            white-space: nowrap;
+        }
 
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  <!--cursor: pointer;-->
-}
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        <!-- cursor: pointer;
+        -->
+        }
 
-.upload-btn-wrapper2 {
-  position: relative;
-  overflow: hidden;
-  padding: 20px 40px;
-  <!--display: inline-block;-->
-}
+        .upload-btn-wrapper2 {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 40px;
+        <!-- display: inline-block;
+        -->
+        }
 
-.upload-btn-wrapper2{
-  <!--border: 2px solid gray;-->
-  color: gray;
-  <!--padding: 4px 10px;-->
-  <!--border-radius: 8px;-->
-  font-size: 20px;
-  <!--font-weight: bold;-->
-  border: none;
-    <!--cursor: pointer;-->
-    border-radius: 2px;
-    text-align: center;
-    white-space: nowrap;
-}
+        .upload-btn-wrapper2 {
+        <!-- border: 2 px solid gray;
+        --> color: gray;
+        <!-- padding: 4 px 10 px;
+        --> <!-- border-radius: 8 px;
+        --> font-size: 20px;
+        <!-- font-weight: bold;
+        --> border: none;
+        <!-- cursor: pointer;
+        --> border-radius: 2px;
+            text-align: center;
+            white-space: nowrap;
+        }
 
-.semi-transparent-button {
-  display: block;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 8px;
-  width: 80%;
-  max-width: 200px;
-  background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-out;
-}
+        .semi-transparent-button {
+            display: block;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 8px;
+            width: 80%;
+            max-width: 200px;
+            background: #fff; /* fallback color for old browsers */
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-out;
+        }
 
-#textHover1{
-display: none;
-font-size: 14px;
-}
-#icon1:hover #textHover1{
-display: block;
-}
+        #textHover1 {
+            display: none;
+            font-size: 14px;
+        }
 
-#textHover2{
-display: none;
-font-size: 14px;
-}
-#icon2:hover #textHover2{
-display: block;
-}
+        #icon1:hover #textHover1 {
+            display: block;
+        }
 
-#textHover3{
-display: none;
-font-size: 14px;
-}
-#icon3:hover #textHover3{
-display: block;
-}
+        #textHover2 {
+            display: none;
+            font-size: 14px;
+        }
 
+        #icon2:hover #textHover2 {
+            display: block;
+        }
 
+        #textHover3 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon3:hover #textHover3 {
+            display: block;
+        }
 
 
     </style>
@@ -118,33 +123,28 @@ display: block;
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
     <script>
-        function load()
-        {
+        function load() {
             return "http://127.0.0.1:5000/";
         }
 
-        function load2()
-        {
+        function load2() {
             return "http://127.0.0.1:5000/webpage";
         }
 
-        function load3()
-        {
+        function load3() {
             return "http://127.0.0.1:5000/search";
         }
 
-        function load4()
-        {
+        function load4() {
             return "http://127.0.0.1:5000/about";
         }
 
         <!--function to_image(){-->
-                <!--&lt;!&ndash;document.getElementById("button").style.opacity = 0;&ndash;&gt;-->
-                <!--var canvas = document.getElementById("imageCanvas");-->
-                <!--document.getElementById("fileInput").src = canvas.toDataURL();-->
-                <!--document.getElementById("upload").submit();-->
-            <!--}-->
-
+        <!--&lt;!&ndash;document.getElementById("button").style.opacity = 0;&ndash;&gt;-->
+        <!--var canvas = document.getElementById("imageCanvas");-->
+        <!--document.getElementById("fileInput").src = canvas.toDataURL();-->
+        <!--document.getElementById("upload").submit();-->
+        <!--}-->
 
 
     </script>
@@ -200,11 +200,9 @@ display: block;
                 Generation</h2>
         </header>
         <p>You can generate color palettes just by uploading an image from the home page. Additional color palettes can
-            be generated by selecting a particular region of the image using the crop feature. You can also select
-            specific types of color palettes, such as complementary and analogous. The output color palette is shown in
-            an interactive format that displays a color’s hex and rgb values on hover. A color’s hex value is also
-            copied to clipboard when clicked on. If you want a color palette for digital coloring or design, the
-            Download Palette button downloads an annotated color palette when chosen.</p>
+            be created by selecting a particular region of the image using the crop feature or choosing different types
+            of color palettes (i.e. complementary and analogous). The output palette is shown in an interactive format,
+            which displays a color’s hex and rgb values on hover.</p>
         <footer>
             <a href="#first" class="button style2 scrolly">Click here for more information</a>
         </footer>
@@ -220,7 +218,7 @@ display: block;
                 <!--<br/>-->
             </h2>
         </header>
-        <p>One of the more important features of Paletteful involves providing recommended color palettes based on the
+        <p>One of the most important features of Paletteful involves providing recommended color palettes based on the
             sentiment of an inputted image...
         </p>
         <footer>
@@ -232,9 +230,8 @@ display: block;
 <!-- Portfolio -->
 <article class="container box style2">
     <header>
-        <h2>Magnis parturient</h2>
-        <p>Justo phasellus et aenean dignissim<br/>
-            placerat cubilia purus lectus.</p>
+        <h2>Popular Images</h2>
+        <p>Click on any image to see its generated color palette</p>
     </header>
     <div class="inner gallery">
         <div class="row 0%">

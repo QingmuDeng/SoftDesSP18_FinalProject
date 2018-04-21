@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/Violet.Evergarden.723482.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/Violet.Evergarden.723482_crop.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/myart1_1_crop.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/myart_2_crop.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/photo-1500817487388-039e623edc21.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/team_photo_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/img/team_photo_1_crop.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/flask/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/about.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$crop_img.coverage" NAME="crop_img Coverage Results" MODIFIED="1524240088522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
-    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524283560178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
+    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524284265336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -51,8 +42,8 @@
       <file leaf-file-name="image.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="176" column="50" lean-forward="true" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
+            <state relative-caret-position="3168">
+              <caret line="176" column="50" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -66,8 +57,8 @@
       <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="235" column="51" lean-forward="true" selection-start-line="235" selection-start-column="51" selection-end-line="235" selection-end-column="51" />
+            <state relative-caret-position="270">
+              <caret line="228" lean-forward="true" selection-start-line="228" selection-end-line="228" />
             </state>
           </provider>
         </entry>
@@ -205,6 +196,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,7 +246,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,7 +436,7 @@
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22844827" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19900498" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20121615" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -464,22 +455,22 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19650654" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25698924" />
       <window_info anchor="right" id="Data View" order="3" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25698924" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.12858926" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.12858926" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,6 +483,40 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3168">
+          <caret line="176" column="50" lean-forward="true" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/webpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="102" column="13" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4230">
+          <caret line="235" column="51" lean-forward="true" selection-start-line="235" selection-start-column="51" selection-end-line="235" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1512">
@@ -643,13 +668,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/img/photo-1500817487388-039e623edc21.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/image.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="176" column="50" lean-forward="true" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
+        <state relative-caret-position="3168">
+          <caret line="176" column="50" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -661,8 +683,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="235" column="51" lean-forward="true" selection-start-line="235" selection-start-column="51" selection-end-line="235" selection-end-column="51" />
+        <state relative-caret-position="270">
+          <caret line="228" lean-forward="true" selection-start-line="228" selection-end-line="228" />
         </state>
       </provider>
     </entry>
