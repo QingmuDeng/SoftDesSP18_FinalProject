@@ -1311,7 +1311,7 @@
 
 	body {
 		background-color: #183026;
-		background-image: url("../../assets_overflow/css/images/overlay.png"), url("../../images/bg1.jpg");
+		background-image: url("../../assets_overflow/css/images/overlay.png"), url("../../images_overflow/bg-alt.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
 		background-position: top left, center 0;

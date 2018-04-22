@@ -113,10 +113,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--[if lte IE 8]>
     <script src="../static/assets_overflow/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="../static/assets_overflow/css/main7.css"/>
+    <link rel="stylesheet" href="../static/assets_overflow/css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../static/assets_overflow/css/style.css"> <!-- Resource style -->
+    <script src="../static/assets_overflow/js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="../static/assets_overflow/css/main8.css"/>
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_5.css"/><![endif]-->
+    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_6.css"/><![endif]-->
     <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
+
 
     <![endif]-->
     <noscript>
@@ -191,38 +195,47 @@
 <article id="first" class="container box style1 right">
     <a href="#" class="image fit"><img src="../static/images_overflow/pic01.jpg" alt=""/></a>
     <div class="inner">
-        <header>
-            <h2>Color Palette<br/>
-                Generation</h2>
-        </header>
+
+        <h2>Color Palette<br/>
+            Generation</h2>
+        <br>
         <p>You can generate color palettes just by uploading an image from the home page. Additional color palettes can
             be created by selecting a particular region of the image using the crop feature or choosing different types
             of color palettes (i.e. complementary and analogous). The output palette is shown in an interactive format,
             which displays a color’s hex and rgb values on hover.</p>
-        <footer>
-            <a href="#intro">Click here for more information</a>
-        </footer>
+        <div class="cd-section" style="background-color: transparent; padding: 0%; margin: 0%;">
+            <div class="cd-modal-action">
+                <a href="#1" class="btn" data-type="modal-trigger">More Information</a>
+                <span class="cd-modal-bg"></span>
+            </div>
+            <div class="cd-modal">
+                <div class="cd-modal-content">
+                    <img src="../static/images/pic01.jpg" alt=""/>
+                    <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante
+                        interdum congue.
+                        Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
+                        magna finibus nisi
+                        nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work.
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class
+                        aptent taciti
+                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
+                        libero eu nibh
+                        porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut
+                        ultricies condimentum.
+                        Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris,
+                        fringilla in
+                        aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et
+                        malesuada fames ac
+                        turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus
+                        risus, vel sed
+                        vehicula.</p>
+                </div> <!-- cd-modal-content -->
+            </div> <!-- cd-modal -->
+            <a href="#1" class="cd-modal-close">Close</a>
+        </div>
     </div>
 </article>
-
-<!--Pop up One-->
-<div id="main">
-    <article id="intro">
-        <h2 class="major">Intro</h2>
-        <span class="image main"><img src="../static/images/pic01.jpg" alt=""/></span>
-        <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue.
-            Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi
-            nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work.
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh
-            porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in
-            aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-            turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.</p>
-    </article>
-</div>
 
 <!-- Feature 2 Description -->
 <article class="container box style1 left">
@@ -324,7 +337,9 @@
 <script src="../static/assets_overflow/js/main.js"></script>
 <script src="../static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
-
+<script src="../static/assets_overflow/js/jquery-2.1.1.js"></script>
+<script src="../static/assets_overflow/js/velocity.min.js"></script>
+<script src="../static/assets_overflow/js/modal.js"></script> <!-- Resource jQuery -->
 
 </body>
 </html>
