@@ -9,7 +9,7 @@ import generate_palette as gp
 from sklearn.cluster import KMeans
 
 
-class ml_utils:
+class ml_utils():
     def __init__(self, keywords=['happiness', 'sadness', 'violence', 'mysterious']):
         self.dataset = []
         self.length = None
@@ -50,10 +50,11 @@ class ml_utils:
         f.close()
 
     def shuffle(self, save_path='dataset/data_with_label.pckl'):
-        if not self.dataset:
-            f = open(save_path, 'rb')
-            self.dataset = pickle.load(f)
-            f.close()
+        # if not self.dataset:
+        f = open(save_path, 'rb')
+        self.dataset = pickle.load(f)
+        self.length = len(self.dataset)
+        f.close()
         np.random.shuffle(self.dataset)
         self.shuffled = True
 
@@ -121,3 +122,4 @@ class ml_utils:
 
 
 if __name__ == '__main__':
+    ML = ml_utils()
