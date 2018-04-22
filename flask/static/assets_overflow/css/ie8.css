@@ -7,12 +7,12 @@
 /* Basic */
 
 	body {
-		background-image: url("../../images/bg.jpg");
+		background-image: url("../../images/bg1.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: auto;
 		background-attachment: scroll;
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
+		-ms-behavior: url("flask/static/assets_overflow/js/ie/backgroundsize.min.htc");
 	}
 
 /* Section/Article */

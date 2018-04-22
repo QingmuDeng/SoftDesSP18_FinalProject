@@ -1311,7 +1311,7 @@
 
 	body {
 		background-color: #183026;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+		background-image: url("flask/static/assets_overflow/css/images/overlay.png"), url("flask/static/images_overflow/bg.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
 		background-position: top left, center 0;
@@ -2252,7 +2252,7 @@
 
 			body {
 				background-color: #203936;
-				background-image: url("images/overlay.png"), url("../../images/bg-alt.jpg");
+				background-image: url("flask/static/assets_overflow/css/images/overlay.png"), url("flask/static/images_overflow/bg-alt.jpg");
 				background-repeat: repeat, no-repeat;
 				background-size: auto, 100% auto;
 				background-position: top left, top center;

@@ -108,19 +108,19 @@
 
 
     </style>
-    <title>Our Story by HTML5 UP</title>
+    <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--[if lte IE 8]>
-    <script src="/static/assets_overflow/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="/static/assets_overflow//css/main.css"/>
+    <script src="../static/assets_overflow/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="../static/assets_overflow/css/main7.css"/>
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="/static/assets_overflow/css/ie8.css"/><![endif]-->
-    <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_5.css"/><![endif]-->
+    <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
 
     <![endif]-->
     <noscript>
-        <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
+        <link rel="stylesheet" href="../static/assets/css/noscript.css"/>
     </noscript>
     <script>
         function load() {
@@ -139,13 +139,9 @@
             return "http://127.0.0.1:5000/about";
         }
 
-        <!--function to_image(){-->
-        <!--&lt;!&ndash;document.getElementById("button").style.opacity = 0;&ndash;&gt;-->
-        <!--var canvas = document.getElementById("imageCanvas");-->
-        <!--document.getElementById("fileInput").src = canvas.toDataURL();-->
-        <!--document.getElementById("upload").submit();-->
-        <!--}-->
-
+        // function popup1() {
+        //     document.getElementById("first").hidden = true;
+        // }
 
     </script>
 </head>
@@ -191,9 +187,9 @@
     <!--</footer>-->
 </section>
 
-<!-- Feature 1 -->
+<!-- Feature 1 Description -->
 <article id="first" class="container box style1 right">
-    <a href="#" class="image fit"><img src="/static/images_overflow/pic01.jpg" alt=""/></a>
+    <a href="#" class="image fit"><img src="../static/images_overflow/pic01.jpg" alt=""/></a>
     <div class="inner">
         <header>
             <h2>Color Palette<br/>
@@ -204,14 +200,33 @@
             of color palettes (i.e. complementary and analogous). The output palette is shown in an interactive format,
             which displays a color’s hex and rgb values on hover.</p>
         <footer>
-            <a href="#first" class="button style2 scrolly">Click here for more information</a>
+            <a href="#intro">Click here for more information</a>
         </footer>
     </div>
 </article>
 
-<!-- Feature 2 -->
+<!--Pop up One-->
+<div id="main">
+    <article id="intro">
+        <h2 class="major">Intro</h2>
+        <span class="image main"><img src="../static/images/pic01.jpg" alt=""/></span>
+        <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue.
+            Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi
+            nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti
+            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh
+            porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
+            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in
+            aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+            turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed
+            vehicula.</p>
+    </article>
+</div>
+
+<!-- Feature 2 Description -->
 <article class="container box style1 left">
-    <a href="#" class="image fit"><img src="/static/images_overflow/pic02.jpg" alt=""/></a>
+    <a href="#" class="image fit"><img src="../static/images_overflow/pic02.jpg" alt=""/></a>
     <div class="inner">
         <header>
             <h2>Color Symbolism
@@ -235,236 +250,81 @@
     </header>
     <div class="inner gallery">
         <div class="row 0%">
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/01.jpg" class="image fit"><img
-                    src="/static/images_about/demo1.jpg" alt="" title="Ad infinitum"/></a></div>
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/02.jpg" class="image fit"><img
-                    src="/static/images_about/demo2.jpg" alt="" title="Dressed in Clarity"/></a></div>
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/03.jpg" class="image fit"><img
-                    src="/static/images_about/demo3.jpg" alt="" title="Raven"/></a></div>
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/04.jpg" class="image fit"><img
-                    src="/static/images_about/demo4.jpg" alt=""
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/01.jpg" class="image fit"><img
+                    src="../static/images_about/demo1.jpg" alt="" title="Ad infinitum"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/02.jpg" class="image fit"><img
+                    src="../static/images_about/demo2.jpg" alt="" title="Dressed in Clarity"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/03.jpg" class="image fit"><img
+                    src="../static/images_about/demo3.jpg" alt="" title="Raven"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/04.jpg" class="image fit"><img
+                    src="../static/images_about/demo4.jpg" alt=""
                     title="I'll have a cup of Disneyland, please"/></a></div>
         </div>
         <div class="row 0%">
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/05.jpg" class="image fit"><img
-                    src="/static/images_about/demo5.jpg" alt="" title="Cherish"/></a></div>
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/06.jpg" class="image fit"><img
-                    src="/static/images_about/demo6.jpg" alt="" title="Different."/></a></div>
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/07.jpg" class="image fit"><img
-                    src="/static/images_about/demo7.jpg" alt="" title="History was made here"/></a></div>
-            <div class="3u 12u(mobile)"><a href="/static/images_overflow/fulls/08.jpg" class="image fit"><img
-                    src="/static/images_about/demo8.jpg" alt="" title="People come and go and walk away"/></a>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/05.jpg" class="image fit"><img
+                    src="../static/images_about/demo5.jpg" alt="" title="Cherish"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/06.jpg" class="image fit"><img
+                    src="../static/images_about/demo6.jpg" alt="" title="Different."/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/07.jpg" class="image fit"><img
+                    src="../static/images_about/demo7.jpg" alt="" title="History was made here"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/08.jpg" class="image fit"><img
+                    src="../static/images_about/demo8.jpg" alt="" title="People come and go and walk away"/></a>
             </div>
         </div>
     </div>
-</article>
 
-<!-- Contact -->
-<article class="container box style3">
-    <header>
-        <h2>Nisl sed ultricies</h2>
-        <p>Diam dignissim lectus eu ornare volutpat orci.</p>
-    </header>
-    <form method="post" action="#">
-        <div class="row 50%">
-            <div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name"/></div>
-            <div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email"/></div>
-            <div class="12u$">
-                <textarea name="message" placeholder="Message"></textarea>
-            </div>
-            <div class="12u$">
-                <ul class="actions">
-                    <li><input type="submit" value="Send Message"/></li>
-                </ul>
-            </div>
-        </div>
-    </form>
-</article>
-
-<!-- Generic -->
-<!--
-    <article class="container box style3">
-        <header>
-            <h2>Generic Box</h2>
-            <p>Just a generic box. Nothing to see here.</p>
-        </header>
-        <section>
-            <header>
-                <h3>Paragraph</h3>
-                <p>This is a subtitle</p>
-            </header>
-            <p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-            habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-            leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-            amet risus elit.</p>
-        </section>
-        <section>
-            <header>
-                <h3>Blockquote</h3>
-            </header>
-            <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-            tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
-        </section>
-        <section>
-            <header>
-                <h3>Divider</h3>
-            </header>
-            <p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
-            ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-            facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-            tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia.</p>
-            <hr />
-            <p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-            ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-            facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-            tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia.</p>
-        </section>
-        <section>
-            <header>
-                <h3>Unordered List</h3>
-            </header>
-            <ul class="default">
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+    <section id="footer">
+        <!--<ul class="icons">-->
+        <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+        <!--</ul>-->
+        <div class="copyright">
+            <ul class="menu">
+                <p><a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject">Our GitHub</a>.</p>
             </ul>
-        </section>
-        <section>
-            <header>
-                <h3>Ordered List</h3>
-            </header>
-            <ol class="default">
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-                <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-            </ol>
-        </section>
-        <section>
-            <header>
-                <h3>Table</h3>
-            </header>
-            <div class="table-wrapper">
-                <table class="default">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>45815</td>
-                            <td>Something</td>
-                            <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-                            <td>29.99</td>
-                        </tr>
-                        <tr>
-                            <td>24524</td>
-                            <td>Nothing</td>
-                            <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-                            <td>19.99</td>
-                        </tr>
-                        <tr>
-                            <td>45815</td>
-                            <td>Something</td>
-                            <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-                            <td>29.99</td>
-                        </tr>
-                        <tr>
-                            <td>24524</td>
-                            <td>Nothing</td>
-                            <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-                            <td>19.99</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3"></td>
-                            <td>100.00</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </section>
-        <section>
-            <header>
-                <h3>Form</h3>
-            </header>
-            <form method="post" action="#">
-                <div class="row">
-                    <div class="6u">
-                        <input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
-                    </div>
-                    <div class="6u">
-                        <input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="12u">
-                        <select name="department" id="department">
-                            <option value="">Choose a department</option>
-                            <option value="1">Manufacturing</option>
-                            <option value="2">Administration</option>
-                            <option value="3">Support</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="12u">
-                        <input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="12u">
-                        <textarea name="message" id="message" placeholder="Enter your message"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="12u">
-                        <ul class="actions">
-                            <li><input type="submit" value="Submit" /></li>
-                            <li><input type="reset" class="style3" value="Clear Form" /></li>
-                        </ul>
-                    </div>
-                </div>
-            </form>
-        </section>
-    </article>
--->
+        </div>
+    </section>
+</article>
 
-<section id="footer">
-    <ul class="icons">
-        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-        <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-        <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    </ul>
-    <div class="copyright">
-        <ul class="menu">
-            <p><a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject">Our GitHub</a>.</p>
-        </ul>
-    </div>
-</section>
+<!--&lt;!&ndash; Contact &ndash;&gt;-->
+<!--<article class="container box style3">-->
+<!--<header>-->
+<!--<h2>Nisl sed ultricies</h2>-->
+<!--<p>Diam dignissim lectus eu ornare volutpat orci.</p>-->
+<!--</header>-->
+<!--<form method="post" action="#">-->
+<!--<div class="row 50%">-->
+<!--<div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name"/></div>-->
+<!--<div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email"/></div>-->
+<!--<div class="12u$">-->
+<!--<textarea name="message" placeholder="Message"></textarea>-->
+<!--</div>-->
+<!--<div class="12u$">-->
+<!--<ul class="actions">-->
+<!--<li><input type="submit" value="Send Message"/></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</form>-->
+<!--</article>-->
+
 
 <!-- Scripts -->
-<script src="/static/assets_overflow/js/jquery.min.js"></script>
-<script src="/static/assets_overflow/js/jquery.scrolly.min.js"></script>
-<script src="/static/assets_overflow/js/jquery.poptrox.min.js"></script>
-<script src="/static/assets_overflow/js/skel.min.js"></script>
-<script src="/static/assets_overflow/js/util.js"></script>
+<script src="../static/assets_overflow/js/jquery.min.js"></script>
+<script src="../static/assets_overflow/js/jquery.scrolly.min.js"></script>
+<script src="../static/assets_overflow/js/jquery.poptrox.min.js"></script>
+<script src="../static/assets_overflow/js/skel.min.js"></script>
+<script src="../static/assets_overflow/js/util.js"></script>
 <!--[if lte IE 8]>
-<script src="/static/assets_overflow/js/ie/respond.min.js"></script><![endif]-->
-<script src="/static/assets_overflow/js/main.js"></script>
-<script src="/static/toolbar/jquery.toolbar.js"></script>
-<script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
+<script src="../static/assets_overflow/js/ie/respond.min.js"></script><![endif]-->
+<script src="../static/assets_overflow/js/main.js"></script>
+<script src="../static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
+
 
 </body>
 </html>
