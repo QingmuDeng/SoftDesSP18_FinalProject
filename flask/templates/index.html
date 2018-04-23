@@ -44,7 +44,7 @@
   <!--display: inline-block;-->
 }
 
-.upload-btn-wrapper2 input[type=submit] {
+.upload-btn-wrapper2{
   <!--border: 2px solid gray;-->
   color: gray;
   <!--padding: 4px 10px;-->
@@ -103,7 +103,7 @@ display: block;
     <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="/static/assets/css/main.css"/>
+    <link rel="stylesheet" href="/static/assets/css/main4.css"/>
     <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
     <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
 
@@ -117,6 +117,28 @@ display: block;
             return "http://127.0.0.1:5000/";
         }
 
+        function load2()
+        {
+            return "http://127.0.0.1:5000/webpage";
+        }
+
+        function load3()
+        {
+            return "http://127.0.0.1:5000/search";
+        }
+
+        function load4()
+        {
+            return "http://127.0.0.1:5000/about";
+        }
+
+        <!--function to_image(){-->
+                <!--&lt;!&ndash;document.getElementById("button").style.opacity = 0;&ndash;&gt;-->
+                <!--var canvas = document.getElementById("imageCanvas");-->
+                <!--document.getElementById("fileInput").src = canvas.toDataURL();-->
+                <!--document.getElementById("upload").submit();-->
+            <!--}-->
+
     </script>
 </head>
 <body>
@@ -127,9 +149,9 @@ display: block;
     <!-- Header -->
     <header id="header">
         <div id="toolbar-options" class="hidden">
-            <a href="#" id="icon1"><i class="fa fa-search"></i><span id="textHover1">Search</span></a>
-            <a href="#" id="icon2"><i class="fa fa-tree"></i><span id="textHover2">Webpages</span></a>
-            <a href="#" id="icon3"><i class="fa fa-qq"></i><span id="textHover3">About</span></a>
+            <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span id="textHover1">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree" onclick="document.location.href= load2()"></i><span id="textHover2">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span id="textHover3">About</span></a>
         </div>
 
         <div id="button">
@@ -142,21 +164,24 @@ display: block;
             </div>
         </div>
 
-        <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+        <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper">
                 <button class="btn">Upload</button>
-                <input type="file" name="image" id="fileInput" onchange="handleFileSelect(event)"/>
+                <input type="file" name="image"/>
             </div>
-            <div class="upload-btn-wrapper2"><input type="submit"/></div>
+            <!--<canvas id="imageCanvas" width="1" height="1" style="border:0px solid #000000; opacity:0;">-->
+                    <!--</canvas>-->
+            <!--<div id="preview" ></div>-->
+            <!--<button class="btn" onclick="to_image()" style="opacity:0;">Sub</button>-->
+            <div class="upload-btn-wrapper2" style="opacity:1;" id="subbtn"><button class="btn">Submit</button></div>
+                <!--<input type="submit" onclick="to_image()"/></div>-->
         </form>
 
-<canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000; opacity:0;">
-                    </canvas>
     </header>
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        <p><a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject">Our GitHub</a>.</p>
     </footer>
 
 </div>
@@ -171,8 +196,8 @@ display: block;
 <script src="/static/assets/js/main.js"></script>
 <script src="/static/toolbar/jquery.toolbar.js"></script>
 <script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
-<script src="/static/assets/js/ImageCropperTest3.js"></script>
-<script src="/static/assets/js/ImageCropper.js"></script>
+<!--<script src="/static/assets/js/ImageCropperTest13.js"></script>-->
+<!--<script src="/static/assets/js/ImageCropper.js"></script>-->
 
 
 </body>
