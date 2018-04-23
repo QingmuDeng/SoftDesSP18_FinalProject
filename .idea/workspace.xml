@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/js/jquery-2.1.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/js/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/js/modernizr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/js/velocity.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/partials/_layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/partials/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/partials/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/static/assets_overflow/scss/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_5.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/static/assets_overflow/css/main7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/static/assets_overflow/css/main8.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/flask/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/about.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,17 +16,18 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$crop_img.coverage" NAME="crop_img Coverage Results" MODIFIED="1524240088522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
-    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524369670143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
+    <SUITE FILE_PATH="coverage/SoftDesSP18_FinalProject$app.coverage" NAME="app Coverage Results" MODIFIED="1524445636327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="258" column="21" selection-start-line="258" selection-start-column="21" selection-end-line="258" selection-end-column="21" />
+            <state relative-caret-position="306">
+              <caret line="290" column="18" lean-forward="true" selection-start-line="290" selection-start-column="18" selection-end-line="290" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#article#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,8 +36,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="56" column="7" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="7" />
+            <state relative-caret-position="442">
+              <caret line="156" column="20" lean-forward="true" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -84,10 +75,12 @@
       <find>main</find>
       <find>h2</find>
       <find>images</find>
-      <find>background</find>
       <find>image</find>
-      <find>url</find>
       <find>cd-sec</find>
+      <find>p</find>
+      <find>font</find>
+      <find>url</find>
+      <find>background</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,14 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTes3.js" />
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTes4.js" />
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest5.js" />
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest6.js" />
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest7.js" />
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest8.js" />
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest9.js" />
-        <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest10.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest11.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest12.js" />
         <option value="$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest13.js" />
@@ -146,6 +131,14 @@
         <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/main6.css" />
         <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/main7.css" />
         <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_5.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/main8.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/main9.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_6.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_7.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/main10.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_8.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/main11.css" />
+        <option value="$PROJECT_DIR$/flask/static/assets_overflow/css/main12.css" />
         <option value="$PROJECT_DIR$/flask/templates/about.html" />
       </list>
     </option>
@@ -164,7 +157,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1082" />
-    <option name="y" value="24" />
+    <option name="y" value="34" />
     <option name="width" value="825" />
     <option name="height" value="955" />
   </component>
@@ -173,6 +166,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,40 +230,39 @@
               <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images_overflow" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SoftDesSP18_FinalProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="SoftDesSP18_FinalProject" type="462c0819:PsiDirectoryNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="images_overflow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/morphing-modal-window-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dimension" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flask/static/assets/js" />
+      <recent name="$PROJECT_DIR$/webapp_archive" />
+      <recent name="$PROJECT_DIR$/flask_old" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/flask/static/assets_overflow/css" />
       <recent name="$PROJECT_DIR$/flask/static/assets_overflow" />
       <recent name="$PROJECT_DIR$/flask/static/assets_overflow/js" />
       <recent name="$PROJECT_DIR$/flask/static/images_overflow" />
       <recent name="$PROJECT_DIR$/flask/static/assets/css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/flask/static/assets/js" />
-      <recent name="$PROJECT_DIR$/webapp_archive" />
-      <recent name="$PROJECT_DIR$/flask_old" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -439,9 +432,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17672414" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.14655173" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15201768" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23438364" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -469,12 +462,12 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25698924" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.12858926" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.12858926" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -488,6 +481,31 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="56" column="7" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4644">
+          <caret line="258" column="21" selection-start-line="258" selection-start-column="21" selection-end-line="258" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#article#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="56" column="7" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest31.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest32.js" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets/js/ImageCropperTest33.js" />
@@ -508,9 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -553,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -563,12 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -579,33 +585,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/images/overlay.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/images/poptrox-closer.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="2256" column="49" lean-forward="true" selection-start-line="2256" selection-start-column="49" selection-end-line="2256" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_3.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main2.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_2.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_3.css" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -613,125 +595,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main3.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="1317" column="44" lean-forward="true" selection-start-line="1317" selection-start-column="44" selection-end-line="1317" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/js/ie/html5shiv.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images/overlay.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/js/ie/backgroundsize.min.htc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_4.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main4.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/pic01.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/fulls/01.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/fulls/02.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/images/banner.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/images/loader.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main5.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="2250" column="19" lean-forward="true" selection-start-line="2250" selection-start-column="19" selection-end-line="2250" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg-alt.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images/bg1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/images/bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="2254" column="37" selection-start-line="2254" selection-start-column="34" selection-end-line="2254" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main6.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="2256" column="49" lean-forward="true" selection-start-line="2256" selection-start-column="49" selection-end-line="2256" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/partials/_layout.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/js/jquery-2.1.1.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/img/cd-icon-close.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main7.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="1313" column="118" lean-forward="true" selection-start-line="1313" selection-start-column="79" selection-end-line="1313" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main8.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_5.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_6.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main3.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_4.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main4.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main5.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main6.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main7.css" />
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_5.css" />
     <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/reset.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
@@ -739,19 +609,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/style.css">
+    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg-alt.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images/bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images/overlay.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images/bg1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images/pic01.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/images_overflow/bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main9.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="56" column="7" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="7" />
+        <state relative-caret-position="298">
+          <caret line="2258" column="54" lean-forward="true" selection-start-line="2258" selection-start-column="54" selection-end-line="2258" selection-end-column="54" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_6.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="62" lean-forward="true" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/images/overlay.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="2260" column="13" lean-forward="true" selection-start-line="2260" selection-start-column="13" selection-end-line="2260" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main8.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="2268" column="13" lean-forward="true" selection-start-line="2268" selection-start-column="13" selection-end-line="2268" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_7.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main10.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="2259" column="32" lean-forward="true" selection-start-line="2259" selection-start-column="32" selection-end-line="2259" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main11.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="2261" lean-forward="true" selection-start-line="2261" selection-end-line="2261" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="156" column="20" lean-forward="true" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_8.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/ie8_9.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-541" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main12.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="2524" column="53" lean-forward="true" selection-start-line="2524" selection-start-column="53" selection-end-line="2524" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/static/assets_overflow/css/main13.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="258" column="21" selection-start-line="258" selection-start-column="21" selection-end-line="258" selection-end-column="21" />
+        <state relative-caret-position="306">
+          <caret line="290" column="18" lean-forward="true" selection-start-line="290" selection-start-column="18" selection-end-line="290" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#article#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

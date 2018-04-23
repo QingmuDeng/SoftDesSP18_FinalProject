@@ -106,6 +106,20 @@
             display: block;
         }
 
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        figcaption {
+            font-size: 1.6rem;
+            font-family: 'Source Sans Pro', 'sans-serif';
+            color: #ffffff;
+            text-align: center;
+        }
+
 
     </style>
     <title>Paletteful</title>
@@ -116,9 +130,9 @@
     <link rel="stylesheet" href="../static/assets_overflow/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="../static/assets_overflow/css/style.css"> <!-- Resource style -->
     <script src="../static/assets_overflow/js/modernizr.js"></script> <!-- Modernizr -->
-    <link rel="stylesheet" href="../static/assets_overflow/css/main8.css"/>
+    <link rel="stylesheet" href="../static/assets_overflow/css/main13.css"/>
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_6.css"/><![endif]-->
+    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_9.css"/><![endif]-->
     <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
 
 
@@ -210,26 +224,37 @@
             </div>
             <div class="cd-modal">
                 <div class="cd-modal-content">
-                    <img src="../static/images/pic01.jpg" alt=""/>
-                    <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante
-                        interdum congue.
-                        Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-                        magna finibus nisi
-                        nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work.
+                    <p>
+                        There are currently three main types of color palettes that Paletteful can generate from a given
+                        image. All three types utilize K means clustering and color theory concepts. The default color
+                        palette type selects the five palette colors by searching for the dominant and accent colors
+                        within an image. Three of the five colors are varying shades of the dominant color, while the
+                        other two colors are accents that pop out in the image. A palette containing dominant and accent
+                        colors is often useful when designing eye-catching webpages and presentations. The complementary
+                        color palette type consists of colors that lie opposite each other on the color wheel. To
+                        generate this type of color palette, the dominant color of the image is matched with its
+                        complement. Complementary palettes offer a sense of balance. The analogous color palette type
+                        consists of colors that lie close to each other on the color wheel. It is generated from various
+                        shades of the image’s dominant color.
+
                     </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class
-                        aptent taciti
-                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-                        libero eu nibh
-                        porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut
-                        ultricies condimentum.
-                        Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris,
-                        fringilla in
-                        aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et
-                        malesuada fames ac
-                        turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus
-                        risus, vel sed
-                        vehicula.</p>
+                    <figure>
+                        <img src="../static/images_about/color_wheel.png" alt="" width="500" height="auto" class="center"/>
+                        <br>
+                        <figcaption>Additive Color Wheel</figcaption>
+                    </figure>
+                    <p>
+                        For all three types of color palettes, finding the dominant colors by K means clustering is an
+                        important concept. K means clustering finds K groups within an image’s RGB data. The algorithm
+                        works iteratively to assign each data point to one of K groups based on the color values that
+                        are provided. The centroids of the K clusters can then be labeled as the K most dominant colors
+                        of the image.
+                    </p>
+                    <figure>
+                        <img src="../static/images_about/Kmeans.gif" alt="" class="center"/>
+                        <br>
+                        <figcaption>Visualization of K Means Clustering</figcaption>
+                    </figure>
                 </div> <!-- cd-modal-content -->
             </div> <!-- cd-modal -->
             <a href="#1" class="cd-modal-close">Close</a>
@@ -249,9 +274,17 @@
         <p>One of the most important features of Paletteful involves providing recommended color palettes based on the
             sentiment of an inputted image...
         </p>
-        <footer>
-            <a href="#first" class="button style2 scrolly">Click here for more information</a>
-        </footer>
+        <div class="cd-section" style="background-color: transparent; padding: 0%; margin: 0%;">
+            <div class="cd-modal-action">
+                <a href="#1" class="btn" data-type="modal-trigger">More Information</a>
+                <span class="cd-modal-bg"></span>
+            </div>
+            <div class="cd-modal">
+                <div class="cd-modal-content">
+                    <p>More technical delve into machine learning. More to come</p>
+                </div> <!-- cd-modal-content -->
+            </div> <!-- cd-modal -->
+            <a href="#1" class="cd-modal-close">Close</a></div>
     </div>
 </article>
 
