@@ -27,7 +27,7 @@ a. Website Tour
 
 b. Color palette progress update
 
-c. Machine learning and sentiment analysi
+c. Machine learning and sentiment analysis
 
 d. Future plans
 
