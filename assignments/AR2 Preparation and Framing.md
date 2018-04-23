@@ -1,4 +1,4 @@
-## Paletteful Architectural Review2
+## Paletteful Architectural Review 2
 
 ### 1. Background and Context
 
