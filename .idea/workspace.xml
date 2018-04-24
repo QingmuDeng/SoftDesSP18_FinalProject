@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/flask/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/runtime.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/crop_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/crop_img.py" afterDir="false" />
-    </list>
+    <list default="true" id="be23b679-3e51-42c6-a590-fa42eb98bd41" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +119,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="80" />
+    <option name="x" value="961" />
     <option name="y" value="24" />
     <option name="width" value="955" />
     <option name="height" value="947" />
@@ -350,8 +345,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="80" y="24" width="955" height="947" extended-state="0" />
-    <editor active="true" />
+    <frame x="961" y="24" width="955" height="947" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
