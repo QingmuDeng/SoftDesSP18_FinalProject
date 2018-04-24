@@ -9,9 +9,9 @@ import os
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 import crop_img
-import cv2
-import webbrowser
-import threading
+# import cv2
+# import webbrowser
+# import threading
 import os.environ
 
 app = Flask(__name__)
