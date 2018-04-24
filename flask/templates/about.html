@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <style>
+
+        .btn {
+            text-align: center;
+            white-space: nowrap;
+            color: white;
+        }
+
+        #textHover1 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon1:hover #textHover1 {
+            display: block;
+        }
+
+        #textHover2 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon2:hover #textHover2 {
+            display: block;
+        }
+
+        #textHover3 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon3:hover #textHover3 {
+            display: block;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        figcaption {
+            font-size: 1.6rem;
+            font-family: 'Source Sans Pro', 'sans-serif';
+            color: #ffffff;
+            text-align: center;
+        }
+
+
+    </style>
+    <title>Paletteful</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="../static/assets_overflow/js/ie/html5shiv.js"></script>
+    <link rel="stylesheet" href="../static/assets_overflow/css/reset.css">
+    <link rel="stylesheet" href="../static/assets_overflow/css/style.css">
+    <script src="../static/assets_overflow/js/modernizr.js"></script>
+    <link rel="stylesheet" href="../static/assets_overflow/css/main13.css"/>
+    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_9.css"/>
+    <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
+    <noscript>
+        <link rel="stylesheet" href="../static/assets/css/noscript.css"/>
+    </noscript>
+    <script>
+        function load() {
+            return "http://127.0.0.1:5000/";
+        }
+
+        function load2() {
+            return "http://127.0.0.1:5000/webpage";
+        }
+
+        function load3() {
+            return "http://127.0.0.1:5000/search";
+        }
+
+        function load4() {
+            return "http://127.0.0.1:5000/about";
+        }
+
+    </script>
+</head>
+<body>
+
+<!-- Header -->
+<section id="header">
+    <header>
+        <div id="toolbar-options" class="hidden">
+            <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span
+                    id="textHover1" style="color: white">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree" onclick="document.location.href= load2()"></i><span
+                    id="textHover2" style="color: white">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span
+                    id="textHover3" style="color: white">About</span></a>
+        </div>
+
+        <div id="button">
+            <i class="fa fa-envira" onclick="document.location.href=load();" style="font-size:3em;"></i>
+        </div>
+        <br>
+        <h1>Our Story</h1>
+        <p>by Paletteful</p>
+    </header>
+    <footer>
+        <a href="#first" class="button style2 scrolly">Start Journey</a>
+    </footer>
+</section>
+
+<!-- Banner -->
+<section id="banner">
+    <header>
+        <h2>Our Purpose</h2>
+    </header>
+    <p>Generate web safe color palettes from inputted images using color theory, k means clustering, and machine
+        learning.
+        Our goal is to extract usefulness from your favorite images by providing user-friendly tools,
+        such as downloadable color palettes, web page generation, and image sentiment analysis. We
+        want to make it easier for everyone to be amazing designers and artists. Some future features that
+        we are working on right now include...</p>
+    <!--<footer>-->
+    <!--<a href="#first" class="button style2 scrolly">Act on this message</a>-->
+    <!--</footer>-->
+</section>
+
+<!-- Feature 1 Description -->
+<article id="first" class="container box style1 right">
+    <a href="#" class="image fit"><img src="../static/images_overflow/pic01.jpg" alt=""/></a>
+    <div class="inner">
+
+        <h2>Color Palette<br/>
+            Generation</h2>
+        <br>
+        <p>You can generate color palettes just by uploading an image from the home page. Additional color palettes can
+            be created by selecting a particular region of the image using the crop feature or choosing different types
+            of color palettes (i.e. complementary and analogous). The output palette is shown in an interactive format,
+            which displays a color’s hex and rgb values on hover.</p>
+        <div class="cd-section" style="background-color: transparent; padding: 0%; margin: 0%;">
+            <div class="cd-modal-action">
+                <a href="#1" class="btn" data-type="modal-trigger" style="color: white">More Information</a>
+                <span class="cd-modal-bg"></span>
+            </div>
+            <div class="cd-modal">
+                <div class="cd-modal-content">
+                    <p>
+                        There are currently three main types of color palettes that Paletteful can generate from a given
+                        image. All three types utilize K means clustering and color theory concepts. The default color
+                        palette type selects the five palette colors by searching for the dominant and accent colors
+                        within an image. Three of the five colors are varying shades of the dominant color, while the
+                        other two colors are accents that pop out in the image. A palette containing dominant and accent
+                        colors is often useful when designing eye-catching webpages and presentations. The complementary
+                        color palette type consists of colors that lie opposite each other on the color wheel. To
+                        generate this type of color palette, the dominant color of the image is matched with its
+                        complement. Complementary palettes offer a sense of balance. The analogous color palette type
+                        consists of colors that lie close to each other on the color wheel. It is generated from various
+                        shades of the image’s dominant color.
+
+                    </p>
+                    <figure>
+                        <img src="../static/images_about/color_wheel.png" alt="" width="500" height="auto"
+                             class="center"/>
+                        <br>
+                        <figcaption>Additive Color Wheel</figcaption>
+                    </figure>
+                    <p>
+                        For all three types of color palettes, finding the dominant colors by K means clustering is an
+                        important concept. K means clustering finds K groups within an image’s RGB data. The algorithm
+                        works iteratively to assign each data point to one of K groups based on the color values that
+                        are provided. The centroids of the K clusters can then be labeled as the K most dominant colors
+                        of the image.
+                    </p>
+                    <figure>
+                        <img src="../static/images_about/Kmeans.gif" alt="" class="center"/>
+                        <br>
+                        <figcaption>Visualization of K Means Clustering</figcaption>
+                    </figure>
+                </div> <!-- cd-modal-content -->
+            </div> <!-- cd-modal -->
+            <a href="#1" class="cd-modal-close">Close</a>
+        </div>
+    </div>
+</article>
+
+<!-- Feature 2 Description -->
+<article class="container box style1 left">
+    <a href="#" class="image fit"><img src="../static/images_overflow/pic02.jpg" alt=""/></a>
+    <div class="inner">
+        <h2>Color Symbolism
+            <!--<br/>-->
+        </h2>
+        <br>
+        <p>One of the most important features of Paletteful involves providing recommended color palettes based on the
+            sentiment of an inputted image...
+        </p>
+        <div class="cd-section" style="background-color: transparent; padding: 0%; margin: 0%;">
+            <div class="cd-modal-action">
+                <a href="#1" class="btn" data-type="modal-trigger" style="color: white">More Information</a>
+                <span class="cd-modal-bg"></span>
+            </div>
+            <div class="cd-modal">
+                <div class="cd-modal-content">
+                    <p>More technical delve into machine learning. More to come.</p>
+                </div> <!-- cd-modal-content -->
+            </div> <!-- cd-modal -->
+            <a href="#1" class="cd-modal-close">Close</a></div>
+    </div>
+</article>
+
+<!-- Portfolio -->
+<article class="container box style2">
+    <header>
+        <h2>Popular Images</h2>
+        <p>Click on any image to see its generated color palette</p>
+    </header>
+    <div class="inner gallery">
+        <div class="row 0%">
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/01.jpg" class="image fit"><img
+                    src="../static/images_about/demo1.jpg" alt="" title="Ad infinitum"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/02.jpg" class="image fit"><img
+                    src="../static/images_about/demo2.jpg" alt="" title="Dressed in Clarity"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/03.jpg" class="image fit"><img
+                    src="../static/images_about/demo3.jpg" alt="" title="Raven"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_about/demo4.jpg" class="image fit"><img
+                    src="../static/images_about/demo4.jpg" alt=""
+                    title="I'll have a cup of Disneyland, please"/></a></div>
+        </div>
+        <div class="row 0%">
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/05.jpg" class="image fit"><img
+                    src="../static/images_about/demo5.jpg" alt="" title="Cherish"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/06.jpg" class="image fit"><img
+                    src="../static/images_about/demo6.jpg" alt="" title="Different."/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/07.jpg" class="image fit"><img
+                    src="../static/images_about/demo7.jpg" alt="" title="History was made here"/></a></div>
+            <div class="3u 12u(mobile)"><a href="../static/images_overflow/fulls/08.jpg" class="image fit"><img
+                    src="../static/images_about/demo8.jpg" alt="" title="People come and go and walk away"/></a>
+            </div>
+        </div>
+    </div>
+    <!-- Feature 2 Description -->
+
+    <article class="container box style1" style="padding: 1rem 1rem">
+        <!--<a href="#" class="image fit"><img src="../static/images_overflow/pic02.jpg" alt=""/></a>-->
+        <div class="inner">
+            <h2>Acknowledgments
+            </h2>
+            <br>
+            <p>
+                We would like to thank the Olin College of Engineering Software Design instructors and NINJAS for their
+                help during our project. We would also like to thank
+                <a style="color: black" href="https://html5up.net/">HTML5 Up</a>, <a
+                    style="color: black" href="https://github.com/CodyHouse/morphing-modal-window">CodyHouse</a>, <a
+                    style="color: black" href="http://paulkinzett.github.io/toolbar/">Paul Kinzett</a>, and <a
+                    style="color: black" href="https://github.com/AllanBishop/ImageCropper">Allan Bishop</a>
+                for their beautiful HTML templates and JS plugins.
+            </p>
+        </div>
+    </article>
+
+    <section id="footer">
+        <!--<ul class="icons">-->
+        <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+        <!--<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+        <!--</ul>-->
+        <div class="copyright">
+            <ul class="menu">
+                <p><a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject">Our GitHub</a>.</p>
+            </ul>
+        </div>
+    </section>
+</article>
+
+<!--&lt;!&ndash; Contact &ndash;&gt;-->
+<!--<article class="container box style3">-->
+<!--<header>-->
+<!--<h2>Nisl sed ultricies</h2>-->
+<!--<p>Diam dignissim lectus eu ornare volutpat orci.</p>-->
+<!--</header>-->
+<!--<form method="post" action="#">-->
+<!--<div class="row 50%">-->
+<!--<div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name"/></div>-->
+<!--<div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email"/></div>-->
+<!--<div class="12u$">-->
+<!--<textarea name="message" placeholder="Message"></textarea>-->
+<!--</div>-->
+<!--<div class="12u$">-->
+<!--<ul class="actions">-->
+<!--<li><input type="submit" value="Send Message"/></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</form>-->
+<!--</article>-->
+
+
+<!-- Scripts -->
+<script src="../static/assets_overflow/js/jquery.min.js"></script>
+<script src="../static/assets_overflow/js/jquery.scrolly.min.js"></script>
+<script src="../static/assets_overflow/js/jquery.poptrox.min.js"></script>
+<script src="../static/assets_overflow/js/skel.min.js"></script>
+<script src="../static/assets_overflow/js/util.js"></script>
+<script src="../static/assets_overflow/js/ie/respond.min.js"></script>
+<script src="../static/assets_overflow/js/main.js"></script>
+
+<script src="../static/assets_overflow/js/jquery-2.1.1.js"></script>
+<script src="../static/assets_overflow/js/velocity.min.js"></script>
+<script src="../static/assets_overflow/js/modal.js"></script>
+
+<script src="../static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
+
+</body>
+</html>

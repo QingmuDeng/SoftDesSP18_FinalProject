@@ -1,120 +1,88 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
     <style>
 
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  <!--display: inline-block;-->
-}
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            /*display: inline-block;*/
+        }
 
-.btn {
-  <!--border: 2px solid gray;-->
-  color: gray;
-  <!--padding: 4px 10px;-->
-  <!--border-radius: 8px;-->
-  font-size: 20px;
-  <!--font-weight: bold;-->
-    border: none;
-    <!--cursor: pointer;-->
-    border-radius: 2px;
-    text-align: center;
-    white-space: nowrap;
-}
+        .btn {
+            text-align: center;
+            white-space: nowrap;
+        }
 
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  <!--cursor: pointer;-->
-}
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
 
-.upload-btn-wrapper2 {
-  position: relative;
-  overflow: hidden;
-  padding: 20px 40px;
-  <!--display: inline-block;-->
-}
+        .upload-btn-wrapper2 {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 40px;
+            /*display: inline-block;*/
+        }
 
-.upload-btn-wrapper2 input[type=submit] {
-  <!--border: 2px solid gray;-->
-  color: gray;
-  <!--padding: 4px 10px;-->
-  <!--border-radius: 8px;-->
-  font-size: 20px;
-  <!--font-weight: bold;-->
-  border: none;
-    <!--cursor: pointer;-->
-    border-radius: 2px;
-    text-align: center;
-    white-space: nowrap;
-}
+        #textHover1 {
+            display: none;
+            font-size: 14px;
+        }
 
-.semi-transparent-button {
-  display: block;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 8px;
-  width: 80%;
-  max-width: 200px;
-  background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-out;
-}
+        #icon1:hover #textHover1 {
+            display: block;
+        }
 
-#textHover1{
-display: none;
-font-size: 14px;
-}
-#icon1:hover #textHover1{
-display: block;
-}
+        #textHover2 {
+            display: none;
+            font-size: 14px;
+        }
 
-#textHover2{
-display: none;
-font-size: 14px;
-}
-#icon2:hover #textHover2{
-display: block;
-}
+        #icon2:hover #textHover2 {
+            display: block;
+        }
 
-#textHover3{
-display: none;
-font-size: 14px;
-}
-#icon3:hover #textHover3{
-display: block;
-}
+        #textHover3 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon3:hover #textHover3 {
+            display: block;
+        }
 
 
     </style>
     <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="/static/assets/css/main.css"/>
-    <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
-    <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
-
-    <![endif]-->
+    <link rel="stylesheet" href="../static/assets/css/main5.css"/>
+    <link rel="stylesheet" href="../static/assets/css/ie9.css"/>
+    <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <noscript>
-        <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
+        <link rel="stylesheet" href="../static/assets/css/noscript.css"/>
     </noscript>
     <script>
-        function load()
-        {
+        function load() {
             return "http://127.0.0.1:5000/";
+        }
+
+        function load2() {
+            return "http://127.0.0.1:5000/webpage";
+        }
+
+        function load3() {
+            return "http://127.0.0.1:5000/search";
+        }
+
+        function load4() {
+            return "http://127.0.0.1:5000/about";
         }
 
     </script>
@@ -127,9 +95,12 @@ display: block;
     <!-- Header -->
     <header id="header">
         <div id="toolbar-options" class="hidden">
-            <a href="#" id="icon1"><i class="fa fa-search"></i><span id="textHover1">Search</span></a>
-            <a href="#" id="icon2"><i class="fa fa-tree"></i><span id="textHover2">Webpages</span></a>
-            <a href="#" id="icon3"><i class="fa fa-qq"></i><span id="textHover3">About</span></a>
+            <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span
+                    id="textHover1">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree" onclick="document.location.href= load2()"></i><span
+                    id="textHover2">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span
+                    id="textHover3">About</span></a>
         </div>
 
         <div id="button">
@@ -142,21 +113,21 @@ display: block;
             </div>
         </div>
 
-        <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+        <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper">
                 <button class="btn">Upload</button>
-                <input type="file" name="image" id="fileInput" onchange="handleFileSelect(event)"/>
+                <input type="file" name="image"/>
             </div>
-            <div class="upload-btn-wrapper2"><input type="submit"/></div>
+            <div class="upload-btn-wrapper2" style="opacity:1;" id="subbtn">
+                <button class="btn">Submit</button>
+            </div>
         </form>
 
-<canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000; opacity:0;">
-                    </canvas>
     </header>
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        <p><a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject">Our GitHub</a>.</p>
     </footer>
 
 </div>
@@ -165,15 +136,12 @@ display: block;
 <div id="bg"></div>
 
 <!-- Scripts -->
-<script src="/static/assets/js/jquery.min.js"></script>
-<script src="/static/assets/js/skel.min.js"></script>
-<script src="/static/assets/js/util.js"></script>
-<script src="/static/assets/js/main.js"></script>
-<script src="/static/toolbar/jquery.toolbar.js"></script>
-<script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
-<script src="/static/assets/js/ImageCropperTest3.js"></script>
-<script src="/static/assets/js/ImageCropper.js"></script>
-
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/skel.min.js"></script>
+<script src="../static/assets/js/util.js"></script>
+<script src="../static/assets/js/main.js"></script>
+<script src="../static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
 
 </body>
 </html>

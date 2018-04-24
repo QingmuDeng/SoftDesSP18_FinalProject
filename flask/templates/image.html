@@ -1,162 +1,176 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head lang="en">
+    <link rel="stylesheet" href="../static/assets/css/main5.css"/>
+    <link rel="stylesheet" href="../static/assets/css/ie9.css"/>
+    <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <style>
-    #result{
-    -moz-transform: translateY(0.25rem);
-        -webkit-transform: translateY(0.25rem);
-        -ms-transform: translateY(0.25rem);
-        transform: translateY(0.25rem);
-        -moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
-        -webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
-        -ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
-        transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-        padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
-        position: relative;
-        width: 60rem;
-        max-width: 100%;
-        background-color: rgba(27, 31, 34, 0.85);
-        border-radius: 4px;
-        opacity: 1;
-    }
+        #result {
+            -moz-transform: translateY(0.25rem);
+            -webkit-transform: translateY(0.25rem);
+            -ms-transform: translateY(0.25rem);
+            transform: translateY(0.25rem);
+            -moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
+            -webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
+            -ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
+            transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+            padding: 4.5rem 2.5rem 1.5rem 2.5rem;
+            position: relative;
+            width: 60rem;
+            max-width: 100%;
+            background-color: rgba(27, 31, 34, 0.85);
+            border-radius: 4px;
+            opacity: 1;
+        }
 
-        .caption-style-1{
-		list-style-type: none;
-		display:inline-block;
-		margin: 0px;
-		padding: 0px;
-	}
+        .caption-style-1 {
+            list-style-type: none;
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+        }
 
-	.caption-style-1 li{
-		float: right;
-		<!--display:inline-block;-->
-		padding: 0px;
-		position: relative;
-		overflow: hidden;
-	}
+        .caption-style-1 li {
+            float: right;
+            display: inline-block;
+            padding: 0px;
+            position: relative;
+            overflow: hidden;
+        }
 
-	.caption-style-1 li:hover .caption{
-		opacity: 1;
-	}
+        .caption-style-1 li:hover .caption {
+            opacity: 1;
+        }
 
+        .caption-style-1 img {
+            margin: 0px;
+            padding: 0px;
+            float: right;
+            display: inline-block;
+            z-index: 4;
+        }
 
-	.caption-style-1 img{
-		margin: 0px;
-		padding: 0px;
-		float: right;
-		<!--display:inline-block;-->
-		z-index: 4;
-	}
+        .caption-style-1 .caption {
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            -webkit-transition: all 0.45s ease-in-out;
+            -moz-transition: all 0.45s ease-in-out;
+            -o-transition: all 0.45s ease-in-out;
+            -ms-transition: all 0.45s ease-in-out;
+            transition: all 0.45s ease-in-out;
 
+        }
 
-	.caption-style-1 .caption{
-		cursor: pointer;
-		position: absolute;
-		opacity: 0;
-		-webkit-transition:all 0.45s ease-in-out;
-		-moz-transition:all 0.45s ease-in-out;
-		-o-transition:all 0.45s ease-in-out;
-		-ms-transition:all 0.45s ease-in-out;
-		transition:all 0.45s ease-in-out;
+        .caption-style-1 .blur {
+            background-color: rgba(0, 0, 0, 0.65);
+            height: 100px;
+            width: 500px;
+            z-index: 5;
+            position: absolute;
+        }
 
-	}
-	.caption-style-1 .blur{
-		background-color: rgba(0,0,0,0.65);
-		height: 100px;
-		width: 500px;
-		z-index: 5;
-		position: absolute;
-	}
+        .caption-style-1 .caption-text {
+            z-index: 10;
+            font-size: 20px;
+            display: inline-block;
+            color: #fff;
+            position: absolute;
+            width: 124px;
+            height: 83px;
+            /*top: 100 px;*/
+            vertical-align: middle;
+            top: 50%;
+            left: 50%;
+            opacity: 1;
+            float: middle;
+            text-align: center;
+        }
 
-	.caption-style-1 .caption-text{
-		z-index: 10;
-		font-size: 20px;
-		<!--display:inline-block;-->
-		<!--color: #fff;-->
-		position: absolute;
-		width: 124px;
-		height: 83px;
-		<!--top: 100px;-->
-		<!--vertical-align: middle;-->
-		top: 50%;
-		left:50%;
-		opacity: 1;
-		<!--float: middle;-->
-		<!--text-align: center;-->
-	}
+        #textHover1 {
+            display: none;
+            font-size: 14px;
+        }
 
-	#textHover1{
-display: none;
-font-size: 14px;
-}
-#icon1:hover #textHover1{
-display: block;
-}
+        #icon1:hover #textHover1 {
+            display: block;
+        }
 
-#textHover2{
-display: none;
-font-size: 14px;
-}
-#icon2:hover #textHover2{
-display: block;
-}
+        #textHover2 {
+            display: none;
+            font-size: 14px;
+        }
 
-#textHover3{
-display: none;
-font-size: 14px;
-}
-#icon3:hover #textHover3{
-display: block;
-}
+        #icon2:hover #textHover2 {
+            display: block;
+        }
+
+        #textHover3 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon3:hover #textHover3 {
+            display: block;
+        }
+
+        .btn {
+            text-align: center;
+            white-space: nowrap;
+            font-size: 14px;
+            padding: 0 1rem;
+        }
+
+        form {
+            margin: 0;
+            padding: 0;
+        }
 
     </style>
     <meta charset="UTF-8">
     <title>Paletteful</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="/static/assets/css/main.css"/>
-    <link rel="stylesheet" href="/static/assets/css/ie9.css"/>
-    <link href="/static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <noscript>
-        <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
+        <link rel="stylesheet" href="../static/assets/css/noscript.css"/>
     </noscript>
     <script>
-        function load()
-        {
+        function load() {
             return "http://127.0.0.1:5000/";
         }
 
-        function save()
-        {
-            /* Get the text field */
-            var copyText = document.getElementById("hex1");
-
-          /* Select the text field */
-          copyText.select();
-
-          /* Copy the text inside the text field */
-          document.execCommand("Copy");
-
-          <!--/* Alert the copied text */-->
-  <!--alert("Copied the text: " + copyText.value);-->
-
+        function load2() {
+            return "http://127.0.0.1:5000/webpage";
         }
 
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-}
+        function load3() {
+            return "http://127.0.0.1:5000/search";
+        }
+
+        function load4() {
+            return "http://127.0.0.1:5000/about";
+        }
+
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
 
 
     </script>
+    <!-- Scripts -->
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script src="../static/assets/js/skel.min.js"></script>
+    <script src="../static/assets/js/util.js"></script>
+    <script src="../static/assets/js/main.js"></script>
+    <script src="../static/toolbar/jquery.toolbar.js"></script>
+    <script src="../static/toolbar/jquery.toolbar.js"></script>
+    <script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
+    <script src="../static/assets/js/ImageCropper.js"></script>
+    <script src="../static/assets/js/ImageCropperTest35.js"></script>
 
 </head>
 <body>
@@ -167,9 +181,12 @@ function copyToClipboard(element) {
     <!-- Header -->
     <header id="header">
         <div id="toolbar-options" class="hidden">
-            <a href="#" id="icon1"><i class="fa fa-search"></i><span id="textHover1">Search</span></a>
-            <a href="#" id="icon2"><i class="fa fa-tree"></i><span id="textHover2">Webpages</span></a>
-            <a href="#" id="icon3"><i class="fa fa-qq"></i><span id="textHover3">About</span></a>
+            <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span
+                    id="textHover1">Search</span></a>
+            <a href="#" id="icon2"><i class="fa fa-tree" onclick="document.location.href= load2()"></i><span
+                    id="textHover2">Webpages</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span
+                    id="textHover3">About</span></a>
         </div>
 
         <div id="button">
@@ -177,26 +194,18 @@ function copyToClipboard(element) {
         </div>
         <div id="result" class="container-a1">{% if filename1 %}
             <div class="content">
-                <div class="inner">
-
-                    <img id="fileInput" src="{{ filename1 }}" name="file">
-
-                    <!--<div>-->
-                    <!--Select image to crop: <input type="file"  name="file" multiple="" />-->
-                    <!--</div>-->
-                    <!--<div><input src="{{ filename1 }}" type="file" id="fileInput" multiple=""></div>-->
-
-
-                    <div><canvas id="imageCanvas" width="600" height="400" style="border:0px solid #000000;">
-                    </canvas></div>
-                    <div>
-                        Cropped image:
-                    </div>
-                    <div id="preview"></div>
+                <div class="inner" style="padding: 1rem 1rem">
+                    <canvas id="imageCanvas" style="border:0px solid #000000; opacity:1;">
+                    </canvas>
+                    <img id="fileInput" src="{{ filename1 }}" name="file" onload="handleFileSelect()">
                 </div>
+                <form name="update" id="update" method=POST>
+                    <button class="btn" onclick="getBounds()">Update</button>
+                    <input type="text" name="bounds" id="bounds" hidden style="opacity: 0; margin: 0; padding: 0">
+                    <input type="text" name="img" id="img" hidden style="opacity: 0; display: block">
+                </form>
                 {% if filename2 %}
-                <br><br><br>
-                <div class="caption-style-1">
+                <div class="caption-style-1" style="padding: 0; margin: 0">
                     <li><img src="{{ filename2[3] }}" alt="">
                         <div class="caption">
                             <div class="blur" onclick="copyToClipboard('#hex3')"></div>
@@ -235,7 +244,7 @@ function copyToClipboard(element) {
                     </li>
                 </div>
                 <br>
-                <a href="{{ filename2 }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
+                <a href="{{ filename2[4] }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
                     Palette</a>
                 {% else %}
                 <h1>please re-submit image</h1>
@@ -243,30 +252,20 @@ function copyToClipboard(element) {
                 {% else %}
                 <h1>please re-submit image</h1>
                 {% endif %}
-            </div></div>
+            </div>
+        </div>
     </header>
 
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">OUR WEBSITE</a>.</p>
+        <p><a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject">Our GitHub</a>.</p>
     </footer>
 
 </div>
 
 <!-- BG -->
 <div id="bg"></div>
-
-<!-- Scripts -->
-<script src="/static/assets/js/jquery.min.js"></script>
-<script src="/static/assets/js/skel.min.js"></script>
-<script src="/static/assets/js/util.js"></script>
-<script src="/static/assets/js/main.js"></script>
-<script src="/static/toolbar/jquery.toolbar.js"></script>
-<script src="/static/toolbar/jquery.toolbar.js"></script>
-<script type="text/javascript" src="/static/toolbar/scriptmaybe.js"></script>
-<script src="/static/assets/js/ImageCropperTest3.js"></script>
-<script src="/static/assets/js/ImageCropper.js"></script>
 
 </body>
 </html>
