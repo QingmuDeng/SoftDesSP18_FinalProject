@@ -12,6 +12,7 @@ import crop_img
 import cv2
 import webbrowser
 import threading
+import os.environ
 
 app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
@@ -99,4 +100,6 @@ if __name__ == "__main__":
     # threading.Timer(1.25, lambda: webbrowser.open(url)).start()
     #
     # app.run(port=port, debug=False)
-    app.run()
+    HOST = '0.0.0.0' if 'PORT' in os.environ else '127.0.0.1'
+    PORT = int(os.environ.get('PORT', 5000))
+    app.run(host=HOST, port=PORT)
