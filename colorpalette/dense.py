@@ -74,16 +74,18 @@ def cluster_around(flattened_img, centroids):
     for i in flattened_img:
         temp = 0
         first_pass = True
+        which_centroid = None
         for centroid in centroids:
-            dist = np.linalog.norm((i-centroid))
-            which_centroid = None
+            dist = np.linalg.norm((i-centroid))
             if first_pass:
                 which_centroid = centroid
+                temp = dist
                 first_pass = False
             elif temp > dist:
                 which_centroid = centroid
+                temp = dist
         cluster[tuple(which_centroid)] += 1
-    cluster = {(k, v/total) for k, v in cluster.items()}
+    cluster = dict((k, v/total) for k, v in cluster.items())
     return cluster
 
 
