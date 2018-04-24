@@ -72,5 +72,5 @@ def crop_img(image_path, bounds):
 # resize('static/img/team_meal.jpg')
 if __name__ == "__main__":
     # crop_img("static/img/Violet.Evergarden.723482_13.jpg", "486, 296, 126, 273")
-    image = Image.open("/home/cassandra/Pictures/DEMO/test6.jpeg")
-    crop_surrounding_whitespace(image).save('/home/cassandra/Pictures/DEMO/palette10.jpeg')
+    image = Image.open("/home/cassandra/Pictures/DEMO/1.png")
+    crop_surrounding_whitespace(image).save('/home/cassandra/Pictures/DEMO/palette1.png')
