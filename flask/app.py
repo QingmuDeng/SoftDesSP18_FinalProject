@@ -45,8 +45,9 @@ def about():
     return render_template('about.html')
 
 
-# @app.route("/upload", methods=['GET', 'POST'])
-# def upload():
+@app.route("/upload", methods=['GET', 'POST'])
+def upload():
+    return render_template('webpage.html')
 #     """
 #     This function waits until the user uploads an image, grabs the color palette and color codes, and loads the upload
 #     page with the image and palette displayed.
@@ -77,6 +78,7 @@ def about():
 #     hex = ['#4e9559', '#18960b', '#d16903', '#f8d000']
 #     rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)']
 #     return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
+
 
 
 def allowed_file(filename):
