@@ -12,7 +12,6 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES
 # import cv2
 # import webbrowser
 # import threading
-import os.environ
 
 app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
