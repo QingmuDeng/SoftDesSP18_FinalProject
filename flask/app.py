@@ -8,8 +8,8 @@ javascript.
 import os
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
-# import crop_img
-# import cv2
+import crop_img
+import cv2
 # import webbrowser
 # import threading
 
@@ -47,37 +47,37 @@ def about():
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload():
-    return render_template('webpage.html')
-#     """
-#     This function waits until the user uploads an image, grabs the color palette and color codes, and loads the upload
-#     page with the image and palette displayed.
-#     :return: rendered template of image page (known as 'image.html') with the image files and color codes passed in
-#     """
-#     fullname = None
-#     print("hello")
-#     if request.method == 'POST':
-#         print("posting something")
-#         print("requests", request.files)
-#
-#         if "image" in request.files:
-#             print("posted image")
-#             filename = photos.save(request.files["image"])
-#             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
-#             # crop_img.resize(fullname)
-#             print(fullname)
-#
-#         if "bounds" in request.form:
-#             text = request.form['img']
-#             bounds = request.form['bounds']
-#             fullname = str(text[22:])
-#             print("BOUNDS", bounds, fullname)
-#             # cropped_img_path = crop_img.crop_img(fullname, bounds)
-#
-#     palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
-#     # colors_path = crop_img.crop_palette(palettename)
-#     hex = ['#4e9559', '#18960b', '#d16903', '#f8d000']
-#     rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)']
-#     return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
+    # return render_template('webpage.html')
+    """
+    This function waits until the user uploads an image, grabs the color palette and color codes, and loads the upload
+    page with the image and palette displayed.
+    :return: rendered template of image page (known as 'image.html') with the image files and color codes passed in
+    """
+    fullname = None
+    print("hello")
+    if request.method == 'POST':
+        print("posting something")
+        print("requests", request.files)
+
+        if "image" in request.files:
+            print("posted image")
+            filename = photos.save(request.files["image"])
+            fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
+            crop_img.resize(fullname)
+            print(fullname)
+
+        if "bounds" in request.form:
+            text = request.form['img']
+            bounds = request.form['bounds']
+            fullname = str(text[22:])
+            print("BOUNDS", bounds, fullname)
+            cropped_img_path = crop_img.crop_img(fullname, bounds)
+
+    palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
+    colors_path = crop_img.crop_palette(palettename)
+    hex = ['#4e9559', '#18960b', '#d16903', '#f8d000']
+    rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)']
+    return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
 
 
 
