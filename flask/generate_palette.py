@@ -1,7 +1,7 @@
 """Uses k means to determine the dominate colors in an image. Displays the results in a color histogram and saves the
 RGB values in a csv file. """
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import utils
 import csv
 # import itertools
@@ -120,15 +120,15 @@ def get_hexs(clrs):
     return hexs
 
 
-def show_colors(bar, save=None):
-    # show our color bar
-    plt.figure()
-    plt.axis("off")
-    plt.imshow(bar)
-    if save:
-        plt.savefig(save)
-    plt.show()
-    plt.close()
+# def show_colors(bar, save=None):
+#     # show our color bar
+#     plt.figure()
+#     plt.axis("off")
+#     plt.imshow(bar)
+#     if save:
+#         plt.savefig(save)
+#     plt.show()
+#     plt.close()
 
 
 def cropped(image):
