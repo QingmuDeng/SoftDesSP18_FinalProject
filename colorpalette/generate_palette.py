@@ -3,11 +3,12 @@ RGB values in a csv file. """
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import utils
-import cv2
 import csv
 import itertools
 from colorsys import rgb_to_hsv, hsv_to_rgb
 from operator import itemgetter
+from PIL import Image
+import PIL
 import math
 import numpy as np
 
@@ -134,10 +135,11 @@ def cropped(image):
     # first resize image
     r = 100.0 / image.shape[1]
     dim = (100, int(image.shape[0] * r))
-    image = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
-
+    image = Image.fromarray(image)
+    image = image.resize(dim, resample=PIL.Image.LANCZOS)
     # iterate through the image width and height to create all possible crops
     images = []
+    image = np.array(image)
     height, width = image.shape[:2]
     delta_x = int(width / 4)
     delta_y = int(height / 4)
@@ -146,8 +148,6 @@ def cropped(image):
     for i in range(0, 4):
         for j in range(0, 4):
             temp_img = image[index_y:index_y + delta_y, index_x:index_x + delta_x]
-            # cv2.imshow("cropped", temp_img)
-            # cv2.waitKey(500)
             images.append(temp_img)
             index_y += delta_y
         index_y = 0
@@ -168,20 +168,15 @@ def cropped(image):
 
 
 def edit_image(image):
-    # TESTING: show our image
-    # cv2.imshow('image',image)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
-
     r = 100.0 / image.shape[1]
     dim = (100, int(image.shape[0] * r))
 
     # perform the actual resizing of the image and show it
-    resized = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
-    # cv2.imshow("resized", resized)
-    # cv2.waitKey(0)
+    image = Image.fromarray(image)
+    resized = image.resize(dim, resample=PIL.Image.BILINEAR)
 
     # reshape image to list of pixels and clamp values
+    resized = np.array(resized)
     image = resized.reshape((resized.shape[0] * resized.shape[1], 3))
     image2 = []
     for pix in image:

@@ -1,3 +1,4 @@
+from __future__ import print_function
 """
 app.py is used to generate the user interface aspect of our project. We will be integrating everything in this python file.
 Flask is the main library utilized in this python script. It basically renders our html templates without having us write
@@ -5,11 +6,19 @@ javascript.
 """
 # had to pip install Flask-Uploads
 # kill processes: ps -fA | grep python
+"""importing python files not in this directory"""
 import os
+import sys
+module_path = os.path.abspath(os.path.join('../colorpalette'))
+if module_path not in sys.path:
+    sys.path.append(module_path)
+
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
-# import crop_img
-# import cv2
+import crop_img
+import main
+import glob
+
 # import webbrowser
 # import threading
 
@@ -20,6 +29,8 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
 configure_uploads(app, photos)
 
+crop_count = 0
+
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -27,6 +38,8 @@ def home():
     This function is automatically called when the main function runs. It renders the home page html file
     :return: rendered html of home page (known as 'index.html')
     """
+    for infile in glob.glob('static/img/*'):
+        os.remove(infile)
     return render_template('index.html')
 
 
@@ -47,37 +60,42 @@ def about():
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload():
-    return render_template('webpage.html')
-    # """
-    # This function waits until the user uploads an image, grabs the color palette and color codes, and loads the upload
-    # page with the image and palette displayed.
-    # :return: rendered template of image page (known as 'image.html') with the image files and color codes passed in
-    # """
-    # fullname = None
-    # print("hello")
-    # if request.method == 'POST':
-    #     print("posting something")
-    #     print("requests", request.files)
-    #
-    #     if "image" in request.files:
-    #         print("posted image")
-    #         filename = photos.save(request.files["image"])
-    #         fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
-    #         crop_img.resize(fullname)
-    #         print(fullname)
-    #
-    #     if "bounds" in request.form:
-    #         text = request.form['img']
-    #         bounds = request.form['bounds']
-    #         fullname = str(text[22:])
-    #         print("BOUNDS", bounds, fullname)
-    #         cropped_img_path = crop_img.crop_img(fullname, bounds)
-    #
+    # return render_template('webpage.html')
+    """
+    This function waits until the user uploads an image, grabs the color palette and color codes, and loads the upload
+    page with the image and palette displayed.
+    :return: rendered template of image page (known as 'image.html') with the image files and color codes passed in
+    """
+    global crop_count
+    fullname = None
+    print("hello")
+    if request.method == 'POST':
+        print("posting something")
+        print("requests", request.files)
+
+        if "image" in request.files:
+            print("posted image")
+            filename = photos.save(request.files["image"])
+            fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
+            crop_img.resize(fullname)
+            print(fullname)
+            palettename, rgb, hex = main.generate(fullname)
+
+        if "bounds" in request.form:
+            crop_count += 1
+            text = request.form['img']
+            bounds = request.form['bounds']
+            fullname = str(text[22:])
+            print("BOUNDS", bounds, fullname)
+            croppedname = crop_img.crop_img(fullname, bounds, crop_count)
+            palettename, rgb, hex = main.generate(croppedname)
+
     # palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
-    # colors_path = crop_img.crop_palette(palettename)
-    # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000']
-    # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)']
-    # return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
+    print(palettename)
+    colors_path = crop_img.crop_palette(palettename)
+    # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
+    # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
+    return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
 
 
 

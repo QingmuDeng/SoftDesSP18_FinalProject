@@ -1,6 +1,7 @@
 # import the necessary packages
 import numpy as np
-import cv2
+# import cv2
+from PIL import ImageDraw, Image
 
 
 def centroid_histogram(clt):
@@ -34,17 +35,18 @@ def plot_colors(hist, centroids):
         bar (np.arrary/image): a bar graph that display the centroid colors based on
                                the distribution in histogram
     """
-    bar = np.zeros((50, 300, 3), dtype="uint8")
+    bar = np.zeros((100, 600, 3), dtype="uint8")
     startX = 0
 
     # loop over the percentage of each cluster and the color of
     # each cluster
+    bar = Image.fromarray(bar)
+    bar2 = ImageDraw.Draw(bar)
     for (percent, color) in zip(hist, centroids):
         # plot the relative percentage of each cluster
-        endX = startX + (percent * 300)
-        cv2.rectangle(bar, (int(startX), 0), (int(endX), 50),
-                      color.astype("uint8").tolist(), -1)
+        endX = startX + (percent * 600)
+        bar2.rectangle([int(startX), 0, int(endX), 100], fill=tuple(color.astype("uint8")), outline=tuple(color.astype("uint8")))
+        # cv2.rectangle(bar, (int(startX), 0), (int(endX), 50),
+        #               color.astype("uint8").tolist(), -1)
         startX = endX
-
-    # return the bar chart
     return bar

@@ -2,19 +2,16 @@ from generate_palette import *
 import colorwheel
 import utils
 import webcolors
+from PIL import Image
 
-palette = []
-websafe = []
-final_palette = []
-
-if __name__ == "__main__":
-    user_input = input("Select your palette type (1 = Default, 2 = Complementary, 3 = Analogous):")
-    safe = input("Make palette web safe? [y/n]:")
-
-    # load image and convert from BGR to RBG
-    image_path = 'src_imgs/test6.jpg'
-    orig_image = cv2.imread(image_path)
-    orig_image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
+def generate(img_path, user_input=1):
+    palette = []
+    websafe = []
+    final_palette = []
+    # user_input = input("Select your palette type (1 = Default, 2 = Complementary, 3 = Analogous):")
+    # safe = input("Make palette web safe? [y/n]:")
+    safe = 'n'
+    orig_image = np.array(Image.open(img_path))
     image = edit_image(orig_image)
     if int(user_input) == 2:
         # find top 5 dominant colors of entire image
@@ -35,7 +32,7 @@ if __name__ == "__main__":
         palette = list(colorwheel.analogous(first))
 
 
-    else:
+    elif user_input == 1:
         palette = default_palette(image, orig_image)
         print(palette)
 
@@ -49,7 +46,15 @@ if __name__ == "__main__":
     else:
         final_palette.extend(palette)
     # final_palette = map(list, final_palette)
+    hexs = get_hexs(final_palette)
     final_palette2 = np.array(final_palette)
     hist = [1.0 / len(final_palette2)] * len(final_palette2)
     bar = utils.plot_colors(hist, final_palette2)
-    show_colors(bar)
+    # show_colors(bar)
+    # bar = Image.fromarray(bar)
+    new_path = img_path[0:-4]+'_p.png'
+    bar.save(new_path)
+    return new_path, final_palette, hexs
+
+if __name__ == "__main__":
+    main()

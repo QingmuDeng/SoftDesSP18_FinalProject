@@ -1,4 +1,5 @@
-import cv2
+import PIL
+from PIL import Image
 import numpy as np
 import random
 import generate_palette as gp
@@ -117,8 +118,6 @@ def get_complement(color):
     return (newh, s, v)
 
 
-
-
 def analogous(color):
     """
     Returns the HSV values of all of the 4 analogous complements. NOTE THAT H VALUES ARE 0-180
@@ -152,17 +151,6 @@ def midcolor(color):
     mids = random.randint(75,115)
     midv = random.randint(100,150)
     return (midh, mids, midv)
-
-
-def hsvrgbcv(color):
-    """
-    Takes HSV values and converts to RGB tuple for OpenCV
-    :param color:
-    :return:
-    """
-    rgb = cv2.cvtColor(np.uint8([[list(color)]]), cv2.COLOR_HSV2RGB)
-    rgbcolor = rgb[0][0][0], rgb[0][0][1], rgb[0][0][2]
-    return rgbcolor
 
 
 def complement_accents(color):
@@ -199,12 +187,6 @@ def complement(color):
     return gp.get_rgbs([domacc, dominant, mid, complement, compacc])
 
 
-def visualize(hsv, colorstr):
-    canvas = np.zeros((100, 100, 3), np.uint8)
-    canvas[:, :] = hsv
-    canvas = cv2.cvtColor(canvas, cv2.COLOR_HSV2BGR)
-    cv2.imshow(colorstr, canvas)
-
 def make_websafe(color):
     # lets populate some names into spatial name database
     hexnames = webcolors.css3_hex_to_names
@@ -224,28 +206,3 @@ def make_websafe(color):
 
         # return a css3 compatible color in hex
     return webcolors.name_to_hex(names[index], spec=u'css3')
-
-#TODO: generate 3 midcolors to go gradient between the two colors or generate two accent colors and one midtone color
-# ogH = random.randint(0,180)
-# ogS = random.randint(0,255)
-# ogV = random.randint(0,255)
-# comp = complement((ogH, ogS, ogV))
-# analog = analogous((int(ogH/2), ogS, ogV))
-#
-# print(ogH, ogS, ogV)
-# while True:
-#     visualize(analog[0], 'Lacc')
-#     visualize(analog[1], 'Ltra')
-#     visualize(analog[2], 'dom')
-#     visualize(analog[3], 'Rtra')
-#     visualize(analog[4], 'Racc')
-#
-#     #visualize(comp[0], 'DAcc')
-#     #visualize(comp[1], 'D')
-#     #visualize(comp[2], 'mid')
-#     #visualize(comp[3], 'C')
-#     #visualize(comp[4], 'CAcc')
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
-#
-# cv2.destroyAllWindows()
