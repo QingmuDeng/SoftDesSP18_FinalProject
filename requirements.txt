@@ -1,6 +1,6 @@
 Flask
 flask_uploads
-PIL
+Pillow
 numpy
 webcolors
 random
