@@ -6,7 +6,7 @@ import utils
 import csv
 # import itertools
 from colorsys import rgb_to_hsv, hsv_to_rgb
-# from operator import itemgetter
+from operator import itemgetter
 from PIL import Image
 import PIL
 import math

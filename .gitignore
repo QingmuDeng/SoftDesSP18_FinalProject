@@ -5,7 +5,7 @@ colorpalette/dataset/scrape/
 colorpalette/output/
 colorpalette/src_imgs/
 colorpalette/vctr.py
+CNN/dataset/
 .idea/
 flask/.idea/
 color_palette/.idea/
-CNN/dataset/

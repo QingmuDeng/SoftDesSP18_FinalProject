@@ -136,19 +136,19 @@
     </noscript>
     <script>
         function load() {
-            return "http://127.0.0.1:5000/";
+            return "/";
         }
 
         function load2() {
-            return "http://127.0.0.1:5000/webpage";
+            return "/webpage";
         }
 
         function load3() {
-            return "http://127.0.0.1:5000/search";
+            return "/search";
         }
 
         function load4() {
-            return "http://127.0.0.1:5000/about";
+            return "/about";
         }
 
         function copyToClipboard(element) {
@@ -206,6 +206,15 @@
                 </form>
                 {% if filename2 %}
                 <div class="caption-style-1" style="padding: 0; margin: 0">
+                  <li><img src="{{ filename2[4] }}" alt="">
+                      <div class="caption">
+                          <div class="blur" onclick="copyToClipboard('#hex4')"></div>
+                          <div class="caption-text">
+                              <center id="hex4">{{hex[4]}}</center>
+                              <center>{{rgb[4]}}</center>
+                          </div>
+                      </div>
+                  </li>
                     <li><img src="{{ filename2[3] }}" alt="">
                         <div class="caption">
                             <div class="blur" onclick="copyToClipboard('#hex3')"></div>
@@ -244,7 +253,7 @@
                     </li>
                 </div>
                 <br>
-                <a href="{{ filename2[4] }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
+                <a href="{{ filename2[5] }}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
                     Palette</a>
                 {% else %}
                 <h1>please re-submit image</h1>

@@ -1,0 +1,7 @@
+Flask
+flask_uploads
+Pillow
+numpy
+webcolors
+scipy
+sklearn
