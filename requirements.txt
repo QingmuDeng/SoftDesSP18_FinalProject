@@ -6,6 +6,3 @@ webcolors
 scipy
 sklearn
 matplotlib
-csv
-colorsys
-math
