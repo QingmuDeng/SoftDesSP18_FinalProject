@@ -1,12 +1,12 @@
 """Uses k means to determine the dominate colors in an image. Displays the results in a color histogram and saves the
 RGB values in a csv file. """
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import utils
 import csv
 # import itertools
 from colorsys import rgb_to_hsv, hsv_to_rgb
-from operator import itemgetter
+# from operator import itemgetter
 from PIL import Image
 import PIL
 import math
