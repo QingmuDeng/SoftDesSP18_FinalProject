@@ -1,4 +1,3 @@
-from __future__ import print_function
 """
 app.py is used to generate the user interface aspect of our project. We will be integrating everything in this python file.
 Flask is the main library utilized in this python script. It basically renders our html templates without having us write
@@ -9,9 +8,9 @@ javascript.
 """importing python files not in this directory"""
 import os
 import sys
-module_path = os.path.abspath(os.path.join('../colorpalette'))
-if module_path not in sys.path:
-    sys.path.append(module_path)
+# module_path = os.path.abspath(os.path.join('../colorpalette'))
+# if module_path not in sys.path:
+#     sys.path.append(module_path)
 
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
