@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import utils
 import csv
-import itertools
+# import itertools
 from colorsys import rgb_to_hsv, hsv_to_rgb
 from operator import itemgetter
 from PIL import Image

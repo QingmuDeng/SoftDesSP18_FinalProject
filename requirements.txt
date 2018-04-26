@@ -1,2 +1,12 @@
 Flask
 flask_uploads
+PIL
+numpy
+webcolors
+random
+scipy
+sklearn
+matplotlib
+csv
+colorsys
+math
