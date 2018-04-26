@@ -120,15 +120,15 @@ def get_hexs(clrs):
     return hexs
 
 
-def show_colors(bar, save=None):
-    # show our color bar
-    plt.figure()
-    plt.axis("off")
-    plt.imshow(bar)
-    if save:
-        plt.savefig(save)
-    plt.show()
-    plt.close()
+# def show_colors(bar, save=None):
+#     # show our color bar
+#     plt.figure()
+#     plt.axis("off")
+#     plt.imshow(bar)
+#     if save:
+#         plt.savefig(save)
+#     plt.show()
+#     plt.close()
 
 
 def cropped(image):
