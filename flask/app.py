@@ -18,7 +18,7 @@ import flask
 import crop_img
 import main
 import glob
-from config import MEDIA_FOLDER
+# from config import MEDIA_FOLDER
 # from nocache import nocache
 # import json, boto3
 
@@ -29,7 +29,7 @@ app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOADED_PHOTOS_DEST'] = '../static/img'
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
 configure_uploads(app, photos)
 
 crop_count = 0

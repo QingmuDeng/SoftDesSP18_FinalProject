@@ -5,4 +5,3 @@ numpy
 webcolors
 scipy
 sklearn
-config
