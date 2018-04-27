@@ -56,7 +56,7 @@ def resize(image_path):
         # perform the actual resizing of the image
         image = Image.fromarray(image)
         image = image.resize(dim, resample=PIL.Image.LANCZOS)
-        image.save(image_path)
+        image.save('static/img/erza.jpg')
 
 def crop_img(image_path, bounds, count):
     """ Crops an image based on the bounds that the user selects from the

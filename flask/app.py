@@ -17,6 +17,8 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES
 import crop_img
 import main
 import glob
+# from nocache import nocache
+# import json, boto3
 
 # import webbrowser
 # import threading
@@ -32,13 +34,14 @@ crop_count = 0
 
 
 @app.route("/", methods=['GET', 'POST'])
+@nocache
 def home():
     """
     This function is automatically called when the main function runs. It renders the home page html file
     :return: rendered html of home page (known as 'index.html')
     """
-    for infile in glob.glob('static/img/*'):
-        os.remove(infile)
+    # for infile in glob.glob('static/img/*'):
+    #     os.remove(infile)
     return render_template('index.html')
 
 
@@ -58,6 +61,7 @@ def about():
 
 
 @app.route("/upload", methods=['GET', 'POST'])
+@nocache
 def upload():
     # return render_template('webpage.html')
     """
@@ -73,6 +77,7 @@ def upload():
         print("requests", request.files)
 
         if "image" in request.files:
+            # S3_BUCKET = os.environ.get('S3_BUCKET')
             print("posted image")
             filename = photos.save(request.files["image"])
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
@@ -95,7 +100,6 @@ def upload():
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
     return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
-
 
 
 def allowed_file(filename):
