@@ -8,7 +8,7 @@ javascript.
 """importing python files not in this directory"""
 import os
 import sys
-# module_path = os.path.abspath(os.path.join('../colorpalette'))
+# module_path = os.path.abspath(os.path.join('colorpalette'))
 # if module_path not in sys.path:
 #     sys.path.append(module_path)
 
