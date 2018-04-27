@@ -197,7 +197,7 @@
                 <div class="inner" style="padding: 1rem 1rem">
                     <canvas id="imageCanvas" style="border:0px solid #000000; opacity:1;">
                     </canvas>
-                    <img id="fileInput" src="{{ url_for('static', filename=filename1) }}" name="file" onload="handleFileSelect()">
+                    <img id="fileInput" src="{{ url_for(filename=filename1) }}" name="file" onload="handleFileSelect()">
                 </div>
                 <form name="update" id="update" method=POST>
                     <button class="btn" onclick="getBounds()">Update</button>

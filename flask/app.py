@@ -20,7 +20,7 @@ import main
 import glob
 # from config import MEDIA_FOLDER
 # from nocache import nocache
-# import json, boto3
+import json, boto3
 
 # import webbrowser
 # import threading
@@ -82,7 +82,7 @@ def upload():
         print("requests", request.files)
 
         if "image" in request.files:
-            # S3_BUCKET = os.environ.get('S3_BUCKET')
+            S3_BUCKET = os.environ.get('S3_BUCKET')
             print("posted image")
             filename = photos.save(request.files["image"])
             print("FILENAME", filename)
@@ -91,6 +91,17 @@ def upload():
             crop_img.resize(fullname)
             print("NAME", fullname)
             palettename, rgb, hex = main.generate(fullname)
+            s3 = boto3.client('s3')
+            presigned_post = s3.generate_presigned_post(
+                Bucket = S3_BUCKET,
+                Key = request.files["image"],
+                Fields = {"acl": "public-read", "Content-Type": "jpg"},
+                Conditions = [
+                  {"acl": "public-read"},
+                  {"Content-Type": "jpg"}
+                ],
+                ExpiresIn = 3600
+              )
 
         if "bounds" in request.form:
             crop_count += 1
@@ -108,7 +119,7 @@ def upload():
     colors_path = crop_img.crop_palette(palettename)
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
-    return render_template('image.html', filename1=fullname2, filename2=colors_path, hex=hex, rgb=rgb)
+    return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, request.files["image"]), filename2=colors_path, hex=hex, rgb=rgb)
 
 
 def allowed_file(filename):
