@@ -21,7 +21,7 @@ import glob
 # import webbrowser
 # import threading
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
