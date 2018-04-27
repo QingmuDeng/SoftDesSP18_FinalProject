@@ -8,7 +8,7 @@ javascript.
 """importing python files not in this directory"""
 import os
 import sys
-# module_path = os.path.abspath(os.path.join('../colorpalette'))
+# module_path = os.path.abspath(os.path.join('colorpalette'))
 # if module_path not in sys.path:
 #     sys.path.append(module_path)
 
@@ -29,7 +29,7 @@ app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
+app.config['UPLOADED_PHOTOS_DEST'] = '../static/img'
 configure_uploads(app, photos)
 
 crop_count = 0
@@ -87,7 +87,7 @@ def upload():
             filename = photos.save(request.files["image"])
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
             crop_img.resize(fullname)
-            print(fullname)
+            print("NAME", fullname)
             palettename, rgb, hex = main.generate(fullname)
 
         if "bounds" in request.form:

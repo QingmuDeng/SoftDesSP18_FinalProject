@@ -30,8 +30,8 @@ def crop_palette(image_path):
     height = image.shape[0]
     x_index = 0
     single_color=[]
-    print(width)
-    print(height)
+    # print(width)
+    # print(height)
 
     for i in range(5):
         color= image[0:height, (int)(x_index):(int)(x_index + width)]
@@ -40,6 +40,7 @@ def crop_palette(image_path):
         img.save(image_path[0:-4]+"_"+str(i)+".png")
         single_color.append(image_path[0:-4]+"_"+str(i)+".png")
     single_color.append(image_path)
+    print("PATHS", single_color)
     return single_color
 
 
