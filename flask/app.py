@@ -29,7 +29,7 @@ app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
+app.config['UPLOADED_PHOTOS_DEST'] = 'img/'
 configure_uploads(app, photos)
 
 crop_count = 0
