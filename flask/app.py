@@ -14,9 +14,11 @@ import sys
 
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
+import flask
 import crop_img
 import main
 import glob
+from config import MEDIA_FOLDER
 # from nocache import nocache
 # import json, boto3
 
@@ -34,7 +36,6 @@ crop_count = 0
 
 
 @app.route("/", methods=['GET', 'POST'])
-@nocache
 def home():
     """
     This function is automatically called when the main function runs. It renders the home page html file
@@ -43,6 +44,11 @@ def home():
     # for infile in glob.glob('static/img/*'):
     #     os.remove(infile)
     return render_template('index.html')
+
+
+@app.route('/upload/<path:filename>')
+def download_file(filename):
+    return flask.send_from_directory(MEDIA_FOLDER, filename, as_attachment=True)
 
 
 @app.route("/webpage", methods=['GET', 'POST'])
@@ -61,7 +67,6 @@ def about():
 
 
 @app.route("/upload", methods=['GET', 'POST'])
-@nocache
 def upload():
     # return render_template('webpage.html')
     """
