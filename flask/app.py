@@ -21,7 +21,7 @@ import glob
 # import webbrowser
 # import threading
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
@@ -37,8 +37,8 @@ def home():
     This function is automatically called when the main function runs. It renders the home page html file
     :return: rendered html of home page (known as 'index.html')
     """
-    # for infile in glob.glob('static/img/*'):
-    #     os.remove(infile)
+    for infile in glob.glob('static/img/*'):
+        os.remove(infile)
     return render_template('index.html')
 
 
