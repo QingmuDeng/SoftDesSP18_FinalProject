@@ -82,7 +82,7 @@ def upload():
         print("requests", request.files)
 
         if "image" in request.files:
-            S3_BUCKET = os.environ.get('S3_BUCKET')
+            S3_BUCKET = os.environ.get('S3_BUCKET_NAME')
             print("posted image")
             filename = photos.save(request.files["image"])
             print("FILENAME", filename)
