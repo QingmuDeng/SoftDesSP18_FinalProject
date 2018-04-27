@@ -90,6 +90,7 @@ def upload():
             fullname2 = 'img/'+filename
             crop_img.resize(fullname)
             print("NAME", fullname)
+            print("NEW NAME", request.files["image"])
             palettename, rgb, hex = main.generate(fullname)
             s3 = boto3.client('s3')
             presigned_post = s3.generate_presigned_post(
