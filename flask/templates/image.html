@@ -197,7 +197,7 @@
                 <div class="inner" style="padding: 1rem 1rem">
                     <canvas id="imageCanvas" style="border:0px solid #000000; opacity:1;">
                     </canvas>
-                    <img id="fileInput" src="{{ filename1 }}" name="file" onload="handleFileSelect()">
+                    <img id="fileInput" src=".."+"{{ filename1 }}" name="file" onload="handleFileSelect()">
                 </div>
                 <form name="update" id="update" method=POST>
                     <button class="btn" onclick="getBounds()">Update</button>
@@ -206,7 +206,7 @@
                 </form>
                 {% if filename2 %}
                 <div class="caption-style-1" style="padding: 0; margin: 0">
-                  <li><img src="{{ filename2[4] }}" alt="">
+                  <li><img src=".."+"{{ filename2[4] }}" alt="">
                       <div class="caption">
                           <div class="blur" onclick="copyToClipboard('#hex4')"></div>
                           <div class="caption-text">
