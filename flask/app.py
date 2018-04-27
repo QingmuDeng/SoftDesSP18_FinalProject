@@ -37,8 +37,8 @@ def home():
     This function is automatically called when the main function runs. It renders the home page html file
     :return: rendered html of home page (known as 'index.html')
     """
-    for infile in glob.glob('static/img/*'):
-        os.remove(infile)
+    # for infile in glob.glob('static/img/*'):
+    #     os.remove(infile)
     return render_template('index.html')
 
 
