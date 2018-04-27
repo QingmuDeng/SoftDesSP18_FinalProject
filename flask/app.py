@@ -90,12 +90,11 @@ def upload():
             fullname2 = 'img/'+filename
             crop_img.resize(fullname)
             print("NAME", fullname)
-            print("NEW NAME", request.files["image"])
             palettename, rgb, hex = main.generate(fullname)
             s3 = boto3.client('s3')
             presigned_post = s3.generate_presigned_post(
                 Bucket = S3_BUCKET,
-                Key = request.files["image"],
+                Key = filename,
                 Fields = {"acl": "public-read", "Content-Type": "jpg"},
                 Conditions = [
                   {"acl": "public-read"},
@@ -120,7 +119,7 @@ def upload():
     colors_path = crop_img.crop_palette(palettename)
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
-    return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, request.files["image"]), filename2=colors_path, hex=hex, rgb=rgb)
+    return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
 
 
 def allowed_file(filename):
