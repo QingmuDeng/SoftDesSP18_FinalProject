@@ -29,7 +29,7 @@ app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOADED_PHOTOS_DEST'] = 'img/'
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/img/'
 configure_uploads(app, photos)
 
 crop_count = 0
@@ -85,7 +85,9 @@ def upload():
             # S3_BUCKET = os.environ.get('S3_BUCKET')
             print("posted image")
             filename = photos.save(request.files["image"])
+            print("FILENAME", filename)
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
+            fullname2 = 'img/'+filename
             crop_img.resize(fullname)
             print("NAME", fullname)
             palettename, rgb, hex = main.generate(fullname)
@@ -95,6 +97,8 @@ def upload():
             text = request.form['img']
             bounds = request.form['bounds']
             fullname = str(text[22:])
+            fullname2 = fullname[7:]
+            print("THE NAME", fullname2)
             print("BOUNDS", bounds, fullname)
             croppedname = crop_img.crop_img(fullname, bounds, crop_count)
             palettename, rgb, hex = main.generate(croppedname)
@@ -104,7 +108,7 @@ def upload():
     colors_path = crop_img.crop_palette(palettename)
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
-    return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
+    return render_template('image.html', filename1=fullname2, filename2=colors_path, hex=hex, rgb=rgb)
 
 
 def allowed_file(filename):
