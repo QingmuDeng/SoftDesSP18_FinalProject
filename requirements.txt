@@ -6,3 +6,4 @@ webcolors
 scipy
 sklearn
 boto3
+boto
