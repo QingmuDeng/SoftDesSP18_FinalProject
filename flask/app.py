@@ -91,17 +91,22 @@ def upload():
             crop_img.resize(fullname)
             print("NAME", fullname)
             palettename, rgb, hex = main.generate(fullname)
-            s3 = boto3.client('s3')
-            presigned_post = s3.generate_presigned_post(
-                Bucket = S3_BUCKET,
-                Key = filename,
-                Fields = {"acl": "public-read", "Content-Type": "jpg"},
-                Conditions = [
-                  {"acl": "public-read"},
-                  {"Content-Type": "jpg"}
-                ],
-                ExpiresIn = 3600
-              )
+            s3 = boto.connect_s3()
+            bucket = s3.create_bucket('paletteful')
+            key = bucket.new_key(filename)
+            key.set_contents_from_file(request.files["image"], headers=None, replace=True, cb=None, num_cb=10, policy=None, md5=None)
+
+            # s3 = boto3.client('s3')
+            # presigned_post = s3.generate_presigned_post(
+            #     Bucket = S3_BUCKET,
+            #     Key = filename,
+            #     Fields = {"acl": "public-read", "Content-Type": "jpg"},
+            #     Conditions = [
+            #       {"acl": "public-read"},
+            #       {"Content-Type": "jpg"}
+            #     ],
+            #     ExpiresIn = 3600
+            #   )
 
         if "bounds" in request.form:
             crop_count += 1
