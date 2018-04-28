@@ -89,13 +89,25 @@ def upload():
             print("FILENAME", filename)
             fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
             fullname2 = 'img/'+filename
-            crop_img.resize(fullname)
+            # crop_img.resize(fullname)
             print("NAME", fullname)
-            palettename, rgb, hex = main.generate(fullname)
-            s3 = boto.connect_s3()
-            bucket = s3.create_bucket('paletteful')
-            key = bucket.new_key(filename)
-            key.set_contents_from_file(request.files["image"], headers=None, replace=True, cb=None, num_cb=10, policy=None, md5=None)
+            # palettename, rgb, hex = main.generate(fullname)
+            # s3 = boto.connect_s3()
+            # bucket = s3.create_bucket('paletteful')
+            # key = bucket.new_key(filename)
+            # key.set_contents_from_file(request.files["image"], headers=None, replace=True, cb=None, num_cb=10, policy=None, md5=None)
+            # connect to s3
+			s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'))
+
+			# open s3 bucket, create new Key/file
+			# set the mimetype, content and access control
+			b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME')) # bucket name defined in .env
+
+			k = b.new_key(b) # create a new Key (like a file)
+			k.key = filename # set filename
+			k.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+			k.set_contents_from_string(request.files["image"].stream.read()) # file contents to be added
+			k.set_acl('public-read') # make publicly readable
 
             # s3 = boto3.client('s3')
             # presigned_post = s3.generate_presigned_post(
@@ -121,11 +133,12 @@ def upload():
             palettename, rgb, hex = main.generate(croppedname)
 
     # palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
-    print(palettename)
-    colors_path = crop_img.crop_palette(palettename)
+    # print(palettename)
+    # colors_path = crop_img.crop_palette(palettename)
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
-    return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
+    # return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
+    return render_template('image.html', filename1=filename)
 
 
 def allowed_file(filename):

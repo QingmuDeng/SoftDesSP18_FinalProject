@@ -197,14 +197,14 @@
                 <div class="inner" style="padding: 1rem 1rem">
                     <canvas id="imageCanvas" style="border:0px solid #000000; opacity:1;">
                     </canvas>
-                    <img id="fileInput" src="{{ filename1 }}" name="file" onload="handleFileSelect()">
+                    <img id="fileInput" src="https://s3.amazonaws.com/paletteful/{{filename1}}" name="file" onload="handleFileSelect()">
                 </div>
                 <form name="update" id="update" method=POST>
                     <button class="btn" onclick="getBounds()">Update</button>
                     <input type="text" name="bounds" id="bounds" hidden style="opacity: 0; margin: 0; padding: 0">
                     <input type="text" name="img" id="img" hidden style="opacity: 0; display: block">
                 </form>
-                {% if filename2 %}
+                <!-- {% if filename2 %}
                 <div class="caption-style-1" style="padding: 0; margin: 0">
                   <li><img src="{{ filename2[4] }}" alt="">
                       <div class="caption">
@@ -260,7 +260,7 @@
                 {% endif %}
                 {% else %}
                 <h1>please re-submit image</h1>
-                {% endif %}
+                {% endif %} -->
             </div>
         </div>
     </header>
