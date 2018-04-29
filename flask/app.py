@@ -100,6 +100,7 @@ def upload():
             s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'))
 			# open s3 bucket, create new Key/file
 			# set the mimetype, content and access control
+            print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
             b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME')) # bucket name defined in .env
             k = b.new_key(b) # create a new Key (like a file)
             k.key = filename # set filename
