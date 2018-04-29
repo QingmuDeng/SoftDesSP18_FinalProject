@@ -85,11 +85,12 @@ def upload():
         if "image" in request.files:
             S3_BUCKET = os.environ.get('S3_BUCKET_NAME')
             print("posted image")
-            filename = photos.save(request.files["image"])
-            print("FILENAME", filename)
-            fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
-            fullname2 = 'img/'+filename
-            # crop_img.resize(fullname)
+            # filename = photos.save(request.files["image"])
+            filename = request.files["image"].filename
+            # print("FILENAME", filename)
+            # fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
+            # fullname2 = 'img/'+filename
+            # # crop_img.resize(fullname)
             print("NAME", fullname)
             # palettename, rgb, hex = main.generate(fullname)
             # s3 = boto.connect_s3()
