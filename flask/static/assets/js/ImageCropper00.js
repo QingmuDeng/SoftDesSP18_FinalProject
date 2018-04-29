@@ -660,6 +660,8 @@ var ImageCropper = (function () {
         if (fileType == 'png' || fileType == 'jpg') {
             this.fileType = fileType;
         }
+        console.log(this.fileType);
+        console.log(img.src);
         this.srcImage = img;
         this.updateClampBounds();
         var sourceAspect = this.srcImage.height / this.srcImage.width;
