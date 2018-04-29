@@ -97,7 +97,7 @@ def upload():
             # key = bucket.new_key(filename)
             # key.set_contents_from_file(request.files["image"], headers=None, replace=True, cb=None, num_cb=10, policy=None, md5=None)
             # connect to s3
-            REGION_HOST = 's3.us-east-1.amazonaws.com'
+            REGION_HOST = 's3.us-east-2.amazonaws.com'
             s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
 			# open s3 bucket, create new Key/file
 			# set the mimetype, content and access control
