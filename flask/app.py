@@ -20,7 +20,7 @@ import main
 import glob
 # from config import MEDIA_FOLDER
 # from nocache import nocache
-import json, boto3
+# import json, boto3
 import boto
 
 # import webbrowser
@@ -100,13 +100,12 @@ def upload():
             s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'))
 			# open s3 bucket, create new Key/file
 			# set the mimetype, content and access control
-			b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME')) # bucket name defined in .env
-
-			k = b.new_key(b) # create a new Key (like a file)
-			k.key = filename # set filename
-			k.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
-			k.set_contents_from_string(request.files["image"].stream.read()) # file contents to be added
-			k.set_acl('public-read') # make publicly readable
+            b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME')) # bucket name defined in .env
+            k = b.new_key(b) # create a new Key (like a file)
+            k.key = filename # set filename
+            k.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+            k.set_contents_from_string(request.files["image"].stream.read()) # file contents to be added
+            k.set_acl('public-read') # make publicly readable
 
             # s3 = boto3.client('s3')
             # presigned_post = s3.generate_presigned_post(
