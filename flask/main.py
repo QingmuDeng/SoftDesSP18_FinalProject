@@ -4,14 +4,14 @@ import utils
 import webcolors
 from PIL import Image
 
-def generate(img_path, user_input=1):
+def generate(input, user_input=1):
     palette = []
     websafe = []
     final_palette = []
     # user_input = input("Select your palette type (1 = Default, 2 = Complementary, 3 = Analogous):")
     # safe = input("Make palette web safe? [y/n]:")
     safe = 'n'
-    orig_image = np.array(Image.open(img_path))
+    orig_image = np.array(input)
     image = edit_image(orig_image)
     if int(user_input) == 2:
         # find top 5 dominant colors of entire image
@@ -20,7 +20,7 @@ def generate(img_path, user_input=1):
         # get the top 1 dominant color from palette1
         first = palette1.pop(max(palette1))
         palette = list(colorwheel.complement(first))
-        print(palette)
+        print("PALETTE", palette)
 
 
     elif int(user_input) == 3:
@@ -34,7 +34,7 @@ def generate(img_path, user_input=1):
 
     elif user_input == 1:
         palette = default_palette(image, orig_image)
-        print(palette)
+        print("PALETTE", palette)
 
     #converts colors to websafe
     if safe=="y":
@@ -52,9 +52,11 @@ def generate(img_path, user_input=1):
     bar = utils.plot_colors(hist, final_palette2)
     # show_colors(bar)
     # bar = Image.fromarray(bar)
-    new_path = img_path[0:-4]+'_p.png'
-    bar.save(new_path)
-    return new_path, final_palette, hexs
+    print("BAR TYPE", type(bar))
+
+    # new_path = img_path[0:-4]+'_p.png'
+    # bar.save(new_path)
+    return bar, final_palette, hexs
 
 if __name__ == "__main__":
     main()

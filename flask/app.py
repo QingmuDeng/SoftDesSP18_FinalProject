@@ -91,18 +91,8 @@ def upload():
         if "image" in request.files:
             S3_BUCKET = os.environ.get('S3_BUCKET_NAME')
             # print("posted image")
-            # filename = photos.save(request.files["image"])
             filename = request.files["image"].filename
             print("FILENAME", filename)
-            # fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
-            # fullname2 = 'img/'+filename
-            # # crop_img.resize(fullname)
-            # print("NAME", fullname)
-            # palettename, rgb, hex = main.generate(fullname)
-            # s3 = boto.connect_s3()
-            # bucket = s3.create_bucket('paletteful')
-            # key = bucket.new_key(filename)
-            # key.set_contents_from_file(request.files["image"], headers=None, replace=True, cb=None, num_cb=10, policy=None, md5=None)
             # connect to s3
             REGION_HOST = 's3.us-east-2.amazonaws.com'
             s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
@@ -123,12 +113,9 @@ def upload():
             print("IMAGE", type(img))
             resized_img = crop_img.resize(img)
             print("RESIZED IMAGE", type(resized_img))
-            # k = b.new_key(b)  # create a new Key (like a file)
-            # k.key = filename  # set filename
-            # k.set_metadata("Content-Type", request.files["image"].mimetype)  # identify MIME type
-            # # HELP!!! HERE!!!
-            # k.set_contents_from_string()  # file contents to be added
-            # k.set_acl('public-read')  # make publicly readable
+
+            palette, rgb, hex = main.generate(img)
+
             extension = filename.split(".")[-1]
             if extension in ['jpeg', 'jpg']:
                 format = 'JPEG'

@@ -189,7 +189,7 @@ def default_palette(image, orig_image):
     """
 
     :param image_path: The image that you want to create color palette from
-    :return: list of 5 HSV values to plot for the palette
+    :return: list of 5 RGB values to plot for the palette
     """
 
     # stores the rgb and hsv info for dominant and accent colors

@@ -18,29 +18,28 @@ def crop_surrounding_whitespace(image):
         return image
     return image.crop(bbox)
 
-def crop_palette(image_path):
+def crop_palette(image):
     """Crop a palette into the five sub colors and save the
     cropped colors in separate image files
 
-    :param image_path: path of palette image_path
-    :rtype: array of image paths belonging to the cropped colors
+    :param image: Image object of generated palette
+    :rtype: array of Image objects belonging to the cropped colors
     """
-    image= np.array(Image.open(image_path))
-    width = image.shape[1]/5.0
-    height = image.shape[0]
+    image2 = np.array(image)
+    width = image2.shape[1]/5.0
+    height = image2.shape[0]
     x_index = 0
-    single_color=[]
+    single_colors = []
     # print(width)
     # print(height)
 
     for i in range(5):
-        color= image[0:height, (int)(x_index):(int)(x_index + width)]
+        color= image2[0:height, (int)(x_index):(int)(x_index + width)]
         x_index+= width
         img = Image.fromarray(color)
-        img.save(image_path[0:-4]+"_"+str(i)+".png")
-        single_color.append(image_path[0:-4]+"_"+str(i)+".png")
-    single_color.append(image_path)
-    print("PATHS", single_color)
+        single_colors.append(img)
+    single_colors.append(image)
+    # print("PATHS", single_color)
     return single_color
 
 
