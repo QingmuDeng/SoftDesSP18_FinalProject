@@ -121,12 +121,25 @@ def upload():
             img = Image.open(BytesIO(response.content))
             print("IMAGE", type(img))
             resized_img = crop_img.resize(img)
-            k = b.new_key(b)  # create a new Key (like a file)
-            k.key = filename  # set filename
-            k.set_metadata("Content-Type", request.files["image"].mimetype)  # identify MIME type
-            # HELP!!! HERE!!!
-            k.set_contents_from_string()  # file contents to be added
-            k.set_acl('public-read')  # make publicly readable
+            # k = b.new_key(b)  # create a new Key (like a file)
+            # k.key = filename  # set filename
+            # k.set_metadata("Content-Type", request.files["image"].mimetype)  # identify MIME type
+            # # HELP!!! HERE!!!
+            # k.set_contents_from_string()  # file contents to be added
+            # k.set_acl('public-read')  # make publicly readable
+            format = 'JPEG'
+            buffer = BytesIO()
+            img.save(buffer, format)
+            buffer.seek(0)
+
+            s3 = boto3.resource('s3')
+
+            # Uploading the image
+            obj = s3.Object(
+                bucket_name=b,
+                key=k,
+            )
+            obj.put(Body=buffer)
 
         if "bounds" in request.form:
             crop_count += 1
