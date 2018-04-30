@@ -129,7 +129,7 @@ def upload():
             # k.set_acl('public-read')  # make publicly readable
             format = 'JPEG'
             buffer = BytesIO()
-            img.save(buffer, format)
+            resized_img.save(buffer, format)
             buffer.seek(0)
 
             s3 = boto3.resource('s3')
