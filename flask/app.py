@@ -132,6 +132,8 @@ def upload():
             buffer = BytesIO()
             resized_img.save(buffer, format=format)
 
+            print("HELLO!", buffer.getvalue(), type(buffer.getvalue()))
+
             s3 = boto3.resource('s3')
 
             # Uploading the image
