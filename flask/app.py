@@ -103,7 +103,7 @@ def upload():
             # open s3 bucket, create new Key/file
             # set the mimetype, content and access control
             print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
-            print("FILE CONTENTS", request.files["image"].stream.read())
+            # print("FILE CONTENTS", request.files["image"].stream.read())
             b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME')) # bucket name defined in .env
             k = b.new_key(b) # create a new Key (like a file)
             k.key = filename # set filename
