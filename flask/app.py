@@ -155,12 +155,37 @@ def upload():
             crop_count += 1
             text = request.form['img']
             bounds = request.form['bounds']
-            fullname = str(text[22:])
-            fullname2 = fullname[7:]
-            print("THE NAME", fullname2)
-            print("BOUNDS", bounds, fullname)
-            croppedname = crop_img.crop_img(fullname, bounds, crop_count)
-            palettename, rgb, hex = main.generate(croppedname)
+            response = requests.get(text, stream=True)
+            img = Image.open(BytesIO(response.content))
+            extension = text.split(".")[-1]
+            filename = text.split('/')[-1]
+            if extension in ['jpeg', 'jpg']:
+                format = 'JPEG'
+            if extension in ['png']:
+                format = 'PNG'
+            # fullname = str(text[22:])
+            # fullname2 = fullname[7:]
+            # print("THE NAME", fullname2)
+            print("BOUNDS", bounds)
+            cropped_img = crop_img.crop_img(img, bounds, crop_count)
+            palette, rgb, hex = main.generate(cropped_img)
+
+            palettes = crop_img.crop_palette(palette)
+
+            color_names = []
+
+            for ind, color in enumerate(palettes):
+                # save each palette image into AWS
+                buffer2 = BytesIO()
+                color.save(buffer2, format=format)
+                name = filename[0:-1*(len(extension)+1)]+"_palette" + str(ind) + filename[-1*(len(extension)+1):]
+                color_names.append(name)
+                k3 = Key(b) # create a new Key (like a file)
+                k3.key = name # set filename
+                print("COLOR NAME", name)
+                # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+                k3.set_contents_from_string(buffer2.getvalue()) # file contents to be added
+                k3.set_acl('public-read') # make publicly readable
 
     # palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
     # print(palettename)

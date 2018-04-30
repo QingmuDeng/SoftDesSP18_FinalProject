@@ -58,27 +58,24 @@ def resize(image):
         image = image.resize(dim, resample=PIL.Image.LANCZOS)
         return image
 
-def crop_img(image_path, bounds, count):
+def crop_img(input, bounds, count):
     """ Crops an image based on the bounds that the user selects from the
     crop tool. Saves the crop image in a new file.
 
-    :param image_path: path of uploaded image
+    :param input: Image object of uploaded image
     :param bounds: crop BOUNDS
     :param count: the number of crops done on a single image
-    :rtype: image path of cropped image
+    :rtype: Image object of cropped image
     """
     top, bottom, left, right = bounds.split(', ')
     print(int(top), int(bottom), int(left), int(right))
-    print(image_path)
-    image = np.array(Image.open(image_path))
+    image = np.array(input)
     height = image.shape[0]
     new_top = abs(int(top) - height)
     new_bot = abs(int(bottom) - height)
     cropped = image[new_top:new_bot, int(left):int(right)]
-    new_image_path = image_path[0:-4]+"_crop" + str(count) + ".jpg"
     img = Image.fromarray(cropped)
-    img.save(new_image_path)
-    return new_image_path
+    return img
 
 # if __name__ == "__main__":
     # crop_img("static/img/Violet.Evergarden.723482_13.jpg", "486, 296, 126, 273")
