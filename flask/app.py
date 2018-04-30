@@ -132,11 +132,13 @@ def upload():
             format = 'JPEG'
             buffer = BytesIO()
             resized_img.save(buffer, format=format)
+            filename2 = filename[0:-4]+"_resize"+filename[-4:]
 
             print("HELLO!", type(buffer.getvalue()))
             k2 = Key(b) # create a new Key (like a file)
-            k2.key = filename[0:-4]+"_resize"+filename[-4:] # set filename
-            print("NEW NAME", filename[0:-4]+"_resize"+filename[-4:])
+            k2.key = filename2 # set filename
+
+            print("NEW NAME", filename2)
             # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
             k2.set_contents_from_string(buffer.getvalue()) # file contents to be added
             k2.set_acl('public-read') # make publicly readable
@@ -159,7 +161,7 @@ def upload():
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
     # return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
-    return render_template('image.html', filename1=filename)
+    return render_template('image.html', filename1=filename2)
 
 
 def allowed_file(filename):
