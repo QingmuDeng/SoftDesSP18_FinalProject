@@ -40,7 +40,7 @@ def crop_palette(image):
         single_colors.append(img)
     single_colors.append(image)
     # print("PATHS", single_color)
-    return single_color
+    return single_colors
 
 
 def resize(image):
