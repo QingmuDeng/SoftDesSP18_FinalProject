@@ -130,17 +130,16 @@ def upload():
             # k.set_acl('public-read')  # make publicly readable
             format = 'JPEG'
             buffer = BytesIO()
-            resized_img.save(buffer, format)
-            buffer.seek(0)
+            resized_img.save(buffer, format=format)
 
             s3 = boto3.resource('s3')
 
             # Uploading the image
             obj = s3.Object(
                 bucket_name=b,
-                key=k,
+                key=filename,
             )
-            obj.put(Body=buffer)
+            obj.put(Body=buffer.getvalue())
 
         if "bounds" in request.form:
             crop_count += 1
