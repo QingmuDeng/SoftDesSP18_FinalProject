@@ -44,12 +44,12 @@ def crop_palette(image_path):
     return single_color
 
 
-def resize(image_path):
+def resize(image):
     """ Resizes image that user uploads if it is too large and replaces it
 
-    :param image_path: path of uploaded image
+    :param image: Pillow Image that user uploaded
     """
-    image= np.array(Image.open(image_path))
+    image= np.array(image)
     print(image.shape[1], image.shape[0])
     if image.shape[1] > 600 or image.shape[0] > 600:
         r = 600.0 / image.shape[1]
@@ -57,7 +57,7 @@ def resize(image_path):
         # perform the actual resizing of the image
         image = Image.fromarray(image)
         image = image.resize(dim, resample=PIL.Image.LANCZOS)
-        image.save(image_path)
+        return image
 
 def crop_img(image_path, bounds, count):
     """ Crops an image based on the bounds that the user selects from the

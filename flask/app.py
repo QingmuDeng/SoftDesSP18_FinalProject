@@ -5,7 +5,7 @@ javascript.
 """
 # had to pip install Flask-Uploads
 # kill processes: ps -fA | grep python
-"""importing python files not in this directory"""
+
 import os
 import sys
 # module_path = os.path.abspath(os.path.join('colorpalette'))
@@ -120,6 +120,13 @@ def upload():
             response = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename, stream=True)
             img = Image.open(BytesIO(response.content))
             print("IMAGE", type(img))
+            resized_img = crop_img.resize(img)
+            k = b.new_key(b)  # create a new Key (like a file)
+            k.key = filename  # set filename
+            k.set_metadata("Content-Type", request.files["image"].mimetype)  # identify MIME type
+            # HELP!!! HERE!!!
+            k.set_contents_from_string()  # file contents to be added
+            k.set_acl('public-read')  # make publicly readable
 
         if "bounds" in request.form:
             crop_count += 1
