@@ -23,8 +23,11 @@ import glob
 # import json, boto3
 import boto
 import boto3
+from PIL import Image, ImageChops
 import PIL
 import numpy as np
+import requests
+import io
 
 # import webbrowser
 # import threading
@@ -114,11 +117,9 @@ def upload():
             k.set_acl('public-read') # make publicly readable
 
             #extract the image from aws and call resize
-            s3 = boto3.resource('s3', region_name='us-east-2')
-            bucket = s3.Bucket(os.environ.get('S3_BUCKET_NAME'))
-            object = bucket.Object("https://s3.us-east-2.amazonaws.com/paletteful/" + filename)
-            img_data = object.get().get('Body').read()
-            print("IMAGE DATA", type(img_data), img_data)
+            image = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename)
+            image2 = Image.open(io.StringIO(image.content))
+            print("IMAGE", image2)
 
         if "bounds" in request.form:
             crop_count += 1
