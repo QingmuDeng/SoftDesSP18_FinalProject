@@ -138,7 +138,7 @@ def upload():
             k2.key = filename[0:-4]+"_resize"+filename[-4:] # set filename
             print("NEW NAME", filename[0:-4]+"_resize"+filename[-4:])
             # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
-            k2.set_contents_from_string(buffer.getvalue())) # file contents to be added
+            k2.set_contents_from_string(buffer.getvalue()) # file contents to be added
             k2.set_acl('public-read') # make publicly readable
 
 
