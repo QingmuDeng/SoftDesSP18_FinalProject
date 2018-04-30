@@ -27,7 +27,7 @@ from PIL import Image, ImageChops
 import PIL
 import numpy as np
 import requests
-import io
+from io import BytesIO
 
 # import webbrowser
 # import threading
@@ -117,9 +117,9 @@ def upload():
             k.set_acl('public-read') # make publicly readable
 
             #extract the image from aws and call resize
-            image = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename)
-            image2 = Image.open(io.StringIO(image.content))
-            print("IMAGE", image2)
+            response = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename, stream=True)
+            img = Image.open(BytesIO(response.content))
+            print("IMAGE", type(img))
 
         if "bounds" in request.form:
             crop_count += 1
