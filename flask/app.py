@@ -152,6 +152,13 @@ def upload():
                 k3.set_acl('public-read') # make publicly readable
 
         if "bounds" in request.form:
+            REGION_HOST = 's3.us-east-2.amazonaws.com'
+            s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
+            # open s3 bucket, create new Key/file
+            # set the mimetype, content and access control
+            # print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
+            # print("FILE CONTENTS", request.files["image"].read())
+            b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
             crop_count += 1
             text = request.form['img']
             bounds = request.form['bounds']
