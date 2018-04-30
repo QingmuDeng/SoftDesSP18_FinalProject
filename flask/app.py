@@ -28,6 +28,7 @@ import PIL
 import numpy as np
 import requests
 from io import BytesIO
+from boto.s3.key import Key
 
 # import webbrowser
 # import threading
@@ -132,16 +133,14 @@ def upload():
             buffer = BytesIO()
             resized_img.save(buffer, format=format)
 
-            print("HELLO!", buffer.getvalue(), type(buffer.getvalue()))
+            print("HELLO!", type(buffer.getvalue()))
+            k2 = Key(b) # create a new Key (like a file)
+            k2.key = filename[0:-4]+"_resize"+filename[-4:] # set filename
+            print("NEW NAME", filename[0:-4]+"_resize"+filename[-4:])
+            # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+            k2.set_contents_from_string(buffer.getvalue())) # file contents to be added
+            k2.set_acl('public-read') # make publicly readable
 
-            s3 = boto3.resource('s3')
-
-            # Uploading the image
-            obj = s3.Object(
-                bucket_name=b,
-                key=filename,
-            )
-            obj.put(Body=buffer.getvalue())
 
         if "bounds" in request.form:
             crop_count += 1
