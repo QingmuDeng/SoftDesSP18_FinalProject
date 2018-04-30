@@ -22,6 +22,9 @@ import glob
 # from nocache import nocache
 # import json, boto3
 import boto
+import boto3
+import PIL
+import numpy as np
 
 # import webbrowser
 # import threading
@@ -77,21 +80,20 @@ def upload():
     """
     global crop_count
     fullname = None
-    print("hello")
     if request.method == 'POST':
-        print("posting something")
-        print("requests", request.files)
+        # print("posting something")
+        # print("requests", request.files)
 
         if "image" in request.files:
             S3_BUCKET = os.environ.get('S3_BUCKET_NAME')
-            print("posted image")
+            # print("posted image")
             # filename = photos.save(request.files["image"])
             filename = request.files["image"].filename
-            # print("FILENAME", filename)
+            print("FILENAME", filename)
             # fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
             # fullname2 = 'img/'+filename
             # # crop_img.resize(fullname)
-            print("NAME", fullname)
+            # print("NAME", fullname)
             # palettename, rgb, hex = main.generate(fullname)
             # s3 = boto.connect_s3()
             # bucket = s3.create_bucket('paletteful')
@@ -102,8 +104,8 @@ def upload():
             s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
             # open s3 bucket, create new Key/file
             # set the mimetype, content and access control
-            print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
-            print("FILE CONTENTS", request.files["image"].read())
+            # print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
+            # print("FILE CONTENTS", request.files["image"].read())
             b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME')) # bucket name defined in .env
             k = b.new_key(b) # create a new Key (like a file)
             k.key = filename # set filename
@@ -111,17 +113,12 @@ def upload():
             k.set_contents_from_string(request.files["image"].stream.read()) # file contents to be added
             k.set_acl('public-read') # make publicly readable
 
-            # s3 = boto3.client('s3')
-            # presigned_post = s3.generate_presigned_post(
-            #     Bucket = S3_BUCKET,
-            #     Key = filename,
-            #     Fields = {"acl": "public-read", "Content-Type": "jpg"},
-            #     Conditions = [
-            #       {"acl": "public-read"},
-            #       {"Content-Type": "jpg"}
-            #     ],
-            #     ExpiresIn = 3600
-            #   )
+            #extract the image from aws and call resize
+            s3 = boto3.resource('s3', region_name='us-east-2')
+            bucket = s3.Bucket(os.environ.get('S3_BUCKET_NAME'))
+            object = bucket.Object("https://s3.us-east-2.amazonaws.com/paletteful/" + filename)
+            img_data = object.get().get('Body').read()
+            print("IMAGE DATA", type(img_data), img_data)
 
         if "bounds" in request.form:
             crop_count += 1
