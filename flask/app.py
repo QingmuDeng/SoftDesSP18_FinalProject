@@ -121,6 +121,7 @@ def upload():
             img = Image.open(BytesIO(response.content))
             print("IMAGE", type(img))
             resized_img = crop_img.resize(img)
+            print("RESIZED IMAGE", type(resized_img))
             # k = b.new_key(b)  # create a new Key (like a file)
             # k.key = filename  # set filename
             # k.set_metadata("Content-Type", request.files["image"].mimetype)  # identify MIME type
