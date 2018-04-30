@@ -52,7 +52,7 @@ def generate(input, user_input=1):
     bar = utils.plot_colors(hist, final_palette2)
     # show_colors(bar)
     # bar = Image.fromarray(bar)
-    print("BAR TYPE", type(bar))
+    # print("BAR TYPE", type(bar))
 
     # new_path = img_path[0:-4]+'_p.png'
     # bar.save(new_path)

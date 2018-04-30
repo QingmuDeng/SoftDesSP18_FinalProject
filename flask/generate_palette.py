@@ -263,28 +263,28 @@ def default_palette(image, orig_image):
                 max_diff1 = diff
                 accents_rgb[-1] = rgb
                 accents_hsv[-1] = hsv
-                print("replace 1st accent", rgb)
+                # print("replace 1st accent", rgb)
 
             elif diff - max_diff2 > 10 and brightness1 > get_brightness(accents_hsv[-2]):
                 max_diff2 = diff
                 accents_rgb[-2] = rgb
                 accents_hsv[-2] = hsv
                 # found a color that is more different from dominant than current 2nd accent
-                print("replace 2nd accent", rgb)
+                # print("replace 2nd accent", rgb)
 
             elif abs(diff - max_diff2) < 10 and mag1 > get_mag(accents_rgb[-2]):
                 # found a color that is similar in hue to 2nd accent
                 max_diff2 = diff
                 accents_rgb[-2] = rgb
                 accents_hsv[-2] = hsv
-                print("maybe found a brighter color to replace 2nd accent", rgb)
+                # print("maybe found a brighter color to replace 2nd accent", rgb)
 
             elif abs(diff - max_diff1) < 10 and mag1 > get_mag(accents_rgb[-1]):
                 # found a color that is similar in hue to 1st accent
                 max_diff1 = diff
                 accents_rgb[-1] = rgb
                 accents_hsv[-1] = hsv
-                print("maybe found a brighter color to replace 1st accent", rgb)
+                # print("maybe found a brighter color to replace 1st accent", rgb)
 
     #Find transition dominant color and add to list of dominants
     #transdomS, transdomV = max(dominants_hsv[-1][1], dominants_hsv[0][1]), max(dominants_hsv[-1][2], dominants_hsv[0][2])

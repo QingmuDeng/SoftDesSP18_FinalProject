@@ -114,8 +114,6 @@ def upload():
             resized_img = crop_img.resize(img)
             print("RESIZED IMAGE", type(resized_img))
 
-            palette, rgb, hex = main.generate(img)
-
             extension = filename.split(".")[-1]
             if extension in ['jpeg', 'jpg']:
                 format = 'JPEG'
@@ -135,6 +133,23 @@ def upload():
             k2.set_contents_from_string(buffer.getvalue()) # file contents to be added
             k2.set_acl('public-read') # make publicly readable
 
+            palette, rgb, hex = main.generate(img)
+            palettes = crop_img.crop_palette(palette)
+
+            color_names = []
+
+            for ind, color in enumerate(palettes):
+                # save each palette image into AWS
+                buffer2 = BytesIO()
+                color.save(buffer2, format=format)
+                name = filename[0:-1*(len(extension)+1)]+"_palette" + str(ind) + filename[-1*(len(extension)+1):]
+                color_names.append(name)
+                k3 = Key(b) # create a new Key (like a file)
+                k3.key = name # set filename
+                print("COLOR NAME", name)
+                # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+                k3.set_contents_from_string(buffer2.getvalue()) # file contents to be added
+                k3.set_acl('public-read') # make publicly readable
 
         if "bounds" in request.form:
             crop_count += 1
@@ -153,7 +168,7 @@ def upload():
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
     # return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
-    return render_template('image.html', filename1=filename2)
+    return render_template('image.html', filename1=filename2, filename2=color_names, hex=hex, rgb=rgb)
 
 
 def allowed_file(filename):
