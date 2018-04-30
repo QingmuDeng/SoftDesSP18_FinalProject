@@ -129,12 +129,17 @@ def upload():
             # # HELP!!! HERE!!!
             # k.set_contents_from_string()  # file contents to be added
             # k.set_acl('public-read')  # make publicly readable
-            format = 'JPEG'
+            extension = filename.split(".")[-1]
+            if extension in ['jpeg', 'jpg']:
+                format = 'JPEG'
+            if extension in ['png']:
+                format = 'PNG'
+
             buffer = BytesIO()
             resized_img.save(buffer, format=format)
-            filename2 = filename[0:-4]+"_resize"+filename[-4:]
+            filename2 = filename[0:-1*(len(extension)+1)]+"_resize"+filename[-1*(len(extension)+1):]
 
-            print("HELLO!", type(buffer.getvalue()))
+            # print("HELLO!", type(buffer.getvalue()))
             k2 = Key(b) # create a new Key (like a file)
             k2.key = filename2 # set filename
 
