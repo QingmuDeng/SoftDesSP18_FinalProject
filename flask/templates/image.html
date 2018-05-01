@@ -151,16 +151,6 @@
             return "/about";
         }
 
-        function copyToClipboard(element) {
-            console.log("hello");
-            var $temp = $("<input>");
-            $("body").append($temp);
-            $temp.val($(element).text()).select();
-            document.execCommand("copy");
-            $temp.remove();
-        }
-
-
     </script>
     <!-- Scripts -->
     <script src="../static/assets/js/jquery.min.js"></script>
@@ -172,6 +162,7 @@
     <script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
     <script src="../static/assets/js/ImageCropper00000.js"></script>
     <script src="../static/assets/js/ImageCropperTest35000.js"></script>
+    <script src="../static/assets/js/copy0.js"></script>
 
 </head>
 <body>
