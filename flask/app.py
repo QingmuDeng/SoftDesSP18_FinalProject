@@ -55,6 +55,7 @@ def home():
     b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
     for key in keys:
         b.delete_key(key)
+    keys = []
     return render_template('index.html')
 
 
