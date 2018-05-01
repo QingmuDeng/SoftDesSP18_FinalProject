@@ -61,16 +61,6 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/upload/<path:filename>')
-def download_file(filename):
-    return flask.send_from_directory(MEDIA_FOLDER, filename, as_attachment=True)
-
-
-@app.route("/webpage", methods=['GET', 'POST'])
-def webpage():
-    return render_template('webpage.html')
-
-
 @app.route("/search", methods=['GET', 'POST'])
 def search():
     return render_template('search.html')
