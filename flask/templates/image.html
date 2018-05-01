@@ -186,73 +186,77 @@
         </div>
         <div id="result" class="container-a1">{% if filename1 %}
             <div class="content">
-                <div class="inner" style="padding: 1rem 1rem">
-                    <canvas id="imageCanvas" style="border:0px solid #000000; opacity:1;">
-                    </canvas>
-                    <img id="fileInput" crossOrigin = "Anonymous" src="https://s3.us-east-2.amazonaws.com/paletteful/{{filename1}}" name="file" onload="handleFileSelect()">
-                </div>
-                <form name="update" id="update" method=POST>
-                    <button class="btn" onclick="getBounds()">Update</button>
-                    <input type="text" name="bounds" id="bounds" hidden style="opacity: 0; margin: 0; padding: 0">
-                    <input type="text" name="img" id="img" hidden style="opacity: 0; display: block">
-                </form>
-                {% if filename2 %}
+            <div class="inner" style="padding: 1rem 1rem">
+                <canvas id="imageCanvas" style="border:0px solid #000000; opacity:1;">
+                </canvas>
+                <img id="fileInput" crossOrigin="Anonymous"
+                     src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename1 }}" name="file"
+                     onload="handleFileSelect()">
+            </div>
+            <form name="update" id="update" method=POST>
+                <button class="btn" onclick="getBounds()">Update</button>
+                <input type="text" name="bounds" id="bounds" hidden style="opacity: 0; margin: 0; padding: 0">
+                <input type="text" name="img" id="img" hidden style="opacity: 0; display: block">
+            </form>
+            {% if filename2 %}
                 <div class="caption-style-1" style="padding: 0; margin: 0">
-                  <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{filename2[4]}}" alt="" onclick="copyToClipboard('#hex4')" onload="copyToClipboard('#hex4')>
-                      <div class="caption">
-                          <div class="blur" onclick="copyToClipboard('#hex4')"></div>
-                          <div class="caption-text">
-                              <center id="hex4">{{hex[4]}}</center>
-                              <center>{{rgb[4]}}</center>
-                          </div>
-                      </div>
-                  </li>
-                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{filename2[3]}}" alt="">
+                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[4] }}" alt=""
+                             onclick="copyToClipboard('#hex4')" onload="copyToClipboard('#hex4')">
+                        <div class="caption">
+                            <div class="blur" onclick="copyToClipboard('#hex4')"></div>
+                            <div class="caption-text">
+                                <center id="hex4">{{ hex[4] }}</center>
+                                <center>{{ rgb[4] }}</center>
+                            </div>
+                        </div>
+                    </li>
+                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[3] }}" alt="">
                         <div class="caption">
                             <div class="blur" onclick="copyToClipboard('#hex3')"></div>
                             <div class="caption-text">
-                                <center id="hex3">{{hex[3]}}</center>
-                                <center>{{rgb[3]}}</center>
+                                <center id="hex3">{{ hex[3] }}</center>
+                                <center>{{ rgb[3] }}</center>
                             </div>
                         </div>
                     </li>
-                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{filename2[2]}}" alt="">
+                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[2] }}" alt="">
                         <div class="caption">
                             <div class="blur" onclick="copyToClipboard('#hex2')"></div>
                             <div class="caption-text">
-                                <center id="hex2">{{hex[2]}}</center>
-                                <center>{{rgb[2]}}</center>
+                                <center id="hex2">{{ hex[2] }}</center>
+                                <center>{{ rgb[2] }}</center>
                             </div>
                         </div>
                     </li>
-                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{filename2[1]}}" alt="">
+                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[1] }}" alt="">
                         <div class="caption">
                             <div class="blur" onclick="copyToClipboard('#hex1')"></div>
                             <div class="caption-text">
-                                <center id="hex1">{{hex[1]}}</center>
-                                <center>{{rgb[1]}}</center>
+                                <center id="hex1">{{ hex[1] }}</center>
+                                <center>{{ rgb[1] }}</center>
                             </div>
                         </div>
                     </li>
-                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{filename2[0]}}" alt="">
+                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[0] }}" alt="">
                         <div class="caption">
                             <div class="blur" onclick="copyToClipboard('#hex0')"></div>
                             <div class="caption-text">
-                                <center id="hex0">{{hex[0]}}</center>
-                                <center>{{rgb[0]}}</center>
+                                <center id="hex0">{{ hex[0] }}</center>
+                                <center>{{ rgb[0] }}</center>
                             </div>
                         </div>
                     </li>
                 </div>
                 <br>
-                <a href="https://s3.us-east-2.amazonaws.com/paletteful/{{filename2[5]}}" download="palette" target="_blank" style="font-size:23px; opacity:1;">Download
+                <a href="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[5] }}" download="palette"
+                   target="_blank" style="font-size:23px; opacity:1;">Download
                     Palette</a>
-                {% else %}
+            {% else %}
                 <h1>please re-submit image</h1>
-                {% endif %}
-                {% else %}
-                <h1>please re-submit image</h1>
-                {% endif %}
+            {% endif %}
+        {% else %}
+            <h1>please re-submit image</h1>
+        {% endif %}
             </div>
         </div>
     </header>
