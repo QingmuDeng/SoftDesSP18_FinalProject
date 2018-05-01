@@ -8,12 +8,34 @@
 // }
 
 function copyToClipboard(element) {
-    console.log($(element).text());
-    const copyText = $(element).text();
-    /* Select the text field */
-    copyText.select();
-    /* Copy the text inside the text field */
-    document.execCommand("Copy");
+    // console.log($(element).text());
+    // const copyText = $(element).text();
+    // /* Select the text field */
+    // copyText.select();
+    // /* Copy the text inside the text field */
+    // document.execCommand("Copy");
+
+    let range, selection, worked;
+
+    if (document.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
+      } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+
+    try {
+        document.execCommand('copy');
+        alert('text copied');
+    }
+    catch (err) {
+        alert('unable to copy text');
+    }
 }
 
 // const span = document.querySelector("span");
