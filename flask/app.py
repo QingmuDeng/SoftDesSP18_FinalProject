@@ -43,6 +43,7 @@ configure_uploads(app, photos)
 crop_count = 0
 keys = []
 
+
 @app.route("/", methods=['GET', 'POST'])
 def home():
     """
@@ -51,7 +52,8 @@ def home():
     """
     global keys
     REGION_HOST = 's3.us-east-2.amazonaws.com'
-    s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
+    s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'), os.environ.get('AWS_SECRET_ACCESS_KEY'),
+                             host=REGION_HOST)
     b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
     for key in keys:
         b.delete_key(key)
@@ -101,20 +103,21 @@ def upload():
             print("FILENAME", filename)
             # connect to s3
             REGION_HOST = 's3.us-east-2.amazonaws.com'
-            s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
+            s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'), os.environ.get('AWS_SECRET_ACCESS_KEY'),
+                                     host=REGION_HOST)
             # open s3 bucket, create new Key/file
             # set the mimetype, content and access control
             # print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
             # print("FILE CONTENTS", request.files["image"].read())
-            b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME')) # bucket name defined in .env
-            k = b.new_key(b) # create a new Key (like a file)
-            k.key = filename # set filename
-            k.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
-            k.set_contents_from_string(request.files["image"].stream.read()) # file contents to be added
-            k.set_acl('public-read') # make publicly readable
+            b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))  # bucket name defined in .env
+            k = b.new_key(b)  # create a new Key (like a file)
+            k.key = filename  # set filename
+            k.set_metadata("Content-Type", request.files["image"].mimetype)  # identify MIME type
+            k.set_contents_from_string(request.files["image"].stream.read())  # file contents to be added
+            k.set_acl('public-read')  # make publicly readable
             keys.append(k)
 
-            #extract the image from aws and call resize
+            # extract the image from aws and call resize
             response = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename, stream=True)
             img = Image.open(BytesIO(response.content))
             print("IMAGE", type(img))
@@ -129,16 +132,16 @@ def upload():
 
             buffer = BytesIO()
             resized_img.save(buffer, format=format)
-            filename2 = filename[0:-1*(len(extension)+1)]+"_resize"+filename[-1*(len(extension)+1):]
+            filename2 = filename[0:-1 * (len(extension) + 1)] + "_resize" + filename[-1 * (len(extension) + 1):]
 
             # print("HELLO!", type(buffer.getvalue()))
-            k2 = Key(b) # create a new Key (like a file)
-            k2.key = filename2 # set filename
+            k2 = Key(b)  # create a new Key (like a file)
+            k2.key = filename2  # set filename
 
             print("NEW NAME", filename2)
             # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
-            k2.set_contents_from_string(buffer.getvalue()) # file contents to be added
-            k2.set_acl('public-read') # make publicly readable
+            k2.set_contents_from_string(buffer.getvalue())  # file contents to be added
+            k2.set_acl('public-read')  # make publicly readable
             keys.append(k2)
 
             palette, rgb, hex = main.generate(img)
@@ -150,19 +153,21 @@ def upload():
                 # save each palette image into AWS
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
-                name = filename[0:-1*(len(extension)+1)]+"_palette" + str(ind) + filename[-1*(len(extension)+1):]
+                name = filename[0:-1 * (len(extension) + 1)] + "_palette" + str(ind) + filename[
+                                                                                       -1 * (len(extension) + 1):]
                 color_names.append(name)
-                k3 = Key(b) # create a new Key (like a file)
-                k3.key = name # set filename
+                k3 = Key(b)  # create a new Key (like a file)
+                k3.key = name  # set filename
                 print("COLOR NAME", name)
                 # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
-                k3.set_contents_from_string(buffer2.getvalue()) # file contents to be added
-                k3.set_acl('public-read') # make publicly readable
+                k3.set_contents_from_string(buffer2.getvalue())  # file contents to be added
+                k3.set_acl('public-read')  # make publicly readable
                 keys.append(k3)
 
         if "bounds" in request.form:
             REGION_HOST = 's3.us-east-2.amazonaws.com'
-            s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
+            s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'), os.environ.get('AWS_SECRET_ACCESS_KEY'),
+                                     host=REGION_HOST)
             # open s3 bucket, create new Key/file
             # set the mimetype, content and access control
             # print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
@@ -194,14 +199,15 @@ def upload():
                 # save each palette image into AWS
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
-                name = filename2[0:-1*(len(extension)+1)]+"_palette" + str(ind) + filename2[-1*(len(extension)+1):]
+                name = filename2[0:-1 * (len(extension) + 1)] + "_palette" + str(ind) + filename2[
+                                                                                        -1 * (len(extension) + 1):]
                 color_names.append(name)
-                k3 = Key(b) # create a new Key (like a file)
-                k3.key = name # set filename
+                k3 = Key(b)  # create a new Key (like a file)
+                k3.key = name  # set filename
                 print("COLOR NAME", name)
                 # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
-                k3.set_contents_from_string(buffer2.getvalue()) # file contents to be added
-                k3.set_acl('public-read') # make publicly readable
+                k3.set_contents_from_string(buffer2.getvalue())  # file contents to be added
+                k3.set_acl('public-read')  # make publicly readable
                 keys.append(k3)
 
     # palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
