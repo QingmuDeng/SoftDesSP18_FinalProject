@@ -41,7 +41,7 @@ app.config['UPLOADED_PHOTOS_DEST'] = 'static/img/'
 configure_uploads(app, photos)
 
 crop_count = 0
-
+keys = []
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -49,8 +49,12 @@ def home():
     This function is automatically called when the main function runs. It renders the home page html file
     :return: rendered html of home page (known as 'index.html')
     """
-    # for infile in glob.glob('static/img/*'):
-    #     os.remove(infile)
+    global keys
+    REGION_HOST = 's3.us-east-2.amazonaws.com'
+    s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'),os.environ.get('AWS_SECRET_ACCESS_KEY'), host=REGION_HOST)
+    b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
+    for key in keys:
+        b.delete_key(key)
     return render_template('index.html')
 
 
@@ -83,6 +87,7 @@ def upload():
     :return: rendered template of image page (known as 'image.html') with the image files and color codes passed in
     """
     global crop_count
+    global keys
     fullname = None
     if request.method == 'POST':
         # print("posting something")
@@ -106,6 +111,7 @@ def upload():
             k.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
             k.set_contents_from_string(request.files["image"].stream.read()) # file contents to be added
             k.set_acl('public-read') # make publicly readable
+            keys.append(k)
 
             #extract the image from aws and call resize
             response = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename, stream=True)
@@ -132,6 +138,7 @@ def upload():
             # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
             k2.set_contents_from_string(buffer.getvalue()) # file contents to be added
             k2.set_acl('public-read') # make publicly readable
+            keys.append(k2)
 
             palette, rgb, hex = main.generate(img)
             palettes = crop_img.crop_palette(palette)
@@ -150,6 +157,7 @@ def upload():
                 # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
                 k3.set_contents_from_string(buffer2.getvalue()) # file contents to be added
                 k3.set_acl('public-read') # make publicly readable
+                keys.append(k3)
 
         if "bounds" in request.form:
             REGION_HOST = 's3.us-east-2.amazonaws.com'
@@ -193,6 +201,7 @@ def upload():
                 # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
                 k3.set_contents_from_string(buffer2.getvalue()) # file contents to be added
                 k3.set_acl('public-read') # make publicly readable
+                keys.append(k3)
 
     # palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
     # print(palettename)
