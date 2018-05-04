@@ -165,7 +165,7 @@
     <script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
     <script src="../static/assets/js/ImageCropper00000.js"></script>
     <script src="../static/assets/js/ImageCropperTest35000.js"></script>
-    <script src="../static/assets/js/copy2.js"></script>
+    <script src="../static/assets/js/copy20.js"></script>
 
 </head>
 <body>
@@ -200,13 +200,12 @@
                 <input type="text" name="img" id="img" hidden style="opacity: 0; display: block">
             </form>
             {% if filename2 %}
-                <div class="caption-style-1" style="padding: 0; margin: 0">
+                <div class="caption-style-1" style="padding-bottom: 2%; margin: 0">
                   <h3>Default Color Palette</h3>
-                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[4] }}" alt=""
-                             onclick="copyToClipboard('#hex4')" onload="copyToClipboard('hex4')">
-                        <div class="caption" onclick="copyToClipboard('#hex4')">
-                            <div class="blur" onclick="copyToClipboard('#hex4')"></div>
-                            <div class="caption-text" onclick="copyToClipboard('#hex4')">
+                    <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[4] }}" alt="">
+                        <div class="caption" onclick="copyToClipboard('hex4')">
+                            <div class="blur"></div>
+                            <div class="caption-text">
                                 <center id="hex4">{{ hex1[4] }}</center>
                                 <center>{{ rgb1[4] }}</center>
                             </div>
@@ -251,14 +250,13 @@
                 </div>
                 <br>
                 <a href="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[5] }}" download="palette"
-                   target="_blank" style="font-size:23px; opacity:1;">Download
-                    Palette</a>
+                   target="_blank" style="font-size:18px; opacity:1;">Download</a>
             {% else %}
                 <h1>please re-submit image</h1>
             {% endif %}
             <br><br><br>
             {% if filename3 %}
-                <div class="caption-style-1" style="padding: 0; margin: 0">
+                <div class="caption-style-1" style="padding-bottom: 2%; margin: 0">
                   <h3>Analogous Color Palette</h3>
                     <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename3[4] }}" alt=""
                              onclick="copyToClipboard('#hex9')" onload="copyToClipboard('hex9')">
@@ -309,8 +307,7 @@
                 </div>
                 <br>
                 <a href="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename3[5] }}" download="palette"
-                   target="_blank" style="font-size:23px; opacity:1;">Download
-                    Palette</a>
+                   target="_blank" style="font-size:18px; opacity:1;">Download</a>
             {% else %}
                 <h1>please re-submit image</h1>
             {% endif %}
