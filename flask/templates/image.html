@@ -164,7 +164,7 @@
     <script src="../static/toolbar/jquery.toolbar.js"></script>
     <script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
     <script src="../static/assets/js/ImageCropper00000.js"></script>
-    <script src="../static/assets/js/ImageCropperTest200.js"></script>
+    <script src="../static/assets/js/ImageCropperTest2000.js"></script>
     <script src="../static/assets/js/copy3.js"></script>
 
 </head>
@@ -193,7 +193,7 @@
                 <img id="fileInput" crossOrigin="Anonymous"
                      src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename1 }}" name="file"
                      onload="handleFileSelect()">
-                <p id="old_bounds" onload="drawBounds()" hidden>{{ bounds }}</p>
+                <p id="old_bounds" hidden>{{ bounds }}</p>
             </div>
             <form name="update" id="update" method=POST>
                 <button class="btn" onclick="getBounds()">Crop</button>
