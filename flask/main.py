@@ -22,6 +22,9 @@ def generate(input, type):
         # generate analogous palette
         palette = analogous_palette(image, orig_image)
 
+    else:
+        palette = classic_palette(input)
+
     # if int(user_input) == 2:
     #     # find top 5 dominant colors of entire image
     #     bar1, palette1 = dominant_colors(image, orig_image)

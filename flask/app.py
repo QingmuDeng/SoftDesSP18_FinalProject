@@ -136,8 +136,8 @@ def upload():
             k2.set_acl('public-read')  # make publicly readable
             keys.append(k2)
 
-            # generate default palette type
-            palette1, rgb1, hex1 = main.generate(img, 1)
+            # generate color thief palette type
+            palette1, rgb1, hex1 = main.generate(img, 3)
             palettes1 = crop_img.crop_palette(palette1)
 
             color_names1 = []
@@ -159,8 +159,8 @@ def upload():
                 k3.set_acl('public-read')  # make publicly readable
                 keys.append(k3)
 
-            # generate analogous palette type
-            palette2, rgb2, hex2 = main.generate(img, 2)
+            # generate default palette type
+            palette2, rgb2, hex2 = main.generate(img, 1)
             palettes2 = crop_img.crop_palette(palette2)
 
             color_names2 = []
@@ -175,6 +175,29 @@ def upload():
                     name = filename[0:-1 * (len(extension) + 1)] + "_palette2_" + str(ind) + filename[
                                                                                        -1 * (len(extension) + 1):]
                 color_names2.append(name)
+                k3 = Key(b)  # create a new Key (like a file)
+                k3.key = name  # set filename
+                # print("COLOR NAME", name)
+                # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+                k3.set_contents_from_string(buffer2.getvalue())  # file contents to be added
+                k3.set_acl('public-read')  # make publicly readable
+                keys.append(k3)
+
+            # generate analogous palette type
+            palette3, rgb3, hex3 = main.generate(img, 2)
+            palettes3 = crop_img.crop_palette(palette3)
+
+            color_names3 = []
+
+            for ind, color in enumerate(palettes3):
+                # save each palette image into AWS
+                buffer2 = BytesIO()
+                color.save(buffer2, format=format)
+                if ind == 5:
+                    name = filename[0:-1 * (len(extension) + 1)] + "_palette3" + filename[-1 * (len(extension) + 1):]
+                else:
+                    name = filename[0:-1 * (len(extension) + 1)] + "_palette3_" + str(ind) + filename[-1 * (len(extension) + 1):]
+                color_names3.append(name)
                 k3 = Key(b)  # create a new Key (like a file)
                 k3.key = name  # set filename
                 # print("COLOR NAME", name)
@@ -208,8 +231,8 @@ def upload():
             # print("THE NAME", fullname2)
             print("BOUNDS", bounds)
             cropped_img = crop_img.crop_img(img, bounds, crop_count)
-            # generate default palette type
-            palette1, rgb1, hex1 = main.generate(cropped_img, 1)
+            # generate color thief palette type
+            palette1, rgb1, hex1 = main.generate(cropped_img, 3)
             palettes1 = crop_img.crop_palette(palette1)
 
             color_names1 = []
@@ -232,8 +255,8 @@ def upload():
                 k3.set_acl('public-read')  # make publicly readable
                 keys.append(k3)
 
-            # generate analogous palette type
-            palette2, rgb2, hex2 = main.generate(cropped_img, 2)
+            # generate default palette type
+            palette2, rgb2, hex2 = main.generate(cropped_img, 1)
             palettes2 = crop_img.crop_palette(palette2)
 
             color_names2 = []
@@ -256,13 +279,37 @@ def upload():
                 k3.set_acl('public-read')  # make publicly readable
                 keys.append(k3)
 
+            # generate analogous palette type
+            palette3, rgb3, hex3 = main.generate(cropped_img, 2)
+            palettes3 = crop_img.crop_palette(palette3)
+
+            color_names3 = []
+
+            for ind, color in enumerate(palettes3):
+                # save each palette image into AWS
+                buffer2 = BytesIO()
+                color.save(buffer2, format=format)
+                if ind == 5:
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3" + filename2[-1 * (len(extension) + 1):]
+                else:
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3_" + str(ind) + filename2[
+                                                                                       -1 * (len(extension) + 1):]
+                color_names3.append(name)
+                k3 = Key(b)  # create a new Key (like a file)
+                k3.key = name  # set filename
+                # print("COLOR NAME", name)
+                # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+                k3.set_contents_from_string(buffer2.getvalue())  # file contents to be added
+                k3.set_acl('public-read')  # make publicly readable
+                keys.append(k3)
+
     # palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
     # print(palettename)
     # colors_path = crop_img.crop_palette(palettename)
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
     # return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
-    return render_template('image.html', filename1=filename2, filename2=color_names1, hex1=hex1, rgb1=rgb1, filename3=color_names2, hex2=hex2, rgb2=rgb2)
+    return render_template('image.html', filename1=filename2, filename2=color_names1, hex1=hex1, rgb1=rgb1, filename3=color_names2, hex2=hex2, rgb2=rgb2, filename4=color_names3, hex3=hex3, rgb3=rgb3)
 
 
 def allowed_file(filename):

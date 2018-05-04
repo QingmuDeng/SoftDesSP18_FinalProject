@@ -1,10 +1,8 @@
 """Uses k means to determine the dominate colors in an image. Displays the results in a color histogram and saves the
 RGB values in a csv file. """
 from sklearn.cluster import KMeans
-# import matplotlib.pyplot as plt
 import utils
 import csv
-# import itertools
 from colorsys import rgb_to_hsv, hsv_to_rgb
 from operator import itemgetter
 from PIL import Image
@@ -12,6 +10,7 @@ import PIL
 import math
 import numpy as np
 import random
+import color_thief
 
 DEFAULT_NUM_COLORS = 5
 DEFAULT_MINV = 150
@@ -21,12 +20,6 @@ COLORWHEEL = {"red": (255, 0, 0), "rose": (255, 0, 128), "magenta": (255, 0, 255
               "blue": (0, 0, 255), "azure": (0, 128, 255), "cyan": (0, 255, 255),
               "spring green": (0, 255, 128), "green": (0, 255, 0), "chartreuse": (128, 255, 0), "yellow": (225, 255, 0),
               "orange": (255, 128, 0)}
-
-
-def user_input():
-    palette_types = ["1) Analogous", "2) Complementary", "3) Triadic", "4) Pastel", "5) Monochromatic", "6) Bright"]
-    palette_choice = input("Select one of the following palette types: " + ' '.join(palette_types) + "\n")
-    return palette_types[palette_choice - 1][3:]
 
 
 def down_scale(x):
@@ -121,19 +114,8 @@ def get_hexs(clrs):
     return hexs
 
 
-# def show_colors(bar, save=None):
-#     # show our color bar
-#     plt.figure()
-#     plt.axis("off")
-#     plt.imshow(bar)
-#     if save:
-#         plt.savefig(save)
-#     plt.show()
-#     plt.close()
-
-
 def cropped(image):
-    # first resize image
+    # resize image before crop
     r = 100.0 / image.shape[1]
     dim = (100, int(image.shape[0] * r))
     image = Image.fromarray(image)
@@ -153,7 +135,6 @@ def cropped(image):
             index_y += delta_y
         index_y = 0
         index_x += delta_x
-
     # iterate through the cropped images to generate an array of clamped pixels
     images2 = []
     for img in images:
@@ -188,7 +169,6 @@ def edit_image(image):
 
 def default_palette(image, orig_image):
     """
-
     :param image_path: The image that you want to create color palette from
     :return: list of 5 RGB values to plot for the palette
     """
@@ -219,12 +199,8 @@ def default_palette(image, orig_image):
     for hsv in hsvs:
         sub_hsvs.append(abs(hsv[0] - dom_h))
 
-    # print(hsvs)
-    # print(sub_hsvs)
-
     # sort the hue differences from least difference to most difference
     hsvs.sort(key=dict(zip(hsvs, sub_hsvs)).get)
-    # print(hsvs)
     dominants_hsv.append(hsvs[0])  # first elm is most dominant color
     accents_hsv.extend(hsvs[-2:])  # last elm is most diff in hue from dominant color
 
@@ -232,9 +208,6 @@ def default_palette(image, orig_image):
     max_diff1 = abs(accents_hsv[-1][0] - dom_h) # difference between dominant and first accent
     min_diff = abs(dominants_hsv[-1][0] - dom_h) # difference between dominant and second dominant
 
-    # print(max_dis, min_dis)
-    # print(dominants_hsv)
-    # print(accents_hsv)
     dominants_rgb.extend(get_rgbs(dominants_hsv))
     accents_rgb.extend(get_rgbs(accents_hsv))
     print(dominants_rgb)
@@ -248,7 +221,6 @@ def default_palette(image, orig_image):
     for crop in cropped_images:
         # find top 3 most dominant colors in each crop image
         bar, palette = dominant_colors(crop, 3)
-        # show_colors(bar)
         temp_hsvs = get_hsvs(palette.values())
         for hsv in temp_hsvs:
             rgb = get_rgb(hsv)
@@ -264,14 +236,11 @@ def default_palette(image, orig_image):
                 max_diff1 = diff
                 accents_rgb[-1] = rgb
                 accents_hsv[-1] = hsv
-                # print("replace 1st accent", rgb)
 
             elif diff - max_diff2 > 10 and brightness1 > get_brightness(accents_hsv[-2]):
                 max_diff2 = diff
                 accents_rgb[-2] = rgb
                 accents_hsv[-2] = hsv
-                # found a color that is more different from dominant than current 2nd accent
-                # print("replace 2nd accent", rgb)
 
             elif abs(diff - max_diff2) < 10 and mag1 > get_mag(accents_rgb[-2]):
                 # found a color that is similar in hue to 2nd accent
@@ -285,10 +254,8 @@ def default_palette(image, orig_image):
                 max_diff1 = diff
                 accents_rgb[-1] = rgb
                 accents_hsv[-1] = hsv
-                # print("maybe found a brighter color to replace 1st accent", rgb)
 
     #Find transition dominant color and add to list of dominants
-    #transdomS, transdomV = max(dominants_hsv[-1][1], dominants_hsv[0][1]), max(dominants_hsv[-1][2], dominants_hsv[0][2])
     transdomH = (abs(dominants_hsv[-1][0] - dominants_hsv[0][0])) / 2 + min(dominants_hsv[-1][0], dominants_hsv[0][0])
     transdomS = (abs(dominants_hsv[-1][1] - dominants_hsv[0][1])) / 2 + min(dominants_hsv[-1][1], dominants_hsv[0][1])
     transdomV = (abs(dominants_hsv[-1][2] - dominants_hsv[0][2])) / 2 + min(dominants_hsv[-1][2], dominants_hsv[0][2])
@@ -319,9 +286,6 @@ def analogous_palette(image, orig_image):
     for hsv in hsvs:
         sub_hsvs.append(abs(hsv[0] - dom_h))
 
-    # print(hsvs)
-    # print(sub_hsvs)
-
     # sort the hue differences from least difference to most difference
     hsvs.sort(key=dict(zip(hsvs, sub_hsvs)).get)
 
@@ -341,14 +305,12 @@ def analogous_palette(image, orig_image):
 
     # generate a random float between 1.5 and 2.5
     factor = random.uniform(1.5, 2.5)
-    # print("FACTOR", factor)
 
     # find mid color between dom and dom2 by finding difference in H,S,V
     # channels, averaging them, and then adding them to the min H,S,V values
     diffH = abs(dom_hsv[0] - dom2_hsv[0])
     diffS = abs(dom_hsv[1] - dom2_hsv[1])
     diffV = abs(dom_hsv[2] - dom2_hsv[2])
-    # print(diffH, diffS, diffV)
     mid_domH = diffH / factor + min(dom_hsv[0], dom2_hsv[0])
     mid_domS = diffS / factor + min(dom_hsv[1], dom2_hsv[1])
     mid_domV = diffV / factor + min(dom_hsv[2], dom2_hsv[2])
@@ -374,9 +336,6 @@ def analogous_palette(image, orig_image):
     if max_S and upperV >= 3:
         upperV -= 3
 
-    # print(upperH, upperS, upperV)
-    # print(results_hsv[0][0], results_hsv[0][1], results_hsv[0][2])
-
     lowerH = results_hsv[-1][0]
 
     # make sure saturation does not go under 0%
@@ -397,3 +356,61 @@ def analogous_palette(image, orig_image):
     results_rgb.append(get_rgb((lowerH, lowerS, lowerV)))
 
     return results_rgb
+
+def choose_fifth(palette):
+    # choose the most saturated color from dominant colors
+    hsvs = get_hsvs(palette)
+    fifth = palette[0]
+    maxS = hsvs[0][1]
+    for ind, hsv in enumerate(hsvs):
+        if hsv[1] > maxS:
+            fifth = palette[ind]
+            maxS = hsv[1]
+    return fifth
+
+def reorder_val(palette, order=False):
+    # Rearrange 5 colors based on their brightness
+    hsvs = get_hsvs(palette)
+    sats = []
+    vals = []
+    hues = []
+    mags = []
+    for ind, hsv in enumerate(hsvs):
+        hues.append(hsv[0])
+        sats.append(hsv[1])
+        vals.append(hsv[2])
+        mags.append(get_mag(palette[ind]))
+    return [x for _,x in sorted(zip(vals, palette), reverse=order)]
+
+def reorder_hue(palette):
+    # Rearrange 5 colors based on their hue
+    dom = palette[0]
+    temp_palette = palette[1:]
+    output = []
+    hsvs = get_hsvs(temp_palette)
+    sats = []
+    vals = []
+    hues = []
+    mags = []
+    for ind, hsv in enumerate(hsvs):
+        hues.append(hsv[0])
+        sats.append(hsv[1])
+        vals.append(hsv[2])
+        mags.append(get_mag(palette[ind]))
+    by_hue = [x for _,x in sorted(zip(hues, temp_palette))]
+    second_half = reorder_val(by_hue[:2])
+    first_half = reorder_val(by_hue[2:], True)
+    output.extend(first_half)
+    output.append(dom)
+    output.extend(second_half)
+    return output
+
+def classic_palette(image):
+    ex = ColorThief(image)
+    final_palette = ex.get_palette(11, 10)
+    fifth = choose_fifth(final_palette[5:])
+    final_palette2 = final_palette[:4]
+    final_palette2.append(fifth)
+    final_palette2 = reorder_hue(final_palette2)
+    final_palette2 = np.array(final_palette2)
+    return final_palette2
