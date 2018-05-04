@@ -201,11 +201,12 @@
             </form>
             {% if filename2 %}
                 <div class="caption-style-1" style="padding: 0; margin: 0">
+                  <h3>Default Color Palette</h3>
                     <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename2[4] }}" alt=""
                              onclick="copyToClipboard('#hex4')" onload="copyToClipboard('hex4')">
-                        <div class="caption">
+                        <div class="caption" onclick="copyToClipboard('#hex4')">
                             <div class="blur" onclick="copyToClipboard('#hex4')"></div>
-                            <div class="caption-text">
+                            <div class="caption-text" onclick="copyToClipboard('#hex4')">
                                 <center id="hex4">{{ hex1[4] }}</center>
                                 <center>{{ rgb1[4] }}</center>
                             </div>
@@ -258,7 +259,7 @@
             <br><br><br>
             {% if filename3 %}
                 <div class="caption-style-1" style="padding: 0; margin: 0">
-                  <h2 class="center">Analogous Color Palette</h2>
+                  <h3>Analogous Color Palette</h3>
                     <li><img src="https://s3.us-east-2.amazonaws.com/paletteful/{{ filename3[4] }}" alt=""
                              onclick="copyToClipboard('#hex9')" onload="copyToClipboard('hex9')">
                         <div class="caption">
