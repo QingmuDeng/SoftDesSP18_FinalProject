@@ -82,6 +82,7 @@ def upload():
     global crop_count
     global keys
     fullname = None
+    bounds = ""
     if request.method == 'POST':
         # print("posting something")
         # print("requests", request.files)
@@ -309,7 +310,7 @@ def upload():
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
     # return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
-    return render_template('image.html', filename1=filename2, filename2=color_names1, hex1=hex1, rgb1=rgb1, filename3=color_names2, hex2=hex2, rgb2=rgb2, filename4=color_names3, hex3=hex3, rgb3=rgb3)
+    return render_template('image.html', filename1=filename2, filename2=color_names1, hex1=hex1, rgb1=rgb1, filename3=color_names2, hex2=hex2, rgb2=rgb2, filename4=color_names3, hex3=hex3, rgb3=rgb3, bounds=bounds)
 
 
 def allowed_file(filename):
