@@ -4,14 +4,14 @@ import utils
 import webcolors
 from PIL import Image
 
-def generate(img_path, type):
+def generate(input, type):
     palette = []
     # websafe = []
     final_palette = []
     # user_input = input("Select your palette type (1 = Default, 2 = Complementary, 3 = Analogous):")
     # safe = input("Make palette web safe? [y/n]:")
     # safe = 'n'
-    orig_image = np.array(Image.open(img_path))
+    orig_image = np.array(input)
     image = edit_image(orig_image)
 
     if type == 1:
