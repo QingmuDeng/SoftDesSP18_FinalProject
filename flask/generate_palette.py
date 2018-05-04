@@ -406,7 +406,7 @@ def reorder_hue(palette):
     return output
 
 def classic_palette(image):
-    ex = ColorThief(image)
+    ex = color_thief.ColorThief(image)
     final_palette = ex.get_palette(11, 10)
     fifth = choose_fifth(final_palette[5:])
     final_palette2 = final_palette[:4]
