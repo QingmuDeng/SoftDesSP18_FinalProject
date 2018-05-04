@@ -11,6 +11,7 @@ from PIL import Image
 import PIL
 import math
 import numpy as np
+import random
 
 DEFAULT_NUM_COLORS = 5
 DEFAULT_MINV = 150
