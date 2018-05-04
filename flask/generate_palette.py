@@ -297,3 +297,102 @@ def default_palette(image, orig_image):
     dominants_rgb.extend(accents_rgb)
 
     return dominants_rgb
+
+def analogous_palette(image, orig_image):
+    results_rgb = []
+    results_hsv = []
+    # find top 5 dominant colors of entire image
+    bar1, palette1 = dominant_colors(image, orig_image, 5)
+    # get the most dominant color and remove from palette1
+    dom_rgb = palette1.pop(max(palette1))
+    dom_hsv = get_hsv(dom_rgb)
+    results_hsv.append(dom_hsv)
+    dom_h = results_hsv[0][0]
+    # print(results_hsv)
+
+    # get the hsv values for the rest of the dominant colors
+    hsvs = get_hsvs(palette1.values())
+
+    # calculate absolute value of different between hue values and store in array
+    sub_hsvs = []
+    for hsv in hsvs:
+        sub_hsvs.append(abs(hsv[0] - dom_h))
+
+    # print(hsvs)
+    # print(sub_hsvs)
+
+    # sort the hue differences from least difference to most difference
+    hsvs.sort(key=dict(zip(hsvs, sub_hsvs)).get)
+
+    # get next dominant color that is most similar to dom color in hue
+    dom2_rgb = get_rgb(hsvs[0])
+    dom2_hsv = hsvs[0]
+
+    if get_mag(dom_rgb) > get_mag(dom2_rgb):
+        # first color is brighter so want the second dom to be on the left
+        results_hsv.insert(0, dom2_hsv)
+    else:
+        # just add the second dom to the result array
+        results_hsv.append(dom2_hsv)
+
+    # update rgb array of results
+    results_rgb.extend(get_rgbs(results_hsv))
+
+    # generate a random float between 1.5 and 2.5
+    factor = random.uniform(1.5, 2.5)
+    # print("FACTOR", factor)
+
+    # find mid color between dom and dom2 by finding difference in H,S,V
+    # channels, averaging them, and then adding them to the min H,S,V values
+    diffH = abs(dom_hsv[0] - dom2_hsv[0])
+    diffS = abs(dom_hsv[1] - dom2_hsv[1])
+    diffV = abs(dom_hsv[2] - dom2_hsv[2])
+    # print(diffH, diffS, diffV)
+    mid_domH = diffH / factor + min(dom_hsv[0], dom2_hsv[0])
+    mid_domS = diffS / factor + min(dom_hsv[1], dom2_hsv[1])
+    mid_domV = diffV / factor + min(dom_hsv[2], dom2_hsv[2])
+
+    # calculate HSV values for the two border colors while maintaining the gradient
+    max_S = False #state variable that turns true when a color is at max saturation
+    upperH = results_hsv[0][0]
+
+    # make sure the saturation does not go over 100%
+    if results_hsv[0][1] + diffS / factor <= 100:
+        upperS = results_hsv[0][1] + diffS / factor
+    else:
+        upperS = 100
+        max_S = True
+
+    # make sure the brightness does not go udner 0%
+    if results_hsv[0][2] - diffV / factor >= 0:
+        upperV = results_hsv[0][2] - diffV / factor
+    else:
+        upperV = 0
+
+    # if max sat was reached, make the color a little darker
+    if max_S and upperV >= 3:
+        upperV -= 3
+
+    # print(upperH, upperS, upperV)
+    # print(results_hsv[0][0], results_hsv[0][1], results_hsv[0][2])
+
+    lowerH = results_hsv[-1][0]
+
+    # make sure saturation does not go under 0%
+    if results_hsv[-1][1] - diffS / factor >= 0:
+        lowerS = results_hsv[-1][1] - diffS / factor
+    else:
+        lowerS = 0
+
+    # make sure brightness does not go above 100%
+    if results_hsv[-1][2] + diffV / factor <= 100:
+        lowerV = results_hsv[-1][2] + diffV / factor
+    else:
+        lowerV= 100
+
+    # insert the generated colors in the correct positions
+    results_rgb.insert(1, get_rgb((mid_domH, mid_domS, mid_domV)))
+    results_rgb.insert(0, get_rgb((upperH, upperS, upperV)))
+    results_rgb.append(get_rgb((lowerH, lowerS, lowerV)))
+
+    return results_rgb

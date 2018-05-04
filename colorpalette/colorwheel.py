@@ -138,6 +138,8 @@ def analogous(color):
     return gp.get_rgbs([accent1, leftdomin, color, rightdomin, accent2])
 
 
+
+
 def midcolor(color):
     """
     Generates middle color between 2 complementary colors
