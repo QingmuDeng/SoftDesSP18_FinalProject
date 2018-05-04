@@ -211,7 +211,7 @@ def upload():
                 # save each palette image into AWS
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
-                name = filename2[0:-1 * (len(extension) + 1)] + "_palette1" + str(ind) + filename[
+                name = filename2[0:-1 * (len(extension) + 1)] + "_palette1" + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
                 color_names1.append(name)
                 k3 = Key(b)  # create a new Key (like a file)
@@ -232,7 +232,7 @@ def upload():
                 # save each palette image into AWS
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
-                name = filename2[0:-1 * (len(extension) + 1)] + "_palette2" + str(ind) + filename[
+                name = filename2[0:-1 * (len(extension) + 1)] + "_palette2" + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
                 color_names2.append(name)
                 k3 = Key(b)  # create a new Key (like a file)
