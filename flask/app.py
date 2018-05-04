@@ -145,7 +145,7 @@ def upload():
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
                 if ind == 5:
-                    name = "palette1" + filename[-1 * (len(extension) + 1):]
+                    name = filename[0:-1 * (len(extension) + 1)] + "_palette1" + filename[-1 * (len(extension) + 1):]
                 else:
                     name = filename[0:-1 * (len(extension) + 1)] + "_palette1_" + str(ind) + filename[-1 * (len(extension) + 1):]
                 color_names1.append(name)
@@ -168,7 +168,7 @@ def upload():
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
                 if ind == 5:
-                    name = "palette2" + filename[-1 * (len(extension) + 1):]
+                    name = filename[0:-1 * (len(extension) + 1)] + "_palette2" + filename[-1 * (len(extension) + 1):]
                 else:
                     name = filename[0:-1 * (len(extension) + 1)] + "_palette2_" + str(ind) + filename[
                                                                                        -1 * (len(extension) + 1):]
@@ -217,7 +217,7 @@ def upload():
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
                 if ind == 5:
-                    name = "palette1" + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1" + filename2[-1 * (len(extension) + 1):]
                 else:
                     name = filename2[0:-1 * (len(extension) + 1)] + "_palette1_" + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
@@ -241,7 +241,7 @@ def upload():
                 buffer2 = BytesIO()
                 color.save(buffer2, format=format)
                 if ind == 5:
-                    name = "palette2" + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2" + filename2[-1 * (len(extension) + 1):]
                 else:
                     name = filename2[0:-1 * (len(extension) + 1)] + "_palette2_" + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
