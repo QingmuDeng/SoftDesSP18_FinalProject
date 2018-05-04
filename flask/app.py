@@ -90,8 +90,8 @@ def upload():
             S3_BUCKET = os.environ.get('S3_BUCKET_NAME')
             # print("posted image")
             filename = request.files["image"].filename
-            filename = filename.replace(".", "")
-            filename = filename.replace("/", "")
+            # filename = filename.replace(".", "")
+            # filename = filename.replace("/", "")
             print("FILENAME", filename)
             # connect to s3
             REGION_HOST = 's3.us-east-2.amazonaws.com'
