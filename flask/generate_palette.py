@@ -412,5 +412,6 @@ def classic_palette(image):
     final_palette2 = final_palette[:4]
     final_palette2.append(fifth)
     final_palette2 = reorder_hue(final_palette2)
-    final_palette2 = np.array(final_palette2)
+    for color in final_palette2:
+        color = tuple(color)
     return final_palette2

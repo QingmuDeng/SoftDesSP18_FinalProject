@@ -417,7 +417,5 @@ if __name__ == '__main__':
     final_palette2 = np.array(final_palette2)
     hist = [1.0 / len(final_palette2)] * len(final_palette2)
     bar = utils.plot_colors(hist, final_palette2)
-    # show_colors(bar)z
-    # bar = Image.fromarray(bar)
     new_path = 'test13_a1.png'
     bar.save(new_path)
