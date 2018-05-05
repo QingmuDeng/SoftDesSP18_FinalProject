@@ -64,7 +64,7 @@ function handleFileSelect() {
     canvas.height = img.height;
 
     crop = new ImageCropper(canvas, img.width, img.height, img.width, img.height, true);
-    crop.setImage2(document.getElementById('fileInput'));
+    crop.setImage(document.getElementById('fileInput'));
     drawBounds(img.height, img.width);
     // preview();
 }
