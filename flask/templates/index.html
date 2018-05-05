@@ -84,12 +84,15 @@
         function change_sub() {
             // var clockButton = document.getElementById('subbtn');
             console.log("pressed");
-            if (document.getElementById("img_file").value != "") {
-              console.log("passed");
-              document.getElementById('subbtn').style.opacity = 1;
-              document.getElementById('upbtn').style.opacity = 0;
-              document.getElementById('upbtn').hidden = true;
+            console.log(document.getElementById("img_file").value);
+            while (document.getElementById("img_file").value == "") {
+              console.log("still going");
+              change_sub();
             }
+            console.log("passed");
+            document.getElementById('subbtn').style.opacity = 1;
+            document.getElementById('upbtn').style.opacity = 0;
+            document.getElementById('upbtn').hidden = true;
         }
 
     </script>
