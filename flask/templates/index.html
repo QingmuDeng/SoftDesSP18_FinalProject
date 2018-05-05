@@ -95,6 +95,14 @@
             document.getElementById('upbtn').hidden = true;
         }
 
+        function change_sub2() {
+            // var clockButton = document.getElementById('subbtn');
+            console.log("passed");
+            document.getElementById('subbtn').style.opacity = 1;
+            document.getElementById('upbtn').style.opacity = 0;
+            document.getElementById('upbtn').hidden = true;
+        }
+
     </script>
 </head>
 <body>
@@ -123,8 +131,8 @@
 
         <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper" onclick="change_sub()" id="upbtn">
-                <button class="btn" onclick="change_sub()">Upload</button>
-                <input type="file" id="img_file" name="image"/>
+                <button class="btn">Upload</button>
+                <input type="file" id="img_file" name="image" onchange="change_sub2()"/>
             </div>
             <div class="upload-btn-wrapper2" style="opacity:0;" id="subbtn">
                 <button class="btn" style="vertical-align:middle"> Submit</button>
