@@ -114,15 +114,15 @@ def upload():
             response = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename, stream=True)
             img = Image.open(BytesIO(response.content))
             print("IMAGE", type(img))
-            resized_img = crop_img.resize(img)
-            print("RESIZED IMAGE", type(resized_img))
-
             extension = filename.split(".")[-1]
             print("EXTENSION", extension)
             if extension in ['jpeg', 'jpg', 'JPG', 'JPEG']:
                 format = 'JPEG'
             if extension in ['png']:
                 format = 'PNG'
+                img = img.convert('RGB')
+            resized_img = crop_img.resize(img)
+            print("RESIZED IMAGE", type(resized_img))
 
             buffer = BytesIO()
             resized_img.save(buffer, format=format)
