@@ -87,7 +87,7 @@
             console.log(document.getElementById("img_file").value);
             while (document.getElementById("img_file").value == "") {
               console.log("still going");
-              change_sub();
+              setTimeout(change_sub, 3000);
             }
             console.log("passed");
             document.getElementById('subbtn').style.opacity = 1;
