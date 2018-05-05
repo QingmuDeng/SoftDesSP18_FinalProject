@@ -113,7 +113,7 @@
         </div>
 
         <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
-            <div class="upload-btn-wrapper">
+            <div class="upload-btn-wrapper" onclick="change_sub()">
                 <button class="btn" onclick="change_sub()">Upload</button>
                 <input type="file" name="image"/>
             </div>
