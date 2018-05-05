@@ -84,6 +84,7 @@
         function change_sub() {
             // var clockButton = document.getElementById('subbtn');
             document.getElementById('subbtn').style.opacity = 1;
+            document.getElementById('upbtn').style.opacity = 0;
         }
 
     </script>
@@ -113,7 +114,7 @@
         </div>
 
         <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
-            <div class="upload-btn-wrapper" onclick="change_sub()">
+            <div class="upload-btn-wrapper" onclick="change_sub()" id="upbtn">
                 <button class="btn" onclick="change_sub()">Upload</button>
                 <input type="file" name="image"/>
             </div>
