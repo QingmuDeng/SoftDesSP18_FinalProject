@@ -119,7 +119,7 @@ def upload():
 
             extension = filename.split(".")[-1]
             print("EXTENSION", extension)
-            if extension in ['jpeg', 'jpg']:
+            if extension in ['jpeg', 'jpg', 'JPG', 'JPEG']:
                 format = 'JPEG'
             if extension in ['png']:
                 format = 'PNG'
