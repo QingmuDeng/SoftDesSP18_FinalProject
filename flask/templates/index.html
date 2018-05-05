@@ -26,14 +26,14 @@
             white-space: nowrap;
         }
 
-        .button span {
+        /* .button span {
           cursor: pointer;
           display: inline-block;
           position: relative;
           transition: 0.5s;
-        }
+        } */
 
-        .button span:after {
+        /* .button span:after {
           content: '\00bb';
           position: absolute;
           opacity: 0;
@@ -49,7 +49,8 @@
         .button:hover span:after {
           opacity: 1;
           right: 0;
-        }
+        } */
+
         .upload-btn-wrapper input[type=file] {
             font-size: 100px;
             position: absolute;
@@ -117,6 +118,12 @@
             return "/about";
         }
 
+        function change_sub() {
+            // var x = document.getElementById("myDIV");
+            var clockButton = document.getElementById('subbtn');
+            subbtn.innerHTML = 'Hover>>';
+        }
+
     </script>
 </head>
 <body>
@@ -145,11 +152,11 @@
 
         <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper">
-                <button class="btn">Upload</button>
+                <button class="btn" onclick="change_sub()">Upload</button>
                 <input type="file" name="image"/>
             </div>
             <div class="upload-btn-wrapper2" style="opacity:1;" id="subbtn">
-                <button class="btn" style="vertical-align:middle"><span>Submit</span></button>
+                <button class="btn" style="vertical-align:middle"> Submit</button>
             </div>
         </form>
 
