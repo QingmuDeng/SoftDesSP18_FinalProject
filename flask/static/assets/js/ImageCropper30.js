@@ -251,6 +251,8 @@ var CornerMarker = (function (_super) {
         this.drawCornerFill(ctx);
         this.drawCornerBorder(ctx);
     };
+    console.log("HELLO BABY");
+    reset();
     return CornerMarker;
 })(Handle);
 var Bounds = (function () {

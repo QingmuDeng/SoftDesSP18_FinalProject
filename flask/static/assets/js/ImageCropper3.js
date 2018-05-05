@@ -252,8 +252,7 @@ var CornerMarker = (function (_super) {
         this.drawCornerBorder(ctx);
     };
     console.log("HELLO BABY");
-    document.getElementById("fileInput").hidden = true;
-    document.getElementById("imageCanvas").hidden = false;
+    reset();
     return CornerMarker;
 })(Handle);
 var Bounds = (function () {
