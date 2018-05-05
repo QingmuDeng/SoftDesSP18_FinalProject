@@ -69,7 +69,7 @@ function handleFileSelect() {
     document.getElementById("imageCanvas").hidden = true;
     document.getElementById("fileInput").hidden = false;
     drawBounds(img.height, img.width);
-    document.getElementById("fileInput").hidden = true;
+    // document.getElementById("fileInput").hidden = true;
     // document.getElementById("imageCanvas").hidden = false;
     // preview();
 }
