@@ -64,8 +64,8 @@ function handleFileSelect() {
     canvas.height = img.height;
 
     crop = new ImageCropper(canvas, img.width, img.height, img.width, img.height, true);
+    drawBounds(img.height, img.width);
     crop.setImage(document.getElementById('fileInput'));
-    drawBounds();
     // preview();
 }
 
@@ -75,13 +75,15 @@ function getBounds() {
     document.getElementById("img").value = document.getElementById("fileInput").src;
 }
 
-function drawBounds(){
-  console.log("HELLO");
-  var result;
-  result = document.getElementById("old_bounds").innerHTML.split(",");
-  console.log(result);
-  var bounds = Bounds(parseInt(result[0]), parseInt(result[1]), parseInt(result[2]), parseInt(result[3]));
-  console.log(result[0]);
-  console.log(bounds);
-  crop.setBounds(bounds);
+function drawBounds(h, w){
+    console.log("HELLO");
+    if (document.getElementById("old_bounds").innerHTML.length > 0) {
+      var result;
+      result = document.getElementById("old_bounds").innerHTML.split(",");
+      console.log(result);
+      // var bounds = crop.Bounds(parseInt(result[0]), parseInt(result[1]), parseInt(result[2]), parseInt(result[3]));
+      console.log(result[0]);
+      // console.log(bounds);
+      crop.setBounds2(parseInt(result[0]), parseInt(result[1]), parseInt(result[2]), parseInt(result[3]), h, w);
+    }
 }

@@ -799,8 +799,13 @@ var ImageCropper = (function () {
         this.center.recalculatePosition(bounds);
         this.center.draw(this.ctx);
     };
-    ImageCropper.prototype.setBounds2 = function (x, y, width, height) {
-        var bounds = new Bounds(x, y, width, height);
+    ImageCropper.prototype.setBounds2 = function (x, y, width, height, h , w) {
+        // var bounds = new Bounds(x, y, width, height);
+        var bounds = new Bounds();
+        bounds.left = width;
+        bounds.right = height;
+        bounds.top = Math.abs(x - h);
+        bounds.bottom = Math.abs(y - h);
         var topLeft;
         var topRight;
         var bottomLeft;
