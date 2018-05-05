@@ -118,6 +118,7 @@ def upload():
             print("RESIZED IMAGE", type(resized_img))
 
             extension = filename.split(".")[-1]
+            print("EXTENSION", extension)
             if extension in ['jpeg', 'jpg']:
                 format = 'JPEG'
             if extension in ['png']:
