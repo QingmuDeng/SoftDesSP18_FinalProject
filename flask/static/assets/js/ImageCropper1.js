@@ -156,7 +156,6 @@ var DragMarker = (function (_super) {
         ctx.beginPath();
         ctx.moveTo(points[0].x + this.position.x, points[0].y + this.position.y);
         for (var k = 0; k < points.length; k++) {
-            console.log("STUFF");
             var p = points[k];
             ctx.lineTo(p.x + this.position.x, p.y + this.position.y);
         }
@@ -251,8 +250,6 @@ var CornerMarker = (function (_super) {
         this.drawCornerFill(ctx);
         this.drawCornerBorder(ctx);
     };
-    console.log("HELLO BABY");
-    reset(true);
     return CornerMarker;
 })(Handle);
 var Bounds = (function () {
@@ -839,6 +836,7 @@ var ImageCropper = (function () {
         bottomRight.setPosition(bounds.right, bounds.bottom);
         this.center.recalculatePosition(bounds);
         this.center.draw(this.ctx);
+        this.draw(this.ctx);
     };
     ImageCropper.prototype.getBounds = function () {
         var minX = Number.MAX_VALUE;
