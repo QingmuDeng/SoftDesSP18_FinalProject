@@ -156,6 +156,7 @@ var DragMarker = (function (_super) {
         ctx.beginPath();
         ctx.moveTo(points[0].x + this.position.x, points[0].y + this.position.y);
         for (var k = 0; k < points.length; k++) {
+            console.log("STUFF");
             var p = points[k];
             ctx.lineTo(p.x + this.position.x, p.y + this.position.y);
         }
@@ -250,6 +251,9 @@ var CornerMarker = (function (_super) {
         this.drawCornerFill(ctx);
         this.drawCornerBorder(ctx);
     };
+    console.log("HELLO BABY");
+    document.getElementById("fileInput").hidden = true;
+    document.getElementById("imageCanvas").hidden = false;
     return CornerMarker;
 })(Handle);
 var Bounds = (function () {
@@ -722,25 +726,6 @@ var ImageCropper = (function () {
                 PointPool.instance.returnPoint(brPos);
             }
         }
-        this.vertSquashRatio = this.detectVerticalSquash(img);
-        this.draw(this.ctx);
-    };
-    ImageCropper.prototype.setImage2 = function (img) {
-        if (!img) {
-            throw "Image is null";
-        }
-        this.imageSet = true;
-        // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        var bufferContext = this.buffer.getContext('2d');
-        // bufferContext.clearRect(0, 0, this.buffer.width, this.buffer.height);
-        var splitName = img.src.split('.');
-        var fileType = splitName[splitName.length-1];
-        if (fileType == 'png' || fileType == 'jpg') {
-            this.fileType = fileType;
-        }
-        console.log(this.fileType);
-        console.log(img.src);
-        this.srcImage = img;
         this.vertSquashRatio = this.detectVerticalSquash(img);
         this.draw(this.ctx);
     };

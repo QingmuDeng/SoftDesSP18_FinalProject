@@ -66,9 +66,11 @@ function handleFileSelect() {
 
     crop = new ImageCropper(canvas, img.width, img.height, img.width, img.height, true);
     crop.setImage(document.getElementById('fileInput'));
+    document.getElementById("imageCanvas").hidden = true;
+    document.getElementById("fileInput").hidden = false;
     drawBounds(img.height, img.width);
-    document.getElementById("fileInput").hidden = true;
-    document.getElementById("imageCanvas").hidden = false;
+    // document.getElementById("fileInput").hidden = true;
+    // document.getElementById("imageCanvas").hidden = false;
     // preview();
 }
 
@@ -88,5 +90,12 @@ function drawBounds(h, w){
       console.log(result[0]);
       // console.log(bounds);
       crop.setBounds2(parseInt(result[0]), parseInt(result[1]), parseInt(result[2]), parseInt(result[3]), h, w);
+      while (true) {
+        console.log("waiting");
+        bounds = crop.getCropBounds();
+        if (bounds.top.toString()+", "+bounds.bottom.toString()+", "+bounds.left.toString()+", "+bounds.right.toString().valueOf() == document.getElementById("old_bounds").innerHTML.valueOf()){
+          break;
+        }
+      }
     }
 }
