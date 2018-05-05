@@ -28,12 +28,12 @@ window.onload = function () {
     window.addEventListener('mouseup', preview);
     window.addEventListener('touchend', preview);
 };
-function preview() {
-    if (crop.isImageSet()) {
-        var img = crop.getCroppedImage();
-        img.onload = (function () { return previewLoaded(img); });
-    }
-}
+// function preview() {
+//     if (crop.isImageSet()) {
+//         var img = crop.getCroppedImage();
+//         img.onload = (function () { return previewLoaded(img); });
+//     }
+// }
 
 function to_image(){
 //    <!--document.getElementById("button").style.opacity = 0;-->
@@ -47,11 +47,11 @@ function to_image(){
     document.getElementById("upload").submit();
 }
 
-function previewLoaded(img) {
-    if (img) {
-        document.getElementById("preview").appendChild(img);
-    }
-}
+// function previewLoaded(img) {
+//     if (img) {
+//         document.getElementById("preview").appendChild(img);
+//     }
+// }
 
 function handleFileSelect() {
     document.getElementById("fileInput").hidden = true;

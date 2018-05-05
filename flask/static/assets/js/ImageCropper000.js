@@ -656,11 +656,14 @@ var ImageCropper = (function () {
         var bufferContext = this.buffer.getContext('2d');
         bufferContext.clearRect(0, 0, this.buffer.width, this.buffer.height);
         var splitName = img.src.split('.');
-        var fileType = splitName[-1];
+        var fileType = splitName[splitName.length-1];
         if (fileType == 'png' || fileType == 'jpg') {
             this.fileType = fileType;
         }
+        console.log(this.fileType);
+        console.log(img.src);
         this.srcImage = img;
+        this.srcImage.crossOrigin = "Anonymous";
         this.updateClampBounds();
         var sourceAspect = this.srcImage.height / this.srcImage.width;
         var cropBounds = this.getBounds();

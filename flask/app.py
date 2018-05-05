@@ -5,10 +5,10 @@ javascript.
 """
 # had to pip install Flask-Uploads
 # kill processes: ps -fA | grep python
-"""importing python files not in this directory"""
+
 import os
 import sys
-# module_path = os.path.abspath(os.path.join('../colorpalette'))
+# module_path = os.path.abspath(os.path.join('colorpalette'))
 # if module_path not in sys.path:
 #     sys.path.append(module_path)
 
@@ -18,9 +18,17 @@ import flask
 import crop_img
 import main
 import glob
-from config import MEDIA_FOLDER
+# from config import MEDIA_FOLDER
 # from nocache import nocache
 # import json, boto3
+import boto
+import boto3
+from PIL import Image, ImageChops
+import PIL
+import numpy as np
+import requests
+from io import BytesIO
+from boto.s3.key import Key
 
 # import webbrowser
 # import threading
@@ -29,10 +37,11 @@ app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/img/'
 configure_uploads(app, photos)
 
 crop_count = 0
+keys = []
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -41,19 +50,15 @@ def home():
     This function is automatically called when the main function runs. It renders the home page html file
     :return: rendered html of home page (known as 'index.html')
     """
-    # for infile in glob.glob('static/img/*'):
-    #     os.remove(infile)
+    global keys
+    REGION_HOST = 's3.us-east-2.amazonaws.com'
+    s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'), os.environ.get('AWS_SECRET_ACCESS_KEY'),
+                             host=REGION_HOST)
+    b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
+    for key in keys:
+        b.delete_key(key)
+    keys = []
     return render_template('index.html')
-
-
-@app.route('/upload/<path:filename>')
-def download_file(filename):
-    return flask.send_from_directory(MEDIA_FOLDER, filename, as_attachment=True)
-
-
-@app.route("/webpage", methods=['GET', 'POST'])
-def webpage():
-    return render_template('webpage.html')
 
 
 @app.route("/search", methods=['GET', 'POST'])
@@ -75,36 +80,133 @@ def upload():
     :return: rendered template of image page (known as 'image.html') with the image files and color codes passed in
     """
     global crop_count
+    global keys
     fullname = None
-    print("hello")
     if request.method == 'POST':
-        print("posting something")
-        print("requests", request.files)
+        # print("posting something")
+        # print("requests", request.files)
 
         if "image" in request.files:
-            # S3_BUCKET = os.environ.get('S3_BUCKET')
-            print("posted image")
-            filename = photos.save(request.files["image"])
-            fullname = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], filename)
-            crop_img.resize(fullname)
-            print(fullname)
-            palettename, rgb, hex = main.generate(fullname)
+            S3_BUCKET = os.environ.get('S3_BUCKET_NAME')
+            # print("posted image")
+            filename = request.files["image"].filename
+            print("FILENAME", filename)
+            # connect to s3
+            REGION_HOST = 's3.us-east-2.amazonaws.com'
+            s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'), os.environ.get('AWS_SECRET_ACCESS_KEY'),
+                                     host=REGION_HOST)
+            # open s3 bucket, create new Key/file
+            # set the mimetype, content and access control
+            # print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
+            # print("FILE CONTENTS", request.files["image"].read())
+            b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))  # bucket name defined in .env
+            k = b.new_key(b)  # create a new Key (like a file)
+            k.key = filename  # set filename
+            k.set_metadata("Content-Type", request.files["image"].mimetype)  # identify MIME type
+            k.set_contents_from_string(request.files["image"].stream.read())  # file contents to be added
+            k.set_acl('public-read')  # make publicly readable
+            keys.append(k)
+
+            # extract the image from aws and call resize
+            response = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename, stream=True)
+            img = Image.open(BytesIO(response.content))
+            print("IMAGE", type(img))
+            resized_img = crop_img.resize(img)
+            print("RESIZED IMAGE", type(resized_img))
+
+            extension = filename.split(".")[-1]
+            if extension in ['jpeg', 'jpg']:
+                format = 'JPEG'
+            if extension in ['png']:
+                format = 'PNG'
+
+            buffer = BytesIO()
+            resized_img.save(buffer, format=format)
+            filename2 = filename[0:-1 * (len(extension) + 1)] + "_resize" + filename[-1 * (len(extension) + 1):]
+
+            # print("HELLO!", type(buffer.getvalue()))
+            k2 = Key(b)  # create a new Key (like a file)
+            k2.key = filename2  # set filename
+
+            print("NEW NAME", filename2)
+            # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+            k2.set_contents_from_string(buffer.getvalue())  # file contents to be added
+            k2.set_acl('public-read')  # make publicly readable
+            keys.append(k2)
+
+            palette, rgb, hex = main.generate(img)
+            palettes = crop_img.crop_palette(palette)
+
+            color_names = []
+
+            for ind, color in enumerate(palettes):
+                # save each palette image into AWS
+                buffer2 = BytesIO()
+                color.save(buffer2, format=format)
+                name = filename[0:-1 * (len(extension) + 1)] + "_palette" + str(ind) + filename[
+                                                                                       -1 * (len(extension) + 1):]
+                color_names.append(name)
+                k3 = Key(b)  # create a new Key (like a file)
+                k3.key = name  # set filename
+                print("COLOR NAME", name)
+                # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+                k3.set_contents_from_string(buffer2.getvalue())  # file contents to be added
+                k3.set_acl('public-read')  # make publicly readable
+                keys.append(k3)
 
         if "bounds" in request.form:
+            REGION_HOST = 's3.us-east-2.amazonaws.com'
+            s3conn = boto.connect_s3(os.environ.get('AWS_ACCESS_KEY_ID'), os.environ.get('AWS_SECRET_ACCESS_KEY'),
+                                     host=REGION_HOST)
+            # open s3 bucket, create new Key/file
+            # set the mimetype, content and access control
+            # print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
+            # print("FILE CONTENTS", request.files["image"].read())
+            b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
             crop_count += 1
             text = request.form['img']
             bounds = request.form['bounds']
-            fullname = str(text[22:])
-            print("BOUNDS", bounds, fullname)
-            croppedname = crop_img.crop_img(fullname, bounds, crop_count)
-            palettename, rgb, hex = main.generate(croppedname)
+            response = requests.get(text, stream=True)
+            img = Image.open(BytesIO(response.content))
+            extension = text.split(".")[-1]
+            filename2 = text.split('/')[-1]
+            if extension in ['jpeg', 'jpg']:
+                format = 'JPEG'
+            if extension in ['png']:
+                format = 'PNG'
+            # fullname = str(text[22:])
+            # fullname2 = fullname[7:]
+            # print("THE NAME", fullname2)
+            print("BOUNDS", bounds)
+            cropped_img = crop_img.crop_img(img, bounds, crop_count)
+            palette, rgb, hex = main.generate(cropped_img)
+
+            palettes = crop_img.crop_palette(palette)
+
+            color_names = []
+
+            for ind, color in enumerate(palettes):
+                # save each palette image into AWS
+                buffer2 = BytesIO()
+                color.save(buffer2, format=format)
+                name = filename2[0:-1 * (len(extension) + 1)] + "_palette" + str(ind) + filename2[
+                                                                                        -1 * (len(extension) + 1):]
+                color_names.append(name)
+                k3 = Key(b)  # create a new Key (like a file)
+                k3.key = name  # set filename
+                print("COLOR NAME", name)
+                # k2.set_metadata("Content-Type", request.files["image"].mimetype) # identify MIME type
+                k3.set_contents_from_string(buffer2.getvalue())  # file contents to be added
+                k3.set_acl('public-read')  # make publicly readable
+                keys.append(k3)
 
     # palettename = os.path.join(app.config['UPLOADED_PHOTOS_DEST'], "palette3.png")
-    print(palettename)
-    colors_path = crop_img.crop_palette(palettename)
+    # print(palettename)
+    # colors_path = crop_img.crop_palette(palettename)
     # hex = ['#4e9559', '#18960b', '#d16903', '#f8d000', '#f8d000']
     # rgb = ['(78, 149, 89)', '(24, 150, 11)', '(209, 105, 3)', '(248, 208, 0)', '(248, 208, 0)']
-    return render_template('image.html', filename1=fullname, filename2=colors_path, hex=hex, rgb=rgb)
+    # return render_template('image.html', filename1='https://%s.s3.amazonaws.com/%s' % (S3_BUCKET, filename), filename2=colors_path, hex=hex, rgb=rgb)
+    return render_template('image.html', filename1=filename2, filename2=color_names, hex=hex, rgb=rgb)
 
 
 def allowed_file(filename):

@@ -656,7 +656,7 @@ var ImageCropper = (function () {
         var bufferContext = this.buffer.getContext('2d');
         bufferContext.clearRect(0, 0, this.buffer.width, this.buffer.height);
         var splitName = img.src.split('.');
-        var fileType = splitName[-1];
+        var fileType = splitName[splitName.length-1];
         if (fileType == 'png' || fileType == 'jpg') {
             this.fileType = fileType;
         }
