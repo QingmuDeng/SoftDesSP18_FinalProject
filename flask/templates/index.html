@@ -81,19 +81,19 @@
             return "/about";
         }
 
-        function change_sub() {
-            // var clockButton = document.getElementById('subbtn');
-            console.log("pressed");
-            console.log(document.getElementById("img_file").value);
-            while (document.getElementById("img_file").value == "") {
-              console.log("still going");
-              setTimeout(change_sub, 3000);
-            }
-            console.log("passed");
-            document.getElementById('subbtn').style.opacity = 1;
-            document.getElementById('upbtn').style.opacity = 0;
-            document.getElementById('upbtn').hidden = true;
-        }
+        // function change_sub() {
+        //     // var clockButton = document.getElementById('subbtn');
+        //     console.log("pressed");
+        //     console.log(document.getElementById("img_file").value);
+        //     while (document.getElementById("img_file").value == "") {
+        //       console.log("still going");
+        //       setTimeout(change_sub, 3000);
+        //     }
+        //     console.log("passed");
+        //     document.getElementById('subbtn').style.opacity = 1;
+        //     document.getElementById('upbtn').style.opacity = 0;
+        //     document.getElementById('upbtn').hidden = true;
+        // }
 
         function change_sub2() {
             // var clockButton = document.getElementById('subbtn');
@@ -130,7 +130,7 @@
         </div>
 
         <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
-            <div class="upload-btn-wrapper" onclick="change_sub()" id="upbtn">
+            <div class="upload-btn-wrapper" id="upbtn">
                 <button class="btn">Upload</button>
                 <input type="file" id="img_file" name="image" onchange="change_sub2()"/>
             </div>
