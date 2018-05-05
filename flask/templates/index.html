@@ -10,10 +10,46 @@
         }
 
         .btn {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            /* text-align: center; */
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
             text-align: center;
             white-space: nowrap;
         }
 
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .button:hover span {
+          padding-right: 25px;
+        }
+
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
         .upload-btn-wrapper input[type=file] {
             font-size: 100px;
             position: absolute;
@@ -113,7 +149,7 @@
                 <input type="file" name="image"/>
             </div>
             <div class="upload-btn-wrapper2" style="opacity:1;" id="subbtn">
-                <button class="btn">Submit</button>
+                <button class="btn" style="vertical-align:middle"><span>Submit</span></button>
             </div>
         </form>
 
