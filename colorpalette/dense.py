@@ -1,6 +1,12 @@
 import tensorflow as tf
 import numpy as np
 from ml_utils import ml_utils
+import pickle
+import multiprocessing as mp
+from PIL import Image
+import generate_palette as gp
+from random import shuffle
+import os, sys
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
@@ -12,34 +18,34 @@ def dense_fn(features, labels, mode):
 
     # Dense Layers
     dense1 = tf.layers.dense(inputs=input_layer, units=2048, activation=tf.nn.relu)
-    dropout1 = tf.layers.dropout(inputs=dense1, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    dropout1 = tf.layers.dropout(inputs=dense1, rate=0.5, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense2 = tf.layers.dense(inputs=dropout1, units=2048, activation=tf.nn.relu)
-    dropout2 = tf.layers.dropout(inputs=dense2, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    # dense2 = tf.layers.dense(inputs=dense1, units=2048, activation=tf.nn.relu)
+    # dropout2 = tf.layers.dropout(inputs=dense2, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense3 = tf.layers.dense(inputs=dropout2, units=2048, activation=tf.nn.relu)
-    dropout3 = tf.layers.dropout(inputs=dense3, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    # dense3 = tf.layers.dense(inputs=dense2, units=2048, activation=tf.nn.relu)
+    # dropout3 = tf.layers.dropout(inputs=dense3, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense4 = tf.layers.dense(inputs=dropout3, units=2048, activation=tf.nn.relu)
-    dropout4 = tf.layers.dropout(inputs=dense4, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    # dense4 = tf.layers.dense(inputs=dense3, units=2048, activation=tf.nn.relu)
+    # dropout4 = tf.layers.dropout(inputs=dense4, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense5 = tf.layers.dense(inputs=dropout4, units=2048, activation=tf.nn.relu)
-    dropout5 = tf.layers.dropout(inputs=dense5, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+#     dense5 = tf.layers.dense(inputs=dropout4, units=2048, activation=tf.nn.relu)
+#     dropout5 = tf.layers.dropout(inputs=dense5, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense6 = tf.layers.dense(inputs=dropout5, units=2048, activation=tf.nn.relu)
-    dropout6 = tf.layers.dropout(inputs=dense6, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+#     dense6 = tf.layers.dense(inputs=dropout5, units=2048, activation=tf.nn.relu)
+#     dropout6 = tf.layers.dropout(inputs=dense6, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense7 = tf.layers.dense(inputs=dropout6, units=2048, activation=tf.nn.relu)
-    dropout7 = tf.layers.dropout(inputs=dense7, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+#     dense7 = tf.layers.dense(inputs=dropout6, units=2048, activation=tf.nn.relu)
+#     dropout7 = tf.layers.dropout(inputs=dense7, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense8 = tf.layers.dense(inputs=dropout7, units=2048, activation=tf.nn.relu)
-    dropout8 = tf.layers.dropout(inputs=dense8, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+#     dense8 = tf.layers.dense(inputs=dropout7, units=2048, activation=tf.nn.relu)
+#     dropout8 = tf.layers.dropout(inputs=dense8, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
-    dense9 = tf.layers.dense(inputs=dropout8, units=1024, activation=tf.nn.relu)
-    dropout9 = tf.layers.dropout(inputs=dense8, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+#     dense9 = tf.layers.dense(inputs=dropout8, units=1024, activation=tf.nn.relu)
+#     dropout9 = tf.layers.dropout(inputs=dense8, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
     # Logits Layer
-    logits = tf.layers.dense(inputs=dropout9, units=4)
+    logits = tf.layers.dense(inputs=dense1, units=4)
 
     predictions = {
         "classes": tf.argmax(input=logits, axis=1),
@@ -52,6 +58,9 @@ def dense_fn(features, labels, mode):
     # Loss Calculation
     onehot_labels = tf.one_hot(indices=tf.cast(labels, tf.int32), depth=4)
     loss = tf.losses.softmax_cross_entropy(onehot_labels=onehot_labels, logits=logits)
+    #Calculate Loss (for both TRAIN and EVAL modes)
+
+#     loss = tf.losses.sparse_softmax_cross_entropy(labels=labels, logits=logits)
 
     # Training
     if mode == tf.estimator.ModeKeys.TRAIN:
@@ -68,69 +77,66 @@ def dense_fn(features, labels, mode):
     return tf.estimator.EstimatorSpec(mode=mode, loss=loss, eval_metric_ops=eval_metric_ops)
 
 
-def cluster_around(flattened_img, centroids):
-    cluster = dict((tuple(centroid), 0) for centroid in centroids)
-    total = float(len(flattened_img))
-    for i in flattened_img:
-        temp = 0
-        first_pass = True
-        which_centroid = None
-        for centroid in centroids:
-            dist = np.linalg.norm((i-centroid))
-            if first_pass:
-                which_centroid = centroid
-                temp = dist
-                first_pass = False
-            elif temp > dist:
-                which_centroid = centroid
-                temp = dist
-        cluster[tuple(which_centroid)] += 1
-    cluster = dict((k, v/total) for k, v in cluster.items())
-    return cluster
-
-
 def main(not_used):
+    with open('dataset/processed.pckl', 'rb') as f:
+        u = pickle._Unpickler(f)
+        u.encoding = 'latin1'
+        dataset = u.load()
 
-    ML = ml_utils()
-    ML.shuffle()
-    ML.split()
-    # Import data
-    train_data = ML.tr_data
-    train_labels = ML.tr_label
-    eval_data = ML.eva_data
-    eval_labels = ML.eva_data
+    setlength = len(dataset)
+    splitpoint = int(setlength * .8)
+    shuffle(dataset)
+    train = dataset[:splitpoint]
+    evaluate = dataset[splitpoint:]
+
+    train_data = np.asarray([data[0] for data in train]).astype(float)
+    train_labels = np.asarray([data[1] for data in train], dtype=np.int32)
+
+    #     train_labels = tf.one_hot(indices=tf.cast(train_labels, tf.int32), depth=16)
+
+    eval_data = np.asarray([data[0] for data in evaluate]).astype(float)
+    eval_labels = np.asarray([data[1] for data in evaluate], dtype=np.int32)
+    #     eva_labels = tf.one_hot(indices=tf.cast(eva_labels, tf.int32), depth=16)
 
     # Create an Estimator
-    dense_classifier = tf.estimator.Estimator(model_fn=dense_fn, model_dir='dataset/color_model')
+    dense_classifier = tf.estimator.Estimator(model_fn=dense_fn, model_dir='dataset/model_sess/')
 
     # Set up logging for predictions
     # Log the values in the softmax tensor with labels "probabilities"
-    tensors_to_log = {"probabilities": "softmax"}
+    tensors_to_log = {"probabilities": "softmax_tensor"}
     logging_hook = tf.train.LoggingTensorHook(tensors=tensors_to_log, every_n_iter=50)
+
+#     print(len(train_data), 'data length')
+#     print(len(train_labels), 'label length')
 
     # Train the model
     train_input_fn = tf.estimator.inputs.numpy_input_fn(
         x={"x": train_data},
         y=train_labels,
-        batch_size=50,
-        num_epoch=None,
+        batch_size=16,
+        num_epochs=None,
         shuffle=True
     )
     dense_classifier.train(
         input_fn=train_input_fn,
-        steps=20000,
+        steps=30000,
         hooks=[logging_hook]
     )
 
+    # saver.save(sess, '/model_sess/generator.ckpt')
+    
+
     # Evaluate the model
-    eval_input_fn = tf.estimator.input.numpy_input_fn(
+    eval_input_fn = tf.estimator.inputs.numpy_input_fn(
         x={"x": eval_data},
         y=eval_labels,
-        num_epoch=1,
+        num_epochs=1,
         shuffle=False
     )
-    eval_results = dense_classifier.Evaluate(input_fn=eval_input_fn)
+    eval_results = dense_classifier.evaluate(input_fn=eval_input_fn)
+    print(eval_results)
 
 
 if __name__ == "__main__":
-    tf.app.run()
+    with tf.device("/cpu:0"):
+        tf.app.run()
