@@ -806,34 +806,36 @@ var ImageCropper = (function () {
         bounds.right = y;
         bounds.top = width;
         bounds.bottom = height;
-        // var topLeft;
-        // var topRight;
-        // var bottomLeft;
-        // var bottomRight;
+        console.log("it gets there !");
+        var topLeft;
+        var topRight;
+        var bottomLeft;
+        var bottomRight;
         var currentBounds = this.getBounds();
-        // for (var i = 0; i < this.markers.length; i++) {
-        //     var marker = this.markers[i];
-        //     if (marker.getPosition().x == currentBounds.left) {
-        //         if (marker.getPosition().y == currentBounds.top) {
-        //             topLeft = marker;
-        //         }
-        //         else {
-        //             bottomLeft = marker;
-        //         }
-        //     }
-        //     else {
-        //         if (marker.getPosition().y == currentBounds.top) {
-        //             topRight = marker;
-        //         }
-        //         else {
-        //             bottomRight = marker;
-        //         }
-        //     }
-        // }
-        // topLeft.setPosition(bounds.left, bounds.top);
-        // topRight.setPosition(bounds.right, bounds.top);
-        // bottomLeft.setPosition(bounds.left, bounds.bottom);
-        // bottomRight.setPosition(bounds.right, bounds.bottom);
+        for (var i = 0; i < this.markers.length; i++) {
+          console.log("i");
+            var marker = this.markers[i];
+            if (marker.getPosition().x == currentBounds.left) {
+                if (marker.getPosition().y == currentBounds.top) {
+                    topLeft = marker;
+                }
+                else {
+                    bottomLeft = marker;
+                }
+            }
+            else {
+                if (marker.getPosition().y == currentBounds.top) {
+                    topRight = marker;
+                }
+                else {
+                    bottomRight = marker;
+                }
+            }
+        }
+        topLeft.setPosition(bounds.left, bounds.top);
+        topRight.setPosition(bounds.right, bounds.top);
+        bottomLeft.setPosition(bounds.left, bounds.bottom);
+        bottomRight.setPosition(bounds.right, bounds.bottom);
         this.center.recalculatePosition(bounds);
         this.center.draw(this.ctx);
     };
