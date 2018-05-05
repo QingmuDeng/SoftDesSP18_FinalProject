@@ -97,7 +97,7 @@ function drawBounds(h, w){
           break;
         }
       }
-      document.getElementById("fileInput").hidden = true;
-      document.getElementById("imageCanvas").hidden = false;
     }
+    document.getElementById("fileInput").hidden = true;
+    document.getElementById("imageCanvas").hidden = false;
 }
