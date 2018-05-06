@@ -1311,7 +1311,7 @@
 
 	body {
 		background-color: #183026;
-		background-image: url("flask/static/assets_overflow/css/images/overlay.png"), url("flask/static/images_overflow/bg.jpg");
+		background-image: url("flask/static/assets_overflow/css/images/mountain.jpeg"), url("flask/static/images_overflow/bg.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
 		background-position: top left, center 0;
