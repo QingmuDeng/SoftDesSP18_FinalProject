@@ -62,7 +62,8 @@ def resize(input):
     if image.shape[0] > 600:
         print("height too long")
         r = 600.0 / image.shape[0]
-        dim = (600, int(image.shape[1] * r))
+        dim = (int(image.shape[1] * r), 600)
+        print(dim)
         # perform the actual resizing of the image
         image = Image.fromarray(image)
         image2 = image.resize(dim, resample=PIL.Image.LANCZOS)
