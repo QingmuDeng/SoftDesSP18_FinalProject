@@ -8,3 +8,7 @@ sklearn
 boto3
 boto
 requests
+tensorflow
+pickle
+multiprocessing
+flickrapi
