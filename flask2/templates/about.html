@@ -60,7 +60,7 @@
     <link rel="stylesheet" href="../static/assets_overflow/css/reset.css">
     <link rel="stylesheet" href="../static/assets_overflow/css/style.css">
     <script src="../static/assets_overflow/js/modernizr.js"></script>
-    <link rel="stylesheet" href="../static/assets_overflow/css/main1300.css"/>
+    <link rel="stylesheet" href="../static/assets_overflow/css/main15.css"/>
     <link rel="stylesheet" href="../static/assets_overflow/css/ie8_900.css"/>
     <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <noscript>
@@ -84,7 +84,7 @@
 <body>
 
 <!-- Header -->
-<section id="header">
+<section id="header" style="padding-top:20%; padding-bottom:0%;">
     <header>
         <div id="toolbar-options" class="hidden">
             <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span
@@ -101,13 +101,18 @@
         <p>by Paletteful</p>
     </header>
     <footer>
-      <div class="cd-section" style="background-color: transparent; padding: 0%; margin: 0%;">
+      <div class="cd-section" style="background-color: transparent; padding-top: 5%; padding-bottom: 0%; margin: 0%;">
           <div class="cd-modal-action">
               <a href="#1" class="button style2" data-type="modal-trigger">User Manual</a>
               <span class="cd-modal-bg"></span>
           </div>
           <div class="cd-modal">
               <div class="cd-modal-content">
+                  <figure>
+                        <img src="../static/images_about/intro.gif" alt="" class="center"/>
+                        <br>
+                        <figcaption>Home Page Tour</figcaption>
+                  </figure>
                   <p>To start generating color palettes, just go to the home page by clicking on the main leaf icon.
                     At the home page, upload an image of your choice via the “upload” and “submit” buttons.
                     After selecting an image, a new page will load with the generated color palettes.
@@ -116,7 +121,11 @@
                     The penguin icon links to this page while the search icon links to the image sentiment analysis feature.
                     However, currently, the image sentiment analysis is separate from the rest of the application
                     and will be integrated in the future.</p>
-                  <p>INPUT GIFS/ IMAGES</p>
+                  <figure>
+                        <img src="../static/images_about/image.gif" alt="" class="center"/>
+                        <br>
+                        <figcaption>Color Palette Features</figcaption>
+                    </figure>
                   <p>See our
                     <a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject" style="color: white">README</a>
                     for more information on how to run the application locally.</p>
@@ -124,10 +133,23 @@
           </div> <!-- cd-modal -->
           <a href="#1" class="cd-modal-close">Close</a>
       </div>
-  </div>
     </footer>
 </section>
 
+<!--<section id = "break">-->
+    <!--&lt;!&ndash;<ul class="icons">&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!--<div>-->
+        <!--<br>-->
+        <!--<br>-->
+    <!--</div>-->
+<!--</section>-->
 <!-- Banner -->
 <!-- <section id="banner">
     <header>
@@ -143,7 +165,8 @@
     <!--<a href="#first" class="button style2 scrolly">Act on this message</a>-->
     <!--</footer>-->
 <!-- </section> -->
-<article class="container box style1">
+
+<article class="container box style1" style="margin-top: 0%">
     <div class="inner" style="text-align:center;">
         <h2>Our Purpose
         </h2>
@@ -152,6 +175,7 @@
           Our goal is to extract usefulness from your favorite images by providing user-friendly tools, such as
           downloadable color palettes and image sentiment analysis. We want to make it easier for everyone to
           be amazing designers and artists.</p>
+    </div>
 </article>
 
 <article class="container box style1">
@@ -163,6 +187,7 @@
           We are currently first-years at Olin College of Engineering. This website was created as
           part of the final project for Software Design, Spring 2018.
         </p>
+    </div>
 </article>
 
 <!-- Feature 1 Description -->
@@ -203,7 +228,7 @@
                       It is generated from various shades of the image’s dominant color that is found using K means clustering.
                       We also experimented with generating a complementary color palette type, which consists of colors that lie
                        opposite each other on the color wheel. To generate this type of color palette, the dominant color of
-                       the image is matched with its complement. However, this palette still needs to be refined before it is integrated into Paletteful.
+                       the image is matched with its complement. The color theory behind this palette still needs to be refined before publishing it to Paletteful.
 
                     </p>
                     <figure>
