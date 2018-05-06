@@ -238,9 +238,13 @@ def upload():
             # # print("BUCKET", os.environ.get('S3_BUCKET_NAME'))
             # # print("FILE CONTENTS", request.files["image"].read())
             # b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
+            print("HELLO")
             crop_count += 1
             text = request.form['img']
             bounds = request.form['bounds']
+            print("TEXT", text)
+            print("BOUNDS", bounds)
+            text = str(text[22:])
             # response = requests.get(text, stream=True)
             # img = Image.open(BytesIO(response.content))
             img = Image.open(text)
@@ -267,10 +271,10 @@ def upload():
                 # buffer2 = BytesIO()
                 # color.save(buffer2, format=format)
                 if ind == 5:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1" + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1" + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 else:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1_" + str(ind) + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1_" + str(ind) + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 color_names1.append(name)
                 # k3 = Key(b)  # create a new Key (like a file)
@@ -292,10 +296,10 @@ def upload():
                 # buffer2 = BytesIO()
                 # color.save(buffer2, format=format)
                 if ind == 5:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2" + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2" + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 else:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2_" + str(ind) + filename2[
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2_" + "_" + str(crop_count) + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
                     color.save(name)
                 color_names2.append(name)
@@ -318,10 +322,10 @@ def upload():
                 # buffer2 = BytesIO()
                 # color.save(buffer2, format=format)
                 if ind == 5:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3" + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3" + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 else:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3_" + str(ind) + filename2[
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3_" + "_" + str(crop_count) + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
                     color.save(name)
                 color_names3.append(name)

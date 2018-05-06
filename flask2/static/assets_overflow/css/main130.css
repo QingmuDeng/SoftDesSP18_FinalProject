@@ -1311,7 +1311,7 @@
 
 	body {
 		background-color: #34383c;
-		background-image: url("../../images/overlay.png");
+		/* background-image: url("../../images/overlay.png"); */
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
 		background-position: top left, center 0;
@@ -2252,7 +2252,7 @@
 
 			body {
 				background-color: #34383c;
-				background-image: url("../../images/overlay.png");
+				/* background-image: url("../../images/overlay.png"); */
 				background-repeat: repeat, no-repeat;
 				background-size: auto, 100% auto;
 				background-position: top left, top center;

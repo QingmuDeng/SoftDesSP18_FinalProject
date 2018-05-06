@@ -60,8 +60,8 @@
     <link rel="stylesheet" href="../static/assets_overflow/css/reset.css">
     <link rel="stylesheet" href="../static/assets_overflow/css/style.css">
     <script src="../static/assets_overflow/js/modernizr.js"></script>
-    <link rel="stylesheet" href="../static/assets_overflow/css/main13.css"/>
-    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_9.css"/>
+    <link rel="stylesheet" href="../static/assets_overflow/css/main1300.css"/>
+    <link rel="stylesheet" href="../static/assets_overflow/css/ie8_900.css"/>
     <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
     <noscript>
         <link rel="stylesheet" href="../static/assets/css/noscript.css"/>
@@ -108,7 +108,18 @@
           </div>
           <div class="cd-modal">
               <div class="cd-modal-content">
-                  <p>User guidlines will be put here...</p>
+                  <p>To start generating color palettes, just go to the home page by clicking on the main leaf icon.
+                    At the home page, upload an image of your choice via the “upload” and “submit” buttons.
+                    After selecting an image, a new page will load with the generated color palettes.
+                    From there you can use the crop tool to generate additional color palettes.
+                    More features can be accessed from the toolbar that appears when hovering over the leaf icon.
+                    The penguin icon links to this page while the search icon links to the image sentiment analysis feature.
+                    However, currently, the image sentiment analysis is separate from the rest of the application
+                    and will be integrated in the future.</p>
+                  <p>INPUT GIFS/ IMAGES</p>
+                  <p>See our
+                    <a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject" style="color: white">README</a>
+                    for more information on how to run the application locally.</p>
               </div> <!-- cd-modal-content -->
           </div> <!-- cd-modal -->
           <a href="#1" class="cd-modal-close">Close</a>
@@ -133,29 +144,38 @@
     <!--</footer>-->
 <!-- </section> -->
 <article class="container box style1">
-    <div class="inner">
-        <h2 style="text-align:center;">Our Purpose
+    <div class="inner" style="text-align:center;">
+        <h2>Our Purpose
         </h2>
         <br>
-        <p>Generate web safe color palettes from inputted images using color theory, k means clustering, and machine
-            learning.
-            Our goal is to extract usefulness from your favorite images by providing user-friendly tools,
-            such as downloadable color palettes, web page generation, and image sentiment analysis. We
-            want to make it easier for everyone to be amazing designers and artists. Some future features that
-            we are working on right now include...</p>
+        <p>Generate color palettes from inputted images using color theory, color quantization, and k means clustering.
+          Our goal is to extract usefulness from your favorite images by providing user-friendly tools, such as
+          downloadable color palettes and image sentiment analysis. We want to make it easier for everyone to
+          be amazing designers and artists.</p>
+</article>
+
+<article class="container box style1">
+    <div class="inner" style="text-align:center;">
+        <h2>About Us
+        </h2>
+        <br>
+        <p>Paletteful was created by Cassandra Overney, Enmo Ren, Hwei-Shin Harriman, and Josh Deng.
+          We are currently first-years at Olin College of Engineering. This website was created as
+          part of the final project for Software Design, Spring 2018.
+        </p>
 </article>
 
 <!-- Feature 1 Description -->
 <article class="container box style1">
-    <div class="inner">
-        <h2 style="text-align:center;"> Color Palette Generation
+    <div class="inner" style="text-align:center;">
+        <h2> Color Palette Generation
         </h2>
         <br>
-        <p>You can generate color palettes just by uploading an image from the home page. Additional color palettes can
-            be created by selecting a particular region of the image using the crop feature or choosing different types
-            of color palettes (i.e. complementary and analogous). The output palette is shown in an interactive format,
-            which displays a color’s hex and rgb values on hover.</p>
-        <div class="cd-section" style="background-color: transparent; padding: 0%; margin: 0%;">
+        <p>You can generate color palettes just by uploading an image from the home page.
+          Additional color palettes can be created by selecting a particular region of the image using the crop feature.
+          The three output palettes (classic, dominant/accent, and analogous) are shown in an interactive format,
+          which displays a color’s hex and rgb values on hover. </p>
+        <div class="cd-section" style="background-color: transparent; padding-top: 2%; padding-bottom: 0%; margin: 0%;">
             <div class="cd-modal-action">
                 <a href="#2" class="btn" data-type="modal-trigger" style="color: white">More Information</a>
                 <span class="cd-modal-bg"></span>
@@ -163,26 +183,27 @@
             <div class="cd-modal">
                 <div class="cd-modal-content">
                     <p>
-                        There are currently three main types of color palettes that Paletteful can generate from a given
-                        image. All three types utilize K means clustering and color theory concepts. The default color
-                        palette type selects the five palette colors by searching for the dominant and accent colors
-                        within an image. Three of the five colors are varying shades of the dominant color, while the
-                        other two colors are accents that pop out in the image. A palette containing dominant and accent
-                        colors is often useful when designing eye-catching webpages and presentations.
+                        There are currently three main types of color palettes that Paletteful can generate from a given image.
+                        All three types utilize clustering techniques and color theory concepts. The classic color palette finds
+                        the dominant colors within an image using a modified median cut algorithm, which repeatedly divides the
+                        image colorspace into clusters by using the medians of the clusters as partition points.
+                        The dominant/accent color palette type selects the five palette colors by using K means clustering to
+                        search for the dominant and accent colors within an image. Three of the five colors are varying shades
+                         of the dominant color, while the other two colors are bright accents that pop out in the image.
+                         A palette containing dominant and accent colors is often useful when designing eye-catching webpages and presentations.
                     </p>
 
                     <figure>
                         <img src="../static/images_about/example.png" alt="" class="center"/>
                         <br>
-                        <figcaption>Example Default Palette</figcaption>
+                        <figcaption>Example Dominant/Accent Palette</figcaption>
                     </figure>
 
-                    <p>The complementary
-                        color palette type consists of colors that lie opposite each other on the color wheel. To
-                        generate this type of color palette, the dominant color of the image is matched with its
-                        complement. Complementary palettes offer a sense of balance. The analogous color palette type
-                        consists of colors that lie close to each other on the color wheel. It is generated from various
-                        shades of the image’s dominant color.
+                    <p>The analogous color palette type consists of colors that lie close to each other on the color wheel.
+                      It is generated from various shades of the image’s dominant color that is found using K means clustering.
+                      We also experimented with generating a complementary color palette type, which consists of colors that lie
+                       opposite each other on the color wheel. To generate this type of color palette, the dominant color of
+                       the image is matched with its complement. However, this palette still needs to be refined before it is integrated into Paletteful.
 
                     </p>
                     <figure>
@@ -192,17 +213,22 @@
                         <figcaption>Additive Color Wheel</figcaption>
                     </figure>
                     <p>
-                        For all three types of color palettes, finding the dominant colors by K means clustering is an
-                        important concept. K means clustering finds K groups within an image’s RGB data. The algorithm
-                        works iteratively to assign each data point to one of K groups based on the color values that
-                        are provided. The centroids of the K clusters can then be labeled as the K most dominant colors
-                        of the image.
+                        For the dominant/accent and analogous color palettes, finding the dominant colors by K means clustering is an important concept.
+                        K means clustering finds K groups within an image’s RGB data. The algorithm works iteratively to assign each data point to
+                        one of K groups based on the color values that are provided. The centroids of the K clusters can then be labeled as the
+                        K most dominant colors of the image. In our program, we used K means with five clusters.
                     </p>
                     <figure>
                         <img src="../static/images_about/Kmeans.gif" alt="" class="center"/>
                         <br>
                         <figcaption>Visualization of K Means Clustering</figcaption>
                     </figure>
+                    <p>
+                      More information regarding modified median cut quantization can be found
+                      <a href="http://www.leptonica.com/color-quantization.html" style="color: white">here</a>.
+                      To generate the palettes we find the median colors for 11 clusters. The final five colors are determined by taking
+                      the four most dominant colors and the most saturated color from the remaining seven.
+                    </P>
                 </div> <!-- cd-modal-content -->
             </div> <!-- cd-modal -->
             <a href="#2" class="cd-modal-close">Close</a>
@@ -212,14 +238,14 @@
 
 <!-- Feature 2 Description -->
 <article class="container box style1">
-    <div class="inner">
-        <h2 style="text-align:center;">Color Symbolism
+    <div class="inner" style="text-align:center;">
+        <h2>Color Symbolism
         </h2>
         <br>
         <p>One of the most important features of Paletteful involves providing recommended color palettes based on the
             sentiment of an inputted image...
         </p>
-        <div class="cd-section" style="background-color: transparent; padding: 0%; margin: 0%;">
+        <div class="cd-section" style="background-color: transparent; padding-top: 2%; padding-bottom: 0%; margin: 0%;">
             <div class="cd-modal-action">
                 <a href="#3" class="btn" data-type="modal-trigger" style="color: white">More Information</a>
                 <span class="cd-modal-bg"></span>
@@ -268,8 +294,8 @@
 
 <article class="container box style1">
     <!--<a href="#" class="image fit"><img src="../static/images_overflow/pic02.jpg" alt=""/></a>-->
-    <div class="inner">
-        <h2 style="text-align:center;">Acknowledgments
+    <div class="inner" style="text-align:center;">
+        <h2>Acknowledgments
         </h2>
         <br>
         <p>
@@ -280,6 +306,14 @@
                 style="color: black" href="http://paulkinzett.github.io/toolbar/">Paul Kinzett</a>, and <a
                 style="color: black" href="https://github.com/AllanBishop/ImageCropper">Allan Bishop</a>
             for their beautiful HTML templates and JS plugins.
+        </p>
+        <p>
+          The modified median cut algorithm utilized for the classic color palette is based off of
+          <a style="color: black" href="https://github.com/fengsp/color-thief-py">Shipeng Feng</a>
+          and
+          <a style="color: black" href="https://github.com/lokesh/color-thief">Lokesh Dhakar’s</a>
+          ColorThief libraries. The algorithm itself was created by the
+          <a style="color: black" href="http://www.leptonica.com/color-quantization.html">Leptonica Library</a>.
         </p>
     </div>
 </article>
