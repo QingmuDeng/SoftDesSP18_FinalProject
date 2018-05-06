@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en">
+    <style>
+        #textHover1 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon1:hover #textHover1 {
+            display: block;
+        }
+
+        #textHover2 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon2:hover #textHover2 {
+            display: block;
+        }
+
+        #textHover3 {
+            display: none;
+            font-size: 14px;
+        }
+
+        #icon3:hover #textHover3 {
+            display: block;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Paletteful</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/assets/css/main5.css"/>
+    <link rel="stylesheet" href="../static/assets/css/ie9.css"/>
+    <link href="../static/toolbar/jquery.toolbar.css" rel="stylesheet"/>
+    <noscript>
+        <link rel="stylesheet" href="../static/assets/css/noscript.css"/>
+    </noscript>
+    <script>
+        function load() {
+            return "/";
+        }
+
+        function load3() {
+            return "/search";
+        }
+
+        function load4() {
+            return "/about";
+        }
+
+    </script>
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div id="toolbar-options" class="hidden">
+            <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span
+                    id="textHover1">Search</span></a>
+            <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span
+                    id="textHover3">About</span></a>
+        </div>
+
+        <div id="button">
+            <i class="fa fa-envira" onclick="document.location.href=load();" style="font-size:3em;"></i>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>Paletteful</h1>
+                <p>Get creativity from your favorite images.</p>
+                <h1>Page Under Construction</h1>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p><a href="https://github.com/QingmuDeng/SoftDesSP18_FinalProject">Our GitHub</a>.</p>
+    </footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/skel.min.js"></script>
+<script src="../static/assets/js/util.js"></script>
+<script src="../static/assets/js/main.js"></script>
+<script src="../static/toolbar/jquery.toolbar.js"></script>
+<script src="../static/toolbar/jquery.toolbar.js"></script>
+<script type="text/javascript" src="../static/toolbar/scriptmaybe.js"></script>
+
+</body>
+</html>

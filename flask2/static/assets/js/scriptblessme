@@ -1,0 +1,3 @@
+$.post( "/postmethod", {
+    javascript_data: data
+});
