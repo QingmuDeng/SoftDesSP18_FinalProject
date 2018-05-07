@@ -63,9 +63,9 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/search", methods=['GET', 'POST'])
+@app.route("/sentiment", methods=['GET', 'POST'])
 def search():
-    return render_template('search.html')
+    return render_template('sentiment.html')
 
 
 @app.route("/about", methods=['GET', 'POST'])
@@ -271,10 +271,10 @@ def upload():
                 # buffer2 = BytesIO()
                 # color.save(buffer2, format=format)
                 if ind == 5:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1" + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1_crop" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 else:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1_" + str(ind) + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette1_crop" + str(crop_count) + str(ind) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 color_names1.append(name)
                 # k3 = Key(b)  # create a new Key (like a file)
@@ -296,10 +296,10 @@ def upload():
                 # buffer2 = BytesIO()
                 # color.save(buffer2, format=format)
                 if ind == 5:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2" + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2_crop" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 else:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2_" + "_" + str(crop_count) + str(ind) + filename2[
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette2_crop" + str(crop_count) + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
                     color.save(name)
                 color_names2.append(name)
@@ -322,10 +322,10 @@ def upload():
                 # buffer2 = BytesIO()
                 # color.save(buffer2, format=format)
                 if ind == 5:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3" + "_" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3_crop" + str(crop_count) + filename2[-1 * (len(extension) + 1):]
                     color.save(name)
                 else:
-                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3_" + "_" + str(crop_count) + str(ind) + filename2[
+                    name = filename2[0:-1 * (len(extension) + 1)] + "_palette3_crop" + str(crop_count) + str(ind) + filename2[
                                                                                        -1 * (len(extension) + 1):]
                     color.save(name)
                 color_names3.append(name)

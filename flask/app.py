@@ -63,7 +63,7 @@ def home():
 
 @app.route("/search", methods=['GET', 'POST'])
 def search():
-    return render_template('search.html')
+    return render_template('sentiment.html')
 
 
 @app.route("/about", methods=['GET', 'POST'])

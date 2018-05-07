@@ -1,3 +1,8 @@
+<!-- The index.html page is created based on the HTML5 Up template, Dimension.
+It displays the home page and has the upload image feature.
+Many edits were made to incorporate it with Flask.
+
+This was created by Cassandra Overney and Enmo Ren.-->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -6,14 +11,12 @@
         .upload-btn-wrapper {
             position: relative;
             overflow: hidden;
-            /*display: inline-block;*/
         }
 
         .btn {
             text-align: center;
             white-space: nowrap;
         }
-
 
         .upload-btn-wrapper input[type=file] {
             font-size: 100px;
@@ -27,7 +30,6 @@
         .upload-btn-wrapper2 {
             position: relative;
             overflow: hidden;
-            /* padding: 20px 40px; */
         }
 
         #textHover1 {
@@ -36,15 +38,6 @@
         }
 
         #icon1:hover #textHover1 {
-            display: block;
-        }
-
-        #textHover2 {
-            display: none;
-            font-size: 14px;
-        }
-
-        #icon2:hover #textHover2 {
             display: block;
         }
 
@@ -74,30 +67,14 @@
         }
 
         function load3() {
-            return "/search";
+            return "/sentiment";
         }
 
         function load4() {
             return "/about";
         }
 
-        // function change_sub() {
-        //     // var clockButton = document.getElementById('subbtn');
-        //     console.log("pressed");
-        //     console.log(document.getElementById("img_file").value);
-        //     while (document.getElementById("img_file").value == "") {
-        //       console.log("still going");
-        //       setTimeout(change_sub, 3000);
-        //     }
-        //     console.log("passed");
-        //     document.getElementById('subbtn').style.opacity = 1;
-        //     document.getElementById('upbtn').style.opacity = 0;
-        //     document.getElementById('upbtn').hidden = true;
-        // }
-
-        function change_sub2() {
-            // var clockButton = document.getElementById('subbtn');
-            console.log("passed");
+        function change_sub() {
             document.getElementById('subbtn').style.opacity = 1;
             document.getElementById('upbtn').style.opacity = 0;
             document.getElementById('upbtn').hidden = true;
@@ -114,7 +91,7 @@
     <header id="header">
         <div id="toolbar-options" class="hidden">
             <a href="#" id="icon1"><i class="fa fa-search" onclick="document.location.href= load3()"></i><span
-                    id="textHover1">Search</span></a>
+                    id="textHover1">Sentiment</span></a>
             <a href="#" id="icon3"><i class="fa fa-qq" onclick="document.location.href= load4()"></i><span
                     id="textHover3">About</span></a>
         </div>
@@ -129,10 +106,11 @@
             </div>
         </div>
 
+        <!-- Upload and submit buttons -->
         <form name="upload" id="upload" method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
             <div class="upload-btn-wrapper" id="upbtn">
                 <button class="btn">Upload</button>
-                <input type="file" id="img_file" name="image" onchange="change_sub2()"/>
+                <input type="file" id="img_file" name="image" onchange="change_sub()"/>
             </div>
             <div class="upload-btn-wrapper2" style="opacity:0;" id="subbtn">
                 <button class="btn" style="vertical-align:middle"> Submit</button>
