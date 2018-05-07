@@ -6,6 +6,7 @@ colorpalette/output/
 colorpalette/src_imgs/
 colorpalette/vctr.py
 CNN/dataset/
+CNN/imgsent_convnet_model/
 .idea/
 flask/.idea/
 color_palette/.idea/
