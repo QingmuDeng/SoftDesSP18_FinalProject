@@ -61,7 +61,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/search", methods=['GET', 'POST'])
+@app.route("/sentiment", methods=['GET', 'POST'])
 def search():
     return render_template('sentiment.html')
 
