@@ -12,3 +12,4 @@ tensorflow
 pickle
 multiprocessing
 flickrapi
+python-opencv
