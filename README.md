@@ -61,7 +61,7 @@ There are two main methods of classification we identified: 1. A Convolutional N
 
 ## License
 
-This project is licensed under the MIT License。 Please see the [LICENSE.md](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License. Please see the [LICENSE.md](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/LICENSE) file for details.
 
 ## Acknowledgments
 We are appreciative of the inspirtations and resources the following sources provide:
