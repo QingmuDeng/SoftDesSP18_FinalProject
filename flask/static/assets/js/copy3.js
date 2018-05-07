@@ -1,8 +1,3 @@
-/**
- * copy3.js copies the text of a html tag to clipboard.
- * It was written by Cassandra Overney.
- **/
-
 function copyToClipboard(element) {
     console.log($(element).text());
     var textarea = document.createElement('textarea');

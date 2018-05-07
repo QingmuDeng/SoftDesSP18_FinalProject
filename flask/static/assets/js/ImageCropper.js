@@ -27,9 +27,6 @@ var __extends = this.__extends || function (d, b) {
  * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
- *
- * The function setBounds2() was written by Cassandra Overney in order to get the crop feature to display when the
- * html page gets re-rendered
  **/
 /// <reference path="touch-events.d.ts" />
 var Handle = (function () {
@@ -659,12 +656,10 @@ var ImageCropper = (function () {
         var bufferContext = this.buffer.getContext('2d');
         bufferContext.clearRect(0, 0, this.buffer.width, this.buffer.height);
         var splitName = img.src.split('.');
-        var fileType = splitName[splitName.length-1];
+        var fileType = splitName[-1];
         if (fileType == 'png' || fileType == 'jpg') {
             this.fileType = fileType;
         }
-        console.log(this.fileType);
-        console.log(img.src);
         this.srcImage = img;
         this.updateClampBounds();
         var sourceAspect = this.srcImage.height / this.srcImage.width;
@@ -801,45 +796,6 @@ var ImageCropper = (function () {
         bottomRight.setPosition(bounds.right, bounds.bottom);
         this.center.recalculatePosition(bounds);
         this.center.draw(this.ctx);
-    };
-    ImageCropper.prototype.setBounds2 = function (x, y, width, height, h , w) {
-        // var bounds = new Bounds(x, y, width, height);
-        var bounds = new Bounds();
-        bounds.left = width;
-        bounds.right = height;
-        bounds.top = Math.abs(x - h);
-        bounds.bottom = Math.abs(y - h);
-        var topLeft;
-        var topRight;
-        var bottomLeft;
-        var bottomRight;
-        var currentBounds = this.getBounds();
-        for (var i = 0; i < this.markers.length; i++) {
-            var marker = this.markers[i];
-            if (marker.getPosition().x == currentBounds.left) {
-                if (marker.getPosition().y == currentBounds.top) {
-                    topLeft = marker;
-                }
-                else {
-                    bottomLeft = marker;
-                }
-            }
-            else {
-                if (marker.getPosition().y == currentBounds.top) {
-                    topRight = marker;
-                }
-                else {
-                    bottomRight = marker;
-                }
-            }
-        }
-        topLeft.setPosition(bounds.left, bounds.top);
-        topRight.setPosition(bounds.right, bounds.top);
-        bottomLeft.setPosition(bounds.left, bounds.bottom);
-        bottomRight.setPosition(bounds.right, bounds.bottom);
-        this.center.recalculatePosition(bounds);
-        this.center.draw(this.ctx);
-        this.draw(this.ctx);
     };
     ImageCropper.prototype.getBounds = function () {
         var minX = Number.MAX_VALUE;
