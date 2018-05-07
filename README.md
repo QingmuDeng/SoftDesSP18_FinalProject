@@ -1,5 +1,5 @@
 # [Paletteful](http://paletteful.herokuapp.com/)
-### Get Creativity From Your Favorite Images
+### Get Inspiration From Your Favorite Images
 
 <span style="color:red">On our website</span>, you can generate color palettes from inputted images using color theory, color quantization, and k means clustering. Our goal is to extract usefulness from your favorite images by providing user-friendly tools, such as downloadable color palettes and image sentiment analysis. We want to make it easier for everyone to be amazing designers and artists. This is the final project for Software Design Spring 2018 at Olin College.
 
