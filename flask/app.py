@@ -218,7 +218,7 @@ def upload():
             # print("FILE CONTENTS", request.files["image"].read())
             b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
             crop_count += 1
-            text = request.form['upload_imgs']
+            text = request.form['img']
             bounds = request.form['bounds']
             response = requests.get(text, stream=True)
             img = Image.open(BytesIO(response.content))
