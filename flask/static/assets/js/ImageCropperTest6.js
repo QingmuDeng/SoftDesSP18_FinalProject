@@ -19,7 +19,7 @@ function handleFileSelect() {
 function getBounds() {
     var bounds = crop.getCropBounds();
     document.getElementById("bounds").value = bounds.top.toString()+", "+bounds.bottom.toString()+", "+bounds.left.toString()+", "+bounds.right.toString();
-    document.getElementById("img").value = document.getElementById("fileInput").src;
+    document.getElementById("upload_imgs").value = document.getElementById("fileInput").src;
 }
 
 function reset() {

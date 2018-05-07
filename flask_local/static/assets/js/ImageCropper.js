@@ -27,6 +27,9 @@ var __extends = this.__extends || function (d, b) {
  * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * The function setBounds2() was written by Cassandra Overney in order to get the crop feature to display when the
+ * html page gets re-rendered
  **/
 /// <reference path="touch-events.d.ts" />
 var Handle = (function () {

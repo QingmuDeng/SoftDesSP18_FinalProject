@@ -67,7 +67,7 @@ def make_dataset(save_path='dataset/scaled_data'):
 
     Returns the full dataset in 4 pickled files: train_img_array, train_label, test_img_array, testlabel, where each is a numpy array.
 
-    train_img_array and test_img_array: contain RGB pixel values of every img in the dataset
+    train_img_array and test_img_array: contain RGB pixel values of every upload_imgs in the dataset
 
     trainlabel and testlabel: contain the appropriate label for each image in the dataset stored as int32. 0=happiness, 1=sadness, 2=violence, 3=mysterious."""
 

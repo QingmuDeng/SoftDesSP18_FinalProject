@@ -40,8 +40,8 @@ class ml_utils():
                 label = 3
             for infile in glob.glob("dataset/"+keyword+"/*.jpg"):
                 file, ext = os.path.splitext(infile)
-                # img = np.array(Image.open(infile))
-                # img = np.reshape(img, (img.shape[0]*img.shape[1], 3))
+                # upload_imgs = np.array(Image.open(infile))
+                # upload_imgs = np.reshape(upload_imgs, (upload_imgs.shape[0]*upload_imgs.shape[1], 3))
                 self.dataset.append((infile, label))
 
         self.length = len(self.dataset)

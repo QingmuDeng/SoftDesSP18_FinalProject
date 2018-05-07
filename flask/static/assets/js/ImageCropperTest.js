@@ -30,7 +30,7 @@ window.onload = function () {
 };
 function preview() {
     if (crop.isImageSet()) {
-//        var img = crop.getCroppedImage(700, 500);
+//        var upload_imgs = crop.getCroppedImage(700, 500);
         img.onload = (function () { return previewLoaded(img); });
     }
 }
@@ -62,7 +62,7 @@ var handleFileSelect = function(file) {
 
         img.width = width;
         img.height = height;
-//        img.src = img.src;
+//        upload_imgs.src = upload_imgs.src;
         document.getElementById("imageCanvas").width = width
         document.getElementById("imageCanvas").height = height
         var canvas = document.getElementById("imageCanvas");
@@ -83,15 +83,15 @@ var handleFileSelect = function(file) {
 //    var file = evt.target.src;
 ////    var file = getDataUrl(evt.currentTarget)
 //    var reader = new FileReader();
-//    var img = new Image();
+//    var upload_imgs = new Image();
 //
-//    img.addEventListener("load", function () {
-//        crop.setImage(img);
+//    upload_imgs.addEventListener("load", function () {
+//        crop.setImage(upload_imgs);
 //        preview();
 //    }, false);
 //
 //    reader.addEventListener("load", function () {
-//        img.src = reader.result;
+//        upload_imgs.src = reader.result;
 //    }, false);
 //    if (file) {
 //        reader.readAsDataURL(file);

@@ -969,7 +969,7 @@ var ImageCropper = (function () {
     //http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
     ImageCropper.prototype.drawImageIOSFix = function (ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
         // Works only if whole image is displayed:
-        // ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
+        // ctx.drawImage(upload_imgs, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
         // The following works correct also when only a part of the image is displayed:
         ctx.drawImage(img, sx * this.vertSquashRatio, sy * this.vertSquashRatio, sw * this.vertSquashRatio, sh * this.vertSquashRatio, dx, dy, dw, dh);
     };

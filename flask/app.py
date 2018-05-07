@@ -37,7 +37,7 @@ app = Flask(__name__)
 photos = UploadSet('photos', IMAGES)
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOADED_PHOTOS_DEST'] = 'static/img/'
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/upload_imgs/'
 configure_uploads(app, photos)
 
 crop_count = 0
@@ -218,7 +218,7 @@ def upload():
             # print("FILE CONTENTS", request.files["image"].read())
             b = s3conn.get_bucket(os.environ.get('S3_BUCKET_NAME'))
             crop_count += 1
-            text = request.form['img']
+            text = request.form['upload_imgs']
             bounds = request.form['bounds']
             response = requests.get(text, stream=True)
             img = Image.open(BytesIO(response.content))
@@ -318,7 +318,7 @@ def allowed_file(filename):
     """
     Helper function that makes sure the user inputs an image of the correct file type.
     NOTE: this function has not been integrated yet.
-    :param filename: the filename of the img the user wants to upload
+    :param filename: the filename of the upload_imgs the user wants to upload
     :return: the complete filename needed for upload()
     """
     return '.' in filename and \

@@ -48,9 +48,9 @@ def resize(input):
 
     :param input: Pillow Image that user uploaded
     """
-    image= np.array(input)
+    image = np.array(input)
     image2 = input
-    print(image.shape[1], image.shape[0])
+    # print(image.shape[1], image.shape[0])
     if image.shape[1] > 600:
         r = 600.0 / image.shape[1]
         dim = (600, int(image.shape[0] * r))
@@ -58,6 +58,7 @@ def resize(input):
         image = Image.fromarray(image)
         image2 = image.resize(dim, resample=PIL.Image.LANCZOS)
         image = np.array(image2)
+
     if image.shape[0] > 600:
         r = 600.0 / image.shape[0]
         dim = (int(image.shape[1] * r), 600)
@@ -66,13 +67,12 @@ def resize(input):
         image2 = image.resize(dim, resample=PIL.Image.LANCZOS)
     return image2
 
-def crop_img(input, bounds, count):
+def crop_img(input, bounds):
     """ Crops an image based on the bounds that the user selects from the
     crop tool. Saves the crop image in a new file.
 
     :param input: Image object of uploaded image
     :param bounds: crop BOUNDS
-    :param count: the number of crops done on a single image
     :rtype: Image object of cropped image
     """
     top, bottom, left, right = bounds.split(', ')
