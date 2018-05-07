@@ -24,6 +24,7 @@ sudo pip3 install -r requirements_local.txt
 ## Usage
 
 ### Heroku
+To start generating color palettes online, just go to the home page hosted on Heroku by either entering [`http://paletteful.herokuapp.com/`](http://paletteful.herokuapp.com/) in your browser or clicking on the main leaf icon on any of _Paletteful_ pages. At the home page, upload an image of your choice via the “upload” and “submit” buttons. After selecting an image, a new page will load with the generated color palettes. From there you can use the crop tool to generate additional color palettes. More features can be accessed from the toolbar that appears when hovering over the leaf icon. The penguin icon links to this page while the search icon links to the image sentiment analysis feature. However, currently, the image sentiment analysis is separate from the rest of the application and will be integrated in the future.
 
 ### Local
 
@@ -43,7 +44,14 @@ sudo pip3 install -r requirements_local.txt
 ```
 git clone https://github.com/USER_NAME/SoftDesSP18_FinalProject.git
 ```
+3. Make a new branch on your local machine using command
+```git checkout -b feature-boo```
+4. Edit _feature boo_ on your local machine
+5. Push the branch you worked on to your Github Fork using 
+```git push origin HEAD```
+6. Submit a pull request to us on GitHub
 
+One area of suggested improvements would include exporting the trained TensorFlow models and integrating the feature with the web application. You are also welcomed to submit new issues through GitHub to report bugs or provide suggestions.
 ## Implementation Details
 
 ### Color Palette Generation
@@ -57,7 +65,7 @@ More information regarding modified median cut quantization can be found [here](
 ### Color Symbolism
 To further explore the realm of colors, we decided to look at the colors within a given image and tried to look at how certain colors can be associated with certain sentiments and emotions.
 
-There are two main methods of classification we identified: 1. A Convolutional Neural Network (CNN) that performs convolution, feature extractions of images by sweeping a given set of kernels across an image, and downsampling in all three of the RGB channels. Then, the dimension reduced RGB arrays would be flattened and fed into a dense, or fully-connected/hidden, layer before giving out a final list of activations for each sentiment category. The one with the highest activation would be the program’s classification of the image. 2. A neural network solely composed of dense layers. 16 RGB values have been determined by K Means Clustering over a large number of images at the same time. Those 16 RGB values would then serve as the fixed cluster centers for any images regardless of their color schemes. Provided with an image, by counting how many pixels are the closest to each of the 16 RGB values and dividing the counts by the total number of pixels, we would receive a normalized array of  16 percentages that would be the inputs for the neural network. As before, the category with the highest activation would be the program’s classification.
+There are two main methods of classification we identified: 1. A Convolutional Neural Network (CNN) that performs convolution, feature extractions of images by sweeping a given set of kernels across an image, and downsampling in all three of the RGB channels. Then, the dimension reduced RGB arrays would be flattened and fed into a dense, or fully-connected/hidden, layer before giving out a final list of activations for each sentiment category. The one with the highest activation would be the program’s classification of the image. 2. A neural network solely composed of dense layers. 16 RGB values have been determined by K Means Clustering over a large number of images at the same time. Those 16 RGB values would then serve as the fixed cluster centers for any images regardless of their color schemes. Provided with an image, by counting how many pixels are the closest to each of the 16 RGB values and dividing the counts by the total number of pixels, we would receive a normalized array of 16 percentages that would be the inputs for the neural network. As before, the category with the highest activation would be the program’s classification.
 
 ## License
 
