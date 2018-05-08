@@ -83,6 +83,7 @@ def upload():
         if "image" in request.files:
             filename = request.files["image"].filename
             filename = filename.replace("%", "")
+            filename = filename.replace(" ", "_")
 
             # connect to s3
             REGION_HOST = 's3.us-east-2.amazonaws.com'
