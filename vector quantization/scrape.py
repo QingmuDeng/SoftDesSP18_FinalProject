@@ -76,12 +76,10 @@ def main():
     options, args = init_opts()
     # Initiate the Flickrapi
     flickr = flickrapi.FlickrAPI(api_key, api_secret)
-
-    # Get the keyword and the number of photos to scrape
-    keyword, number = user_input()
+    number = int(options.number)
 
     # Check whether the desired file path exists; if not, create it
-    file_path = "dataset/"+str(keyword)+"/"
+    file_path = options.path+str(options.keyword)+"/"
     directory = os.path.dirname(file_path)
 
     if not os.path.exists(directory):
