@@ -1,16 +1,16 @@
+"""
+This library was created by Shipeng Feng. It uses the modified median cut algorithm to find the N dominant colors
+in an image. We use this library to generate the classic color palette by finding the top 11 colors, picking the
+four most dominant colors and the most saturated from the remaining.
+"""
 import math
-from PIL import Image
-import utils
-import numpy as np
-import math
-from PIL import Image
-from colorsys import rgb_to_hsv, hsv_to_rgb
 
 
 class cached_property(object):
     """Decorator that creates converts a method with a single
     self argument into a property cached on the instance.
     """
+
     def __init__(self, func):
         self.func = func
 
@@ -21,6 +21,7 @@ class cached_property(object):
 
 class ColorThief(object):
     """Color thief main class."""
+
     def __init__(self, image):
         """Create one color thief for one image.
         :param file: A Image object
@@ -133,30 +134,30 @@ class MMCQ(object):
         do_cut_color = None
         if maxw == rw:
             do_cut_color = 'r'
-            for i in range(vbox.r1, vbox.r2+1):
+            for i in range(vbox.r1, vbox.r2 + 1):
                 sum_ = 0
-                for j in range(vbox.g1, vbox.g2+1):
-                    for k in range(vbox.b1, vbox.b2+1):
+                for j in range(vbox.g1, vbox.g2 + 1):
+                    for k in range(vbox.b1, vbox.b2 + 1):
                         index = MMCQ.get_color_index(i, j, k)
                         sum_ += histo.get(index, 0)
                 total += sum_
                 partialsum[i] = total
         elif maxw == gw:
             do_cut_color = 'g'
-            for i in range(vbox.g1, vbox.g2+1):
+            for i in range(vbox.g1, vbox.g2 + 1):
                 sum_ = 0
-                for j in range(vbox.r1, vbox.r2+1):
-                    for k in range(vbox.b1, vbox.b2+1):
+                for j in range(vbox.r1, vbox.r2 + 1):
+                    for k in range(vbox.b1, vbox.b2 + 1):
                         index = MMCQ.get_color_index(j, i, k)
                         sum_ += histo.get(index, 0)
                 total += sum_
                 partialsum[i] = total
         else:  # maxw == bw
             do_cut_color = 'b'
-            for i in range(vbox.b1, vbox.b2+1):
+            for i in range(vbox.b1, vbox.b2 + 1):
                 sum_ = 0
-                for j in range(vbox.r1, vbox.r2+1):
-                    for k in range(vbox.g1, vbox.g2+1):
+                for j in range(vbox.r1, vbox.r2 + 1):
+                    for k in range(vbox.g1, vbox.g2 + 1):
                         index = MMCQ.get_color_index(j, k, i)
                         sum_ += histo.get(index, 0)
                 total += sum_
@@ -169,7 +170,7 @@ class MMCQ(object):
         dim2 = do_cut_color + '2'
         dim1_val = getattr(vbox, dim1)
         dim2_val = getattr(vbox, dim2)
-        for i in range(dim1_val, dim2_val+1):
+        for i in range(dim1_val, dim2_val + 1):
             if partialsum[i] > (total / 2):
                 vbox1 = vbox.copy
                 vbox2 = vbox.copy
@@ -183,7 +184,7 @@ class MMCQ(object):
                 while not partialsum.get(d2, False):
                     d2 += 1
                 count2 = lookaheadsum.get(d2)
-                while not count2 and partialsum.get(d2-1, False):
+                while not count2 and partialsum.get(d2 - 1, False):
                     d2 -= 1
                     count2 = lookaheadsum.get(d2)
                 # set dimensions
@@ -260,6 +261,7 @@ class MMCQ(object):
 
 class VBox(object):
     """3d color space box"""
+
     def __init__(self, r1, r2, g1, g2, b1, b2, histo):
         self.r1 = r1
         self.r2 = r2
@@ -335,6 +337,7 @@ class VBox(object):
 
 class CMap(object):
     """Color map"""
+
     def __init__(self):
         self.vboxes = PQueue(lambda x: x['vbox'].count * x['vbox'].volume)
 
@@ -376,6 +379,7 @@ class CMap(object):
 
 class PQueue(object):
     """Simple priority queue."""
+
     def __init__(self, sort_key):
         self.sort_key = sort_key
         self.contents = []
@@ -406,16 +410,3 @@ class PQueue(object):
 
     def map(self, f):
         return list(map(f, self.contents))
-
-if __name__ == '__main__':
-    ex = ColorThief("test13.jpg")
-    final_palette = ex.get_palette(11, 10)
-    fifth = choose_fifth(final_palette[5:])
-    final_palette2 = final_palette[:4]
-    final_palette2.append(fifth)
-    final_palette2 = reorder2(final_palette2)
-    final_palette2 = np.array(final_palette2)
-    hist = [1.0 / len(final_palette2)] * len(final_palette2)
-    bar = utils.plot_colors(hist, final_palette2)
-    new_path = 'test13_a1.png'
-    bar.save(new_path)

@@ -1,18 +1,18 @@
-# import the necessary packages
+"""
+Some util functions that creates a histogram of the colors from K means clustering and plots them as a color palette
+"""
 import numpy as np
-# import cv2
 from PIL import ImageDraw, Image
 
 
 def centroid_histogram(clt):
-    """Grab the number of different clusters and create a histogram based
+    """
+    Grab the number of different clusters and create a histogram based
     on the number of pixels assigned to each cluster
 
-    Args:
-        clt (sklearn.cluster.Kmeans): a sklearn.cluster.Kmeans object that contains centroid
+    :param clt (sklearn.cluster.Kmeans): a sklearn.cluster.Kmeans object that contains centroid
                                       locations and labels for each point
-    Returns:
-        hist (np.histogram): TODO
+    :return: hist (np.histogram)
     """
     # create a histogram for clt.labels_ with the numbers of centroids as bin numbers
     (hist, _) = np.histogram(clt.labels_, bins=len(clt.cluster_centers_))
@@ -26,14 +26,13 @@ def centroid_histogram(clt):
 
 
 def plot_colors(hist, centroids):
-    """Initialize the bar chart representing the relative frequency of each of the colors.
+    """
+    Initialize the bar chart representing the relative frequency of each of the colors.
 
-    Args:
-        hist (np.histogram): a histogram showing how many points are associated with
+    :param hist: a histogram showing how many points are associated with
                              each centroid
-    Returns:
-        bar (np.arrary/image): a bar graph that display the centroid colors based on
-                               the distribution in histogram
+    :param centroids: a bar graph that display the centroid colors in a color palette template
+    :return:
     """
     bar = np.zeros((120, 600, 3), dtype="uint8")
     startX = 0
@@ -43,10 +42,9 @@ def plot_colors(hist, centroids):
     bar = Image.fromarray(bar)
     bar2 = ImageDraw.Draw(bar)
     for (percent, color) in zip(hist, centroids):
-        # plot the relative percentage of each cluster
+        # plot the colors of each cluster
         endX = startX + (percent * 600)
-        bar2.rectangle([int(startX), 0, int(endX), 120], fill=tuple(color.astype("uint8")), outline=tuple(color.astype("uint8")))
-        # cv2.rectangle(bar, (int(startX), 0), (int(endX), 50),
-        #               color.astype("uint8").tolist(), -1)
+        bar2.rectangle([int(startX), 0, int(endX), 120], fill=tuple(color.astype("uint8")),
+                       outline=tuple(color.astype("uint8")))
         startX = endX
     return bar
