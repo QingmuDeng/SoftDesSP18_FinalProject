@@ -24,7 +24,11 @@ sudo pip3 install -r requirements_local.txt
 ## Usage
 
 ### Heroku
-To start generating color palettes online, just go to the home page hosted on Heroku by either entering [`http://paletteful.herokuapp.com/`](http://paletteful.herokuapp.com/) in your browser or clicking on the main leaf icon on any of _Paletteful_ pages. At the home page, upload an image of your choice via the “upload” and “submit” buttons. After selecting an image, a new page will load with the generated color palettes. From there you can use the crop tool to generate additional color palettes. More features can be accessed from the toolbar that appears when hovering over the leaf icon. The penguin icon links to this page while the search icon links to the image sentiment analysis feature. However, currently, the image sentiment analysis is separate from the rest of the application and will be integrated in the future.
+To start generating color palettes online, just go to the home page hosted on Heroku by either entering [`http://paletteful.herokuapp.com/`](http://paletteful.herokuapp.com/) in your browser or clicking on the main leaf icon on any of _Paletteful_ pages. At the home page, upload an image of your choice via the “upload” and “submit” buttons. After selecting an image, a new page will load with the generated color palettes. From there you can use the crop tool to generate additional color palettes. More features can be accessed from the toolbar that appears when hovering over the leaf icon. The penguin icon links to this page while the search icon links to the image sentiment analysis feature. However, currently, the image sentiment analysis is separate from the rest of the application and will be integrated in the future. You can also view a video demo of using the website by clicking below.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ### Local 
 To run the program locally, first navigate to the repo directory cloned to your local machine and go into the flask_local folder with the command. Type in
@@ -116,3 +120,4 @@ Last but not least, we would like to thank the Olin College of Engineering Softw
 ##### The Architectural Review 2 Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Preparation%20and%20Framing.md).
 ##### The Architectural Review 2 Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Reflection.md).
 ##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/System%20architecture%20diagram.jpg).
+##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/poster.pdf).
