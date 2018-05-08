@@ -1,7 +1,7 @@
 # [Paletteful](http://paletteful.herokuapp.com/)
 ### Get Inspiration From Your Favorite Images
 
-<span style="color:red">On our website</span>, you can generate color palettes from inputted images using color theory, color quantization, and k means clustering. Our goal is to extract usefulness from your favorite images by providing user-friendly tools, such as downloadable color palettes and image sentiment analysis. We want to make it easier for everyone to be amazing designers and artists. This is the final project for Software Design Spring 2018 at Olin College.
+<span style="color:red">On our website</span>, you can generate color palettes from inputted images using color theory, color quantization, and k means clustering. Our goal is to extract usefulness from your favorite images by providing user-friendly tools, such as downloadable color palettes and image sentiment analysis. We want to make it easier for everyone to be amazing designers and artists. This is the final project for Software Design Spring 2018 at Olin College. Our about-us page can be viewed [here](http://paletteful.herokuapp.com/about).
 
 ## Authors
 
@@ -12,7 +12,7 @@
 
 ## Getting Started
 
-This program is developed with _Python_ in _Ubuntu 16.4 LTS_. To download the repository as a zip or use the following command in the terminal.
+This program is developed with _Python_ in _Ubuntu 16.04 LTS_. To download the repository as a zip or use the following command in the terminal.
 ```
 git clone https://github.com/QingmuDeng/SoftDesSP18_FinalProject.git
 ```
@@ -118,4 +118,4 @@ Last but not least, we would like to thank the Olin College of Engineering Softw
 ##### The Architectural Review 2 Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Preparation%20and%20Framing.md).
 ##### The Architectural Review 2 Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Reflection.md).
 ##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/System%20architecture%20diagram.jpg).
-##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/poster.pdf).
+##### Our presentation poster can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/poster.pdf).
