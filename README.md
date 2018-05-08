@@ -1,7 +1,7 @@
 # [Paletteful](http://paletteful.herokuapp.com/)
 ### Get Inspiration From Your Favorite Images
 
-<span style="color:red">On our website</span>, you can generate color palettes from inputted images using color theory, color quantization, and k means clustering. Our goal is to extract usefulness from your favorite images by providing user-friendly tools, such as downloadable color palettes and image sentiment analysis. We want to make it easier for everyone to be amazing designers and artists. This is the final project for Software Design Spring 2018 at Olin College.
+<span style="color:red">On our website</span>, you can generate color palettes from inputted images using color theory, color quantization, and k means clustering. Our goal is to extract usefulness from your favorite images by providing user-friendly tools, such as downloadable color palettes and image sentiment analysis. We want to make it easier for everyone to be amazing designers and artists. This is the final project for Software Design Spring 2018 at Olin College. Our about-us page can be viewed [here](http://paletteful.herokuapp.com/about).
 
 ## Authors
 
@@ -12,7 +12,7 @@
 
 ## Getting Started
 
-This program is developed with _Python_ in _Ubuntu 16.4 LTS_. To download the repository as a zip or use the following command in the terminal.
+This program is developed with _Python_ in _Ubuntu 16.04 LTS_. To download the repository as a zip or use the following command in the terminal.
 ```
 git clone https://github.com/QingmuDeng/SoftDesSP18_FinalProject.git
 ```
@@ -26,9 +26,8 @@ sudo pip3 install -r requirements_local.txt
 ### Heroku
 To start generating color palettes online, just go to the home page hosted on Heroku by either entering [`http://paletteful.herokuapp.com/`](http://paletteful.herokuapp.com/) in your browser or clicking on the main leaf icon on any of _Paletteful_ pages. At the home page, upload an image of your choice via the “upload” and “submit” buttons. After selecting an image, a new page will load with the generated color palettes. From there you can use the crop tool to generate additional color palettes. More features can be accessed from the toolbar that appears when hovering over the leaf icon. The penguin icon links to this page while the search icon links to the image sentiment analysis feature. However, currently, the image sentiment analysis is separate from the rest of the application and will be integrated in the future. You can also view a video demo of using the website by clicking below.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="https://youtu.be/kv_5-g3e9UM" target="_blank"><img src="https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/videoscreen1.png" 
+alt="Paletteful Video" width="480" height="270" border="0" /></a>
 
 ### Local 
 To run the program locally, first navigate to the repo directory cloned to your local machine and go into the flask_local folder with the command. Type in
@@ -85,8 +84,7 @@ One area of suggested improvements would include exporting the trained TensorFlo
 ## Implementation Details
 
 ### Color Palette Generation
-There are currently three main types of color palettes that Paletteful can generate from a given image. All three types utilize clustering techniques and color theory concepts. The classic color palette finds the dominant colors within an image using a modified median cut algorithm, which repeatedly divides the image colorspace into clusters by using the medians of the clusters as partition points. The dominant/accent color palette type selects the five palette colors by using K means clustering to search for the dominant and accent colors within an image. Three of the five colors are varying shades of the dominant color, while the other two colors are bright accents that pop out in the image. A palette containing dominant and accent colors is often useful when designing eye-catching webpages and presentations. The analogous color palette type consists of colors that lie close to each other on the color wheel. It is generated from various shades of the image’s dominant color that is found using K means clustering. We also experimented with generating a complementary color palette type, which consists of colors that lie opposite each other on the color wheel. To generate this type of color palette, the dominant color of the image is matched with its complement. 
-The color theory behind this palette still needs to be refined before publishing it to Paletteful. 
+There are currently three main types of color palettes that Paletteful can generate from a given image. All three types utilize clustering techniques and color theory concepts. The classic color palette finds the dominant colors within an image using a modified median cut algorithm, which repeatedly divides the image colorspace into clusters by using the medians of the clusters as partition points. The dominant/accent color palette type selects the five palette colors by using K means clustering to search for the dominant and accent colors within an image. Three of the five colors are varying shades of the dominant color, while the other two colors are bright accents that pop out in the image. A palette containing dominant and accent colors is often useful when designing eye-catching webpages and presentations. The analogous color palette type consists of colors that lie close to each other on the color wheel. It is generated from various shades of the image’s dominant color that is found using K means clustering. We also experimented with generating a complementary color palette type, which consists of colors that lie opposite each other on the color wheel. To generate this type of color palette, the dominant color of the image is matched with its complement. The color theory behind this palette still needs to be refined before publishing it to Paletteful. 
 
 For the dominant/accent and analogous color palettes, finding the dominant colors by K means clustering is an important concept. K means clustering finds K groups within an image’s RGB data. The algorithm works iteratively to assign each data point to one of K groups based on the color values that are provided. The centroids of the K clusters can then be labe
 
@@ -114,10 +112,11 @@ We are appreciative of the inspirtations and resources the following sources pro
 Last but not least, we would like to thank the Olin College of Engineering Software Design instructors and NINJAS for their help during our project. Special thanks to [Paul Ruvolo](https://github.com/paulruvolo) for providing tremendous computing powers to our machine learning endeavors and [Vicky McDermott](https://github.com/vickymmcd) for the support through the difficult web application process.
 
 ## Software Design Course Deliverables
+### Our presentation poster can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/palettefulposter.pdf).
 ##### The Initial Proposal can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/Initial%20Proposal.md).
 ##### The Architectural Review Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR%20Preparation%20and%20Framing.md).
 ##### The Architectural Review Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR%20Reflection.md).
 ##### The Architectural Review 2 Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Preparation%20and%20Framing.md).
 ##### The Architectural Review 2 Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Reflection.md).
 ##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/System%20architecture%20diagram.jpg).
-##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/poster.pdf).
+
