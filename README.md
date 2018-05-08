@@ -24,10 +24,40 @@ sudo pip3 install -r requirements_local.txt
 ## Usage
 
 ### Heroku
-To start generating color palettes online, just go to the home page hosted on Heroku by either entering [`http://paletteful.herokuapp.com/`](http://paletteful.herokuapp.com/) in your browser or clicking on the main leaf icon on any of _Paletteful_ pages. At the home page, upload an image of your choice via the “upload” and “submit” buttons. After selecting an image, a new page will load with the generated color palettes. From there you can use the crop tool to generate additional color palettes. More features can be accessed from the toolbar that appears when hovering over the leaf icon. The penguin icon links to this page while the search icon links to the image sentiment analysis feature. However, currently, the image sentiment analysis is separate from the rest of the application and will be integrated in the future.
+To start generating color palettes online, just go to the home page hosted on Heroku by either entering [`http://paletteful.herokuapp.com/`](http://paletteful.herokuapp.com/) in your browser or clicking on the main leaf icon on any of _Paletteful_ pages. At the home page, upload an image of your choice via the “upload” and “submit” buttons. After selecting an image, a new page will load with the generated color palettes. From there you can use the crop tool to generate additional color palettes. More features can be accessed from the toolbar that appears when hovering over the leaf icon. The penguin icon links to this page while the search icon links to the image sentiment analysis feature. However, currently, the image sentiment analysis is separate from the rest of the application and will be integrated in the future. You can also view a video demo of using the website by clicking below.
 
-### Local
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
+### Local 
+To run the program locally, first navigate to the repo directory cloned to your local machine and go into the flask_local folder with the command. Type in
+```
+cd /Path/To/Repo/SoftDesSP18_FinalProject/flask_local
+```
+Then, enter the following command in the terminal to launch the Flask App. Once the local address of the website shows up in the terminal, open the website in your browser by just clicking the address.
+```
+python3 app.py
+```
+![alt text](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/run_local.gif "Run Locally")
+
+To scrape data from Flickr with our `scrape.py`, navitage to the `/vector quantization` folder and run `scrape.py`. The command line option parser is supported and required.
+```
+cd /Path/To/Repo/SoftDesSP18_FinalProject/vector\ quantization/
+python scrape.py
+Options:
+  -h, --help            show this help message and exit
+  -k KEYWORD, --keyword=KEYWORD
+                        the keyword based on which you wish to scrape flickr
+                        images from.
+  -n NUMBER, --number=NUMBER
+                        The number of images to scrape. The default value is
+                        100 images.
+  -p PATH, --path=PATH  The directory to save the images scraped
+```
+To run the machine learning file in this directory, simply do `python dense.py`. However, to prepare the dataset to run with `dense.py` would require configuring and running `ml_utils.py` where all the necessary functions are already defined in an object-oriented way and free to be tweaked.
+
+To run the machine learning file in `CNN` folder, please do `python cnnImage.py`. Preparing the dataset would require using `resize.py` in the same directory.
 
 ## Built With
 
@@ -87,3 +117,7 @@ Last but not least, we would like to thank the Olin College of Engineering Softw
 ##### The Initial Proposal can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/Initial%20Proposal.md).
 ##### The Architectural Review Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR%20Preparation%20and%20Framing.md).
 ##### The Architectural Review Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR%20Reflection.md).
+##### The Architectural Review 2 Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Preparation%20and%20Framing.md).
+##### The Architectural Review 2 Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Reflection.md).
+##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/System%20architecture%20diagram.jpg).
+##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/poster.pdf).
