@@ -112,10 +112,11 @@ We are appreciative of the inspirtations and resources the following sources pro
 Last but not least, we would like to thank the Olin College of Engineering Software Design instructors and NINJAS for their help during our project. Special thanks to [Paul Ruvolo](https://github.com/paulruvolo) for providing tremendous computing powers to our machine learning endeavors and [Vicky McDermott](https://github.com/vickymmcd) for the support through the difficult web application process.
 
 ## Software Design Course Deliverables
+### Our presentation poster can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/palettefulposter.pdf).
 ##### The Initial Proposal can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/Initial%20Proposal.md).
 ##### The Architectural Review Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR%20Preparation%20and%20Framing.md).
 ##### The Architectural Review Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR%20Reflection.md).
 ##### The Architectural Review 2 Preparation Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Preparation%20and%20Framing.md).
 ##### The Architectural Review 2 Reflection Document can be found [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/AR2%20Reflection.md).
 ##### Our system architectural diagram can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/System%20architecture%20diagram.jpg).
-##### Our presentation poster can be viewed [here](https://github.com/QingmuDeng/SoftDesSP18_FinalProject/blob/master/assignments/poster.pdf).
+
