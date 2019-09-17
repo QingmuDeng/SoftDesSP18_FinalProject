@@ -100,7 +100,7 @@ def upload():
             keys.append(k)
 
             # extract the image from aws and call resize
-            response = requests.get("https://s3.us-east-2.amazonaws.com/paletteful/" + filename, stream=True)
+            response = requests.get("https://s3.us-east-2.amazonaws.com/palatteful/" + filename, stream=True)
             img = Image.open(BytesIO(response.content))
             extension = filename.split(".")[-1]
             if extension in ['jpeg', 'jpg', 'JPG', 'JPEG']:
